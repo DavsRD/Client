@@ -13,14 +13,14 @@ const SPRITE_DIR = "assets/pixel-eagle-sprites/png/1x/";
 
 // Each expression: sprite frames (looped if more than one) + a CSS motion class.
 const EXPRESSIONS = {
-  idle: { frames: ["pose_idle"], motion: "is-idle" },
-  greet: { frames: ["pose_head_flip_1", "pose_head_flip_2"], motion: "is-greet", ms: 260, settle: 1600 },
-  point: { frames: ["pose_point"], motion: "is-idle" },
-  happy: { frames: ["pose_run_flap_2"], motion: "is-happy", settle: 900 },
-  tryAgain: { frames: ["prop_on_sweat_drop"], motion: "is-shake", settle: 900 },
-  cheer: { frames: ["pose_run_flap_1", "pose_run_flap_2"], motion: "is-happy", ms: 180, settle: 1800 },
-  alert: { frames: ["pose_alert"], motion: "is-idle" },
-  thinking: { frames: ["prop_on_magnifier"], motion: "is-idle" },
+  idle: { frames: ["pose_idle_geared"], motion: "is-idle" },
+  greet: { frames: ["pose_head_flip_1_geared", "pose_head_flip_2_geared"], motion: "is-greet", ms: 260, settle: 1600 },
+  point: { frames: ["pose_point_geared"], motion: "is-idle" },
+  happy: { frames: ["pose_run_flap_2_geared"], motion: "is-happy", settle: 900 },
+  tryAgain: { frames: ["prop_on_sweat_drop_geared"], motion: "is-shake", settle: 900 },
+  cheer: { frames: ["pose_run_flap_1_geared", "pose_run_flap_2_geared"], motion: "is-happy", ms: 180, settle: 1800 },
+  alert: { frames: ["pose_alert_geared"], motion: "is-idle" },
+  thinking: { frames: ["prop_on_magnifier_geared"], motion: "is-idle" },
 };
 
 const MOTION_CLASSES = ["is-idle", "is-greet", "is-happy", "is-shake"];

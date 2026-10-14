@@ -8,16 +8,19 @@
  * National numbers are fixed here (verified 2026). The two local numbers come
  * from js/data/local-hotlines.json so another school can reuse the site by
  * editing that one file.
+ *
+ * Numbers are shown as plain text, not tap-to-call links: shared school
+ * computers can't place calls, and a pupil should read the number to an adult.
  */
 
 import { fetchJSON, esc } from "../core/data.js";
 import { t, pick } from "../core/i18n.js";
 
 const NATIONAL = [
-  { labelKey: "emergency.national", number: "911", tel: "911", primary: true },
-  { labelKey: "emergency.ndrrmc", number: "(02) 8911-1406", tel: "+63289111406" },
-  { labelKey: "emergency.redcross", number: "143", tel: "143" },
-  { labelKey: "emergency.pnp", number: "117", tel: "117" },
+  { labelKey: "emergency.national", number: "911", primary: true },
+  { labelKey: "emergency.ndrrmc", number: "(02) 8911-1406" },
+  { labelKey: "emergency.redcross", number: "143" },
+  { labelKey: "emergency.pnp", number: "117" },
 ];
 
 let localPromise = null;
@@ -26,29 +29,22 @@ function getLocalNumbers() {
   return localPromise;
 }
 
-function telHref(number) {
-  return "tel:" + number.replace(/[^\d+]/g, "");
-}
-
 async function listMarkup() {
   const local = await getLocalNumbers();
-  const rows = NATIONAL.map((n) => ({ label: t(n.labelKey), number: n.number, tel: n.tel, primary: n.primary }));
+  const rows = NATIONAL.map((n) => ({ label: t(n.labelKey), number: n.number, primary: n.primary }));
   for (const key of ["bfp", "drrm"]) {
     const entry = local[key];
-    if (entry) rows.push({ label: pick(entry.label), number: entry.number, tel: entry.number && telHref(entry.number) });
+    if (entry) rows.push({ label: pick(entry.label), number: entry.number });
   }
 
   return rows
     .map((row) => {
-      const action = row.number
-        ? `<a class="hotline__call" href="${esc(row.tel)}">
-             <span class="hotline__number">${esc(row.number)}</span>
-             <span class="hotline__call-label">${esc(t("emergency.call"))}</span>
-           </a>`
+      const number = row.number
+        ? `<span class="hotline__number">${esc(row.number)}</span>`
         : `<span class="hotline__missing">${esc(t("emergency.missing"))}</span>`;
       return `<li class="hotline${row.primary ? " hotline--primary" : ""}">
                 <span class="hotline__label">${esc(row.label)}</span>
-                ${action}
+                ${number}
               </li>`;
     })
     .join("");

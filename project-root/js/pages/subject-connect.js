@@ -30,7 +30,7 @@ function render() {
 
   main.innerHTML = `
     <div class="page-hero">
-      <img class="mascot mascot--3x" data-mascot data-rest="idle" src="${mascot.spriteUrl("prop_on_sign")}" alt="" width="120" height="120">
+      <img class="mascot mascot--3x" data-mascot data-rest="idle" src="${mascot.spriteUrl("prop_on_sign_geared")}" alt="" width="120" height="120">
       <div>
         <h1 class="page-hero__title">${esc(t("subject.title"))}</h1>
         <p class="page-hero__sub">${esc(t("subject.subtitle"))}</p>
@@ -56,7 +56,7 @@ function render() {
         hazards.length
           ? `<div class="card-grid">${hazards.map((h) => hazardCard(h, index)).join("")}</div>`
           : `<div class="pending">
-               <img class="sprite" src="${mascot.spriteUrl("prop_on_magnifier")}" alt="" width="80" height="80">
+               <img class="sprite" src="${mascot.spriteUrl("prop_on_magnifier_geared")}" alt="" width="80" height="80">
                <p>${esc(t("learn.subjectsPending"))}</p>
              </div>`
       }

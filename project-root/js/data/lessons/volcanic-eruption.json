@@ -1,32 +1,32 @@
 {
   "beats": {
     "what": {
-      "sprite": "pose_point",
+      "sprite": "pose_point_geared",
       "en": "A volcano is a mountain with hot melted rock, called magma, deep inside. When it erupts, it can send out ash, rocks, and lava.",
       "fil": "Ang bulkan ay bundok na may mainit at tunaw na bato, na tinatawag na magma, sa loob nito. Kapag sumabog ito, naglalabas ito ng abo, bato, at lava."
     },
     "signs": {
-      "sprite": "prop_on_magnifier",
+      "sprite": "prop_on_magnifier_geared",
       "en": "Rumbling sounds, more steam or smoke, small earthquakes, and plants drying up near the crater. PHIVOLCS raises Alert Levels.",
       "fil": "Mga dagundong, mas maraming usok, maliliit na lindol, at natutuyong halaman malapit sa bunganga. Nagtataas ang PHIVOLCS ng Alert Level."
     },
     "before": {
-      "sprite": "gear_on_go_bag",
+      "sprite": "prop_on_sign_geared",
       "en": "Know your evacuation route and evacuation center. Pack a Go Bag with face masks and goggles.",
       "fil": "Alamin ang daan ng paglikas at ang evacuation center. Maghanda ng Go Bag na may face mask at goggles."
     },
     "during": {
-      "sprite": "prop_on_face_mask",
+      "sprite": "prop_on_face_mask_geared",
       "en": "Evacuate right away when told. If ash falls, stay indoors, close windows, and cover your nose and mouth with a mask or damp cloth.",
       "fil": "Lumikas agad kapag sinabihan. Kapag may bumabagsak na abo, manatili sa loob, isara ang bintana, at takpan ang ilong at bibig ng mask o basang tela."
     },
     "after": {
-      "sprite": "gear_on_hard_hat",
+      "sprite": "gear_on_full",
       "en": "Only go home when officials say it's safe. Let adults clean the ash while wearing masks.",
       "fil": "Umuwi lamang kapag sinabi ng mga opisyal na ligtas na. Hayaang ang nakatatanda ang maglinis ng abo habang naka-mask."
     },
     "signoff": {
-      "sprite": "pose_run_flap_1",
+      "sprite": "pose_run_flap_1_geared",
       "en": "Remember: know your way out, and mask up when ash falls!",
       "fil": "Tandaan: alamin ang daan palabas, at mag-mask kapag may abo!"
     }

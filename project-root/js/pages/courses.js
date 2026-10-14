@@ -94,7 +94,7 @@ function renderCatalog(index) {
 
   main().innerHTML = `
     <div class="page-hero">
-      <img class="mascot mascot--3x" data-mascot data-rest="thinking" src="${mascot.spriteUrl("prop_on_magnifier")}" alt="" width="120" height="120">
+      <img class="mascot mascot--3x" data-mascot data-rest="thinking" src="${mascot.spriteUrl("prop_on_magnifier_geared")}" alt="" width="120" height="120">
       <div>
         <h1 class="page-hero__title">${esc(t("learn.title"))}</h1>
         <p class="page-hero__sub">${esc(t("learn.subtitle"))}</p>
@@ -120,7 +120,7 @@ function renderCatalog(index) {
       </div>
       <div class="card-grid" data-grid></div>
       <div class="pending" data-empty hidden>
-        <img class="sprite" src="${mascot.spriteUrl("prop_on_sweat_drop")}" alt="" width="80" height="80">
+        <img class="sprite" src="${mascot.spriteUrl("prop_on_sweat_drop_geared")}" alt="" width="80" height="80">
         <p>${esc(t("learn.noResults"))}</p>
       </div>
     </section>`;
@@ -166,7 +166,7 @@ function beatsMarkup(lesson) {
   if (!lesson) {
     return `
       <div class="pending">
-        <img class="sprite" src="${mascot.spriteUrl("prop_on_magnifier")}" alt="" width="80" height="80">
+        <img class="sprite" src="${mascot.spriteUrl("prop_on_magnifier_geared")}" alt="" width="80" height="80">
         <p>${esc(t("learn.lessonPending"))}</p>
       </div>`;
   }
@@ -176,7 +176,7 @@ function beatsMarkup(lesson) {
     return `
       <li class="card beat beat--${key}">
         <span class="beat__num" aria-hidden="true">${i + 1}</span>
-        <img class="sprite beat__sprite" src="${mascot.spriteUrl(beat.sprite || "pose_idle")}" alt="" width="80" height="80" loading="lazy">
+        <img class="sprite beat__sprite" src="${mascot.spriteUrl(beat.sprite || "pose_idle_geared")}" alt="" width="80" height="80" loading="lazy">
         <div>
           <h3 class="beat__title">${esc(t("learn.beat." + key))}</h3>
           <p>${esc(pick(beat))}</p>

@@ -1,32 +1,32 @@
 {
   "beats": {
     "what": {
-      "sprite": "pose_point",
+      "sprite": "pose_point_geared",
       "en": "A typhoon is a giant storm that spins over the warm sea. It brings very strong winds and heavy rain.",
       "fil": "Ang bagyo ay napakalaking unos na umiikot sa ibabaw ng mainit na dagat. Nagdadala ito ng napakalakas na hangin at malakas na ulan."
     },
     "signs": {
-      "sprite": "pose_alert",
+      "sprite": "pose_alert_geared",
       "en": "PAGASA raises Wind Signals on the news and radio. The sky gets dark, the wind gets stronger, and the rain gets heavier.",
       "fil": "Nagtataas ang PAGASA ng Wind Signal sa balita at radyo. Dumidilim ang langit, lumalakas ang hangin, at lumalakas ang ulan."
     },
     "before": {
-      "sprite": "gear_on_go_bag",
+      "sprite": "prop_on_sign_geared",
       "en": "Help your family pack a Go Bag, charge phones and flashlights, and bring loose things inside.",
       "fil": "Tulungan ang pamilya na maghanda ng Go Bag, mag-charge ng cellphone at flashlight, at ipasok ang mga gamit na nasa labas."
     },
     "during": {
-      "sprite": "pose_closed_wings",
+      "sprite": "pose_closed_wings_geared",
       "en": "Stay indoors and away from windows. Listen to the radio, and leave right away if adults say to evacuate.",
       "fil": "Manatili sa loob ng bahay at lumayo sa bintana. Makinig sa radyo, at lumikas agad kapag sinabi ng nakatatanda."
     },
     "after": {
-      "sprite": "gear_on_flashlight",
+      "sprite": "pose_stop_wing_geared",
       "en": "Wait until adults say it's safe. Stay away from fallen wires, broken trees, and floodwater.",
       "fil": "Hintaying sabihin ng nakatatanda na ligtas na. Lumayo sa nahulog na kable, natumbang puno, at baha."
     },
     "signoff": {
-      "sprite": "pose_run_flap_1",
+      "sprite": "pose_run_flap_1_geared",
       "en": "Remember: listen to the news and be ready before the storm comes!",
       "fil": "Tandaan: makinig sa balita at maging handa bago dumating ang bagyo!"
     }

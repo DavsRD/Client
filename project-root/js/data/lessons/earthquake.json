@@ -1,32 +1,32 @@
 {
   "beats": {
     "what": {
-      "sprite": "pose_point",
+      "sprite": "pose_point_geared",
       "en": "An earthquake is when the ground suddenly shakes. It happens when huge rocks deep under the ground slip and move.",
       "fil": "Ang lindol ay ang biglaang pagyanig ng lupa. Nangyayari ito kapag gumagalaw ang malalaking bato sa ilalim ng lupa."
     },
     "signs": {
-      "sprite": "pose_alert",
+      "sprite": "pose_alert_geared",
       "en": "Earthquakes usually come with no warning. The first sign is shaking, rattling windows, or things swinging and falling.",
       "fil": "Kadalasan, walang babala ang lindol. Ang unang senyales ay pagyanig, kumakalampag na bintana, o umuugoy at nahuhulog na gamit."
     },
     "before": {
-      "sprite": "gear_on_go_bag",
+      "sprite": "prop_on_sign_geared",
       "en": "Find the safe spots in each room, like under a sturdy table. Pack a Go Bag and practice earthquake drills.",
       "fil": "Hanapin ang ligtas na lugar sa bawat silid, tulad ng ilalim ng matibay na mesa. Maghanda ng Go Bag at mag-ensayo ng earthquake drill."
     },
     "during": {
-      "sprite": "pose_duck_cover",
+      "sprite": "pose_duck_cover_geared",
       "en": "Duck, Cover, and Hold! Get under a sturdy table, cover your head, and hold on until the shaking stops. Stay away from windows.",
       "fil": "Duck, Cover, and Hold! Pumunta sa ilalim ng matibay na mesa, takpan ang ulo, at kumapit hanggang tumigil ang pagyanig. Lumayo sa bintana."
     },
     "after": {
-      "sprite": "gear_on_hard_hat",
+      "sprite": "pose_stop_wing_geared",
       "en": "Walk out calmly with your teacher to an open area. Watch out for aftershocks, broken glass, and fallen wires.",
       "fil": "Lumabas nang mahinahon kasama ang guro papunta sa bukas na lugar. Mag-ingat sa aftershock, basag na salamin, at nahulog na kable."
     },
     "signoff": {
-      "sprite": "pose_run_flap_1",
+      "sprite": "pose_run_flap_1_geared",
       "en": "Remember: Duck, Cover, and Hold — every time!",
       "fil": "Tandaan: Duck, Cover, and Hold — sa bawat pagkakataon!"
     }

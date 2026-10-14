@@ -176,6 +176,13 @@
   .hero__mascot {
     width: var(--sprite-2x);
     height: var(--sprite-2x);
+    margin-bottom: 0;
+  }
+  /* Stack Agila above the button so the button never touches the screen edge. */
+  .hero__cta {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--sp-2);
   }
 }
 

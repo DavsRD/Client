@@ -27,7 +27,7 @@
  * -------------------------------------------------------------
  */
 
-const CACHE_VERSION = "v4";
+const CACHE_VERSION = "v5";
 const SHELL_CACHE = `kalasag-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `kalasag-data-${CACHE_VERSION}`;
 const MEDIA_CACHE = `kalasag-media-${CACHE_VERSION}`;
@@ -35,10 +35,11 @@ const MEDIA_CACHE = `kalasag-media-${CACHE_VERSION}`;
 const BASE = new URL("./", self.location).pathname; // e.g. "/" or "/kalasag-kids/"
 
 const SPRITES = [
-  "pose_idle", "pose_point", "pose_head_flip_1", "pose_head_flip_2", "pose_run_flap_1",
-  "pose_run_flap_2", "pose_alert", "pose_closed_wings", "pose_duck_cover", "prop_on_sweat_drop",
-  "prop_on_magnifier", "prop_on_sign", "prop_on_face_mask", "gear_on_flashlight", "gear_on_full",
-  "gear_on_go_bag", "gear_on_hard_hat",
+  "expr_wink_geared", "gear_on_full", "pose_alert_geared", "pose_closed_wings_geared",
+  "pose_duck_cover_geared", "pose_head_flip_1_geared", "pose_head_flip_2_geared",
+  "pose_idle_geared", "pose_point_geared", "pose_run_flap_1_geared", "pose_run_flap_2_geared",
+  "pose_stop_wing_geared", "prop_on_face_mask_geared", "prop_on_magnifier_geared",
+  "prop_on_sign_geared", "prop_on_sweat_drop_geared",
 ].map((name) => `assets/pixel-eagle-sprites/png/1x/${name}.png`);
 
 // Small files only: everything here downloads on install.

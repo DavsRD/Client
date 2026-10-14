@@ -31,7 +31,12 @@ export function pixelIcon(name, className = "pixel-icon") {
   return `<svg class="${className}" viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><path fill="currentColor" fill-rule="evenodd" d="${ICONS[name]}"/></svg>`;
 }
 
+// Pages that show no nav bar: just the corner controls (Settings + Emergency must stay
+// one tap away on every page), floating over the page's own hero.
+const BARE_HEADER_PAGES = new Set(["welcome"]);
+
 function headerMarkup(currentPage) {
+  const bare = BARE_HEADER_PAGES.has(currentPage);
   const links = NAV.map(
     (item) => `
       <a class="main-nav__link" href="${item.href}"${item.page === currentPage ? ' aria-current="page"' : ""}>
@@ -43,11 +48,15 @@ function headerMarkup(currentPage) {
   return `
     <a class="skip-link" href="#main" data-i18n="site.skip"></a>
     <div class="site-header__inner">
-      <a class="brand" href="index.html">
-        <img class="brand__icon sprite" src="assets/icons/favicon-64.png" width="32" height="32" alt="">
-        <span class="brand__name" data-i18n="site.name"></span>
-      </a>
-      <nav class="main-nav" data-i18n-attr="aria-label:nav.main">${links}</nav>
+      ${
+        bare
+          ? ""
+          : `<a class="brand" href="index.html">
+               <img class="brand__icon sprite" src="assets/icons/favicon-64.png" width="32" height="32" alt="">
+               <span class="brand__name" data-i18n="site.name"></span>
+             </a>
+             <nav class="main-nav" data-i18n-attr="aria-label:nav.main">${links}</nav>`
+      }
       <div class="site-header__actions">
         <div class="settings" data-settings>
           <button type="button" class="settings__toggle" aria-expanded="false" aria-controls="settings-panel" data-settings-toggle>
@@ -169,6 +178,10 @@ export function render() {
 
   const header = document.querySelector("[data-site-header]");
   if (header) {
+    const bare = BARE_HEADER_PAGES.has(page);
+    header.classList.toggle("site-header--bare", bare);
+    // The phone tab bar needs room at the bottom of the page; bare pages have none.
+    document.body.classList.toggle("has-tabbar", !bare);
     header.innerHTML = headerMarkup(page);
     wireSettings(header);
     syncSettings(header);

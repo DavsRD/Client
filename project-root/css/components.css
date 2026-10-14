@@ -201,6 +201,22 @@ main {
   padding: 0 var(--gutter);
 }
 
+/* No nav bar (Welcome page): only the corner controls, floating over the hero. */
+.site-header--bare {
+  position: absolute;
+  left: 0;
+  right: 0;
+  min-height: 0;
+  background: transparent;
+  border-bottom: 0;
+}
+.site-header--bare .settings__toggle {
+  background: rgba(10, 11, 31, 0.72);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: var(--shadow-step-sm) rgba(0, 0, 0, 0.45);
+  color: #fff;
+}
+
 .brand {
   display: flex;
   align-items: center;
@@ -438,7 +454,7 @@ main {
     width: 24px;
     height: 24px;
   }
-  body {
+  body.has-tabbar {
     padding-bottom: calc(60px + var(--safe-bottom));
   }
 }
@@ -899,32 +915,21 @@ main {
   font-weight: 700;
   line-height: 1.3;
 }
-.hotline__call {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-shrink: 0;
-  min-width: 96px;
-  padding: var(--sp-1) var(--sp-3);
-  border: var(--bw) solid var(--danger-dark);
-  border-radius: var(--radius);
-  background: var(--danger);
-  box-shadow: var(--shadow-step-sm) var(--danger-dark);
-  color: #fff;
-  text-decoration: none;
-  margin-bottom: 3px;
-}
+/* Plain text, not a link: a bold badge that's easy to read out to an adult. */
 .hotline__number {
+  flex-shrink: 0;
+  min-width: 88px;
+  padding: var(--sp-1) var(--sp-3);
+  border: var(--bw) solid var(--danger);
+  border-radius: var(--radius);
+  background: rgba(239, 68, 68, 0.12);
+  color: var(--danger-ink);
   font-family: var(--font-pixel);
   font-weight: 700;
   font-size: var(--fs-md);
+  text-align: center;
   white-space: nowrap;
-}
-.hotline__call-label {
-  font-size: 0.6875rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  user-select: all; /* one tap selects the whole number for copying */
 }
 .hotline--primary {
   border-color: var(--danger);
