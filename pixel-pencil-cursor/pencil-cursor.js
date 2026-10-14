@@ -106,8 +106,57 @@
 
     if (state.reduced) root.classList.add('ppc-reduced');
 
+    // Modal <dialog>s and fullscreen elements live in the browser's "top layer",
+    // which paints above any z-index. To stay visible over them, the layer is a
+    // manual popover (also top layer) and is re-shown after each one opens, since
+    // the most recently added top-layer element paints on top. Browsers without
+    // the Popover API get the layer moved inside the topmost open modal instead.
+    var canPopover = typeof layer.showPopover === 'function';
+    if (canPopover) layer.setAttribute('popover', 'manual');
+
+    function topModal() {
+      var open = document.querySelectorAll('dialog[open]');
+      for (var i = open.length - 1; i >= 0; i--) {
+        var modal = true;
+        try { modal = open[i].matches(':modal'); } catch (err) { /* :modal unsupported: assume modal */ }
+        if (modal) return open[i];
+      }
+      return null;
+    }
+
+    function raiseLayer() {
+      if (!document.body) return;
+      if (canPopover) {
+        if (!layer.isConnected) document.body.appendChild(layer);
+        try {
+          if (layer.matches(':popover-open')) layer.hidePopover();
+          layer.showPopover();
+        } catch (err) { /* layer detached mid-update: next call retries */ }
+        return;
+      }
+      var host = topModal() || document.body;
+      if (layer.parentNode !== host) host.appendChild(layer);
+    }
+
     function ensureLayer() {
-      if (!layer.isConnected && document.body) document.body.appendChild(layer);
+      if (!layer.isConnected) raiseLayer();
+    }
+
+    // Re-raise whenever a dialog opens/closes or fullscreen changes.
+    var observer = typeof MutationObserver === 'function'
+      ? new MutationObserver(function (records) {
+          for (var i = 0; i < records.length; i++) {
+            if (records[i].target.nodeName === 'DIALOG') { raiseLayer(); return; }
+          }
+        })
+      : null;
+    if (observer) observer.observe(document.documentElement, { attributes: true, attributeFilter: ['open'], subtree: true });
+    state.observer = observer;
+
+    function onFullscreenChange() {
+      raiseLayer();
+      // Without popovers the pencil can't paint over a fullscreen element: show the native cursor.
+      if (!canPopover && (document.fullscreenElement || document.webkitFullscreenElement)) deactivate();
     }
 
     function activate() {
@@ -262,6 +311,8 @@
     on(document, 'pointerout', onLeave, { passive: true });
     on(document, 'dragover', onDragOver, { passive: true });
     on(window, 'blur', onBlur);
+    on(document, 'fullscreenchange', onFullscreenChange);
+    on(document, 'webkitfullscreenchange', onFullscreenChange);
     if (reduceMq) {
       if (reduceMq.addEventListener) on(reduceMq, 'change', onReduceChange);
       else if (reduceMq.addListener) reduceMq.addListener(onReduceChange);
@@ -274,6 +325,7 @@
   function destroy() {
     if (!state) return;
     state.listeners.forEach(function (l) { l[0].removeEventListener(l[1], l[2], l[3]); });
+    if (state.observer) state.observer.disconnect();
     if (state.layer.parentNode) state.layer.parentNode.removeChild(state.layer);
     document.documentElement.classList.remove('ppc-active', 'ppc-pressed', 'ppc-reduced');
     state = null;

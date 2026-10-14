@@ -15,8 +15,8 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/welcome.css">
   <link rel="stylesheet" href="vendor/pixel-pencil-cursor/pencil-cursor.css">
-  <!-- Language hint before first paint (read-only; js/core/state.js owns storage). -->
-  <script>try{if(localStorage.getItem("kalasag:lang")==='"fil"')document.documentElement.dataset.lang="fil"}catch(e){}</script>
+  <!-- Apply saved language + theme before first paint (read-only; js/core/state.js owns storage). -->
+  <script>try{var d=document.documentElement,s=localStorage;if(s.getItem("kalasag:lang")==='"fil"')d.dataset.lang="fil";d.dataset.theme=JSON.parse(s.getItem("kalasag:theme"))||"night"}catch(e){document.documentElement.dataset.theme="night"}</script>
   <script src="vendor/pixel-pencil-cursor/pencil-cursor.js" defer></script>
   <script type="module" src="js/main.js"></script>
 </head>

@@ -50,7 +50,7 @@ p {
 }
 
 a {
-  color: var(--sky);
+  color: var(--link);
 }
 
 img,
@@ -72,7 +72,7 @@ button {
 }
 
 :focus-visible {
-  outline: 3px solid var(--sunny);
+  outline: 3px solid var(--focus);
   outline-offset: 2px;
 }
 
@@ -158,7 +158,7 @@ main {
   font-family: var(--font-body);
   font-weight: 800;
   font-size: var(--fs-sm);
-  color: var(--sky);
+  color: var(--link);
   text-decoration: none;
   white-space: nowrap;
 }
@@ -264,26 +264,140 @@ main {
   margin-left: auto;
 }
 
-/* ---------- Language toggle ---------- */
-.lang-toggle {
-  display: flex;
+/* ---------- Settings (gear button + dropdown: language, theme) ---------- */
+.settings {
+  position: relative;
+}
+.settings__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  min-height: 40px;
+  padding: 0 var(--sp-3);
+  border: var(--bw) solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow-step-sm) var(--border-strong);
+  color: var(--text);
+  font-weight: 800;
+  font-size: var(--fs-sm);
+  margin-bottom: 3px;
+}
+.settings__toggle[aria-expanded="true"] {
+  border-color: var(--sky);
+  box-shadow: var(--shadow-step-sm) var(--sky-dark);
+}
+.settings__icon {
+  width: 18px;
+  height: 18px;
+}
+
+.settings__panel {
+  position: absolute;
+  top: calc(100% + var(--sp-2));
+  right: 0;
+  z-index: var(--z-modal);
+  width: min(340px, calc(100vw - 2 * var(--gutter)));
+  padding: var(--sp-4);
+  background: var(--surface);
+  border: 3px solid var(--border-strong);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 0 0 var(--border-strong);
+}
+.settings__title {
+  margin-bottom: var(--sp-3);
+  font-size: var(--fs-lg);
+}
+.settings__group {
+  margin: 0 0 var(--sp-4);
+  padding: 0;
+  border: 0;
+}
+.settings__group:last-child {
+  margin-bottom: 0;
+}
+.settings__legend {
+  margin-bottom: var(--sp-2);
+  padding: 0;
+  color: var(--text-muted);
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.segmented {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   border: var(--bw) solid var(--border-strong);
   border-radius: var(--radius);
   overflow: hidden;
 }
-.lang-toggle__btn {
-  min-width: 44px;
-  min-height: 36px;
-  padding: 0 var(--sp-2);
+.segmented__btn {
+  min-height: 44px;
   border: 0;
   background: transparent;
   color: var(--text-muted);
   font-family: var(--font-pixel);
-  font-size: var(--fs-sm);
+  font-weight: 700;
 }
-.lang-toggle__btn[aria-pressed="true"] {
+.segmented__btn + .segmented__btn {
+  border-left: var(--bw) solid var(--border-strong);
+}
+.segmented__btn[aria-pressed="true"] {
   background: var(--sky);
   color: var(--text-on-light);
+}
+
+.theme-options {
+  display: grid;
+  gap: var(--sp-2);
+}
+.theme-option {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  min-height: 48px;
+  padding: var(--sp-2) var(--sp-3);
+  border: var(--bw) solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  color: var(--text);
+  text-align: left;
+}
+.theme-option:hover {
+  border-color: var(--border-strong);
+}
+.theme-option[aria-pressed="true"] {
+  border-color: var(--sky);
+  box-shadow: inset 0 0 0 1px var(--sky);
+}
+.theme-option[aria-pressed="true"]::after {
+  content: "✓";
+  margin-left: auto;
+  color: var(--link);
+  font-weight: 800;
+}
+.theme-option__swatch {
+  display: flex;
+  flex-shrink: 0;
+  border: var(--bw) solid var(--border-strong);
+}
+.theme-option__swatch i {
+  width: 14px;
+  height: 28px;
+}
+.theme-option__text {
+  display: grid;
+  line-height: 1.2;
+}
+.theme-option__name {
+  font-weight: 800;
+  font-size: var(--fs-sm);
+}
+.theme-option__mode {
+  color: var(--text-dim);
+  font-size: var(--fs-xs);
 }
 
 /* Small screens: the nav becomes a bottom tab bar (big thumbs-friendly targets). */
@@ -326,6 +440,22 @@ main {
   }
   body {
     padding-bottom: calc(60px + var(--safe-bottom));
+  }
+}
+
+@media (max-width: 560px) {
+  .settings__label {
+    display: none;
+  }
+  /* Full-width sheet under the header so it never runs off-screen. */
+  .settings__panel {
+    position: fixed;
+    top: calc(var(--header-h) + var(--safe-top));
+    left: var(--gutter);
+    right: var(--gutter);
+    width: auto;
+    max-height: calc(100vh - var(--header-h) - 80px);
+    overflow-y: auto;
   }
 }
 
@@ -453,7 +583,7 @@ main {
 }
 .tag--done {
   border-color: var(--success);
-  color: var(--success);
+  color: var(--success-ink);
 }
 
 .label-kicker {
@@ -506,7 +636,7 @@ main {
   background: transparent;
 }
 .search:focus-within {
-  border-color: var(--sunny);
+  border-color: var(--focus);
 }
 
 /* ---------- Hazard icon (the one icon per hazard, used everywhere) ---------- */
@@ -740,7 +870,7 @@ main {
 /* ---------- Emergency hotlines ---------- */
 .hotline-panel__title {
   font-size: var(--fs-lg);
-  color: #ff8a8a;
+  color: var(--danger-ink);
 }
 .hotline-panel__intro {
   margin: var(--sp-2) 0 var(--sp-4);
@@ -819,7 +949,7 @@ main {
   border: var(--bw) solid var(--danger);
   border-radius: 999px;
   background: rgba(239, 68, 68, 0.12);
-  color: #ffb3b3;
+  color: var(--danger-ink);
   font-weight: 800;
 }
 .emergency-chip:hover {
@@ -886,7 +1016,7 @@ main {
 .site-footer {
   margin-top: auto;
   border-top: var(--bw) solid var(--border);
-  background: #070818;
+  background: var(--footer-bg);
 }
 .site-footer__inner {
   display: flex;

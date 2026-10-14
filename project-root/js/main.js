@@ -1,11 +1,12 @@
 /**
  * main.js — the one script every page loads. Deliberately thin:
- * language → shared layout → hotlines → mascot → that page's controller.
+ * theme → language → shared layout → hotlines → mascot → that page's controller.
  * Feature logic belongs in the page modules, not here.
  */
 
 import * as i18n from "./core/i18n.js";
 import * as layout from "./core/layout.js";
+import * as theme from "./core/theme.js";
 import * as mascot from "./core/mascot.js";
 import * as hotlines from "./dashboard/hotline-panel.js";
 import { PLACEHOLDER_IMG } from "./core/data.js";
@@ -57,6 +58,7 @@ async function routeToPageController() {
 
 async function bootstrap() {
   usePlaceholderForMissingImages();
+  theme.init();
   layout.render();
   i18n.applyToPage();
   hotlines.mountSiteWide();

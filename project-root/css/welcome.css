@@ -117,7 +117,7 @@
   padding: var(--sp-1) var(--sp-3);
   border-radius: var(--radius);
   background: rgba(10, 11, 31, 0.7);
-  color: var(--text);
+  color: #fff;
   font-size: var(--fs-sm);
   font-weight: 700;
   white-space: nowrap;
@@ -161,7 +161,7 @@
   border: var(--bw) solid var(--border-strong);
   border-radius: var(--radius);
   background: rgba(10, 11, 31, 0.7);
-  color: var(--text);
+  color: #fff;
   font-family: var(--font-pixel);
   font-size: var(--fs-xs);
 }
@@ -234,7 +234,7 @@
 }
 .feature h3 {
   font-size: var(--fs-lg);
-  color: var(--sunny);
+  color: var(--accent-ink);
 }
 .feature p {
   color: var(--text-muted);

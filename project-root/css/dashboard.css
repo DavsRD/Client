@@ -52,7 +52,9 @@
 }
 
 /* ---------- Jump back in ---------- */
+/* Always sits on a dark overlay over the scene, so its text stays light in every theme. */
 .jump {
+  color: #f4f2ff;
   position: relative;
   overflow: hidden;
   min-height: 240px;
@@ -89,19 +91,19 @@
   margin-bottom: var(--sp-3);
   font-size: var(--fs-xs);
   font-weight: 800;
-  color: var(--text-muted);
+  color: rgba(244, 242, 255, 0.8);
 }
 .jump__progress .progress {
   width: 120px;
 }
 .jump__kicker {
-  color: var(--cat-ink, var(--text-muted));
+  color: #ffd27a;
 }
 .jump__title {
   font-size: var(--fs-2xl);
 }
 .jump__text {
-  color: var(--text-muted);
+  color: rgba(244, 242, 255, 0.85);
 }
 .jump__actions {
   display: flex;
@@ -111,7 +113,7 @@
   margin-top: var(--sp-3);
 }
 .jump__all {
-  color: var(--text);
+  color: #fff;
   font-weight: 700;
   font-size: var(--fs-sm);
 }
@@ -246,7 +248,7 @@
 .ticker__title {
   margin-bottom: var(--sp-2);
   font-size: var(--fs-md);
-  color: var(--sunny);
+  color: var(--accent-ink);
 }
 .ticker__text {
   min-height: 4.8em;

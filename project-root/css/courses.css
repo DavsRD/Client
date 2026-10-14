@@ -159,7 +159,7 @@
 .beat__title {
   margin-bottom: var(--sp-1);
   font-size: var(--fs-md);
-  color: var(--sunny);
+  color: var(--accent-ink);
 }
 .beat p {
   color: var(--text-muted);
@@ -263,7 +263,7 @@
 .subject-link__name {
   font-family: var(--font-pixel);
   font-weight: 700;
-  color: var(--sky);
+  color: var(--link);
 }
 .subject-link__text {
   color: var(--text-muted);

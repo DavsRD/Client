@@ -27,7 +27,7 @@
  * -------------------------------------------------------------
  */
 
-const CACHE_VERSION = "v3";
+const CACHE_VERSION = "v4";
 const SHELL_CACHE = `kalasag-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `kalasag-data-${CACHE_VERSION}`;
 const MEDIA_CACHE = `kalasag-media-${CACHE_VERSION}`;
@@ -64,6 +64,7 @@ const SHELL_FILES = [
   "js/core/i18n.js",
   "js/core/data.js",
   "js/core/layout.js",
+  "js/core/theme.js",
   "js/core/mascot.js",
   "js/dashboard/dashboard.js",
   "js/dashboard/hotline-panel.js",

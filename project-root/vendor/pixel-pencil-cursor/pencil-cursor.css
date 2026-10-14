@@ -20,6 +20,24 @@ html.ppc-active * {
   pointer-events: none;
 }
 
+/* The layer is a popover so it can sit in the top layer above modal dialogs.
+   Undo the browser's default popover box (border, padding, background, auto size). */
+.ppc-layer[popover] {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  overflow: hidden;
+}
+.ppc-layer[popover]::backdrop {
+  display: none;
+}
+
 .ppc-cursor {
   position: fixed;
   left: 0;

@@ -13,6 +13,7 @@
 const PREFIX = "kalasag:";
 const HEARTS_PER_ROUND = 3;
 const HURDLE_ORDER = ["locked", "encountered", "cleared"];
+const SETTINGS_KEYS = ["lang", "theme"]; // survive "Reset my progress"
 
 const memory = { local: new Map(), session: new Map() };
 
@@ -220,8 +221,17 @@ export function setLanguage(lang) {
   write("local", "lang", lang === "fil" ? "fil" : "en");
 }
 
+// ---------- Theme ----------
+export function getTheme(fallback) {
+  return read("local", "theme", fallback);
+}
+
+export function setTheme(themeId) {
+  write("local", "theme", themeId);
+}
+
 // ---------- Reset (shared school devices) ----------
-/** Clears all progress on this device. The chosen language is kept. */
+/** Clears all progress on this device. Settings (language, theme) are kept. */
 export function resetAllProgress() {
   for (const where of ["local", "session"]) {
     const store = stores[where];
@@ -230,7 +240,7 @@ export function resetAllProgress() {
         const keys = [];
         for (let i = 0; i < store.length; i++) {
           const key = store.key(i);
-          if (key && key.startsWith(PREFIX) && key !== PREFIX + "lang") keys.push(key);
+          if (key && key.startsWith(PREFIX) && !SETTINGS_KEYS.includes(key.slice(PREFIX.length))) keys.push(key);
         }
         keys.forEach((key) => store.removeItem(key));
       } catch {
@@ -238,7 +248,7 @@ export function resetAllProgress() {
       }
     }
     for (const key of [...memory[where].keys()]) {
-      if (key !== "lang") memory[where].delete(key);
+      if (!SETTINGS_KEYS.includes(key)) memory[where].delete(key);
     }
   }
   resetHearts();

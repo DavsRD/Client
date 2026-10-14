@@ -53,6 +53,13 @@
   --text-dim: #7d81a8;
   --text-on-light: #1d1838;
 
+  /* Text-colored accents (darker in light themes so they stay readable). */
+  --link: #4cc8ff;
+  --accent-ink: #ffd23f;
+  --danger-ink: #ff9b9b;
+  --focus: #ffd23f;
+  --footer-bg: #070818;
+
   /* ---------- Brand (from Agila's app icons) ---------- */
   --indigo: #3b2a8f;
   --sunny: #ffd23f;
@@ -62,6 +69,7 @@
   --pink: #ff7aa8;
   --success: #5ed16a;
   --success-dark: #2e8a3a;
+  --success-ink: #5ed16a;
   --danger: #ef4444;
   --danger-dark: #a51d1d;
 
@@ -150,6 +158,118 @@
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --safe-left: env(safe-area-inset-left, 0px);
   --safe-right: env(safe-area-inset-right, 0px);
+}
+
+/* =============================================================
+   Themes — set on <html data-theme="...">, chosen in Settings.
+   "night" (the :root values above) is the default.
+   ============================================================= */
+
+/* ---------- Indigo (dark) — from Agila's indigo app icon ---------- */
+:root[data-theme="indigo"] {
+  --bg: #120d2b;
+  --surface: #1d1644;
+  --surface-2: #281f5c;
+  --surface-3: #33287a;
+  --border: #3a2f7e;
+  --border-strong: #5a49ad;
+  --text: #f6f2ff;
+  --text-muted: #c4b9ee;
+  --text-dim: #8e83c0;
+  --link: #8fd8ff;
+  --footer-bg: #0c0820;
+}
+
+/* ---------- Daylight (light) ---------- */
+:root[data-theme="daylight"] {
+  color-scheme: light;
+  --bg: #f3f5fb;
+  --surface: #ffffff;
+  --surface-2: #edf0f8;
+  --surface-3: #e0e5f2;
+  --border: #cdd4e6;
+  --border-strong: #9fa9c8;
+  --text: #1b1d3a;
+  --text-muted: #474c70;
+  --text-dim: #6b7094;
+  --link: #0b67a3;
+  --accent-ink: #9a5f00;
+  --danger-ink: #c42626;
+  --focus: #c27800;
+  --footer-bg: #e6eaf4;
+  --success-ink: #237a2e;
+  --cat-geological-soft: #f6ebe0;
+  --cat-geological-ink: #8a5326;
+  --cat-hydrometeorological-soft: #e3effd;
+  --cat-hydrometeorological-ink: #1d5fae;
+  --cat-biological-soft: #efe7ff;
+  --cat-biological-ink: #6a3fd1;
+  --cat-technological-soft: #fde8e1;
+  --cat-technological-ink: #b23c1b;
+  --cat-social-soft: #fff1d4;
+  --cat-social-ink: #8f5d00;
+}
+
+/* ---------- Sunny (light, warm) — from Agila's sunny app icon ---------- */
+:root[data-theme="sunny"] {
+  color-scheme: light;
+  --bg: #fff7e3;
+  --surface: #fffdf5;
+  --surface-2: #fff0c7;
+  --surface-3: #ffe6a0;
+  --border: #efd48a;
+  --border-strong: #d4a535;
+  --text: #2b2010;
+  --text-muted: #5b4722;
+  --text-dim: #826d3d;
+  --link: #1a5ea6;
+  --accent-ink: #8a4b00;
+  --danger-ink: #c42626;
+  --focus: #b06a00;
+  --footer-bg: #fcefca;
+  --success-ink: #237a2e;
+  --cat-geological-soft: #f8ead9;
+  --cat-geological-ink: #84501f;
+  --cat-hydrometeorological-soft: #e4f0fc;
+  --cat-hydrometeorological-ink: #1d5fae;
+  --cat-biological-soft: #f0e8ff;
+  --cat-biological-ink: #6a3fd1;
+  --cat-technological-soft: #fde6dc;
+  --cat-technological-ink: #ad3a19;
+  --cat-social-soft: #fff0cc;
+  --cat-social-ink: #8a5900;
+}
+
+/* ---------- Auto: follow the device; Daylight when it prefers light ---------- */
+@media (prefers-color-scheme: light) {
+  :root[data-theme="auto"] {
+    color-scheme: light;
+    --bg: #f3f5fb;
+    --surface: #ffffff;
+    --surface-2: #edf0f8;
+    --surface-3: #e0e5f2;
+    --border: #cdd4e6;
+    --border-strong: #9fa9c8;
+    --text: #1b1d3a;
+    --text-muted: #474c70;
+    --text-dim: #6b7094;
+    --link: #0b67a3;
+    --accent-ink: #9a5f00;
+    --danger-ink: #c42626;
+    --focus: #c27800;
+    --footer-bg: #e6eaf4;
+  --success-ink: #237a2e;
+    --cat-geological-soft: #f6ebe0;
+    --cat-geological-ink: #8a5326;
+    --cat-hydrometeorological-soft: #e3effd;
+    --cat-hydrometeorological-ink: #1d5fae;
+    --cat-biological-soft: #efe7ff;
+    --cat-biological-ink: #6a3fd1;
+    --cat-technological-soft: #fde8e1;
+    --cat-technological-ink: #b23c1b;
+    --cat-social-soft: #fff1d4;
+    --cat-social-ink: #8f5d00;
+  }
 }
 
 /* Category lookup: any element with data-category gets --cat / --cat-soft / --cat-ink. */
