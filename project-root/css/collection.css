@@ -1,0 +1,38 @@
+/* =============================================================
+   collection.css — the Collections page (unlocked games + quizzes).
+   ============================================================= */
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--sp-4);
+  margin: var(--sp-6) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.collection-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-4) var(--sp-3);
+  border-top: 4px solid var(--cat);
+  text-align: center;
+}
+.collection-item__name {
+  font-weight: 800;
+  font-size: var(--fs-sm);
+  line-height: 1.3;
+}
+
+/* Locked: a grayed silhouette that teases what's ahead. */
+.collection-item.is-locked {
+  border-top-color: var(--border-strong);
+}
+.collection-item.is-locked .hazard-icon {
+  filter: grayscale(1) brightness(0.45);
+}
+.collection-item.is-locked .collection-item__name {
+  color: var(--text-dim);
+}

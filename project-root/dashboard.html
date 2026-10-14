@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Home · Kalasag Kids</title>
+  <meta name="description" content="Your safety learning home: progress, posters, and emergency hotlines.">
+  <meta name="theme-color" content="#0a0b1f">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="assets/icons/favicon-64.png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/pixelify-sans-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="vendor/pixel-pencil-cursor/pencil-cursor.css">
+  <!-- Language hint before first paint (read-only; js/core/state.js owns storage). -->
+  <script>try{if(localStorage.getItem("kalasag:lang")==='"fil"')document.documentElement.dataset.lang="fil"}catch(e){}</script>
+  <script src="vendor/pixel-pencil-cursor/pencil-cursor.js" defer></script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body data-page="dashboard">
+  <header class="site-header" data-site-header></header>
+
+  <main id="main" class="container page dash">
+    <!-- Main column: dashboard.js fills each section from local progress. -->
+    <div class="dash__main">
+      <section class="greeting">
+        <img class="mascot mascot--2x" data-mascot data-rest="idle" src="assets/pixel-eagle-sprites/png/1x/pose_idle.png" alt="Agila the eagle" width="80" height="80">
+        <button type="button" class="bubble greeting__bubble" data-greeting></button>
+      </section>
+
+      <section class="section dash__section">
+        <h2 class="section-title" data-i18n="dash.jumpBack">Jump back in</h2>
+        <div data-jump-back></div>
+      </section>
+
+      <section class="section dash__section">
+        <div class="section-head">
+          <h2 class="section-title" data-i18n="dash.infographics">Safety posters</h2>
+          <a class="section-link" href="courses.html#all" data-i18n="dash.viewAll">See all hazards</a>
+        </div>
+        <p class="section-sub" data-i18n="dash.infographicsText">Quick posters for every hazard. Open one to read or print it.</p>
+        <ul class="poster-grid" data-posters></ul>
+      </section>
+
+      <section class="section dash__section">
+        <h2 class="section-title" data-i18n="dash.explore">Explore more</h2>
+        <ul class="explore-grid">
+          <li>
+            <a class="card explore-tile" href="courses.html">
+              <img class="sprite" src="assets/pixel-eagle-sprites/png/1x/prop_on_magnifier.png" alt="" width="80" height="80">
+              <span>
+                <strong data-i18n="dash.tile.learn">Learn</strong>
+                <span data-i18n="dash.tile.learnText">Videos and steps for all 19 hazards.</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="card explore-tile" href="collection.html">
+              <img class="sprite" src="assets/pixel-eagle-sprites/png/1x/pose_run_flap_1.png" alt="" width="80" height="80">
+              <span>
+                <strong data-i18n="dash.tile.collection">Collections</strong>
+                <span data-i18n="dash.tile.collectionText">Replay the games and quizzes you've unlocked.</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="card explore-tile" href="subject-connect.html">
+              <img class="sprite" src="assets/pixel-eagle-sprites/png/1x/prop_on_sign.png" alt="" width="80" height="80">
+              <span>
+                <strong data-i18n="dash.tile.subject">Subject Connect</strong>
+                <span data-i18n="dash.tile.subjectText">See how hazards link to your school subjects.</span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- Sidebar: sticky on wide screens. -->
+    <aside class="dash__side">
+      <section class="card card--pad stats" data-stats></section>
+      <section class="card card--pad" data-hotlines></section>
+      <section class="card card--pad ticker">
+        <h2 class="ticker__title" data-i18n="dash.didYouKnow">Did you know?</h2>
+        <p class="ticker__text" data-ticker aria-live="polite"></p>
+      </section>
+      <button type="button" class="btn btn--ghost btn--block reset-btn" data-reset data-i18n="dash.reset">Reset my progress</button>
+    </aside>
+  </main>
+
+  <dialog class="modal" data-reset-dialog aria-labelledby="reset-title">
+    <form method="dialog" class="modal__box">
+      <h2 class="modal__title" id="reset-title" data-i18n="dash.resetTitle">Start over?</h2>
+      <p data-i18n="dash.resetText">This clears XP, streaks, badges, and watched videos on this device.</p>
+      <div class="modal__actions">
+        <button class="btn btn--ghost" value="cancel" data-i18n="dash.resetCancel">Keep my progress</button>
+        <button class="btn btn--emergency" value="confirm" data-i18n="dash.resetConfirm">Yes, reset</button>
+      </div>
+    </form>
+  </dialog>
+
+  <footer class="site-footer" data-site-footer></footer>
+</body>
+</html>

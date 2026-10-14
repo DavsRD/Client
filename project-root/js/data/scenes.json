@@ -1,0 +1,12 @@
+{
+  "slides": [
+    { "id": "volcano-lake", "name": { "en": "Volcano Lake", "fil": "Lawa ng Bulkan" } },
+    { "id": "chocolate-hills", "name": { "en": "Chocolate Hills", "fil": "Chocolate Hills" } },
+    { "id": "rice-terraces", "name": { "en": "Rice Terraces", "fil": "Hagdan-hagdang Palayan" } },
+    { "id": "reef", "name": { "en": "Coral Reef", "fil": "Bahura" } },
+    { "id": "volcano-valley", "name": { "en": "Volcano Valley", "fil": "Lambak ng Bulkan" } },
+    { "id": "harbor-port", "name": { "en": "Harbor Port", "fil": "Daungan" } },
+    { "id": "monument-bay", "name": { "en": "Monument by the Bay", "fil": "Monumento sa Look" } },
+    { "id": "mountain-valley", "name": { "en": "Mountain Valley", "fil": "Lambak ng Bundok" } }
+  ]
+}

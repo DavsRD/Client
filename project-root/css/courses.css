@@ -1,0 +1,321 @@
+/* =============================================================
+   courses.css — the Learn page (catalog + hazard learning view).
+   Also used by subject-connect.html, which shows the same hazard cards.
+   ============================================================= */
+
+/* ---------- Learning Journeys rows ---------- */
+.journeys {
+  display: grid;
+  gap: var(--sp-6);
+}
+.journey {
+  padding-bottom: var(--sp-5);
+  border-bottom: var(--bw) solid var(--border);
+}
+.journey:last-child {
+  border-bottom: 0;
+}
+.journey__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-4);
+}
+.journey__title {
+  font-size: var(--fs-lg);
+  color: var(--cat-ink);
+}
+.journey__blurb {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+}
+.journey__stats {
+  margin-top: var(--sp-1);
+  color: var(--text-dim);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+}
+.journey__arrows {
+  display: flex;
+  gap: var(--sp-2);
+  flex-shrink: 0;
+}
+
+/* ---------- All Hazards toolbar ---------- */
+.catalog-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-5);
+}
+.catalog-toolbar .search {
+  flex: 0 1 260px;
+}
+.chip-row {
+  display: flex;
+  gap: var(--sp-2);
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 2px;
+}
+.chip-row::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .catalog-toolbar .search {
+    flex-basis: 100%;
+  }
+}
+
+/* ---------- Hazard learning view ---------- */
+.back-link {
+  display: inline-block;
+  margin-bottom: var(--sp-4);
+  color: var(--text-muted);
+  font-weight: 800;
+  text-decoration: none;
+}
+.back-link:hover {
+  color: var(--text);
+}
+
+.hazard-hero {
+  overflow: hidden;
+  border-top: 4px solid var(--cat);
+}
+.hazard-hero__banner {
+  width: 100%;
+  height: clamp(120px, 22vw, 220px);
+  object-fit: cover;
+  image-rendering: var(--sprite-render);
+}
+.hazard-hero__body {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  padding: 0 var(--sp-5) var(--sp-5);
+}
+.hazard-hero__body > .hazard-icon {
+  margin-top: -40px;
+  box-shadow: var(--shadow-pixel);
+}
+.hazard-hero__text {
+  flex: 1 1 280px;
+  padding-top: var(--sp-4);
+}
+.hazard-hero__tags {
+  display: flex;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-2);
+}
+.hazard-hero__title {
+  font-size: var(--fs-2xl);
+}
+.hazard-hero__blurb {
+  margin-top: var(--sp-1);
+  color: var(--text-muted);
+  font-size: var(--fs-lg);
+}
+
+/* Six beats */
+.beats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--sp-4);
+  margin: var(--sp-4) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.beat {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  padding: var(--sp-4);
+}
+.beat__num {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  background: var(--sunny);
+  color: var(--text-on-light);
+  border: var(--bw) solid var(--sunny-dark);
+  font-family: var(--font-pixel);
+  font-weight: 700;
+}
+.beat__sprite {
+  flex-shrink: 0;
+  width: var(--sprite-2x);
+  height: var(--sprite-2x);
+}
+.beat__title {
+  margin-bottom: var(--sp-1);
+  font-size: var(--fs-md);
+  color: var(--sunny);
+}
+.beat p {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+}
+.beat--during {
+  border-color: var(--sunny-dark);
+}
+.beat--signoff {
+  background: var(--surface-2);
+}
+
+/* Safety poster: light, high-contrast, and printable on a classroom wall. */
+.poster {
+  margin-top: var(--sp-4);
+  overflow: hidden;
+  background: #fffdf5;
+  color: var(--text-on-light);
+  border: 4px solid var(--cat);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-step) var(--cat);
+}
+.poster__head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: var(--sp-4) var(--sp-5);
+  background: var(--cat);
+  color: #fff;
+}
+.poster__title {
+  font-size: var(--fs-2xl);
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.35);
+}
+.poster__cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--sp-4);
+  padding: var(--sp-5);
+}
+.poster__col h4 {
+  margin-bottom: var(--sp-2);
+  font-size: var(--fs-lg);
+}
+.poster__col ul {
+  display: grid;
+  gap: var(--sp-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: 700;
+}
+.poster__col li {
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--radius);
+  background: #f1eee2;
+}
+.poster__col--dos li {
+  background: #dff5e1;
+}
+.poster__col--donts li {
+  background: #fde2e2;
+}
+.poster__foot {
+  padding: var(--sp-3) var(--sp-5);
+  background: #fde2e2;
+  color: var(--danger-dark);
+  font-weight: 800;
+  text-align: center;
+}
+.poster-placeholder {
+  width: 100%;
+  max-width: 640px;
+  margin-top: var(--sp-4);
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: var(--bw) dashed var(--border-strong);
+  border-radius: var(--radius);
+}
+
+/* Subject strip */
+.subject-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--sp-4);
+  margin: var(--sp-4) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.subject-link {
+  display: grid;
+  gap: var(--sp-1);
+  height: 100%;
+  padding: var(--sp-4);
+  color: var(--text);
+  text-decoration: none;
+}
+.subject-link:hover {
+  border-color: var(--sky);
+}
+.subject-link__name {
+  font-family: var(--font-pixel);
+  font-weight: 700;
+  color: var(--sky);
+}
+.subject-link__text {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+}
+
+.hazard-pager {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  margin-top: var(--sp-7);
+}
+.hazard-pager .btn {
+  white-space: normal;
+  text-align: center;
+}
+
+/* Print only the safety poster. */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .poster,
+  .poster * {
+    visibility: visible;
+  }
+  .poster {
+    position: absolute;
+    inset: 0 0 auto 0;
+    box-shadow: none;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* ---------- Subject Connect ---------- */
+.subject-tabs {
+  flex-wrap: wrap;
+  margin-top: var(--sp-2);
+}
+.subject-panel {
+  margin-top: var(--sp-5);
+}
+.subject-intro {
+  border-left: 4px solid var(--sky);
+}
+.subject-intro p {
+  margin-top: var(--sp-2);
+  color: var(--text-muted);
+}
+.subject-count {
+  margin: var(--sp-6) 0 var(--sp-4);
+  font-size: var(--fs-md);
+  color: var(--text-muted);
+}

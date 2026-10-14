@@ -1,0 +1,269 @@
+/* =============================================================
+   dashboard.css — the Home page: main column + sticky sidebar.
+   Motion stays calm so nothing competes with the emergency panel.
+   ============================================================= */
+
+.dash {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: var(--sp-7);
+  align-items: start;
+}
+
+.dash__side {
+  position: sticky;
+  top: calc(var(--header-h) + var(--sp-5));
+  display: grid;
+  gap: var(--sp-5);
+}
+
+.dash__section {
+  margin-top: var(--sp-6);
+}
+.dash__section > .section-title {
+  margin-bottom: var(--sp-4);
+}
+
+@media (max-width: 960px) {
+  .dash {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--sp-6);
+  }
+  .dash__side {
+    position: static;
+  }
+}
+
+/* ---------- Greeting ---------- */
+.greeting {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+}
+.greeting__bubble {
+  flex: 1;
+  min-height: 56px;
+  color: var(--text);
+  font-size: var(--fs-md);
+  text-align: left;
+}
+.greeting__bubble:hover {
+  border-color: var(--sky);
+}
+
+/* ---------- Jump back in ---------- */
+.jump {
+  position: relative;
+  overflow: hidden;
+  min-height: 240px;
+  isolation: isolate;
+}
+.jump__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: var(--sprite-render);
+}
+.jump::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(10, 11, 31, 0.92) 0%, rgba(10, 11, 31, 0.7) 50%, rgba(10, 11, 31, 0.15) 100%);
+}
+.jump__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-2);
+  max-width: 440px;
+  padding: var(--sp-5);
+}
+.jump__progress {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-3);
+  font-size: var(--fs-xs);
+  font-weight: 800;
+  color: var(--text-muted);
+}
+.jump__progress .progress {
+  width: 120px;
+}
+.jump__kicker {
+  color: var(--cat-ink, var(--text-muted));
+}
+.jump__title {
+  font-size: var(--fs-2xl);
+}
+.jump__text {
+  color: var(--text-muted);
+}
+.jump__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-4);
+  margin-top: var(--sp-3);
+}
+.jump__all {
+  color: var(--text);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+}
+
+/* ---------- Safety posters grid ---------- */
+.poster-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: var(--sp-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.poster-tile {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  height: 100%;
+  padding: var(--sp-2);
+  background: var(--surface);
+  border: var(--bw) solid var(--border);
+  border-left: 4px solid var(--cat);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  line-height: 1.25;
+  text-decoration: none;
+}
+.poster-tile:hover {
+  border-color: var(--cat);
+  background: var(--cat-soft);
+}
+.poster-tile .hazard-icon {
+  width: 40px;
+  height: 40px;
+}
+
+/* ---------- Explore more ---------- */
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--sp-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.explore-tile {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  height: 100%;
+  padding: var(--sp-4);
+  color: var(--text);
+  text-decoration: none;
+}
+.explore-tile:hover {
+  border-color: var(--sky);
+}
+.explore-tile img {
+  flex-shrink: 0;
+  width: var(--sprite-2x);
+  height: var(--sprite-2x);
+}
+.explore-tile strong {
+  display: block;
+  font-family: var(--font-pixel);
+  font-size: var(--fs-md);
+}
+.explore-tile span span {
+  display: block;
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  line-height: 1.4;
+}
+
+/* ---------- Stats card ---------- */
+.stats__who {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-4);
+}
+.stats__avatar {
+  width: 48px;
+  height: 48px;
+}
+.stats__name {
+  font-family: var(--font-pixel);
+  font-weight: 700;
+  font-size: var(--fs-lg);
+}
+.stats__sub {
+  color: var(--text-dim);
+  font-size: var(--fs-xs);
+}
+.stats__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4) var(--sp-3);
+  margin: 0;
+}
+.stat {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  grid-template-areas:
+    "icon value"
+    "icon label";
+  align-items: center;
+  column-gap: var(--sp-2);
+}
+.stat__icon {
+  grid-area: icon;
+  font-size: 1.25rem;
+  text-align: center;
+}
+.stat__value {
+  grid-area: value;
+  margin: 0;
+  font-family: var(--font-pixel);
+  font-weight: 700;
+  font-size: var(--fs-lg);
+  line-height: 1.1;
+}
+.stat__label {
+  grid-area: label;
+  color: var(--text-muted);
+  font-size: var(--fs-xs);
+}
+
+/* ---------- Did you know? ticker ---------- */
+.ticker__title {
+  margin-bottom: var(--sp-2);
+  font-size: var(--fs-md);
+  color: var(--sunny);
+}
+.ticker__text {
+  min-height: 4.8em;
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+}
+.ticker__text.is-in {
+  animation: ticker-in 0.4s steps(4);
+}
+@keyframes ticker-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+.reset-btn {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}

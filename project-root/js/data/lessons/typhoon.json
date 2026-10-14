@@ -1,0 +1,56 @@
+{
+  "beats": {
+    "what": {
+      "sprite": "pose_point",
+      "en": "A typhoon is a giant storm that spins over the warm sea. It brings very strong winds and heavy rain.",
+      "fil": "Ang bagyo ay napakalaking unos na umiikot sa ibabaw ng mainit na dagat. Nagdadala ito ng napakalakas na hangin at malakas na ulan."
+    },
+    "signs": {
+      "sprite": "pose_alert",
+      "en": "PAGASA raises Wind Signals on the news and radio. The sky gets dark, the wind gets stronger, and the rain gets heavier.",
+      "fil": "Nagtataas ang PAGASA ng Wind Signal sa balita at radyo. Dumidilim ang langit, lumalakas ang hangin, at lumalakas ang ulan."
+    },
+    "before": {
+      "sprite": "gear_on_go_bag",
+      "en": "Help your family pack a Go Bag, charge phones and flashlights, and bring loose things inside.",
+      "fil": "Tulungan ang pamilya na maghanda ng Go Bag, mag-charge ng cellphone at flashlight, at ipasok ang mga gamit na nasa labas."
+    },
+    "during": {
+      "sprite": "pose_closed_wings",
+      "en": "Stay indoors and away from windows. Listen to the radio, and leave right away if adults say to evacuate.",
+      "fil": "Manatili sa loob ng bahay at lumayo sa bintana. Makinig sa radyo, at lumikas agad kapag sinabi ng nakatatanda."
+    },
+    "after": {
+      "sprite": "gear_on_flashlight",
+      "en": "Wait until adults say it's safe. Stay away from fallen wires, broken trees, and floodwater.",
+      "fil": "Hintaying sabihin ng nakatatanda na ligtas na. Lumayo sa nahulog na kable, natumbang puno, at baha."
+    },
+    "signoff": {
+      "sprite": "pose_run_flap_1",
+      "en": "Remember: listen to the news and be ready before the storm comes!",
+      "fil": "Tandaan: makinig sa balita at maging handa bago dumating ang bagyo!"
+    }
+  },
+  "infographic": {
+    "signs": [
+      { "en": "PAGASA Wind Signal raised", "fil": "May Wind Signal mula sa PAGASA" },
+      { "en": "Dark sky and strong wind", "fil": "Madilim na langit at malakas na hangin" },
+      { "en": "Heavy, nonstop rain", "fil": "Malakas at tuloy-tuloy na ulan" }
+    ],
+    "dos": [
+      { "en": "Prepare a Go Bag", "fil": "Maghanda ng Go Bag" },
+      { "en": "Stay indoors, away from windows", "fil": "Manatili sa loob, malayo sa bintana" },
+      { "en": "Evacuate when told", "fil": "Lumikas kapag sinabihan" }
+    ],
+    "donts": [
+      { "en": "Don't go outside to play", "fil": "Huwag lumabas para maglaro" },
+      { "en": "Don't touch fallen wires", "fil": "Huwag hawakan ang nahulog na kable" },
+      { "en": "Don't walk in floodwater", "fil": "Huwag lumusong sa baha" }
+    ]
+  },
+  "subjectLinks": [
+    { "subject": "science", "en": "How storms form, air pressure, and the water cycle.", "fil": "Paano nabubuo ang bagyo, air pressure, at water cycle." },
+    { "subject": "ap", "en": "The Typhoon Belt and the work of PAGASA.", "fil": "Ang Typhoon Belt at ang gawain ng PAGASA." },
+    { "subject": "tle", "en": "Packing and checking a family Go Bag.", "fil": "Paghahanda at pagsusuri ng Go Bag ng pamilya." }
+  ]
+}

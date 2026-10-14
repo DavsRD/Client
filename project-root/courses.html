@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Learn · Kalasag Kids</title>
+  <meta name="description" content="Videos, safety steps, and posters for 19 hazards.">
+  <meta name="theme-color" content="#0a0b1f">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="assets/icons/favicon-64.png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/pixelify-sans-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/courses.css">
+  <link rel="stylesheet" href="vendor/pixel-pencil-cursor/pencil-cursor.css">
+  <!-- Language hint before first paint (read-only; js/core/state.js owns storage). -->
+  <script>try{if(localStorage.getItem("kalasag:lang")==='"fil"')document.documentElement.dataset.lang="fil"}catch(e){}</script>
+  <script src="vendor/pixel-pencil-cursor/pencil-cursor.js" defer></script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body data-page="courses">
+  <header class="site-header" data-site-header></header>
+
+  <!-- courses.js renders the catalog, or the hazard learning view for ?hazard=<id>. -->
+  <main id="main" class="container page"></main>
+
+  <footer class="site-footer" data-site-footer></footer>
+</body>
+</html>

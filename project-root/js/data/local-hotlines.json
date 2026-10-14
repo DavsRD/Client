@@ -1,0 +1,11 @@
+{
+  "_note": "The only two deployment-specific numbers. Another school or barangay reuses the site by editing this file. Leave a number as null until it is verified; the panel then tells pupils to ask their teacher.",
+  "bfp": {
+    "label": { "en": "Bureau of Fire Protection (nearest station)", "fil": "Bureau of Fire Protection (pinakamalapit na istasyon)" },
+    "number": null
+  },
+  "drrm": {
+    "label": { "en": "Barangay / LGU DRRM Office", "fil": "Tanggapan ng DRRM ng Barangay / LGU" },
+    "number": null
+  }
+}

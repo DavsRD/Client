@@ -1,11 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Kalasag Kids</title>
+  <meta name="description" content="Learning to stay safe, one hazard at a time. Disaster-preparedness lessons, videos, and games for elementary pupils.">
+  <meta name="theme-color" content="#0a0b1f">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="assets/icons/favicon-64.png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/pixelify-sans-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/images/scenes/volcano-lake.webp" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/welcome.css">
+  <link rel="stylesheet" href="vendor/pixel-pencil-cursor/pencil-cursor.css">
+  <!-- Language hint before first paint (read-only; js/core/state.js owns storage). -->
+  <script>try{if(localStorage.getItem("kalasag:lang")==='"fil"')document.documentElement.dataset.lang="fil"}catch(e){}</script>
+  <script src="vendor/pixel-pencil-cursor/pencil-cursor.js" defer></script>
+  <script type="module" src="js/main.js"></script>
 </head>
-<body>
-    
+<body data-page="welcome">
+  <header class="site-header" data-site-header></header>
+
+  <main id="main">
+    <!-- ===== Hero slideshow ===== -->
+    <section class="hero" aria-roledescription="carousel" data-i18n-attr="aria-label:site.name">
+      <div class="hero__slides" data-slides>
+        <img class="hero__slide is-active" src="assets/images/scenes/volcano-lake.webp" alt="" fetchpriority="high">
+      </div>
+      <div class="hero__shade" aria-hidden="true"></div>
+
+      <div class="hero__content container">
+        <p class="hero__kicker" data-i18n="welcome.kicker">Welcome to</p>
+        <h1 class="hero__title">Kalasag Kids</h1>
+        <p class="hero__tagline" data-i18n="site.tagline">Learning to stay safe, one hazard at a time.</p>
+        <div class="hero__cta">
+          <img class="mascot mascot--3x hero__mascot" data-mascot data-rest="idle" src="assets/pixel-eagle-sprites/png/1x/pose_idle.png" alt="Agila the eagle" width="120" height="120">
+          <a class="btn btn--primary btn--lg" href="dashboard.html" data-i18n="welcome.cta">Enter the Safety Zone</a>
+        </div>
+      </div>
+
+      <div class="hero__controls container">
+        <p class="hero__caption" data-caption aria-live="polite"></p>
+        <div class="hero__dots" data-dots></div>
+        <button type="button" class="hero__pause" data-pause data-i18n-attr="aria-label:welcome.pause" aria-label="Pause slideshow">❚❚</button>
+      </div>
+    </section>
+
+    <!-- ===== What is this? ===== -->
+    <section class="container about">
+      <img class="mascot mascot--4x about__mascot" data-mascot data-rest="point" src="assets/pixel-eagle-sprites/png/1x/pose_point.png" alt="Agila the eagle" width="160" height="160">
+      <div class="about__text">
+        <h2 class="section-title" data-i18n="welcome.aboutTitle">What is this?</h2>
+        <p data-i18n="welcome.about1">Disasters like earthquakes, typhoons, and fires can happen anywhere. Being ready keeps you and your family safe.</p>
+        <p data-i18n="welcome.about2">Here, Agila the eagle helps you learn what to do through short videos, posters, games, and quizzes.</p>
+      </div>
+    </section>
+
+    <!-- ===== What you'll find here ===== -->
+    <section class="container section features">
+      <h2 class="section-title features__title" data-i18n="welcome.featuresTitle">What you'll find here</h2>
+      <ul class="features__grid">
+        <li class="card feature">
+          <img class="sprite feature__icon" src="assets/pixel-eagle-sprites/png/1x/gear_on_flashlight.png" alt="" width="80" height="80">
+          <h3 data-i18n="welcome.feature.watch">Watch</h3>
+          <p data-i18n="welcome.feature.watchText">1-minute videos with Agila for every hazard.</p>
+        </li>
+        <li class="card feature">
+          <img class="sprite feature__icon" src="assets/pixel-eagle-sprites/png/1x/prop_on_magnifier.png" alt="" width="80" height="80">
+          <h3 data-i18n="welcome.feature.learn">Learn</h3>
+          <p data-i18n="welcome.feature.learnText">Easy steps for before, during, and after.</p>
+        </li>
+        <li class="card feature">
+          <img class="sprite feature__icon" src="assets/pixel-eagle-sprites/png/1x/pose_run_flap_1.png" alt="" width="80" height="80">
+          <h3 data-i18n="welcome.feature.play">Play</h3>
+          <p data-i18n="welcome.feature.playText">Mini-games and quizzes that earn you XP.</p>
+        </li>
+        <li class="card feature">
+          <img class="sprite feature__icon" src="assets/pixel-eagle-sprites/png/1x/prop_on_sign.png" alt="" width="80" height="80">
+          <h3 data-i18n="welcome.feature.connect">Connect</h3>
+          <p data-i18n="welcome.feature.connectText">See how safety links to your school subjects.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ===== Closing call to action ===== -->
+    <section class="container section ready">
+      <img class="sprite ready__mascot" src="assets/pixel-eagle-sprites/png/1x/gear_on_full.png" alt="" width="120" height="120">
+      <h2 class="section-title" data-i18n="welcome.ready">Ready to be prepared?</h2>
+      <a class="btn btn--primary btn--lg" href="dashboard.html" data-i18n="welcome.cta">Enter the Safety Zone</a>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-site-footer></footer>
 </body>
 </html>

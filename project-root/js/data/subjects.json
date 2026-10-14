@@ -1,0 +1,39 @@
+{
+  "subjects": [
+    {
+      "id": "science",
+      "name": { "en": "Science", "fil": "Agham" },
+      "blurb": { "en": "The \"why\": what makes the ground shake, storms spin, and germs spread.", "fil": "Ang \"bakit\": ano ang nagpapayanig sa lupa, nagpapaikot sa bagyo, at nagpapakalat sa mikrobyo." }
+    },
+    {
+      "id": "ap",
+      "name": { "en": "Araling Panlipunan", "fil": "Araling Panlipunan" },
+      "blurb": { "en": "The \"when, where, and who\": Philippine geography, agencies, and helping our community.", "fil": "Ang \"kailan, saan, at sino\": heograpiya ng Pilipinas, mga ahensya, at pagtulong sa komunidad." }
+    },
+    {
+      "id": "tle",
+      "name": { "en": "TLE", "fil": "TLE" },
+      "blurb": { "en": "The \"how to prepare\": Go Bags, first aid, and home safety checks.", "fil": "Ang \"paano maghanda\": Go Bag, first aid, at pagsusuri ng kaligtasan sa bahay." }
+    },
+    {
+      "id": "english",
+      "name": { "en": "English", "fil": "English" },
+      "blurb": { "en": "Reading warning signs, learning safety words, and writing emergency messages.", "fil": "Pagbasa ng mga babala, pag-aaral ng mga salitang pangkaligtasan, at pagsulat ng emergency message." }
+    },
+    {
+      "id": "mapeh",
+      "name": { "en": "MAPEH", "fil": "MAPEH" },
+      "blurb": { "en": "Drills in PE, hygiene in Health, safety songs in Music, and posters in Arts.", "fil": "Drill sa PE, kalinisan sa Health, awiting pangkaligtasan sa Music, at poster sa Arts." }
+    },
+    {
+      "id": "esp",
+      "name": { "en": "ESP / Values", "fil": "ESP" },
+      "blurb": { "en": "Kindness, helping neighbors, and knowing who to tell.", "fil": "Kabaitan, pagtulong sa kapwa, at pag-alam kung kanino magsasabi." }
+    },
+    {
+      "id": "filipino",
+      "name": { "en": "Filipino", "fil": "Filipino" },
+      "blurb": { "en": "Local words for hazards, folk beliefs vs. science, and stories about calamities.", "fil": "Mga lokal na salita para sa panganib, paniniwala laban sa agham, at mga kuwento tungkol sa kalamidad." }
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+/* =============================================================
+   variables.css — design tokens for Kalasag Kids.
+   Every other stylesheet reads from these; nothing else hardcodes
+   colors, fonts, spacing, or z-index values.
+   ============================================================= */
+
+/* ---------- Fonts (self-hosted so they work offline) ---------- */
+@font-face {
+  font-family: "Pixelify Sans";
+  src: url("../assets/fonts/pixelify-sans-400.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pixelify Sans";
+  src: url("../assets/fonts/pixelify-sans-700.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("../assets/fonts/nunito-400.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("../assets/fonts/nunito-700.woff2") format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("../assets/fonts/nunito-800.woff2") format("woff2");
+  font-weight: 800;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark;
+
+  /* ---------- Surfaces (dark navy base) ---------- */
+  --bg: #0a0b1f;
+  --surface: #12142e;
+  --surface-2: #1a1d3d;
+  --surface-3: #252a52;
+  --border: #2e3363;
+  --border-strong: #4a5090;
+
+  /* ---------- Text ---------- */
+  --text: #f4f2ff;
+  --text-muted: #b3b6d6;
+  --text-dim: #7d81a8;
+  --text-on-light: #1d1838;
+
+  /* ---------- Brand (from Agila's app icons) ---------- */
+  --indigo: #3b2a8f;
+  --sunny: #ffd23f;
+  --sunny-dark: #c98f00;
+  --sky: #4cc8ff;
+  --sky-dark: #1b7fb8;
+  --pink: #ff7aa8;
+  --success: #5ed16a;
+  --success-dark: #2e8a3a;
+  --danger: #ef4444;
+  --danger-dark: #a51d1d;
+
+  /* ---------- Category colors (Part 1, 2.4) ----------
+     -main is the card/border accent, -soft is a tinted background,
+     -ink is readable text on the dark surface. */
+  --cat-geological: #b8763f;
+  --cat-geological-alt: #5fae4a;
+  --cat-geological-soft: #2e2416;
+  --cat-geological-ink: #e8b585;
+
+  --cat-hydrometeorological: #3b8eea;
+  --cat-hydrometeorological-soft: #14264a;
+  --cat-hydrometeorological-ink: #8cc4ff;
+
+  --cat-biological: #9b6bff;
+  --cat-biological-soft: #251a46;
+  --cat-biological-ink: #c7adff;
+
+  --cat-technological: #f0613a;
+  --cat-technological-soft: #3a1a14;
+  --cat-technological-ink: #ffa98f;
+
+  --cat-social: #ffb020;
+  --cat-social-soft: #3a2a0c;
+  --cat-social-ink: #ffd27a;
+
+  /* ---------- Typography ---------- */
+  --font-pixel: "Pixelify Sans", "Courier New", monospace;
+  --font-body: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --fs-xs: 0.8125rem;
+  --fs-sm: 0.9375rem;
+  --fs-md: 1.0625rem;   /* body: a touch larger than usual for young readers */
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.625rem;
+  --fs-2xl: 2.125rem;
+  --fs-3xl: clamp(2.25rem, 6vw, 4rem);
+  --lh-body: 1.6;
+  --lh-tight: 1.2;
+
+  /* ---------- Spacing ---------- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+
+  --page-max: 1180px;
+  --gutter: 16px;
+  --header-h: 64px;
+
+  /* ---------- Pixel style: chunky borders, hard stepped shadows ---------- */
+  --radius: 4px;
+  --radius-sm: 2px;
+  --bw: 2px;
+  --shadow-step: 0 4px 0 0;          /* append a color: box-shadow: var(--shadow-step) var(--border) */
+  --shadow-step-sm: 0 3px 0 0;
+  --shadow-pixel: 4px 4px 0 0 rgba(0, 0, 0, 0.45);
+
+  /* ---------- Sprites ---------- */
+  --sprite-render: pixelated;
+  --sprite-1x: 40px;
+  --sprite-2x: 80px;
+  --sprite-3x: 120px;
+  --sprite-4x: 160px;
+
+  /* ---------- Motion ---------- */
+  --t-fast: 120ms;
+  --t-med: 220ms;
+  --ease-step: steps(3, end);
+
+  /* ---------- Layers ---------- */
+  --z-base: 1;
+  --z-header: 50;
+  --z-mascot: 60;
+  --z-hotline: 80;
+  --z-modal: 100;
+  --z-toast: 120;
+
+  /* ---------- Installed-PWA safe areas ---------- */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+}
+
+/* Category lookup: any element with data-category gets --cat / --cat-soft / --cat-ink. */
+[data-category="geological"] {
+  --cat: var(--cat-geological);
+  --cat-soft: var(--cat-geological-soft);
+  --cat-ink: var(--cat-geological-ink);
+}
+[data-category="hydrometeorological"] {
+  --cat: var(--cat-hydrometeorological);
+  --cat-soft: var(--cat-hydrometeorological-soft);
+  --cat-ink: var(--cat-hydrometeorological-ink);
+}
+[data-category="biological"] {
+  --cat: var(--cat-biological);
+  --cat-soft: var(--cat-biological-soft);
+  --cat-ink: var(--cat-biological-ink);
+}
+[data-category="technological"] {
+  --cat: var(--cat-technological);
+  --cat-soft: var(--cat-technological-soft);
+  --cat-ink: var(--cat-technological-ink);
+}
+[data-category="social"] {
+  --cat: var(--cat-social);
+  --cat-soft: var(--cat-social-soft);
+  --cat-ink: var(--cat-social-ink);
+}

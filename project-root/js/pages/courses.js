@@ -1,0 +1,324 @@
+/**
+ * courses.js — the Learn page. One page, two views:
+ *   courses.html                 → catalog (Learning Journeys rows + All Hazards grid)
+ *   courses.html?hazard=<id>     → hazard learning view (video gate, six beats,
+ *                                  safety poster, subject strip)
+ * An unknown or missing id falls back to the catalog.
+ */
+
+import { getHazardIndex, fetchJSON, esc, sceneUrl, PLACEHOLDER_IMG } from "../core/data.js";
+import { t, pick } from "../core/i18n.js";
+import * as state from "../core/state.js";
+import * as mascot from "../core/mascot.js";
+import * as videoModal from "../ui/video-modal.js";
+import { hazardCard, hazardIconImg, hazardUrl } from "../ui/hazard-card.js";
+
+const BEATS = ["what", "signs", "before", "during", "after", "signoff"];
+const VIDEO_XP = 10; // PROPOSED: small reward for finishing a hazard video the first time
+
+const main = () => document.getElementById("main");
+
+// Catalog filters survive a language switch re-render.
+const filters = { category: "all", query: "" };
+
+export async function init() {
+  const index = await getHazardIndex();
+  const id = new URLSearchParams(location.search).get("hazard");
+  const hazard = id && index.byId.get(id);
+
+  const render = hazard ? () => renderHazardView(hazard, index) : () => renderCatalog(index);
+  await render();
+  window.addEventListener("kalasag:languagechange", render);
+
+  if (hazard) {
+    state.markHazardExplored(hazard.id);
+    state.setLastHazard(hazard.id);
+    // Offline, the gate waits for a visit with internet instead of opening on an unplayable video.
+    if (hazard.video && navigator.onLine && !state.hasSeenVideoGate(hazard.id)) {
+      state.markVideoGateSeen(hazard.id);
+      playVideo(hazard, index, { autoplay: true });
+    }
+  }
+}
+
+// =============================================================
+// Catalog view
+// =============================================================
+
+function journeyRow(category, index) {
+  const hazards = index.hazards.filter((h) => h.category === category.id);
+  const videos = hazards.filter((h) => h.video).length;
+  const stats = [`${hazards.length} ${t(hazards.length === 1 ? "common.hazard" : "common.hazards")}`];
+  if (videos) stats.push(`${videos} ${t(videos === 1 ? "common.video" : "common.videos")}`);
+
+  return `
+    <section class="journey" data-category="${esc(category.id)}">
+      <div class="journey__head">
+        <div>
+          <h3 class="journey__title">${esc(pick(category.name))}</h3>
+          <p class="journey__blurb">${esc(pick(category.blurb))}</p>
+          <p class="journey__stats">${esc(stats.join(" · "))}</p>
+        </div>
+        <div class="journey__arrows">
+          <button type="button" class="icon-btn" data-scroll="-1" aria-label="${esc(t("common.scrollLeft"))}">‹</button>
+          <button type="button" class="icon-btn" data-scroll="1" aria-label="${esc(t("common.scrollRight"))}">›</button>
+        </div>
+      </div>
+      <div class="scroller">${hazards.map((h) => hazardCard(h, index)).join("")}</div>
+    </section>`;
+}
+
+function matches(hazard) {
+  if (filters.category !== "all" && hazard.category !== filters.category) return false;
+  const q = filters.query.trim().toLowerCase();
+  if (!q) return true;
+  // Search both languages so a pupil can type "lindol" or "earthquake".
+  return [hazard.name.en, hazard.name.fil, hazard.blurb.en, hazard.blurb.fil].some((s) => s?.toLowerCase().includes(q));
+}
+
+function renderGrid(index) {
+  const list = index.hazards.filter(matches);
+  const grid = main().querySelector("[data-grid]");
+  grid.innerHTML = list.map((h) => hazardCard(h, index)).join("");
+  main().querySelector("[data-empty]").hidden = list.length > 0;
+}
+
+function renderCatalog(index) {
+  document.title = `${t("learn.title")} · Kalasag Kids`;
+  const chips = [{ id: "all", name: null }, ...index.categories]
+    .map(
+      (c) =>
+        `<button type="button" class="chip" data-filter="${esc(c.id)}"${c.id === "all" ? "" : ` data-category="${esc(c.id)}"`} aria-pressed="${filters.category === c.id}">${esc(c.name ? pick(c.name) : t("common.all"))}</button>`
+    )
+    .join("");
+
+  main().innerHTML = `
+    <div class="page-hero">
+      <img class="mascot mascot--3x" data-mascot data-rest="thinking" src="${mascot.spriteUrl("prop_on_magnifier")}" alt="" width="120" height="120">
+      <div>
+        <h1 class="page-hero__title">${esc(t("learn.title"))}</h1>
+        <p class="page-hero__sub">${esc(t("learn.subtitle"))}</p>
+      </div>
+    </div>
+
+    <section class="section">
+      <h2 class="section-title">${esc(t("learn.journeys"))}</h2>
+      <p class="section-sub">${esc(t("learn.journeysText"))}</p>
+      <div class="journeys">${index.categories.map((c) => journeyRow(c, index)).join("")}</div>
+    </section>
+
+    <section class="section" id="all">
+      <h2 class="section-title">${esc(t("learn.allHazards"))}</h2>
+      <p class="section-sub">${esc(t("learn.allHazardsText"))}</p>
+      <div class="catalog-toolbar">
+        <label class="search">
+          <span aria-hidden="true">🔍</span>
+          <span class="visually-hidden">${esc(t("common.search"))}</span>
+          <input type="search" data-search placeholder="${esc(t("learn.searchPlaceholder"))}" value="${esc(filters.query)}">
+        </label>
+        <div class="chip-row">${chips}</div>
+      </div>
+      <div class="card-grid" data-grid></div>
+      <div class="pending" data-empty hidden>
+        <img class="sprite" src="${mascot.spriteUrl("prop_on_sweat_drop")}" alt="" width="80" height="80">
+        <p>${esc(t("learn.noResults"))}</p>
+      </div>
+    </section>`;
+
+  renderGrid(index);
+  mascot.init(main());
+
+  main().querySelectorAll("[data-scroll]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const scroller = btn.closest(".journey").querySelector(".scroller");
+      scroller.scrollBy({ left: Number(btn.dataset.scroll) * scroller.clientWidth * 0.9, behavior: "smooth" });
+    });
+  });
+
+  main().querySelector("[data-search]").addEventListener("input", (e) => {
+    filters.query = e.target.value;
+    renderGrid(index);
+  });
+
+  main().querySelector(".chip-row").addEventListener("click", (e) => {
+    const chip = e.target.closest("[data-filter]");
+    if (!chip) return;
+    filters.category = chip.dataset.filter;
+    main().querySelectorAll("[data-filter]").forEach((c) => c.setAttribute("aria-pressed", String(c === chip)));
+    renderGrid(index);
+  });
+}
+
+// =============================================================
+// Hazard learning view
+// =============================================================
+
+async function loadLesson(hazard) {
+  if (!hazard.lesson) return null;
+  try {
+    return await fetchJSON(hazard.lesson);
+  } catch {
+    return null;
+  }
+}
+
+function beatsMarkup(lesson) {
+  if (!lesson) {
+    return `
+      <div class="pending">
+        <img class="sprite" src="${mascot.spriteUrl("prop_on_magnifier")}" alt="" width="80" height="80">
+        <p>${esc(t("learn.lessonPending"))}</p>
+      </div>`;
+  }
+  return `<ol class="beats">${BEATS.map((key, i) => {
+    const beat = lesson.beats?.[key];
+    if (!beat) return "";
+    return `
+      <li class="card beat beat--${key}">
+        <span class="beat__num" aria-hidden="true">${i + 1}</span>
+        <img class="sprite beat__sprite" src="${mascot.spriteUrl(beat.sprite || "pose_idle")}" alt="" width="80" height="80" loading="lazy">
+        <div>
+          <h3 class="beat__title">${esc(t("learn.beat." + key))}</h3>
+          <p>${esc(pick(beat))}</p>
+        </div>
+      </li>`;
+  }).join("")}</ol>`;
+}
+
+function posterMarkup(hazard, lesson) {
+  const info = lesson?.infographic;
+  if (!info) {
+    return `<img class="poster-placeholder" src="${PLACEHOLDER_IMG}" alt="">`;
+  }
+  const list = (items, mark) => items.map((item) => `<li><span aria-hidden="true">${mark}</span> ${esc(pick(item))}</li>`).join("");
+  return `
+    <article class="poster" data-category="${esc(hazard.category)}">
+      <header class="poster__head">
+        ${hazardIconImg(hazard, "hazard-icon--lg")}
+        <h3 class="poster__title">${esc(pick(hazard.name))}</h3>
+      </header>
+      <div class="poster__cols">
+        <section class="poster__col poster__col--signs">
+          <h4>⚠️ ${esc(t("learn.signs"))}</h4>
+          <ul>${list(info.signs || [], "•")}</ul>
+        </section>
+        <section class="poster__col poster__col--dos">
+          <h4>✅ ${esc(t("learn.dos"))}</h4>
+          <ul>${list(info.dos || [], "✓")}</ul>
+        </section>
+        <section class="poster__col poster__col--donts">
+          <h4>❌ ${esc(t("learn.donts"))}</h4>
+          <ul>${list(info.donts || [], "✗")}</ul>
+        </section>
+      </div>
+      <footer class="poster__foot">🚨 ${esc(t("learn.hotlineReminder"))} · Red Cross 143 · PNP 117</footer>
+    </article>`;
+}
+
+async function subjectsMarkup(hazard, lesson) {
+  let subjects = [];
+  try {
+    subjects = (await fetchJSON("js/data/subjects.json")).subjects;
+  } catch {
+    // Without subject names there's nothing useful to show.
+  }
+  const byId = new Map(subjects.map((s) => [s.id, s]));
+  const links = lesson?.subjectLinks?.length
+    ? lesson.subjectLinks
+    : (hazard.subjects || []).map((subject) => ({ subject }));
+  if (!links.length) return `<p class="section-sub">${esc(t("learn.subjectsPending"))}</p>`;
+
+  return `<ul class="subject-strip">${links
+    .map((link) => {
+      const subject = byId.get(link.subject);
+      if (!subject) return "";
+      const text = link.en ? pick(link) : pick(subject.blurb);
+      return `
+        <li>
+          <a class="card subject-link" href="subject-connect.html?subject=${esc(subject.id)}">
+            <span class="subject-link__name">${esc(pick(subject.name))}</span>
+            <span class="subject-link__text">${esc(text)}</span>
+          </a>
+        </li>`;
+    })
+    .join("")}</ul>`;
+}
+
+function neighbors(hazard, index) {
+  const i = index.hazards.indexOf(hazard);
+  const prev = index.hazards[(i - 1 + index.hazards.length) % index.hazards.length];
+  const next = index.hazards[(i + 1) % index.hazards.length];
+  return `
+    <nav class="hazard-pager" aria-label="${esc(t("learn.allHazards"))}">
+      <a class="btn btn--ghost" href="${hazardUrl(prev.id)}">‹ ${esc(pick(prev.name))}</a>
+      <a class="btn btn--ghost" href="${hazardUrl(next.id)}">${esc(pick(next.name))} ›</a>
+    </nav>`;
+}
+
+async function renderHazardView(hazard, index) {
+  const category = index.categoryById.get(hazard.category);
+  const lesson = await loadLesson(hazard);
+  document.title = `${pick(hazard.name)} · Kalasag Kids`;
+
+  const watchBtn = hazard.video
+    ? `<button type="button" class="btn btn--secondary" data-watch>▶ ${esc(t("learn.watchVideo"))}</button>`
+    : `<button type="button" class="btn btn--ghost" disabled>${esc(t("learn.noVideo"))}</button>`;
+  const watchedTag = state.hasWatchedVideo(hazard.id) ? `<span class="tag tag--done">✓ ${esc(t("learn.watched"))}</span>` : "";
+
+  main().innerHTML = `
+    <a class="back-link" href="courses.html">‹ ${esc(t("learn.backToAll"))}</a>
+
+    <header class="card hazard-hero" data-category="${esc(hazard.category)}">
+      <img class="hazard-hero__banner" src="${esc(sceneUrl(category?.scene))}" alt="">
+      <div class="hazard-hero__body">
+        ${hazardIconImg(hazard, "hazard-icon--lg")}
+        <div class="hazard-hero__text">
+          <div class="hazard-hero__tags">
+            <span class="tag tag--cat">${esc(pick(category?.name))}</span>
+            ${watchedTag}
+          </div>
+          <h1 class="hazard-hero__title">${esc(pick(hazard.name))}</h1>
+          <p class="hazard-hero__blurb">${esc(pick(hazard.blurb))}</p>
+        </div>
+        <div class="hazard-hero__actions">${watchBtn}</div>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">${esc(t("learn.lessonTitle"))}</h2>
+      ${beatsMarkup(lesson)}
+    </section>
+
+    <section class="section" id="infographic">
+      <div class="section-head">
+        <h2 class="section-title">${esc(t("learn.infographic"))}</h2>
+        ${lesson?.infographic ? `<button type="button" class="btn btn--ghost no-print" data-print>🖨 ${esc(t("common.print"))}</button>` : ""}
+      </div>
+      ${posterMarkup(hazard, lesson)}
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">🔗 ${esc(t("learn.subjects"))}</h2>
+      ${await subjectsMarkup(hazard, lesson)}
+    </section>
+
+    ${neighbors(hazard, index)}`;
+
+  main().querySelector("[data-watch]")?.addEventListener("click", () => playVideo(hazard, index, { autoplay: true }));
+  main().querySelector("[data-print]")?.addEventListener("click", () => window.print());
+  if (location.hash === "#infographic") main().querySelector("#infographic")?.scrollIntoView();
+}
+
+async function playVideo(hazard, index, { autoplay }) {
+  const { completed } = await videoModal.open({
+    src: hazard.video,
+    title: pick(hazard.name),
+    captions: hazard.captions,
+    autoplay,
+  });
+  if (completed && state.markVideoWatched(hazard.id)) {
+    state.addXP(VIDEO_XP);
+    state.bumpStreakIfNewDay();
+    await renderHazardView(hazard, index);
+  }
+}

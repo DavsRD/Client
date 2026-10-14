@@ -1,0 +1,56 @@
+{
+  "beats": {
+    "what": {
+      "sprite": "pose_point",
+      "en": "An earthquake is when the ground suddenly shakes. It happens when huge rocks deep under the ground slip and move.",
+      "fil": "Ang lindol ay ang biglaang pagyanig ng lupa. Nangyayari ito kapag gumagalaw ang malalaking bato sa ilalim ng lupa."
+    },
+    "signs": {
+      "sprite": "pose_alert",
+      "en": "Earthquakes usually come with no warning. The first sign is shaking, rattling windows, or things swinging and falling.",
+      "fil": "Kadalasan, walang babala ang lindol. Ang unang senyales ay pagyanig, kumakalampag na bintana, o umuugoy at nahuhulog na gamit."
+    },
+    "before": {
+      "sprite": "gear_on_go_bag",
+      "en": "Find the safe spots in each room, like under a sturdy table. Pack a Go Bag and practice earthquake drills.",
+      "fil": "Hanapin ang ligtas na lugar sa bawat silid, tulad ng ilalim ng matibay na mesa. Maghanda ng Go Bag at mag-ensayo ng earthquake drill."
+    },
+    "during": {
+      "sprite": "pose_duck_cover",
+      "en": "Duck, Cover, and Hold! Get under a sturdy table, cover your head, and hold on until the shaking stops. Stay away from windows.",
+      "fil": "Duck, Cover, and Hold! Pumunta sa ilalim ng matibay na mesa, takpan ang ulo, at kumapit hanggang tumigil ang pagyanig. Lumayo sa bintana."
+    },
+    "after": {
+      "sprite": "gear_on_hard_hat",
+      "en": "Walk out calmly with your teacher to an open area. Watch out for aftershocks, broken glass, and fallen wires.",
+      "fil": "Lumabas nang mahinahon kasama ang guro papunta sa bukas na lugar. Mag-ingat sa aftershock, basag na salamin, at nahulog na kable."
+    },
+    "signoff": {
+      "sprite": "pose_run_flap_1",
+      "en": "Remember: Duck, Cover, and Hold — every time!",
+      "fil": "Tandaan: Duck, Cover, and Hold — sa bawat pagkakataon!"
+    }
+  },
+  "infographic": {
+    "signs": [
+      { "en": "Ground shaking", "fil": "Pagyanig ng lupa" },
+      { "en": "Rattling windows", "fil": "Kumakalampag na bintana" },
+      { "en": "Swinging lights", "fil": "Umuugoy na ilaw" }
+    ],
+    "dos": [
+      { "en": "Duck, Cover, and Hold", "fil": "Duck, Cover, and Hold" },
+      { "en": "Stay away from windows and shelves", "fil": "Lumayo sa bintana at estante" },
+      { "en": "Go to an open area after the shaking", "fil": "Pumunta sa bukas na lugar pagkatapos ng pagyanig" }
+    ],
+    "donts": [
+      { "en": "Don't run while the ground is shaking", "fil": "Huwag tumakbo habang yumayanig" },
+      { "en": "Don't use elevators", "fil": "Huwag gumamit ng elevator" },
+      { "en": "Don't go back inside until it's safe", "fil": "Huwag bumalik sa loob hangga't hindi ligtas" }
+    ]
+  },
+  "subjectLinks": [
+    { "subject": "science", "en": "Plate tectonics, faults, and seismic waves.", "fil": "Plate tectonics, fault, at seismic wave." },
+    { "subject": "ap", "en": "The Pacific Ring of Fire and the work of PHIVOLCS.", "fil": "Ang Pacific Ring of Fire at ang gawain ng PHIVOLCS." },
+    { "subject": "mapeh", "en": "Duck, Cover, and Hold as a PE drill routine.", "fil": "Duck, Cover, and Hold bilang drill sa PE." }
+  ]
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>You're offline · Kalasag Kids</title>
+  <meta name="theme-color" content="#0a0b1f">
+  <link rel="icon" type="image/png" href="assets/icons/favicon-64.png">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    body {
+      align-items: center;
+      justify-content: center;
+      gap: var(--sp-4);
+      padding: var(--sp-6) var(--gutter);
+      text-align: center;
+    }
+    .offline-mascot {
+      width: var(--sprite-4x);
+      height: var(--sprite-4x);
+    }
+    h1 {
+      font-size: var(--fs-2xl);
+    }
+    p {
+      max-width: 44ch;
+      color: var(--text-muted);
+    }
+    .offline-alt {
+      font-size: var(--fs-sm);
+    }
+  </style>
+</head>
+<body>
+  <!-- Plain page on purpose: no scripts, so it always works from the cache. Bilingual inline. -->
+  <img class="sprite offline-mascot" src="assets/pixel-eagle-sprites/png/1x/prop_on_sweat_drop.png" alt="Agila the eagle" width="160" height="160">
+  <h1>No internet? No problem.</h1>
+  <p>This page hasn't been saved yet, but your Home page, lessons, and posters already work offline. Go back and pick something you've visited before!</p>
+  <p class="offline-alt" lang="fil">Walang internet? Ayos lang. Bumalik at pumili ng pahinang nabuksan mo na dati.</p>
+  <a href="dashboard.html" class="btn btn--primary btn--lg">Back to Home</a>
+  <p class="offline-alt">🚨 Emergency: <a href="tel:911">911</a> · Red Cross <a href="tel:143">143</a> · PNP <a href="tel:117">117</a></p>
+</body>
+</html>

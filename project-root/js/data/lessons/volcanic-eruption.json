@@ -1,0 +1,55 @@
+{
+  "beats": {
+    "what": {
+      "sprite": "pose_point",
+      "en": "A volcano is a mountain with hot melted rock, called magma, deep inside. When it erupts, it can send out ash, rocks, and lava.",
+      "fil": "Ang bulkan ay bundok na may mainit at tunaw na bato, na tinatawag na magma, sa loob nito. Kapag sumabog ito, naglalabas ito ng abo, bato, at lava."
+    },
+    "signs": {
+      "sprite": "prop_on_magnifier",
+      "en": "Rumbling sounds, more steam or smoke, small earthquakes, and plants drying up near the crater. PHIVOLCS raises Alert Levels.",
+      "fil": "Mga dagundong, mas maraming usok, maliliit na lindol, at natutuyong halaman malapit sa bunganga. Nagtataas ang PHIVOLCS ng Alert Level."
+    },
+    "before": {
+      "sprite": "gear_on_go_bag",
+      "en": "Know your evacuation route and evacuation center. Pack a Go Bag with face masks and goggles.",
+      "fil": "Alamin ang daan ng paglikas at ang evacuation center. Maghanda ng Go Bag na may face mask at goggles."
+    },
+    "during": {
+      "sprite": "prop_on_face_mask",
+      "en": "Evacuate right away when told. If ash falls, stay indoors, close windows, and cover your nose and mouth with a mask or damp cloth.",
+      "fil": "Lumikas agad kapag sinabihan. Kapag may bumabagsak na abo, manatili sa loob, isara ang bintana, at takpan ang ilong at bibig ng mask o basang tela."
+    },
+    "after": {
+      "sprite": "gear_on_hard_hat",
+      "en": "Only go home when officials say it's safe. Let adults clean the ash while wearing masks.",
+      "fil": "Umuwi lamang kapag sinabi ng mga opisyal na ligtas na. Hayaang ang nakatatanda ang maglinis ng abo habang naka-mask."
+    },
+    "signoff": {
+      "sprite": "pose_run_flap_1",
+      "en": "Remember: know your way out, and mask up when ash falls!",
+      "fil": "Tandaan: alamin ang daan palabas, at mag-mask kapag may abo!"
+    }
+  },
+  "infographic": {
+    "signs": [
+      { "en": "Rumbling sounds", "fil": "Mga dagundong" },
+      { "en": "More steam or smoke", "fil": "Mas maraming usok" },
+      { "en": "PHIVOLCS Alert Level raised", "fil": "Itinaas ng PHIVOLCS ang Alert Level" }
+    ],
+    "dos": [
+      { "en": "Evacuate when told", "fil": "Lumikas kapag sinabihan" },
+      { "en": "Wear a mask during ashfall", "fil": "Mag-mask kapag may abo" },
+      { "en": "Close doors and windows", "fil": "Isara ang pinto at bintana" }
+    ],
+    "donts": [
+      { "en": "Don't go near the volcano", "fil": "Huwag lumapit sa bulkan" },
+      { "en": "Don't rub ash from your eyes", "fil": "Huwag kusutin ang mata kapag may abo" },
+      { "en": "Don't go home until it's safe", "fil": "Huwag umuwi hangga't hindi ligtas" }
+    ]
+  },
+  "subjectLinks": [
+    { "subject": "science", "en": "Magma, the rock cycle, and the Pacific Ring of Fire.", "fil": "Magma, rock cycle, at ang Pacific Ring of Fire." },
+    { "subject": "ap", "en": "Taal and Mayon, and how PHIVOLCS keeps watch.", "fil": "Ang Taal at Mayon, at kung paano nagbabantay ang PHIVOLCS." }
+  ]
+}

@@ -1,0 +1,128 @@
+{
+ "frame": [
+  40,
+  40
+ ],
+ "baseline_y": 37,
+ "frames": [
+  {
+   "name": "pose_idle_geared",
+   "x": 0,
+   "y": 0,
+   "w": 40,
+   "h": 40
+  },
+  {
+   "name": "pose_closed_wings_geared",
+   "x": 40,
+   "y": 0,
+   "w": 40,
+   "h": 40
+  },
+  {
+   "name": "pose_alert_geared",
+   "x": 80,
+   "y": 0,
+   "w": 40,
+   "h": 40
+  },
+  {
+   "name": "pose_duck_cover_geared",
+   "x": 120,
+   "y": 0,
+   "w": 40,
+   "h": 40
+  },
+  {
+   "name": "pose_run_flap_1_geared",
+   "x": 160,
+   "y": 0,
+   "w": 40,
+   "h": 40
+  },
+  {
+   "name": "pose_run_flap_2_geared",
+   "x": 200,
+   "y": 0,
+   "w": 40,
+   "h": 40
+  },
+  {
+   "name": "pose_stop_wing_geared",
+   "x": 0,
+   "y": 40,
+   "w": 40,
+   "h": 40
+  },
+  {
+   "name": "pose_point_geared",
+   "x": 40,
+   "y": 40,
+   "w": 40,
+   "h": 40
+  },
+  {
+   "name": "pose_low_crawl_geared",
+   "x": 80,
+   "y": 40,
+   "w": 40,
+   "h": 40
+  },
+  {
+   "name": "pose_wing_over_beak_geared",
+   "x": 120,
+   "y": 40,
+   "w": 40,
+   "h": 40
+  },
+  {
+   "name": "pose_head_flip_1_geared",
+   "x": 160,
+   "y": 40,
+   "w": 40,
+   "h": 40
+  },
+  {
+   "name": "pose_head_flip_2_geared",
+   "x": 200,
+   "y": 40,
+   "w": 40,
+   "h": 40
+  },
+  {
+   "name": "prop_on_face_mask_geared",
+   "x": 0,
+   "y": 80,
+   "w": 40,
+   "h": 40
+  },
+  {
+   "name": "prop_on_sign_geared",
+   "x": 40,
+   "y": 80,
+   "w": 40,
+   "h": 40
+  },
+  {
+   "name": "prop_on_magnifier_geared",
+   "x": 80,
+   "y": 80,
+   "w": 40,
+   "h": 40
+  },
+  {
+   "name": "prop_on_sweat_drop_geared",
+   "x": 120,
+   "y": 80,
+   "w": 40,
+   "h": 40
+  },
+  {
+   "name": "prop_on_wing_bandage_geared",
+   "x": 160,
+   "y": 80,
+   "w": 40,
+   "h": 40
+  }
+ ]
+}
