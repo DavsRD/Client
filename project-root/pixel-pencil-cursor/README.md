@@ -10,7 +10,7 @@ A 16×16 pixel-art pencil, drawn at 2× (32 px), that replaces the mouse cursor.
 | `pencil-cursor.css` | Cursor, sparkle and burst styles. The sparkle frames are embedded too. |
 | `usePencilCursor.js` | React hook wrapper (optional). |
 | `demo.html` | Test page: open it in a browser. |
-| `assets/` | The same sprites as standalone files (`pencil-cursor.svg`, `pencil-cursor.png` 16 px, `pencil-cursor@2x.png` 32 px, `sparkle.svg`, `sparkle-small.svg`). Use these if you want to edit the art or point `spriteUrl` at your own copy. |
+| `assets/` | The same sprites as standalone files (`pencil-cursor.svg`, `pencil-cursor.png` 16 px, `pencil-cursor@2x.png` 32 px, `sparkle.svg`, `sparkle-small.svg`). Use these if you want to edit the art or point `spriteUrl` at your own copy. 
 
 ## Add it to a plain HTML site
 
