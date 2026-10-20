@@ -165,9 +165,15 @@ async function renderFooter(footer) {
 
   try {
     const site = await fetchJSON("js/data/site.json");
-    footer.querySelector("[data-credits]").innerHTML = `
-      <p><span data-i18n="footer.thesis">${esc(t("footer.thesis"))}</span>: <cite>${esc(site.thesisTitle)}</cite></p>
-      <p>${esc(site.school)}${site.proponents?.length ? " · " + site.proponents.map(esc).join(", ") : ""}</p>`;
+    // Skip anything left empty so the footer never shows a dangling label or separator.
+    const people = [site.school, (site.proponents || []).filter(Boolean).join(", ")].filter(Boolean);
+    footer.querySelector("[data-credits]").innerHTML = [
+      site.thesisTitle &&
+        `<p><span data-i18n="footer.thesis">${esc(t("footer.thesis"))}</span>: <cite>${esc(site.thesisTitle)}</cite></p>`,
+      people.length && `<p>${people.map(esc).join(" · ")}</p>`,
+    ]
+      .filter(Boolean)
+      .join("");
   } catch {
     // Credits are optional; the footer still works without them.
   }

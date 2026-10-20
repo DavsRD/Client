@@ -27,7 +27,7 @@
  * -------------------------------------------------------------
  */
 
-const CACHE_VERSION = "v5";
+const CACHE_VERSION = "v6";
 const SHELL_CACHE = `kalasag-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `kalasag-data-${CACHE_VERSION}`;
 const MEDIA_CACHE = `kalasag-media-${CACHE_VERSION}`;
@@ -41,6 +41,17 @@ const SPRITES = [
   "pose_stop_wing_geared", "prop_on_face_mask_geared", "prop_on_magnifier_geared",
   "prop_on_sign_geared", "prop_on_sweat_drop_geared",
 ].map((name) => `assets/pixel-eagle-sprites/png/1x/${name}.png`);
+
+// Each hazard's icon (Home posters, Collections) and card thumbnail (Learn): ~0.8 MB in all.
+const HAZARD_IDS = [
+  "earthquake", "volcanic-eruption", "tsunami", "landslide", "typhoon", "severe-flooding", "storm-surge",
+  "el-nino", "disease-outbreak", "pest-infestation", "fire", "structural-collapse", "road-accidents",
+  "chemical-spill", "electrical-hazards", "missing-child", "bullying", "crowd-crush", "community-conflict",
+];
+const HAZARD_ART = HAZARD_IDS.flatMap((id) => [
+  `assets/icons/hazards/${id}.webp`,
+  `assets/images/hazards/${id}-thumb.webp`,
+]);
 
 // Small files only: everything here downloads on install.
 const SHELL_FILES = [
@@ -91,20 +102,10 @@ const SHELL_FILES = [
   "assets/icons/icon-512.png",
   "assets/images/Blank.jpg",
 
-  // Hero first slide + the five category scenes (full size for hazard headers, thumbs for cards).
-  // The other hero slides cache as they're viewed.
+  // Hero first slide. The other slides and the big hazard page images cache as they're viewed.
   "assets/images/scenes/volcano-lake.webp",
-  "assets/images/scenes/volcano-valley.webp",
-  "assets/images/scenes/reef.webp",
-  "assets/images/scenes/rice-terraces.webp",
-  "assets/images/scenes/harbor-port.webp",
-  "assets/images/scenes/monument-bay.webp",
-  "assets/images/scenes/volcano-valley-thumb.webp",
-  "assets/images/scenes/reef-thumb.webp",
-  "assets/images/scenes/rice-terraces-thumb.webp",
-  "assets/images/scenes/harbor-port-thumb.webp",
-  "assets/images/scenes/monument-bay-thumb.webp",
 
+  ...HAZARD_ART,
   ...SPRITES,
 ];
 

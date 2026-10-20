@@ -88,9 +88,8 @@
 }
 .hazard-hero__banner {
   width: 100%;
-  height: clamp(120px, 22vw, 220px);
+  height: clamp(160px, 30vw, 340px);
   object-fit: cover;
-  image-rendering: var(--sprite-render);
 }
 .hazard-hero__body {
   display: flex;

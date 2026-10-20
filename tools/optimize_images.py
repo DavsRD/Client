@@ -5,6 +5,9 @@ Regenerates the web-ready images from the source art. Not shipped with the site.
 
 - assets/images/*.png  ->  assets/images/scenes/<slug>.webp      (hero, 1672px)
                            assets/images/scenes/<slug>-thumb.webp (card banners, 640px)
+- assets/images/Thumbnails/16:9/*.jpeg -> assets/images/hazards/<id>.webp (hazard page header, 1376px)
+                                          assets/images/hazards/<id>-thumb.webp (hazard cards, 640px)
+- assets/images/Thumbnails/1x1/*.jpeg  -> assets/icons/hazards/<id>.webp (the one icon per hazard, 160px)
 - the geared Agila icon sprite -> PWA icons (any + maskable), apple-touch icon and
   favicon on an indigo tile, scaled by whole numbers so the pixels stay crisp.
 
@@ -29,9 +32,53 @@ SCENES = {
     "Pixel Panorama of Misty Mountain Valley.png": "mountain-valley",
 }
 
+# Hazard art: hazard id -> (16:9 file, 1x1 file) in assets/images/Thumbnails/.
+THUMBNAILS = IMAGES / "Thumbnails"
+HAZARD_ART = {
+    "earthquake": ("earthquake.jpeg", "1x1-earthquake.jpeg"),
+    "volcanic-eruption": ("volcano.jpeg", "1x1-volcano-erupt.jpeg"),
+    "tsunami": ("tsunami.jpeg", "1x1-tsunami.jpeg"),
+    "landslide": ("landslide.jpeg", "1x1-landslide.jpeg"),
+    "typhoon": ("typhoon.jpeg", "1x1-typhoon.jpeg"),
+    "severe-flooding": ("flood.jpeg", "1x1-flood.jpeg"),
+    "storm-surge": ("surge.jpeg", "1x1-surge.jpeg"),
+    "el-nino": ("Elnino.jpeg", "1x1-elNino.jpeg"),
+    "disease-outbreak": ("disease.jpeg", "1x1-disease.jpeg"),
+    "pest-infestation": ("pest.jpeg", "1x1-pest.jpeg"),
+    "fire": ("fire.jpeg", "1x1-fires.jpeg"),
+    "structural-collapse": ("collapse.jpeg", "1x1-collapse.jpeg"),
+    "road-accidents": ("roads.jpeg", "1x1-roads.jpeg"),
+    "chemical-spill": ("spill.jpeg", "1x1-spill.jpeg"),
+    "electrical-hazards": ("electric.jpeg", "1x1-electric.jpeg"),
+    "missing-child": ("stranger.jpeg", "1x1-stranger.jpeg"),
+    "bullying": ("bully.jpeg", "1x1-bully.jpeg"),
+    "crowd-crush": ("crowd.jpeg", "1x1-crowd.jpeg"),
+    "community-conflict": ("conflict.jpeg", "1x1-conflict.jpeg"),
+}
+
 INDIGO = (59, 42, 143, 255)   # Agila "Indigo" app-icon background
 SPRITES = ROOT / "assets" / "pixel-eagle-sprites" / "png" / "1x"
 ICON_ART = SPRITES / "icon_indigo_geared.png"   # 32x32 geared Agila, transparent background
+
+
+def hazard_art():
+    # "16:9" isn't a valid folder name on Windows; accept "16x9" too if it gets renamed.
+    wide_dir = next(d for d in (THUMBNAILS / "16:9", THUMBNAILS / "16x9") if d.exists())
+    square_dir = THUMBNAILS / "1x1"
+    banners = IMAGES / "hazards"
+    icons = ICONS / "hazards"
+    banners.mkdir(exist_ok=True)
+    icons.mkdir(exist_ok=True)
+
+    for hazard_id, (wide_file, square_file) in HAZARD_ART.items():
+        wide = Image.open(wide_dir / wide_file).convert("RGB")
+        wide.save(banners / f"{hazard_id}.webp", "WEBP", quality=80, method=6)
+        w, h = wide.size
+        wide.resize((640, round(h * 640 / w)), Image.LANCZOS).save(
+            banners / f"{hazard_id}-thumb.webp", "WEBP", quality=78, method=6
+        )
+        square = Image.open(square_dir / square_file).convert("RGB")
+        square.resize((160, 160), Image.LANCZOS).save(icons / f"{hazard_id}.webp", "WEBP", quality=82, method=6)
 
 
 def rounded_tile(size, radius):
@@ -67,5 +114,6 @@ def mascot_icons():
 
 if __name__ == "__main__":
     scenes()
+    hazard_art()
     mascot_icons()
     print("done")

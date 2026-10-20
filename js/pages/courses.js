@@ -269,7 +269,7 @@ async function renderHazardView(hazard, index) {
     <a class="back-link" href="courses.html">‹ ${esc(t("learn.backToAll"))}</a>
 
     <header class="card hazard-hero" data-category="${esc(hazard.category)}">
-      <img class="hazard-hero__banner" src="${esc(sceneUrl(category?.scene))}" alt="">
+      <img class="hazard-hero__banner" src="${esc(hazard.image || sceneUrl(category?.scene))}" alt="">
       <div class="hazard-hero__body">
         ${hazardIconImg(hazard, "hazard-icon--lg")}
         <div class="hazard-hero__text">

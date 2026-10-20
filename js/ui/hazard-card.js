@@ -28,7 +28,6 @@ export function hazardCard(hazard, index) {
     <a class="card hazard-card" href="${hazardUrl(hazard.id)}" data-category="${esc(hazard.category)}" data-hazard-id="${esc(hazard.id)}">
       <div class="hazard-card__banner">
         <img class="hazard-card__banner-img" src="${esc(hazardBanner(hazard, index))}" alt="" loading="lazy">
-        ${hazardIconImg(hazard)}
       </div>
       <div class="hazard-card__body">
         <span class="label-kicker">${esc(t("learn.cardLabel"))}</span>

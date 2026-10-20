@@ -664,7 +664,6 @@ main {
   border-radius: var(--radius);
   background: var(--cat-soft, var(--surface-2));
   object-fit: cover;
-  image-rendering: var(--sprite-render);
 }
 .hazard-icon--lg {
   width: 80px;
@@ -690,7 +689,7 @@ main {
 }
 .hazard-card__banner {
   position: relative;
-  aspect-ratio: 16 / 7;
+  aspect-ratio: 16 / 9;
   background: var(--cat-soft);
 }
 .hazard-card__banner-img {
@@ -698,18 +697,12 @@ main {
   height: 100%;
   object-fit: cover;
 }
-.hazard-card__banner .hazard-icon {
-  position: absolute;
-  left: var(--sp-3);
-  bottom: calc(var(--sp-5) * -1);
-  box-shadow: var(--shadow-pixel);
-}
 .hazard-card__body {
   display: flex;
   flex-direction: column;
   gap: var(--sp-1);
   flex: 1;
-  padding: var(--sp-6) var(--sp-4) var(--sp-4);
+  padding: var(--sp-4);
 }
 .hazard-card__title {
   font-size: var(--fs-lg);
