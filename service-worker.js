@@ -12,12 +12,15 @@
  *                    time. Content can be updated after deploy without
  *                    breaking offline use.
  *
- * 3. MEDIA_CACHE   — hazard videos + infographic PDFs. NEVER precached.
- *                    Cached when a full file is fetched, or when the page asks
- *                    with a CACHE_MEDIA message ("Save for offline").
- *                    Note: video players request byte ranges (206 responses),
- *                    which the Cache API can't store, so videos are reliably
- *                    saved for offline only through CACHE_MEDIA.
+ * 3. SAVED_CACHE   — videos and big pictures the visitor chose to "Save for
+ *                    offline" (one video, or everything from Settings). Written
+ *                    by js/core/offline.js, never by this file. NOT versioned:
+ *                    it survives CACHE_VERSION bumps so nobody has to download
+ *                    100 MB again after an update. Video players ask for byte
+ *                    ranges; serveMedia() cuts them from the saved full file.
+ *
+ * The first OFFLINE_SCENES slides in scenes.json are precached so the welcome
+ * slideshow works offline; the rest only once someone saves everything.
  *
  * All paths are relative to this file, so the site also works from a
  * sub-folder (e.g. a GitHub Pages project site).
@@ -27,10 +30,12 @@
  * -------------------------------------------------------------
  */
 
-const CACHE_VERSION = "v7";
+const CACHE_VERSION = "v8";
 const SHELL_CACHE = `kalasag-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `kalasag-data-${CACHE_VERSION}`;
-const MEDIA_CACHE = `kalasag-media-${CACHE_VERSION}`;
+const SAVED_CACHE = "kalasag-saved-v1"; // same name as in js/core/offline.js
+
+const OFFLINE_SCENES = 3;
 
 const BASE = new URL("./", self.location).pathname; // e.g. "/" or "/kalasag-kids/"
 
@@ -78,6 +83,7 @@ const SHELL_FILES = [
   "js/core/layout.js",
   "js/core/theme.js",
   "js/core/mascot.js",
+  "js/core/offline.js",
   "js/dashboard/dashboard.js",
   "js/dashboard/hotline-panel.js",
   "js/pages/welcome.js",
@@ -86,6 +92,7 @@ const SHELL_FILES = [
   "js/pages/subject-connect.js",
   "js/ui/hazard-card.js",
   "js/ui/video-modal.js",
+  "js/ui/offline-ui.js",
 
   "vendor/pixel-pencil-cursor/pencil-cursor.css",
   "vendor/pixel-pencil-cursor/pencil-cursor.js",
@@ -101,9 +108,6 @@ const SHELL_FILES = [
   "assets/icons/icon-192.png",
   "assets/icons/icon-512.png",
   "assets/images/Blank.jpg",
-
-  // Hero first slide. The other slides and the big hazard page images cache as they're viewed.
-  "assets/images/scenes/volcano-lake.webp",
 
   ...HAZARD_ART,
   ...SPRITES,
@@ -132,14 +136,21 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     Promise.all([
       caches.open(SHELL_CACHE).then((cache) => cache.addAll(SHELL_FILES)),
-      caches.open(DATA_CACHE).then((cache) => cache.addAll(DATA_FILES)),
+      caches.open(DATA_CACHE).then((cache) => cache.addAll(DATA_FILES)).then(precacheFirstScenes),
     ]).then(() => self.skipWaiting())
   );
 });
 
+// The first few slideshow scenes, read from scenes.json so adding slides needs no change here.
+async function precacheFirstScenes() {
+  const { slides } = await (await caches.match("js/data/scenes.json")).json();
+  const urls = slides.slice(0, OFFLINE_SCENES).map((slide) => `assets/images/scenes/${slide.id}.webp`);
+  await (await caches.open(SHELL_CACHE)).addAll(urls);
+}
+
 // ---------- ACTIVATE: clear out old cache versions ----------
 self.addEventListener("activate", (event) => {
-  const keepCaches = [SHELL_CACHE, DATA_CACHE, MEDIA_CACHE];
+  const keepCaches = [SHELL_CACHE, DATA_CACHE, SAVED_CACHE];
   event.waitUntil(
     caches
       .keys()
@@ -156,7 +167,7 @@ self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET" || url.origin !== self.location.origin) return;
 
   if (isMediaRequest(url)) {
-    event.respondWith(cacheFirstIfPresent(event.request, MEDIA_CACHE));
+    event.respondWith(serveMedia(event.request));
     return;
   }
 
@@ -192,6 +203,36 @@ async function cacheFirstIfPresent(request, cacheName) {
   return response;
 }
 
+// Videos: from the saved copy if the visitor saved it, otherwise straight from the network
+// (not cached: players fetch byte ranges, which can't be stored).
+async function serveMedia(request) {
+  const saved = await caches.match(request.url); // a plain URL, so the Range header doesn't matter
+  if (!saved) return fetch(request);
+
+  const range = /^bytes=(\d*)-(\d*)$/.exec(request.headers.get("Range") || "");
+  if (!range) return saved;
+
+  const blob = await saved.blob();
+  let start = Number(range[1]);
+  let end = range[2] ? Math.min(Number(range[2]), blob.size - 1) : blob.size - 1;
+  if (!range[1]) {
+    start = Math.max(blob.size - Number(range[2]), 0); // "bytes=-500": the last 500 bytes
+    end = blob.size - 1;
+  }
+  if (start > end || start >= blob.size) {
+    return new Response(null, { status: 416, headers: { "Content-Range": `bytes */${blob.size}` } });
+  }
+  return new Response(blob.slice(start, end + 1), {
+    status: 206,
+    headers: {
+      "Content-Type": saved.headers.get("Content-Type") || "video/mp4",
+      "Content-Length": String(end - start + 1),
+      "Content-Range": `bytes ${start}-${end}/${blob.size}`,
+      "Accept-Ranges": "bytes",
+    },
+  });
+}
+
 // Serve cache instantly if we have it, then refresh it in the background.
 async function staleWhileRevalidate(request, cacheName) {
   const cache = await caches.open(cacheName);
@@ -206,15 +247,3 @@ async function staleWhileRevalidate(request, cacheName) {
 
   return cached || networkFetch;
 }
-
-// ---------- Explicit "Save for offline" support ----------
-// Call from a page like:
-//   navigator.serviceWorker.controller.postMessage({
-//     type: "CACHE_MEDIA",
-//     urls: ["assets/videos/Earthquake_Safety_Drop_Cover_Hold_On.mp4"]
-//   });
-self.addEventListener("message", (event) => {
-  if (event.data?.type === "CACHE_MEDIA" && Array.isArray(event.data.urls)) {
-    event.waitUntil(caches.open(MEDIA_CACHE).then((cache) => cache.addAll(event.data.urls)));
-  }
-});

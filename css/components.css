@@ -416,6 +416,39 @@ main {
   font-size: var(--fs-xs);
 }
 
+.offline-settings [data-offline-body] {
+  display: grid;
+  gap: var(--sp-2);
+}
+.offline-settings__hint {
+  font-size: var(--fs-sm);
+}
+.offline-settings__done {
+  color: var(--success-ink);
+  font-weight: 800;
+  font-size: var(--fs-sm);
+}
+.offline-settings__note {
+  color: var(--text-dim);
+  font-size: var(--fs-xs);
+}
+.offline-settings__note--warn {
+  color: var(--danger-ink);
+  font-weight: 700;
+}
+.offline-settings .btn {
+  font-size: var(--fs-sm);
+  white-space: normal;
+}
+.offline-settings .btn.is-confirming {
+  --btn-edge: var(--danger);
+  color: var(--danger-ink);
+}
+.offline-settings .btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
 /* Small screens: the nav becomes a bottom tab bar (big thumbs-friendly targets). */
 @media (max-width: 760px) {
   .site-header__inner {

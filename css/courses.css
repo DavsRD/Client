@@ -119,6 +119,25 @@
   color: var(--text-muted);
   font-size: var(--fs-lg);
 }
+.hazard-hero__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--sp-2);
+}
+.save-offline {
+  font-size: var(--fs-sm);
+}
+.save-offline:disabled {
+  cursor: default;
+  filter: none;
+  transform: none;
+}
+.save-offline.is-saved {
+  --btn-edge: var(--border);
+  box-shadow: none;
+  color: var(--success-ink);
+}
 
 /* Six beats */
 .beats {

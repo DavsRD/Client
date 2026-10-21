@@ -11,6 +11,8 @@ import { t, pick } from "../core/i18n.js";
 import * as state from "../core/state.js";
 import * as mascot from "../core/mascot.js";
 import * as videoModal from "../ui/video-modal.js";
+import { mountSaveButton } from "../ui/offline-ui.js";
+import * as offline from "../core/offline.js";
 import { hazardCard, hazardIconImg, hazardUrl } from "../ui/hazard-card.js";
 
 const BEATS = ["what", "signs", "before", "during", "after", "signoff"];
@@ -34,7 +36,8 @@ export async function init() {
     state.markHazardExplored(hazard.id);
     state.setLastHazard(hazard.id);
     // Offline, the gate waits for a visit with internet instead of opening on an unplayable video.
-    if (hazard.video && navigator.onLine && !state.hasSeenVideoGate(hazard.id)) {
+    const playable = hazard.video && (navigator.onLine || (await offline.isSaved(hazard.video)));
+    if (playable && !state.hasSeenVideoGate(hazard.id)) {
       state.markVideoGateSeen(hazard.id);
       playVideo(hazard, index, { autoplay: true });
     }
@@ -261,7 +264,8 @@ async function renderHazardView(hazard, index) {
   document.title = `${pick(hazard.name)} · Kalasag Kids`;
 
   const watchBtn = hazard.video
-    ? `<button type="button" class="btn btn--secondary" data-watch>▶ ${esc(t("learn.watchVideo"))}</button>`
+    ? `<button type="button" class="btn btn--secondary" data-watch>▶ ${esc(t("learn.watchVideo"))}</button>
+       <button type="button" class="btn btn--ghost save-offline" data-save-video hidden></button>`
     : `<button type="button" class="btn btn--ghost" disabled>${esc(t("learn.noVideo"))}</button>`;
   const watchedTag = state.hasWatchedVideo(hazard.id) ? `<span class="tag tag--done">✓ ${esc(t("learn.watched"))}</span>` : "";
 
@@ -305,6 +309,8 @@ async function renderHazardView(hazard, index) {
     ${neighbors(hazard, index)}`;
 
   main().querySelector("[data-watch]")?.addEventListener("click", () => playVideo(hazard, index, { autoplay: true }));
+  const saveBtn = main().querySelector("[data-save-video]");
+  if (saveBtn) mountSaveButton(saveBtn, hazard.video);
   main().querySelector("[data-print]")?.addEventListener("click", () => window.print());
   if (location.hash === "#infographic") main().querySelector("#infographic")?.scrollIntoView();
 }

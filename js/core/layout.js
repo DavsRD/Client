@@ -1,5 +1,5 @@
 /**
- * layout.js — the header (nav, language toggle, Emergency button) and footer
+ * layout.js — the header (nav, Settings menu, Emergency button) and footer
  * shared by every page. Pages only provide empty placeholders:
  *   <header class="site-header" data-site-header></header>
  *   <footer class="site-footer" data-site-footer></footer>
@@ -9,6 +9,7 @@
 import { fetchJSON, esc } from "./data.js";
 import { t, getLanguage, setLanguage, applyToPage } from "./i18n.js";
 import * as theme from "./theme.js";
+import { mountSettings as mountOfflineSettings } from "../ui/offline-ui.js";
 
 // 16x16 pixel icons, drawn with whole-pixel paths so they stay crisp.
 const ICONS = {
@@ -100,6 +101,10 @@ function settingsPanelMarkup() {
     <fieldset class="settings__group">
       <legend class="settings__legend" data-i18n="settings.theme"></legend>
       <div class="theme-options">${themes}</div>
+    </fieldset>
+    <fieldset class="settings__group offline-settings" data-offline-settings hidden>
+      <legend class="settings__legend" data-i18n="settings.offline"></legend>
+      <div data-offline-body></div>
     </fieldset>`;
 }
 
@@ -119,16 +124,21 @@ function wireSettings(header) {
   const root = header.querySelector("[data-settings]");
   const toggle = root.querySelector("[data-settings-toggle]");
   const panel = root.querySelector(".settings__panel");
+  const offlineSettings = mountOfflineSettings(panel.querySelector("[data-offline-settings]"));
 
   const setOpen = (open) => {
     panel.hidden = !open;
     toggle.setAttribute("aria-expanded", String(open));
-    if (open) syncSettings(header);
+    if (open) {
+      syncSettings(header);
+      offlineSettings.refresh();
+    }
   };
 
   toggle.addEventListener("click", () => setOpen(panel.hidden));
   document.addEventListener("click", (e) => {
-    if (!panel.hidden && !root.contains(e.target)) setOpen(false);
+    // composedPath, not contains(): a clicked button may already have been re-rendered away.
+    if (!panel.hidden && !e.composedPath().includes(root)) setOpen(false);
   });
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && !panel.hidden) {

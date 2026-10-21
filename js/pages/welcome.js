@@ -6,6 +6,8 @@
  * so weak school connections aren't hit with 8 images at once.
  * Auto-advance pauses when the tab is hidden, and never starts if the visitor
  * prefers reduced motion (the dots still work).
+ * Offline, only the scenes saved on this device are shown: the first three
+ * (precached by the service worker), or all of them after "Save everything".
  */
 
 import { fetchJSON, sceneUrl, esc } from "../core/data.js";
@@ -25,6 +27,12 @@ export async function init() {
     slides = (await fetchJSON("js/data/scenes.json")).slides;
   } catch {
     return; // The first scene is already in the HTML; the page works without the rest.
+  }
+  if (!navigator.onLine && "caches" in window) {
+    const saved = await Promise.all(
+      slides.map((slide, i) => i === 0 || caches.match(sceneUrl(slide.id)).then(Boolean, () => false))
+    );
+    slides = slides.filter((_, i) => saved[i]);
   }
   if (!slides.length) return;
 
