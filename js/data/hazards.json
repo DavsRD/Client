@@ -3,32 +3,27 @@
     {
       "id": "geological",
       "name": { "en": "Geological", "fil": "Heolohikal" },
-      "blurb": { "en": "When the ground shakes, slides, or erupts.", "fil": "Kapag yumayanig, gumuguho, o sumasabog ang lupa." },
-      "scene": "volcano-valley"
+      "blurb": { "en": "When the ground shakes, slides, or erupts.", "fil": "Kapag yumayanig, gumuguho, o sumasabog ang lupa." }
     },
     {
       "id": "hydrometeorological",
       "name": { "en": "Hydrometeorological", "fil": "Hidrometeorolohikal" },
-      "blurb": { "en": "Storms, floods, and too little or too much water.", "fil": "Bagyo, baha, at sobra o kulang na tubig." },
-      "scene": "reef"
+      "blurb": { "en": "Storms, floods, and too little or too much water.", "fil": "Bagyo, baha, at sobra o kulang na tubig." }
     },
     {
       "id": "biological",
       "name": { "en": "Biological", "fil": "Biyolohikal" },
-      "blurb": { "en": "Germs and pests that can make us sick.", "fil": "Mga mikrobyo at peste na maaaring magdulot ng sakit." },
-      "scene": "rice-terraces"
+      "blurb": { "en": "Germs and pests that can make us sick.", "fil": "Mga mikrobyo at peste na maaaring magdulot ng sakit." }
     },
     {
       "id": "technological",
       "name": { "en": "Technological & Structural", "fil": "Teknolohikal at Estruktural" },
-      "blurb": { "en": "Fire, roads, power lines, and buildings.", "fil": "Sunog, daan, kuryente, at mga gusali." },
-      "scene": "harbor-port"
+      "blurb": { "en": "Fire, roads, power lines, and buildings.", "fil": "Sunog, daan, kuryente, at mga gusali." }
     },
     {
       "id": "social",
       "name": { "en": "Social & Safety", "fil": "Panlipunan at Pangkaligtasan" },
-      "blurb": { "en": "Staying safe with people around us.", "fil": "Pagiging ligtas kasama ang ibang tao." },
-      "scene": "monument-bay"
+      "blurb": { "en": "Staying safe with people around us.", "fil": "Pagiging ligtas kasama ang ibang tao." }
     }
   ],
 

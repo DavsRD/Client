@@ -27,7 +27,7 @@
  * -------------------------------------------------------------
  */
 
-const CACHE_VERSION = "v6";
+const CACHE_VERSION = "v7";
 const SHELL_CACHE = `kalasag-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `kalasag-data-${CACHE_VERSION}`;
 const MEDIA_CACHE = `kalasag-media-${CACHE_VERSION}`;

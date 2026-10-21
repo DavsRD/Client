@@ -6,7 +6,7 @@
  * An unknown or missing id falls back to the catalog.
  */
 
-import { getHazardIndex, fetchJSON, esc, sceneUrl, PLACEHOLDER_IMG } from "../core/data.js";
+import { getHazardIndex, fetchJSON, esc, PLACEHOLDER_IMG } from "../core/data.js";
 import { t, pick } from "../core/i18n.js";
 import * as state from "../core/state.js";
 import * as mascot from "../core/mascot.js";
@@ -269,7 +269,7 @@ async function renderHazardView(hazard, index) {
     <a class="back-link" href="courses.html">‹ ${esc(t("learn.backToAll"))}</a>
 
     <header class="card hazard-hero" data-category="${esc(hazard.category)}">
-      <img class="hazard-hero__banner" src="${esc(hazard.image || sceneUrl(category?.scene))}" alt="">
+      <img class="hazard-hero__banner" src="${esc(hazard.image || PLACEHOLDER_IMG)}" alt="">
       <div class="hazard-hero__body">
         ${hazardIconImg(hazard, "hazard-icon--lg")}
         <div class="hazard-hero__text">

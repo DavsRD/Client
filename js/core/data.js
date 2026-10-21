@@ -38,18 +38,18 @@ export function getHazardIndex() {
   return hazardIndex;
 }
 
-export function sceneUrl(sceneId, { thumb = false } = {}) {
-  return sceneId ? `assets/images/scenes/${sceneId}${thumb ? "-thumb" : ""}.webp` : PLACEHOLDER_IMG;
+/** A welcome-slideshow scene image (assets/images/scenes/<id>.webp). */
+export function sceneUrl(sceneId) {
+  return sceneId ? `assets/images/scenes/${sceneId}.webp` : PLACEHOLDER_IMG;
 }
 
 export function assetOrPlaceholder(path) {
   return path || PLACEHOLDER_IMG;
 }
 
-/** Card/banner image for a hazard: its own banner if it has one, else its category's scene. */
-export function hazardBanner(hazard, index) {
-  if (hazard.banner) return hazard.banner;
-  return sceneUrl(index.categoryById.get(hazard.category)?.scene, { thumb: true });
+/** Card image for a hazard, or the placeholder until its art exists. */
+export function hazardBanner(hazard) {
+  return hazard.banner || PLACEHOLDER_IMG;
 }
 
 /** Tiny escaping helper for building markup from data. */

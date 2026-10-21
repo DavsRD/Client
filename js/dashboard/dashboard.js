@@ -69,7 +69,8 @@ function renderJumpBackIn() {
   const text = last ? pick(last.blurb) : t("dash.startText");
   const href = last ? hazardUrl(last.id) : "courses.html";
   const button = last ? t("dash.continueButton") : t("dash.startButton");
-  const scene = last?.image || sceneUrl(category?.scene || "volcano-lake");
+  // A hazard picks up where you left off; a first visit shows the first slideshow scene.
+  const scene = last?.image || sceneUrl("volcano-lake");
 
   box.innerHTML = `
     <article class="card jump" ${last ? `data-category="${esc(last.category)}"` : ""}>
