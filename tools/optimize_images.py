@@ -1,23 +1,28 @@
 """
 Regenerates the web-ready images from the source art. Not shipped with the site.
 
-    python3 tools/optimize_images.py      (run from project-root)
+    python3 tools/optimize_images.py      (run from the site folder)
 
-- assets/images/*.png  ->  assets/images/scenes/<slug>.webp      (hero, 1672px)
-                           assets/images/scenes/<slug>-thumb.webp (card banners, 640px)
-- assets/images/Thumbnails/16:9/*.jpeg -> assets/images/hazards/<id>.webp (hazard page header, 1376px)
-                                          assets/images/hazards/<id>-thumb.webp (hazard cards, 640px)
-- assets/images/Thumbnails/1x1/*.jpeg  -> assets/icons/hazards/<id>.webp (the one icon per hazard, 160px)
-- the geared Agila icon sprite -> PWA icons (any + maskable), apple-touch icon and
-  favicon on an indigo tile, scaled by whole numbers so the pixels stay crisp.
+The large original art lives OUTSIDE the site folder, in its parent (e.g. CodeStuff/Web/),
+so it is never published with the site:
 
-To add a new background: drop the PNG in assets/images/, add it to SCENES below,
+- ../<scene>.png              -> assets/images/scenes/<slug>.webp        (welcome slideshow, 1672px)
+                                 assets/images/scenes/<slug>-thumb.webp  (fallback card banner, 640px)
+- ../Thumbnails/16:9/*.jpeg   -> assets/images/hazards/<id>.webp         (hazard page header, 1376px)
+                                 assets/images/hazards/<id>-thumb.webp   (hazard cards, 640px)
+- ../Thumbnails/1x1/*.jpeg    -> assets/icons/hazards/<id>.webp          (the one icon per hazard, 160px)
+- the geared Agila icon sprite -> PWA icons (any + maskable), apple-touch icon and favicon
+                                  on an indigo tile, scaled by whole numbers so the pixels stay crisp.
+
+To add a new background: put the PNG next to the site folder, add it to SCENES below,
 run this script, then add the slug to js/data/scenes.json.
+To replace a hazard's art: overwrite its JPEG in ../Thumbnails/ and run this script.
 """
 from pathlib import Path
 from PIL import Image
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent.parent   # the site folder
+SOURCE = ROOT.parent                             # where the original art is kept
 IMAGES = ROOT / "assets" / "images"
 ICONS = ROOT / "assets" / "icons"
 
@@ -32,8 +37,8 @@ SCENES = {
     "Pixel Panorama of Misty Mountain Valley.png": "mountain-valley",
 }
 
-# Hazard art: hazard id -> (16:9 file, 1x1 file) in assets/images/Thumbnails/.
-THUMBNAILS = IMAGES / "Thumbnails"
+# Hazard art: hazard id -> (16:9 file, 1x1 file) in ../Thumbnails/.
+THUMBNAILS = SOURCE / "Thumbnails"
 HAZARD_ART = {
     "earthquake": ("earthquake.jpeg", "1x1-earthquake.jpeg"),
     "volcanic-eruption": ("volcano.jpeg", "1x1-volcano-erupt.jpeg"),
@@ -59,6 +64,17 @@ HAZARD_ART = {
 INDIGO = (59, 42, 143, 255)   # Agila "Indigo" app-icon background
 SPRITES = ROOT / "assets" / "pixel-eagle-sprites" / "png" / "1x"
 ICON_ART = SPRITES / "icon_indigo_geared.png"   # 32x32 geared Agila, transparent background
+
+
+def scenes():
+    out = IMAGES / "scenes"
+    out.mkdir(exist_ok=True)
+    for src, slug in SCENES.items():
+        im = Image.open(SOURCE / src).convert("RGB")
+        im.save(out / f"{slug}.webp", "WEBP", quality=80, method=6)
+        w, h = im.size
+        thumb = im.resize((640, round(h * 640 / w)), Image.LANCZOS)
+        thumb.save(out / f"{slug}-thumb.webp", "WEBP", quality=78, method=6)
 
 
 def hazard_art():
