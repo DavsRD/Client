@@ -1,0 +1,327 @@
+[
+ {
+  "world": 1,
+  "level": 1,
+  "mode": "memory",
+  "easy": {
+   "pairs": 4,
+   "cols": 4
+  },
+  "advanced": {
+   "pairs": 8,
+   "cols": 4
+  }
+ },
+ {
+  "world": 1,
+  "level": 2,
+  "mode": "memory",
+  "easy": {
+   "pairs": 4,
+   "cols": 4
+  },
+  "advanced": {
+   "pairs": 8,
+   "cols": 4
+  }
+ },
+ {
+  "world": 1,
+  "level": 3,
+  "mode": "memory",
+  "easy": {
+   "pairs": 5,
+   "cols": 4
+  },
+  "advanced": {
+   "pairs": 10,
+   "cols": 4
+  }
+ },
+ {
+  "world": 1,
+  "level": 4,
+  "mode": "memory",
+  "easy": {
+   "pairs": 6,
+   "cols": 4
+  },
+  "advanced": {
+   "pairs": 10,
+   "cols": 4
+  }
+ },
+ {
+  "world": 1,
+  "level": 5,
+  "mode": "memory",
+  "easy": {
+   "pairs": 6,
+   "cols": 4
+  },
+  "advanced": {
+   "pairs": 10,
+   "cols": 4
+  }
+ },
+ {
+  "world": 2,
+  "level": 1,
+  "mode": "drop",
+  "easy": {
+   "sets": 3
+  },
+  "advanced": {
+   "sets": 4
+  }
+ },
+ {
+  "world": 2,
+  "level": 2,
+  "mode": "drop",
+  "easy": {
+   "sets": 3
+  },
+  "advanced": {
+   "sets": 5
+  }
+ },
+ {
+  "world": 2,
+  "level": 3,
+  "mode": "drop",
+  "easy": {
+   "sets": 4
+  },
+  "advanced": {
+   "sets": 5
+  }
+ },
+ {
+  "world": 2,
+  "level": 4,
+  "mode": "drop",
+  "easy": {
+   "sets": 4
+  },
+  "advanced": {
+   "sets": 5
+  }
+ },
+ {
+  "world": 2,
+  "level": 5,
+  "mode": "drop",
+  "easy": {
+   "sets": 5
+  },
+  "advanced": {
+   "sets": 5
+  }
+ },
+ {
+  "world": 3,
+  "level": 1,
+  "mode": "triple",
+  "easy": {
+   "sets": 3,
+   "cols": 3
+  },
+  "advanced": {
+   "sets": 4,
+   "cols": 3
+  }
+ },
+ {
+  "world": 3,
+  "level": 2,
+  "mode": "triple",
+  "easy": {
+   "sets": 3,
+   "cols": 3
+  },
+  "advanced": {
+   "sets": 4,
+   "cols": 3
+  }
+ },
+ {
+  "world": 3,
+  "level": 3,
+  "mode": "triple",
+  "easy": {
+   "sets": 4,
+   "cols": 3
+  },
+  "advanced": {
+   "sets": 5,
+   "cols": 3
+  }
+ },
+ {
+  "world": 3,
+  "level": 4,
+  "mode": "triple",
+  "easy": {
+   "sets": 4,
+   "cols": 3
+  },
+  "advanced": {
+   "sets": 5,
+   "cols": 3
+  }
+ },
+ {
+  "world": 3,
+  "level": 5,
+  "mode": "triple",
+  "easy": {
+   "sets": 5,
+   "cols": 3
+  },
+  "advanced": {
+   "sets": 5,
+   "cols": 3
+  }
+ },
+ {
+  "world": 4,
+  "level": 1,
+  "mode": "onet",
+  "easy": {
+   "w": 4,
+   "h": 4
+  },
+  "advanced": {
+   "w": 6,
+   "h": 4
+  }
+ },
+ {
+  "world": 4,
+  "level": 2,
+  "mode": "onet",
+  "easy": {
+   "w": 5,
+   "h": 4
+  },
+  "advanced": {
+   "w": 6,
+   "h": 5
+  }
+ },
+ {
+  "world": 4,
+  "level": 3,
+  "mode": "onet",
+  "easy": {
+   "w": 6,
+   "h": 4
+  },
+  "advanced": {
+   "w": 6,
+   "h": 6
+  }
+ },
+ {
+  "world": 4,
+  "level": 4,
+  "mode": "onet",
+  "easy": {
+   "w": 6,
+   "h": 5
+  },
+  "advanced": {
+   "w": 8,
+   "h": 5
+  }
+ },
+ {
+  "world": 4,
+  "level": 5,
+  "mode": "onet",
+  "easy": {
+   "w": 6,
+   "h": 6
+  },
+  "advanced": {
+   "w": 8,
+   "h": 6
+  }
+ },
+ {
+  "world": 5,
+  "level": 1,
+  "mode": "boss",
+  "easy": {
+   "w": 5,
+   "h": 4,
+   "sites": 3
+  },
+  "advanced": {
+   "w": 6,
+   "h": 4,
+   "sites": 4
+  }
+ },
+ {
+  "world": 5,
+  "level": 2,
+  "mode": "boss",
+  "easy": {
+   "w": 6,
+   "h": 4,
+   "sites": 3
+  },
+  "advanced": {
+   "w": 6,
+   "h": 5,
+   "sites": 5
+  }
+ },
+ {
+  "world": 5,
+  "level": 3,
+  "mode": "boss",
+  "easy": {
+   "w": 6,
+   "h": 4,
+   "sites": 4
+  },
+  "advanced": {
+   "w": 6,
+   "h": 6,
+   "sites": 5
+  }
+ },
+ {
+  "world": 5,
+  "level": 4,
+  "mode": "boss",
+  "easy": {
+   "w": 6,
+   "h": 5,
+   "sites": 4
+  },
+  "advanced": {
+   "w": 8,
+   "h": 5,
+   "sites": 6
+  }
+ },
+ {
+  "world": 5,
+  "level": 5,
+  "mode": "boss",
+  "easy": {
+   "w": 6,
+   "h": 6,
+   "sites": 5
+  },
+  "advanced": {
+   "w": 8,
+   "h": 6,
+   "sites": 6
+  }
+ }
+]

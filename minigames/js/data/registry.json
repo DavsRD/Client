@@ -190,12 +190,24 @@
         "fil": "Itugma ang bawat peste sa sakit na dala nito at sa paraan ng pagpigil, at linisin ang pinamumugaran ng lamok."
       },
       "howTo": [
-        { "en": "Flip two cards", "fil": "Buksan ang dalawang card", "keys": ["key_left", "key_right", "key_enter"], "gesture": "gesture_tap" },
-        { "en": "Find the matching pair", "fil": "Hanapin ang magkatugma", "keys": [], "gesture": null },
-        { "en": "Ask for a hint", "fil": "Humingi ng pahiwatig", "keys": ["key_h"], "gesture": "gesture_tap" }
+        { "en": "Move, then flip or select a card", "fil": "Gumalaw, saka magbukas o pumili ng card", "keys": ["key_left", "key_right", "key_up", "key_down", "key_enter"], "gesture": "gesture_tap" },
+        { "en": "World 2: drag each fix onto its pest (Enter picks and places, Esc puts back)", "fil": "Mundo 2: i-drag ang bawat lunas sa peste nito (Enter pumili at ilagay, Esc ibalik)", "keys": ["key_enter", "key_esc"], "gesture": "gesture_drag" },
+        { "en": "Ask for a hint (−50 points)", "fil": "Humingi ng pahiwatig (−50 puntos)", "keys": ["key_h"], "gesture": "gesture_tap" },
+        { "en": "Shuffle the Onet board (2 per level)", "fil": "Haluin ang Onet board (2 bawat antas)", "keys": ["key_s"], "gesture": "gesture_tap" }
       ],
-      "takeaway": { "en": "No standing water, covered food, clean surroundings: pests can't spread what they can't breed.", "fil": "Walang naiipong tubig, takip ang pagkain, malinis ang paligid: hindi kakalat ang pesteng hindi makapamugad." },
-      "built": false, "scripts": [], "data": ["levels.json", "data/sets.json"]
+      "takeaway": { "en": "No standing water, covered food, clean surroundings — pests can't spread what they can't breed.", "fil": "Walang naiipong tubig, takip ang pagkain, malinis ang paligid — hindi kakalat ang pesteng hindi makapamugad." },
+      "built": true,
+      "scripts": [
+        "minigames/js/games/pest-patrol/tuning.js",
+        "minigames/js/games/pest-patrol/PestPatrolScene.js",
+        "minigames/js/games/pest-patrol/modes/MemoryFlip.js",
+        "minigames/js/games/pest-patrol/modes/TripleFlip.js",
+        "minigames/js/games/pest-patrol/modes/PairDrop.js",
+        "minigames/js/games/pest-patrol/modes/Onet.js",
+        "minigames/js/games/pest-patrol/modes/BossBoard.js",
+        "minigames/js/games/pest-patrol/index.js"
+      ],
+      "data": ["levels.json", "data/sets.json"]
     },
     {
       "id": "fire-escape", "num": 11, "hazardId": "fire", "hazardGroup": "technological",

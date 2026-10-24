@@ -1,0 +1,53 @@
+{
+ "sets": [
+  {
+   "id": "mosquito",
+   "pest": { "icon": "mosquito", "emoji": "🦟", "label": { "en": "Mosquito", "fil": "Lamok" } },
+   "cause": { "emoji": "🤒", "label": { "en": "Dengue", "fil": "Dengue" } },
+   "prevent": { "emoji": "🪣", "label": { "en": "Empty standing water", "fil": "Itapon ang naipong tubig" } },
+   "fact": { "en": "Mosquitoes lay eggs in standing water. Empty, scrub and cover anything that holds water.", "fil": "Nangingitlog ang lamok sa naipong tubig. Itapon, kuskusin at takpan ang anumang may naipong tubig." },
+   "hint": { "en": "Mosquitoes need water to lay their eggs. Find the tile about water.", "fil": "Kailangan ng lamok ng tubig para mangitlog. Hanapin ang tile tungkol sa tubig." }
+  },
+  {
+   "id": "rat",
+   "pest": { "icon": "rat", "emoji": "🐀", "label": { "en": "Rat", "fil": "Daga" } },
+   "cause": { "asset": "icon.lepto", "emoji": "🦠", "label": { "en": "Leptospirosis", "fil": "Leptospirosis" } },
+   "prevent": { "emoji": "🗑️", "label": { "en": "Cover garbage; avoid floodwater", "fil": "Takpan ang basura; iwasan ang baha" } },
+   "fact": { "en": "Rat pee in floodwater can cause leptospirosis. Cover your garbage and stay out of floodwater.", "fil": "Ang ihi ng daga sa baha ay puwedeng magdulot ng leptospirosis. Takpan ang basura at umiwas sa baha." },
+   "hint": { "en": "Rats look for open garbage. Find the tile that keeps garbage covered.", "fil": "Naghahanap ang daga ng bukas na basura. Hanapin ang tile na nagtatakip ng basura." }
+  },
+  {
+   "id": "roach",
+   "pest": { "icon": "roach", "emoji": "🪳", "label": { "en": "Cockroach", "fil": "Ipis" } },
+   "cause": { "asset": "icon.dirty_food", "emoji": "🍲", "label": { "en": "Dirty food", "fil": "Maruming pagkain" } },
+   "prevent": { "emoji": "🍱", "label": { "en": "Cover food", "fil": "Takpan ang pagkain" } },
+   "fact": { "en": "Cockroaches walk on food and leave germs. Keep food covered and wipe up crumbs.", "fil": "Naglalakad ang ipis sa pagkain at nag-iiwan ng mikrobyo. Takpan ang pagkain at linisin ang mumo." },
+   "hint": { "en": "Cockroaches crawl over food at night. Find the tile that protects food.", "fil": "Gumagapang ang ipis sa pagkain sa gabi. Hanapin ang tile na nagpoprotekta sa pagkain." }
+  },
+  {
+   "id": "fly",
+   "pest": { "emoji": "🪰", "label": { "en": "Fly", "fil": "Langaw" } },
+   "cause": { "emoji": "🤢", "label": { "en": "Diarrhea", "fil": "Pagtatae" } },
+   "prevent": { "emoji": "🧼", "label": { "en": "Wash hands, cover food", "fil": "Maghugas ng kamay, takpan ang pagkain" } },
+   "fact": { "en": "Flies carry germs from garbage to food. Wash your hands with soap and cover your food.", "fil": "Nagdadala ang langaw ng mikrobyo mula sa basura papunta sa pagkain. Maghugas ng kamay gamit ang sabon at takpan ang pagkain." },
+   "hint": { "en": "Flies land on dirty things, then on your food. Find the tile about clean hands.", "fil": "Dumadapo ang langaw sa marumi, saka sa pagkain mo. Hanapin ang tile tungkol sa malinis na kamay." }
+  },
+  {
+   "id": "crop",
+   "pest": { "emoji": "🐛", "label": { "en": "Crop pests", "fil": "Peste ng pananim" } },
+   "cause": { "asset": "icon.crop_damage", "emoji": "🥀", "label": { "en": "Crop damage", "fil": "Sirang pananim" } },
+   "prevent": { "emoji": "🧑‍🌾", "label": { "en": "Report to the farm technician", "fil": "Isumbong sa farm technician" } },
+   "fact": { "en": "Crop pests can eat a whole field. Tell the farm technician early so the farm can be saved.", "fil": "Kayang ubusin ng peste ang buong bukid. Sabihan agad ang farm technician para mailigtas ang taniman." },
+   "hint": { "en": "Grown-ups who know farms can stop crop pests. Find the farmer tile.", "fil": "Ang mga nakatatandang eksperto sa bukid ang makapipigil sa peste. Hanapin ang tile ng magsasaka." }
+  }
+ ],
+ "lookalikes": [
+  {
+   "id": "mouse",
+   "like": "rat",
+   "face": { "emoji": "🐁", "label": { "en": "House mouse", "fil": "Bubuwit" } },
+   "fact": { "en": "A house mouse is smaller than a rat, but it spreads germs too. Keep food and garbage covered.", "fil": "Mas maliit ang bubuwit kaysa daga, pero nagkakalat din ito ng mikrobyo. Takpan ang pagkain at basura." }
+  }
+ ],
+ "pairs": [["mosquito.pest", "fly.pest"], ["rat.pest", "mouse"]]
+}
