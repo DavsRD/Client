@@ -39,8 +39,7 @@
       "video": "assets/videos/Earthquake_Safety_Drop_Cover_Hold_On.mp4",
       "lesson": "js/data/lessons/earthquake.json",
       "quizDataPath": "js/data/quizzes/earthquake.json",
-      "primaryGame": "maze",
-      "bonusGames": ["match-icons", "jumbled-words"],
+      "game": "drop-cover-hold",
       "subjects": ["science", "ap", "mapeh"],
       "storyStage": 5,
       "storyOrder": 1
@@ -56,8 +55,7 @@
       "video": "assets/videos/Volcano_Safety_Agila.mp4",
       "lesson": "js/data/lessons/volcanic-eruption.json",
       "quizDataPath": "js/data/quizzes/volcanic-eruption.json",
-      "primaryGame": "maze",
-      "bonusGames": ["dodge-collect", "match-icons"],
+      "game": "ashfall",
       "subjects": ["science", "ap"],
       "storyStage": 5,
       "storyOrder": 4
@@ -73,8 +71,7 @@
       "video": "assets/videos/Tsunami_Safety_Agila.mp4",
       "lesson": null,
       "quizDataPath": "js/data/quizzes/tsunami.json",
-      "primaryGame": "dino-jump",
-      "bonusGames": ["jumbled-words", "match-icons"],
+      "game": "wave-runner",
       "subjects": ["science", "ap"],
       "storyStage": 5,
       "storyOrder": 3
@@ -90,8 +87,7 @@
       "video": "assets/videos/Landslide_Safety_Agila.mp4",
       "lesson": null,
       "quizDataPath": "js/data/quizzes/landslide.json",
-      "primaryGame": "puzzle",
-      "bonusGames": ["match-icons", "jumbled-words"],
+      "game": "slope-defense",
       "subjects": ["science", "ap"],
       "storyStage": 5,
       "storyOrder": 2
@@ -108,8 +104,7 @@
       "video": "assets/videos/Typhoon_Safety_Agila.mp4",
       "lesson": "js/data/lessons/typhoon.json",
       "quizDataPath": "js/data/quizzes/typhoon.json",
-      "primaryGame": "dodge-collect",
-      "bonusGames": ["dino-jump", "jumbled-words"],
+      "game": "go-bag-tetris",
       "subjects": ["science", "ap", "tle"],
       "storyStage": 4,
       "storyOrder": 1
@@ -125,8 +120,7 @@
       "video": "assets/videos/Severe_Flooding_Safety_Agila.mp4",
       "lesson": null,
       "quizDataPath": "js/data/quizzes/severe-flooding.json",
-      "primaryGame": "maze",
-      "bonusGames": ["dodge-collect", "match-icons"],
+      "game": "rising-water-house",
       "subjects": ["science", "ap"],
       "storyStage": 4,
       "storyOrder": 2
@@ -142,8 +136,7 @@
       "video": "assets/videos/Storm_Surge_Safety_Agila.mp4",
       "lesson": null,
       "quizDataPath": "js/data/quizzes/storm-surge.json",
-      "primaryGame": "dodge-collect",
-      "bonusGames": ["dino-jump", "jumbled-words"],
+      "game": "evac-convoy",
       "subjects": ["science", "ap"],
       "storyStage": 4,
       "storyOrder": 3
@@ -159,8 +152,7 @@
       "video": "assets/videos/El_Nino_Save_Water_Agila.mp4",
       "lesson": null,
       "quizDataPath": "js/data/quizzes/el-nino.json",
-      "primaryGame": "puzzle",
-      "bonusGames": ["match-icons", "jumbled-words"],
+      "game": "water-ways",
       "subjects": ["science", "tle"],
       "storyStage": 4,
       "storyOrder": 4
@@ -177,8 +169,7 @@
       "video": "assets/videos/Disease_Outbreak_Stop_Germs_Agila.mp4",
       "lesson": null,
       "quizDataPath": "js/data/quizzes/disease-outbreak.json",
-      "primaryGame": "puzzle",
-      "bonusGames": ["match-icons", "jumbled-words"],
+      "game": "word-lab",
       "subjects": ["science", "mapeh"],
       "storyStage": 3,
       "storyOrder": 1
@@ -194,8 +185,7 @@
       "video": null,
       "lesson": null,
       "quizDataPath": "js/data/quizzes/pest-infestation.json",
-      "primaryGame": "puzzle",
-      "bonusGames": ["match-icons"],
+      "game": "pest-patrol",
       "subjects": ["science", "tle"],
       "storyStage": 3,
       "storyOrder": 2
@@ -212,8 +202,7 @@
       "video": null,
       "lesson": null,
       "quizDataPath": "js/data/quizzes/fire.json",
-      "primaryGame": "dodge-collect",
-      "bonusGames": ["dino-jump", "jumbled-words"],
+      "game": "fire-escape",
       "subjects": ["science", "tle"],
       "storyStage": 1,
       "storyOrder": 1
@@ -229,8 +218,7 @@
       "video": null,
       "lesson": null,
       "quizDataPath": "js/data/quizzes/structural-collapse.json",
-      "primaryGame": "go-bag",
-      "bonusGames": ["maze", "match-icons"],
+      "game": "rubble-rescue",
       "subjects": ["science", "tle"],
       "storyStage": 1,
       "storyOrder": 2
@@ -246,8 +234,7 @@
       "video": null,
       "lesson": null,
       "quizDataPath": "js/data/quizzes/road-accidents.json",
-      "primaryGame": "maze",
-      "bonusGames": ["match-icons", "jumbled-words"],
+      "game": "safe-crossing",
       "subjects": ["english", "ap"],
       "storyStage": 1,
       "storyOrder": 3
@@ -263,8 +250,7 @@
       "video": null,
       "lesson": null,
       "quizDataPath": "js/data/quizzes/chemical-spill.json",
-      "primaryGame": "match-icons",
-      "bonusGames": ["jumbled-words", "maze"],
+      "game": "symbol-jigsaw",
       "subjects": ["science"],
       "storyStage": 1,
       "storyOrder": 4
@@ -280,8 +266,7 @@
       "video": null,
       "lesson": null,
       "quizDataPath": "js/data/quizzes/electrical-hazards.json",
-      "primaryGame": "puzzle",
-      "bonusGames": ["match-icons", "jumbled-words"],
+      "game": "spot-the-shock",
       "subjects": ["science", "tle"],
       "storyStage": 1,
       "storyOrder": 5
@@ -298,8 +283,7 @@
       "video": null,
       "lesson": null,
       "quizDataPath": "js/data/quizzes/missing-child.json",
-      "primaryGame": "puzzle",
-      "bonusGames": ["match-icons", "jumbled-words"],
+      "game": "lost-and-found",
       "subjects": ["esp", "english"],
       "storyStage": 2,
       "storyOrder": 1
@@ -315,8 +299,7 @@
       "video": null,
       "lesson": null,
       "quizDataPath": "js/data/quizzes/bullying.json",
-      "primaryGame": "match-icons",
-      "bonusGames": ["puzzle", "jumbled-words"],
+      "game": "lunch-table",
       "subjects": ["esp", "mapeh"],
       "storyStage": 2,
       "storyOrder": 2
@@ -332,8 +315,7 @@
       "video": null,
       "lesson": null,
       "quizDataPath": "js/data/quizzes/crowd-crush.json",
-      "primaryGame": "maze",
-      "bonusGames": ["match-icons", "jumbled-words"],
+      "game": "go-with-the-flow",
       "subjects": ["ap", "mapeh"],
       "storyStage": 2,
       "storyOrder": 3
@@ -349,8 +331,7 @@
       "video": null,
       "lesson": null,
       "quizDataPath": "js/data/quizzes/community-conflict.json",
-      "primaryGame": "go-bag",
-      "bonusGames": ["match-icons", "jumbled-words"],
+      "game": "check-before-share",
       "subjects": ["ap", "esp"],
       "storyStage": 2,
       "storyOrder": 4

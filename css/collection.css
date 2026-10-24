@@ -1,38 +1,248 @@
 /* =============================================================
-   collection.css — the Collections page (unlocked games + quizzes).
+   collection.css — the Collections page: a sticky aside that organizes the collection
+   (All · Videos · Games · Safety posters · Quizzes) and the content beside it. Below
+   760 px the aside becomes a horizontal tab row that scrolls on its own, so the page
+   itself never scrolls sideways.
    ============================================================= */
 
-.collection-grid {
+.collection {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: var(--sp-4);
-  margin: var(--sp-6) 0 0;
+  grid-template-columns: 244px minmax(0, 1fr);
+  gap: var(--sp-6);
+  align-items: start;
+  margin-top: var(--sp-5);
+}
+
+.collection__aside {
+  position: sticky;
+  top: calc(var(--header-h) + var(--sp-4));
+  min-width: 0;
+}
+.collection__tabs {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  margin: 0;
   padding: 0;
   list-style: none;
 }
-
-.collection-item {
+.collection__tab {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: var(--sp-2);
-  padding: var(--sp-4) var(--sp-3);
-  border-top: 4px solid var(--cat);
+  gap: var(--sp-3);
+  min-height: 48px;
+  padding: var(--sp-2) var(--sp-3);
+  border: var(--bw) solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font-pixel);
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: var(--shadow-step-sm) var(--border);
+}
+.collection__tab:hover {
+  border-color: var(--border-strong);
+}
+.collection__tab[aria-current="page"] {
+  border-color: var(--sunny);
+  background: var(--surface-2);
+  box-shadow: var(--shadow-step-sm) var(--sunny-dark);
+}
+.collection__icon {
+  width: 1.5em;
   text-align: center;
 }
-.collection-item__name {
+.collection__label {
+  flex: 1;
+  white-space: nowrap;
+}
+.collection__count {
+  min-width: 28px;
+  padding: 0 var(--sp-2);
+  border-radius: 999px;
+  background: var(--surface-3);
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
   font-weight: 800;
-  font-size: var(--fs-sm);
-  line-height: 1.3;
+  text-align: center;
 }
 
-/* Locked: a grayed silhouette that teases what's ahead. */
-.collection-item.is-locked {
-  border-top-color: var(--border-strong);
+.collection__main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+  min-width: 0;
+  outline: none;
 }
-.collection-item.is-locked .hazard-icon {
-  filter: grayscale(1) brightness(0.45);
+.collection__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
 }
-.collection-item.is-locked .collection-item__name {
-  color: var(--text-dim);
+.collection-group .section-head {
+  margin-bottom: var(--sp-3);
+}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: var(--sp-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.collection-grid--posters {
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+/* ---------- cards ---------- */
+.c-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-top: 4px solid var(--cat, var(--border-strong));
+}
+.c-card__media {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  border: 0;
+  background: var(--surface-2);
+  overflow: hidden;
+}
+.c-card__hit {
+  cursor: pointer;
+}
+.c-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.c-card__img--pixel {
+  image-rendering: pixelated;
+}
+.c-card__play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  transform: translate(-50%, -50%);
+  border: var(--bw) solid var(--text-on-light);
+  border-radius: var(--radius);
+  background: var(--sunny);
+  color: var(--text-on-light);
+  font-size: 1.25rem;
+  box-shadow: var(--shadow-step-sm) var(--sunny-dark);
+}
+.c-card__hit:hover .c-card__play,
+.c-card__hit:focus-visible .c-card__play {
+  filter: brightness(1.1);
+}
+.c-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  padding: var(--sp-3);
+  flex: 1;
+}
+.c-card__title {
+  font-family: var(--font-pixel);
+  font-size: var(--fs-md);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+}
+.c-card__title a {
+  color: inherit;
+  text-decoration: none;
+}
+.c-card__title a:hover {
+  text-decoration: underline;
+}
+.c-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-top: auto;
+  padding-top: var(--sp-2);
+}
+.c-card__btn {
+  min-height: 36px;
+  padding: var(--sp-1) var(--sp-3);
+  font-size: var(--fs-sm);
+  margin-bottom: 3px;
+}
+.tag--saved {
+  border-color: var(--sky);
+  color: var(--link);
+}
+.c-card.is-soon {
+  opacity: 0.6;
+}
+.c-card.is-soon .c-card__img {
+  filter: grayscale(0.7);
+}
+
+.c-card--poster {
+  padding: var(--sp-3);
+  gap: var(--sp-2);
+}
+.c-card__poster {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  color: var(--text);
+  text-decoration: none;
+}
+.c-card__poster > span {
+  display: flex;
+  flex-direction: column;
+}
+.c-card--poster .c-card__tags {
+  padding-top: 0;
+}
+
+.collection-soon {
+  justify-content: flex-start;
+  text-align: left;
+}
+.collection-soon__title {
+  font-size: var(--fs-lg);
+}
+
+/* ---------- phones: the aside becomes a scrollable tab row above the content ---------- */
+@media (max-width: 760px) {
+  .collection {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--sp-4);
+  }
+  .collection__aside {
+    position: static;
+    margin: 0 calc(var(--gutter) * -1);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .collection__aside::-webkit-scrollbar {
+    display: none;
+  }
+  .collection__tabs {
+    flex-direction: row;
+    width: max-content;
+    padding: 0 var(--gutter) var(--sp-2);
+  }
+  .collection__tab {
+    min-height: 44px;
+  }
+}
+@media (max-width: 420px) {
+  .collection-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }

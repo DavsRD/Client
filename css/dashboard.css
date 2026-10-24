@@ -268,3 +268,91 @@
   font-size: var(--fs-sm);
   color: var(--text-muted);
 }
+
+/* ---------- Games card + Daily Challenge (KALASAG O9: compact, not an arcade) ---------- */
+.games-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--sp-4) var(--sp-5);
+  align-items: center;
+  padding: var(--sp-4);
+}
+.games-card__stats {
+  display: flex;
+  gap: var(--sp-5);
+  margin: 0;
+}
+.games-card__stats div {
+  display: flex;
+  flex-direction: column;
+}
+.games-card__stats dt {
+  color: var(--text-dim);
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.games-card__stats dd {
+  margin: 0;
+  font-family: var(--font-pixel);
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.games-card__continue {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--sp-3);
+}
+.games-card__text {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+}
+.daily-banner {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: var(--sp-3);
+  border: var(--bw) solid var(--cat, var(--border-strong));
+  border-radius: var(--radius);
+  background: var(--cat-soft, var(--surface-2));
+  color: var(--text);
+  text-decoration: none;
+}
+.daily-banner:hover {
+  filter: brightness(1.06);
+}
+.daily-banner__thumb {
+  width: 160px;
+  height: 90px;
+  flex: none;
+  border-radius: var(--radius-sm);
+  image-rendering: pixelated;
+}
+.daily-banner__text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.daily-banner__cta {
+  color: var(--accent-ink);
+  font-family: var(--font-pixel);
+  font-weight: 700;
+}
+@media (max-width: 560px) {
+  .games-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .games-card__continue {
+    justify-content: flex-start;
+  }
+  .daily-banner__thumb {
+    width: 80px;
+    height: 45px;
+  }
+}

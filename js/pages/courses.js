@@ -2,7 +2,8 @@
  * courses.js — the Learn page. One page, two views:
  *   courses.html                 → catalog (Learning Journeys rows + All Hazards grid)
  *   courses.html?hazard=<id>     → hazard learning view (video gate, six beats,
- *                                  safety poster, subject strip)
+ *                                  Mini-game section, safety poster, subject strip)
+ * The Mini-game section's routes (#game, #play/<w>-<l>, #daily) belong to js/ui/game-host.js.
  * An unknown or missing id falls back to the catalog.
  */
 
@@ -10,13 +11,14 @@ import { getHazardIndex, fetchJSON, esc, PLACEHOLDER_IMG } from "../core/data.js
 import { t, pick } from "../core/i18n.js";
 import * as state from "../core/state.js";
 import * as mascot from "../core/mascot.js";
-import * as videoModal from "../ui/video-modal.js";
+import { watchHazardVideo } from "../ui/hazard-video.js";
 import { mountSaveButton } from "../ui/offline-ui.js";
 import * as offline from "../core/offline.js";
+import { loadGames } from "../core/games.js";
+import * as gameHost from "../ui/game-host.js";
 import { hazardCard, hazardIconImg, hazardUrl } from "../ui/hazard-card.js";
 
 const BEATS = ["what", "signs", "before", "during", "after", "signoff"];
-const VIDEO_XP = 10; // PROPOSED: small reward for finishing a hazard video the first time
 
 const main = () => document.getElementById("main");
 
@@ -24,7 +26,8 @@ const main = () => document.getElementById("main");
 const filters = { category: "all", query: "" };
 
 export async function init() {
-  const index = await getHazardIndex();
+  // The registry tells the catalog which hazards already have a playable game (🎮 tag).
+  const [index] = await Promise.all([getHazardIndex(), loadGames()]);
   const id = new URLSearchParams(location.search).get("hazard");
   const hazard = id && index.byId.get(id);
 
@@ -37,7 +40,9 @@ export async function init() {
     state.setLastHazard(hazard.id);
     // Offline, the gate waits for a visit with internet instead of opening on an unplayable video.
     const playable = hazard.video && (navigator.onLine || (await offline.isSaved(hazard.video)));
-    if (playable && !state.hasSeenVideoGate(hazard.id)) {
+    // A link straight into a game (#play/…, #daily) skips the gate; it opens on the next plain visit.
+    const gameRoute = /^#(play\/|daily)/.test(location.hash);
+    if (playable && !gameRoute && !state.hasSeenVideoGate(hazard.id)) {
       state.markVideoGateSeen(hazard.id);
       playVideo(hazard, index, { autoplay: true });
     }
@@ -284,7 +289,10 @@ async function renderHazardView(hazard, index) {
           <h1 class="hazard-hero__title">${esc(pick(hazard.name))}</h1>
           <p class="hazard-hero__blurb">${esc(pick(hazard.blurb))}</p>
         </div>
-        <div class="hazard-hero__actions">${watchBtn}</div>
+        <div class="hazard-hero__actions">
+          ${watchBtn}
+          ${hazard.game ? `<a class="btn btn--primary" href="#game">🎮 ${esc(t("learn.playGame"))}</a>` : ""}
+        </div>
       </div>
     </header>
 
@@ -292,6 +300,15 @@ async function renderHazardView(hazard, index) {
       <h2 class="section-title">${esc(t("learn.lessonTitle"))}</h2>
       ${beatsMarkup(lesson)}
     </section>
+
+    ${
+      hazard.game
+        ? `<section class="section game-section" id="game" aria-labelledby="game-title">
+             <h2 class="section-title" id="game-title">🎮 ${esc(t("learn.game"))}</h2>
+             <div class="game-slot" data-game-slot><p class="game-slot__loading">${esc(t("learn.gameLoading"))}</p></div>
+           </section>`
+        : ""
+    }
 
     <section class="section" id="infographic">
       <div class="section-head">
@@ -313,18 +330,19 @@ async function renderHazardView(hazard, index) {
   if (saveBtn) mountSaveButton(saveBtn, hazard.video);
   main().querySelector("[data-print]")?.addEventListener("click", () => window.print());
   if (location.hash === "#infographic") main().querySelector("#infographic")?.scrollIntoView();
+  // Collections' print button opens the poster with ?print=1.
+  if (new URLSearchParams(location.search).get("print") === "1" && lesson?.infographic && !printed) {
+    printed = true;
+    setTimeout(() => window.print(), 400);
+  }
+
+  const slot = main().querySelector("[data-game-slot]");
+  if (slot) gameHost.attach(slot, hazard);
 }
 
+let printed = false;
+
 async function playVideo(hazard, index, { autoplay }) {
-  const { completed } = await videoModal.open({
-    src: hazard.video,
-    title: pick(hazard.name),
-    captions: hazard.captions,
-    autoplay,
-  });
-  if (completed && state.markVideoWatched(hazard.id)) {
-    state.addXP(VIDEO_XP);
-    state.bumpStreakIfNewDay();
-    await renderHazardView(hazard, index);
-  }
+  const { firstTime } = await watchHazardVideo(hazard, { autoplay });
+  if (firstTime) await renderHazardView(hazard, index);
 }

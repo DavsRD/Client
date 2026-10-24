@@ -8,13 +8,14 @@ import { getHazardIndex, fetchJSON, esc } from "../core/data.js";
 import { t, pick } from "../core/i18n.js";
 import * as mascot from "../core/mascot.js";
 import { hazardCard } from "../ui/hazard-card.js";
+import { loadGames } from "../core/games.js";
 
 let index;
 let subjects;
 let current;
 
 export async function init() {
-  [index, { subjects }] = await Promise.all([getHazardIndex(), fetchJSON("js/data/subjects.json")]);
+  [index, { subjects }] = await Promise.all([getHazardIndex(), fetchJSON("js/data/subjects.json"), loadGames()]);
   const requested = new URLSearchParams(location.search).get("subject");
   current = subjects.some((s) => s.id === requested) ? requested : subjects[0].id;
 

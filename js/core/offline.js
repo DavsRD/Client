@@ -15,6 +15,7 @@
  */
 
 import { fetchJSON, getHazardIndex, sceneUrl } from "./data.js";
+import { builtGameFiles } from "./games.js";
 
 export const SAVED_CACHE = "kalasag-saved-v1";
 
@@ -81,11 +82,16 @@ async function download(url, signal, onProgress) {
   emit("kalasag:offlinechange");
 }
 
-/** Everything "Save everything" covers: every video, hazard page picture and slideshow scene. */
+/** Everything "Save everything" covers: every video, hazard page picture and slideshow scene,
+ *  plus every built mini-game's scripts, art and sounds (KALASAG O8). */
 async function allFiles() {
-  const [{ hazards }, { slides }] = await Promise.all([getHazardIndex(), fetchJSON("js/data/scenes.json")]);
+  const [{ hazards }, { slides }, games] = await Promise.all([
+    getHazardIndex(),
+    fetchJSON("js/data/scenes.json"),
+    builtGameFiles().catch(() => []),
+  ]);
   return [
-    ...new Set([...hazards.flatMap((h) => [h.video, h.image]), ...slides.map((s) => sceneUrl(s.id))].filter(Boolean)),
+    ...new Set([...hazards.flatMap((h) => [h.video, h.image]), ...slides.map((s) => sceneUrl(s.id)), ...games].filter(Boolean)),
   ];
 }
 

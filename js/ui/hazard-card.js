@@ -6,6 +6,7 @@
 import { esc, hazardBanner, assetOrPlaceholder } from "../core/data.js";
 import { pick, t } from "../core/i18n.js";
 import * as state from "../core/state.js";
+import { isGameBuilt } from "../core/games.js";
 
 export function hazardUrl(hazardId) {
   return `courses.html?hazard=${encodeURIComponent(hazardId)}`;
@@ -22,6 +23,8 @@ export function hazardCard(hazard, index) {
     `<span class="tag tag--cat">${esc(pick(category?.name))}</span>`,
     hazard.video ? `<span class="tag">▶ ${esc(t("learn.videoTag"))}</span>` : "",
     watched ? `<span class="tag tag--done">✓ ${esc(t("learn.watched"))}</span>` : "",
+    // Shown once the hazard's game is built (pages await loadGames() before rendering cards).
+    isGameBuilt(hazard.game) ? `<span class="tag tag--game">🎮 ${esc(t("learn.gameTag"))}</span>` : "",
   ].join("");
 
   return `

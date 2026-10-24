@@ -30,7 +30,7 @@
  * -------------------------------------------------------------
  */
 
-const CACHE_VERSION = "v8";
+const CACHE_VERSION = "v9";
 const SHELL_CACHE = `kalasag-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `kalasag-data-${CACHE_VERSION}`;
 const SAVED_CACHE = "kalasag-saved-v1"; // same name as in js/core/offline.js
@@ -57,6 +57,22 @@ const HAZARD_ART = HAZARD_IDS.flatMap((id) => [
   `assets/icons/hazards/${id}.webp`,
   `assets/images/hazards/${id}-thumb.webp`,
 ]);
+
+// AGILA Safety Games: the small shared core (KALASAG O8). Keep in step with CORE_SCRIPTS in
+// js/ui/game-host.js. Game art, audio and each game's own scripts are NOT precached: they
+// cache as they're played, or with "Save game for offline" (kalasag-saved-v1).
+const GAME_CORE = [
+  "minigames/css/ag.css",
+  "minigames/js/core/base.js", "minigames/js/data/strings.js", "minigames/js/data/icons.js",
+  "minigames/js/core/store.js", "minigames/js/core/assets.js", "minigames/js/core/sound.js",
+  "minigames/js/core/ui.js", "minigames/js/core/dnd.js", "minigames/js/core/input.js",
+  "minigames/js/core/pixelicon.js", "minigames/js/core/chars.js", "minigames/js/core/rig.js",
+  "minigames/js/core/canvas.js", "minigames/js/core/kit.js", "minigames/js/data/dialogue-data.js",
+  "minigames/js/core/dialogue.js", "minigames/js/core/registry.js", "minigames/js/core/router.js",
+  "minigames/js/core/progress.js", "minigames/js/core/app.js",
+  "minigames/js/data/registry.json",
+  "minigames/assets/asset-manifest.json",
+];
 
 // Small files only: everything here downloads on install.
 const SHELL_FILES = [
@@ -93,6 +109,9 @@ const SHELL_FILES = [
   "js/ui/hazard-card.js",
   "js/ui/video-modal.js",
   "js/ui/offline-ui.js",
+  "js/ui/game-host.js",
+  "js/ui/hazard-video.js",
+  "js/core/games.js",
 
   "vendor/pixel-pencil-cursor/pencil-cursor.css",
   "vendor/pixel-pencil-cursor/pencil-cursor.js",
@@ -111,6 +130,7 @@ const SHELL_FILES = [
 
   ...HAZARD_ART,
   ...SPRITES,
+  ...GAME_CORE,
 ];
 
 const DATA_FILES = [

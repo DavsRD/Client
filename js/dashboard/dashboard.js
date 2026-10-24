@@ -5,6 +5,8 @@
  * changes, so a first visit naturally shows 0 states and "Start Learning".
  * Story Mode isn't built yet, so "Jump back in" follows the last hazard
  * opened on the Learn page; it will switch to the journey map later.
+ * Home stays the overview hub: the games get one compact card (stars, rank, Continue,
+ * and today's Daily Challenge), never an arcade (KALASAG O9).
  */
 
 import { getHazardIndex, esc, sceneUrl } from "../core/data.js";
@@ -13,6 +15,7 @@ import * as state from "../core/state.js";
 import * as mascot from "../core/mascot.js";
 import * as hotlines from "./hotline-panel.js";
 import { hazardIconImg, hazardUrl } from "../ui/hazard-card.js";
+import { loadGames, gameById, dailyToday, gameThumb } from "../core/games.js";
 
 const GREETING_MS = 15000;
 const TICKER_MS = 9000;
@@ -20,7 +23,7 @@ const TICKER_MS = 9000;
 let index = null;
 
 export async function init() {
-  index = await getHazardIndex();
+  [index] = await Promise.all([getHazardIndex(), loadGames()]);
 
   renderAll();
   hotlines.render(document.querySelector("[data-hotlines]"));
@@ -29,11 +32,15 @@ export async function init() {
   wireReset();
 
   window.addEventListener("kalasag:languagechange", renderAll);
-  window.addEventListener("kalasag:statechange", renderStatsCard);
+  window.addEventListener("kalasag:statechange", () => {
+    renderStatsCard();
+    renderGamesCard();
+  });
 }
 
 function renderAll() {
   renderJumpBackIn();
+  renderGamesCard();
   renderInfographics();
   renderStatsCard();
 }
@@ -93,6 +100,44 @@ function renderJumpBackIn() {
     </article>`;
 }
 
+// ---------- Games card + Daily Challenge ----------
+function renderGamesCard() {
+  const box = document.querySelector("[data-games-card]");
+  if (!box || !index) return;
+  const summary = state.getGamesSummary();
+  const lastGame = summary.last && gameById(summary.last.gameId);
+  const daily = dailyToday();
+  const dailyHazard = daily && index.byId.get(daily.hazardId);
+
+  const continueRow = lastGame
+    ? `<a class="btn btn--secondary" href="${hazardUrl(summary.last.hazardId)}#game">▶ ${esc(t("dash.gamesContinue", { game: pick(lastGame.title) }))}</a>`
+    : `<p class="games-card__text">${esc(t("dash.gamesText"))}</p>
+       <a class="btn btn--ghost" href="courses.html#all">${esc(t("dash.gamesStart"))}</a>`;
+
+  const dailyBanner = dailyHazard
+    ? `<a class="daily-banner" href="${hazardUrl(dailyHazard.id)}#${daily.built ? "daily" : "game"}" data-category="${esc(dailyHazard.category)}">
+         <img class="daily-banner__thumb" src="${esc(gameThumb(daily.id))}" alt="" width="160" height="90" loading="lazy">
+         <span class="daily-banner__text">
+           <span class="label-kicker">☀ ${esc(t("dash.daily"))}</span>
+           <strong>${esc(t("dash.dailyText", { game: pick(daily.title) }))}</strong>
+           <span class="daily-banner__cta">
+             ${daily.built ? esc(t("dash.dailyPlay")) + " ›" : `<span class="tag">${esc(t("common.comingSoon"))}</span>`}
+           </span>
+         </span>
+       </a>`
+    : "";
+
+  box.innerHTML = `
+    <article class="card games-card">
+      <dl class="games-card__stats">
+        <div><dt>${esc(t("dash.gamesStars"))}</dt><dd>⭐ ${summary.totalStars}</dd></div>
+        <div><dt>${esc(t("dash.gamesRank"))}</dt><dd>${esc(pick(summary.rank.name))}</dd></div>
+      </dl>
+      <div class="games-card__continue">${continueRow}</div>
+      ${dailyBanner}
+    </article>`;
+}
+
 // ---------- Safety posters (infographics) ----------
 function renderInfographics() {
   document.querySelector("[data-posters]").innerHTML = index.hazards
@@ -114,7 +159,8 @@ function renderStatsCard() {
   const stats = [
     { icon: "⭐", value: state.getXP(), label: t("dash.stats.xp") },
     { icon: "🔥", value: state.getStreak().count, label: t("dash.stats.streak") },
-    { icon: "🏅", value: state.getBadgeCount(), label: t("dash.stats.badges") },
+    // Hazard badges plus the badges earned in the mini-games.
+    { icon: "🏅", value: state.getBadgeCount() + state.getGamesSummary().badges, label: t("dash.stats.badges") },
     { icon: "▶", value: `${state.getWatchedCount()}/${index.hazards.length}`, label: t("dash.stats.watched") },
   ];
 

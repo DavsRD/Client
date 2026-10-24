@@ -9,6 +9,7 @@
 import { fetchJSON, esc } from "./data.js";
 import { t, getLanguage, setLanguage, applyToPage } from "./i18n.js";
 import * as theme from "./theme.js";
+import * as state from "./state.js";
 import { mountSettings as mountOfflineSettings } from "../ui/offline-ui.js";
 
 // 16x16 pixel icons, drawn with whole-pixel paths so they stay crisp.
@@ -102,6 +103,11 @@ function settingsPanelMarkup() {
       <legend class="settings__legend" data-i18n="settings.theme"></legend>
       <div class="theme-options">${themes}</div>
     </fieldset>
+    <fieldset class="settings__group">
+      <legend class="settings__legend" data-i18n="settings.sound"></legend>
+      <label class="switch-row"><input type="checkbox" data-sound-option="sfx"> <span data-i18n="settings.sfx"></span></label>
+      <label class="switch-row"><input type="checkbox" data-sound-option="music"> <span data-i18n="settings.music"></span></label>
+    </fieldset>
     <fieldset class="settings__group offline-settings" data-offline-settings hidden>
       <legend class="settings__legend" data-i18n="settings.offline"></legend>
       <div data-offline-body></div>
@@ -116,6 +122,10 @@ function syncSettings(header) {
   const current = theme.getTheme();
   header.querySelectorAll("[data-theme-option]").forEach((btn) => {
     btn.setAttribute("aria-pressed", String(btn.dataset.themeOption === current));
+  });
+  const sound = state.getSound();
+  header.querySelectorAll("[data-sound-option]").forEach((box) => {
+    box.checked = Boolean(sound[box.dataset.soundOption]);
   });
 }
 
@@ -155,6 +165,11 @@ function wireSettings(header) {
     if (themeBtn) theme.setTheme(themeBtn.dataset.themeOption);
     syncSettings(header);
   });
+  // Sound effects and game music (the games read these through js/ui/game-host.js).
+  panel.addEventListener("change", (e) => {
+    const box = e.target.closest("[data-sound-option]");
+    if (box) state.setSound({ [box.dataset.soundOption]: box.checked });
+  });
 }
 
 async function renderFooter(footer) {
@@ -170,6 +185,7 @@ async function renderFooter(footer) {
       <p class="site-footer__tagline" data-i18n="site.tagline"></p>
       <div class="site-footer__credits" data-credits></div>
       <p class="site-footer__small">© ${new Date().getFullYear()} Kalasag Kids · <span data-i18n="footer.offline"></span></p>
+      <p class="site-footer__small" data-i18n="footer.fonts"></p>
     </div>`;
   applyToPage(footer);
 

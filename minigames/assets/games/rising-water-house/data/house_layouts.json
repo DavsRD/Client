@@ -1,0 +1,278 @@
+{
+ "twostory": {
+  "groundY": 252,
+  "groundFloorY": 252,
+  "upperFloorY": 148,
+  "outletY": 238,
+  "kneeY": 226,
+  "waistY": 208,
+  "nodes": {
+   "yard": [
+    60,
+    252
+   ],
+   "door": [
+    118,
+    252
+   ],
+   "living": [
+    180,
+    252
+   ],
+   "kitchen": [
+    300,
+    252
+   ],
+   "breaker": [
+    128,
+    252
+   ],
+   "stair_bottom": [
+    380,
+    252
+   ],
+   "stair_top": [
+    460,
+    148
+   ],
+   "bedroom": [
+    190,
+    148
+   ],
+   "upstairs_drop": [
+    300,
+    148
+   ],
+   "window": [
+    120,
+    148
+   ]
+  },
+  "props": {
+   "breaker": [
+    120,
+    188
+   ],
+   "outlet_1": [
+    240,
+    234
+   ],
+   "outlet_2": [
+    340,
+    234
+   ],
+   "tv": [
+    160,
+    222
+   ],
+   "ref": [
+    320,
+    204
+   ],
+   "cabinet": [
+    250,
+    216
+   ],
+   "jugs": [
+    290,
+    232
+   ],
+   "gobag": [
+    355,
+    228
+   ],
+   "radio": [
+    210,
+    206
+   ],
+   "bike": [
+    30,
+    228
+   ]
+  }
+ },
+ "night": {
+  "groundY": 252,
+  "groundFloorY": 252,
+  "upperFloorY": 148,
+  "outletY": 238,
+  "kneeY": 226,
+  "waistY": 208,
+  "nodes": {
+   "yard": [
+    60,
+    252
+   ],
+   "door": [
+    118,
+    252
+   ],
+   "living": [
+    180,
+    252
+   ],
+   "kitchen": [
+    300,
+    252
+   ],
+   "breaker": [
+    128,
+    252
+   ],
+   "stair_bottom": [
+    380,
+    252
+   ],
+   "stair_top": [
+    460,
+    148
+   ],
+   "bedroom": [
+    190,
+    148
+   ],
+   "upstairs_drop": [
+    300,
+    148
+   ],
+   "window": [
+    120,
+    148
+   ]
+  },
+  "props": {
+   "breaker": [
+    120,
+    188
+   ],
+   "outlet_1": [
+    240,
+    234
+   ],
+   "outlet_2": [
+    340,
+    234
+   ],
+   "tv": [
+    160,
+    222
+   ],
+   "ref": [
+    320,
+    204
+   ],
+   "cabinet": [
+    250,
+    216
+   ],
+   "jugs": [
+    290,
+    232
+   ],
+   "gobag": [
+    355,
+    228
+   ],
+   "radio": [
+    210,
+    206
+   ],
+   "bike": [
+    30,
+    228
+   ]
+  }
+ },
+ "stilt": {
+  "groundY": 252,
+  "groundFloorY": 228,
+  "upperFloorY": 124,
+  "outletY": 214,
+  "kneeY": 202,
+  "waistY": 184,
+  "nodes": {
+   "yard": [
+    60,
+    252
+   ],
+   "door": [
+    118,
+    228
+   ],
+   "living": [
+    180,
+    228
+   ],
+   "kitchen": [
+    300,
+    228
+   ],
+   "breaker": [
+    128,
+    228
+   ],
+   "stair_bottom": [
+    380,
+    228
+   ],
+   "stair_top": [
+    460,
+    124
+   ],
+   "bedroom": [
+    190,
+    124
+   ],
+   "upstairs_drop": [
+    300,
+    124
+   ],
+   "window": [
+    120,
+    124
+   ]
+  },
+  "props": {
+   "breaker": [
+    120,
+    164
+   ],
+   "outlet_1": [
+    240,
+    210
+   ],
+   "outlet_2": [
+    340,
+    210
+   ],
+   "tv": [
+    160,
+    198
+   ],
+   "ref": [
+    320,
+    180
+   ],
+   "cabinet": [
+    250,
+    192
+   ],
+   "jugs": [
+    290,
+    208
+   ],
+   "gobag": [
+    355,
+    204
+   ],
+   "radio": [
+    210,
+    182
+   ],
+   "bike": [
+    30,
+    228
+   ]
+  }
+ }
+}

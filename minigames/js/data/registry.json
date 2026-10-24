@@ -1,0 +1,330 @@
+{
+  "version": 1,
+  "daily": ["fire-escape", "safe-crossing", "wave-runner", "evac-convoy"],
+  "engines": {},
+  "games": [
+    {
+      "id": "drop-cover-hold", "num": 1, "hazardId": "earthquake", "hazardGroup": "geological",
+      "title": { "en": "Drop! Cover! Hold!", "fil": "Dapa! Takip! Kapit!" },
+      "genre": { "en": "Reaction micro-games", "fil": "Mabilisang reaksiyon" },
+      "engine": "scenetap", "skill": "reflex", "hostRole": "rescue", "view": "side", "hearts": true, "daily": false,
+      "objective": {
+        "en": "When the room shakes, pick the safest cover, hold on until it stops, then walk out the safe way.",
+        "fil": "Kapag yumanig ang silid, piliin ang pinakaligtas na kanlungan, kumapit hanggang tumigil, saka lumabas sa ligtas na daan."
+      },
+      "howTo": [
+        { "en": "Choose a cover spot", "fil": "Pumili ng kanlungan", "keys": ["key_left", "key_right", "key_enter"], "gesture": "gesture_tap" },
+        { "en": "Hold on while it shakes", "fil": "Kumapit habang yumayanig", "keys": ["key_space"], "gesture": "gesture_hold" },
+        { "en": "Let go when the shaking stops, then pick the safe exit", "fil": "Bumitaw kapag tumigil ang yanig, saka piliin ang ligtas na labasan", "keys": ["key_enter"], "gesture": "gesture_tap" }
+      ],
+      "takeaway": { "en": "When the ground shakes: Drop, Cover, Hold, and stay put until it stops.", "fil": "Kapag yumanig ang lupa: Dumapa, Magtakip, Kumapit, at manatili hanggang tumigil ito." },
+      "built": false, "scripts": [], "data": ["levels.json"]
+    },
+    {
+      "id": "ashfall", "num": 2, "hazardId": "volcanic-eruption", "hazardGroup": "geological",
+      "title": { "en": "Ashfall", "fil": "Ashfall" },
+      "genre": { "en": "Dodge and collect", "fil": "Umiwas at mangolekta" },
+      "engine": "falling", "skill": "reflex", "hostRole": "medic", "view": "side", "hearts": true, "daily": false,
+      "objective": {
+        "en": "Dodge falling ash and rocks, grab your mask and goggles, keep away from the lahar river, and leave when the alert says go.",
+        "fil": "Iwasan ang bumabagsak na abo at bato, kunin ang mask at goggles, lumayo sa ilog ng lahar, at umalis kapag sinabi ng alerto."
+      },
+      "howTo": [
+        { "en": "Move left and right", "fil": "Gumalaw pakaliwa at pakanan", "keys": ["key_left", "key_right"], "gesture": "gesture_drag" },
+        { "en": "Catch the safety gear, dodge the ash", "fil": "Saluhin ang gamit pangkaligtasan, iwasan ang abo", "keys": [], "gesture": null },
+        { "en": "Watch the alert level", "fil": "Bantayan ang alert level", "keys": [], "gesture": null }
+      ],
+      "takeaway": { "en": "During ashfall: mask on, goggles on, stay indoors, and leave right away when told to evacuate.", "fil": "Habang may ashfall: magsuot ng mask at goggles, manatili sa loob, at umalis agad kapag pinalikas." },
+      "built": false, "scripts": [], "data": ["levels.json"]
+    },
+    {
+      "id": "wave-runner", "num": 3, "hazardId": "tsunami", "hazardGroup": "geological",
+      "title": { "en": "Wave Runner", "fil": "Wave Runner" },
+      "genre": { "en": "Run-and-jump platformer", "fil": "Takbo at talon" },
+      "engine": "sidescroll", "skill": "reflex", "hostRole": "rescue", "view": "side", "hearts": true, "daily": true,
+      "objective": {
+        "en": "The sea pulled back. Run uphill to high ground, jumping and sliding past obstacles, before the wave arrives.",
+        "fil": "Umurong ang dagat. Tumakbo paakyat sa mataas na lugar, tumalon at dumausdos sa mga harang, bago dumating ang alon."
+      },
+      "howTo": [
+        { "en": "Jump (hold to jump higher)", "fil": "Tumalon (pindutin nang matagal para mas mataas)", "keys": ["key_space", "key_up"], "gesture": "gesture_tap" },
+        { "en": "Slide under things", "fil": "Dumausdos sa ilalim", "keys": ["key_down"], "gesture": "gesture_swipe_down" },
+        { "en": "Keep running uphill", "fil": "Patuloy na tumakbo paakyat", "keys": [], "gesture": null }
+      ],
+      "takeaway": { "en": "If the ground shakes or the sea pulls back, run to high ground. Don't wait, and don't go back.", "fil": "Kapag yumanig ang lupa o umurong ang dagat, tumakbo sa mataas na lugar. Huwag maghintay at huwag bumalik." },
+      "built": false, "scripts": [], "data": ["levels.json", "chunks.json"]
+    },
+    {
+      "id": "slope-defense", "num": 4, "hazardId": "landslide", "hazardGroup": "geological",
+      "title": { "en": "Slope Defense", "fil": "Slope Defense" },
+      "genre": { "en": "Tower defense (lite)", "fil": "Depensa sa dalisdis" },
+      "engine": "sim", "skill": "planning", "hostRole": "comms", "view": "top", "hearts": false, "daily": false,
+      "objective": {
+        "en": "Plant trees and dig canals to slow the mud, watch for warning signs, and get the village out early.",
+        "fil": "Magtanim ng puno at maghukay ng kanal para mapabagal ang putik, bantayan ang mga babala, at ilikas nang maaga ang barangay."
+      },
+      "howTo": [
+        { "en": "Pick a build spot", "fil": "Pumili ng lugar na pagtatayuan", "keys": ["key_left", "key_right", "key_enter"], "gesture": "gesture_tap" },
+        { "en": "Choose what to build", "fil": "Piliin ang itatayo", "keys": ["key_1", "key_2", "key_3"], "gesture": "gesture_tap" },
+        { "en": "Call the evacuation early", "fil": "Ipag-utos nang maaga ang paglikas", "keys": ["key_e"], "gesture": "gesture_tap" }
+      ],
+      "takeaway": { "en": "Cracks, tilting trees, muddy water? Tell an adult and move to safety. Don't wait for the slope to fall.", "fil": "May bitak, nakatagilid na puno, maputik na tubig? Sabihin sa nakatatanda at lumikas. Huwag hintaying gumuho ang dalisdis." },
+      "built": false, "scripts": [], "data": ["levels.json"]
+    },
+    {
+      "id": "go-bag-tetris", "num": 5, "hazardId": "typhoon", "hazardGroup": "hydrometeorological",
+      "title": { "en": "Go Bag Tetris", "fil": "Go Bag Tetris" },
+      "genre": { "en": "Packing puzzle", "fil": "Palaisipan sa pag-iimpake" },
+      "engine": "pieces", "skill": "planning", "hostRole": "logistics", "view": "portrait", "hearts": false, "daily": false,
+      "objective": {
+        "en": "Fit every essential into the go bag before the storm signal rises. Space is tight, so safety items come first.",
+        "fil": "Ipagkasya ang lahat ng mahalaga sa go bag bago tumaas ang signal ng bagyo. Masikip, kaya unahin ang gamit pangkaligtasan."
+      },
+      "howTo": [
+        { "en": "Pick up an item", "fil": "Pumulot ng gamit", "keys": ["key_enter"], "gesture": "gesture_drag" },
+        { "en": "Turn it", "fil": "Ikutin ito", "keys": ["key_r"], "gesture": "gesture_tap" },
+        { "en": "Place it in the bag", "fil": "Ilagay sa bag", "keys": ["key_left", "key_right", "key_enter"], "gesture": "gesture_drag" }
+      ],
+      "takeaway": { "en": "Pack what keeps you safe, not what's fun. A go bag should be ready before the signal goes up.", "fil": "Iimpake ang nagpapanatiling ligtas, hindi ang pampalibang. Dapat handa ang go bag bago tumaas ang signal." },
+      "built": false, "scripts": [], "data": ["levels.json", "data/items.json", "data/scenarios.json"]
+    },
+    {
+      "id": "rising-water-house", "num": 6, "hazardId": "severe-flooding", "hazardGroup": "hydrometeorological",
+      "title": { "en": "Rising Water House", "fil": "Bahay sa Tumataas na Tubig" },
+      "genre": { "en": "Time management", "fil": "Pamamahala ng oras" },
+      "engine": "sim", "skill": "planning", "hostRole": "logistics", "view": "side", "hearts": true, "daily": false,
+      "objective": {
+        "en": "The flood is rising. Switch off the power, move things and family upstairs, and leave when the evacuation order comes.",
+        "fil": "Tumataas ang baha. Patayin ang kuryente, iakyat ang gamit at pamilya, at umalis kapag may utos na lumikas."
+      },
+      "howTo": [
+        { "en": "Pick a task", "fil": "Pumili ng gawain", "keys": ["key_tab", "key_enter"], "gesture": "gesture_tap" },
+        { "en": "Do the most urgent task first", "fil": "Unahin ang pinakamadaliang gawain", "keys": [], "gesture": null },
+        { "en": "Never walk through floodwater", "fil": "Huwag lumusong sa baha", "keys": [], "gesture": null }
+      ],
+      "takeaway": { "en": "Power off, move up, and never walk through floodwater. Leave when you're told to.", "fil": "Patayin ang kuryente, umakyat, at huwag lumusong sa baha. Umalis kapag pinalikas." },
+      "built": false, "scripts": [], "data": ["levels.json", "data/tasks.json"]
+    },
+    {
+      "id": "evac-convoy", "num": 7, "hazardId": "storm-surge", "hazardGroup": "hydrometeorological",
+      "title": { "en": "Evac Convoy", "fil": "Evac Convoy" },
+      "genre": { "en": "Snake-style driving", "fil": "Pagmamaneho (parang snake)" },
+      "engine": "grid", "skill": "reflex", "hostRole": "rescue", "view": "portrait", "hearts": true, "daily": true,
+      "objective": {
+        "en": "Drive the rescue vehicle through town, pick up families (those who need help first) and bring them inland before the surge.",
+        "fil": "Imaneho ang sasakyang pansagip, sunduin ang mga pamilya (unahin ang nangangailangan) at dalhin sila sa loob bago dumating ang daluyong."
+      },
+      "howTo": [
+        { "en": "Steer", "fil": "Magmaneho", "keys": ["key_up", "key_down", "key_left", "key_right"], "gesture": "gesture_swipe_right" },
+        { "en": "Pick up people at the houses", "fil": "Sunduin ang mga tao sa bahay", "keys": [], "gesture": null },
+        { "en": "Bring them to the evacuation center", "fil": "Dalhin sila sa evacuation center", "keys": [], "gesture": null }
+      ],
+      "takeaway": { "en": "Storm surge can rise faster than you can run. Coastal families must leave early, and help those who need it first.", "fil": "Mas mabilis tumaas ang daluyong kaysa sa takbo mo. Dapat umalis nang maaga ang mga nasa baybayin, at unahin ang nangangailangan." },
+      "built": false, "scripts": [], "data": ["levels.json"]
+    },
+    {
+      "id": "water-ways", "num": 8, "hazardId": "el-nino", "hazardGroup": "hydrometeorological",
+      "title": { "en": "Water Ways", "fil": "Daan ng Tubig" },
+      "genre": { "en": "Pipe puzzle", "fil": "Palaisipan ng tubo" },
+      "engine": "grid", "skill": "planning", "hostRole": "logistics", "view": "portrait", "hearts": false, "daily": false,
+      "objective": {
+        "en": "Turn the pipes so water reaches drinking taps first, fix leaks, and reuse water so no drop is wasted.",
+        "fil": "Ikutin ang mga tubo para maunang makarating ang tubig sa inuman, ayusin ang tagas, at gamiting muli ang tubig."
+      },
+      "howTo": [
+        { "en": "Choose a pipe", "fil": "Pumili ng tubo", "keys": ["key_left", "key_right", "key_up", "key_down"], "gesture": "gesture_tap" },
+        { "en": "Turn it", "fil": "Ikutin ito", "keys": ["key_r", "key_enter"], "gesture": "gesture_tap" },
+        { "en": "Test the water flow", "fil": "Subukan ang daloy ng tubig", "keys": ["key_space"], "gesture": "gesture_tap" }
+      ],
+      "takeaway": { "en": "In a drought, every drop counts: fix leaks, reuse water, and drink enough to stay cool.", "fil": "Sa tagtuyot, mahalaga ang bawat patak: ayusin ang tagas, gamiting muli ang tubig, at uminom nang sapat." },
+      "built": false, "scripts": [], "data": ["levels.json"]
+    },
+    {
+      "id": "word-lab", "num": 9, "hazardId": "disease-outbreak", "hazardGroup": "biological",
+      "title": { "en": "Health Center Word Lab", "fil": "Word Lab ng Health Center" },
+      "genre": { "en": "Jumbled words", "fil": "Ginulong salita" },
+      "engine": "cards", "skill": "words", "hostRole": "medic", "view": "portrait", "hearts": false, "daily": false,
+      "objective": {
+        "en": "Help the health center by unscrambling health words: washing hands, covering coughs, vaccines and rest.",
+        "fil": "Tulungan ang health center sa pag-aayos ng ginulong salitang pangkalusugan: paghuhugas ng kamay, pagtakip sa ubo, bakuna at pahinga."
+      },
+      "howTo": [
+        { "en": "Type letters or tap the tiles", "fil": "Mag-type ng letra o pindutin ang tiles", "keys": ["key_a", "key_e"], "gesture": "gesture_tap" },
+        { "en": "Remove a letter", "fil": "Magbura ng letra", "keys": ["key_backspace"], "gesture": "gesture_tap" },
+        { "en": "Shuffle the tiles", "fil": "Haluin ang tiles", "keys": ["key_space"], "gesture": "gesture_tap" }
+      ],
+      "takeaway": { "en": "Wash hands, cover coughs, get vaccinated, and stay home when sick. That's how outbreaks stop.", "fil": "Maghugas ng kamay, takpan ang ubo, magpabakuna, at manatili sa bahay kapag may sakit. Ganyan napipigil ang outbreak." },
+      "built": false, "scripts": [], "data": ["levels.json", "data/words.en.json", "data/words.fil.json"]
+    },
+    {
+      "id": "pest-patrol", "num": 10, "hazardId": "pest-infestation", "hazardGroup": "biological",
+      "title": { "en": "Pest Patrol Match", "fil": "Pest Patrol Match" },
+      "genre": { "en": "Memory match", "fil": "Pagtutugma" },
+      "engine": "cards", "skill": "words", "hostRole": "medic", "view": "portrait", "hearts": false, "daily": false,
+      "objective": {
+        "en": "Match each pest to the sickness it spreads and the way to stop it, and clean out mosquito breeding spots.",
+        "fil": "Itugma ang bawat peste sa sakit na dala nito at sa paraan ng pagpigil, at linisin ang pinamumugaran ng lamok."
+      },
+      "howTo": [
+        { "en": "Flip two cards", "fil": "Buksan ang dalawang card", "keys": ["key_left", "key_right", "key_enter"], "gesture": "gesture_tap" },
+        { "en": "Find the matching pair", "fil": "Hanapin ang magkatugma", "keys": [], "gesture": null },
+        { "en": "Ask for a hint", "fil": "Humingi ng pahiwatig", "keys": ["key_h"], "gesture": "gesture_tap" }
+      ],
+      "takeaway": { "en": "No standing water, covered food, clean surroundings: pests can't spread what they can't breed.", "fil": "Walang naiipong tubig, takip ang pagkain, malinis ang paligid: hindi kakalat ang pesteng hindi makapamugad." },
+      "built": false, "scripts": [], "data": ["levels.json", "data/sets.json"]
+    },
+    {
+      "id": "fire-escape", "num": 11, "hazardId": "fire", "hazardGroup": "technological",
+      "title": { "en": "Fire Escape Maze", "fil": "Fire Escape Maze" },
+      "genre": { "en": "Timed maze", "fil": "Maze na may oras" },
+      "engine": "grid", "skill": "planning", "hostRole": "firesafety", "view": "top", "hearts": false, "daily": true,
+      "objective": {
+        "en": "Follow the exit signs out of the smoky building: stay low, feel doors before opening, use the stairs, and reach the assembly area.",
+        "fil": "Sundan ang exit signs palabas ng mausok na gusali: yumuko, damhin ang pinto bago buksan, gumamit ng hagdan, at pumunta sa assembly area."
+      },
+      "howTo": [
+        { "en": "Walk", "fil": "Maglakad", "keys": ["key_up", "key_down", "key_left", "key_right"], "gesture": "gesture_swipe_right" },
+        { "en": "Crawl low under smoke", "fil": "Gumapang sa ilalim ng usok", "keys": ["key_shift"], "gesture": "gesture_hold" },
+        { "en": "Feel a door", "fil": "Damhin ang pinto", "keys": ["key_space"], "gesture": "gesture_tap" }
+      ],
+      "takeaway": { "en": "Get low, feel the door, use the stairs, and go straight to the assembly area.", "fil": "Yumuko, damhin ang pinto, gumamit ng hagdan, at dumiretso sa assembly area." },
+      "built": false, "scripts": [], "data": ["levels.json"]
+    },
+    {
+      "id": "rubble-rescue", "num": 12, "hazardId": "structural-collapse", "hazardGroup": "technological",
+      "title": { "en": "Rubble Rescue", "fil": "Rubble Rescue" },
+      "genre": { "en": "Sliding-block puzzle", "fil": "Palaisipan ng dumudulas na bloke" },
+      "engine": "grid", "skill": "planning", "hostRole": "rescue", "view": "portrait", "hearts": false, "daily": false,
+      "objective": {
+        "en": "Slide the fallen blocks to clear a way out, without moving the ones that hold the roof up, then signal for help.",
+        "fil": "Idulas ang mga bumagsak na bloke para makalabas, nang hindi ginagalaw ang sumusuporta sa bubong, saka humingi ng tulong."
+      },
+      "howTo": [
+        { "en": "Choose a block", "fil": "Pumili ng bloke", "keys": ["key_tab", "key_enter"], "gesture": "gesture_tap" },
+        { "en": "Slide it", "fil": "Idulas ito", "keys": ["key_left", "key_right", "key_up", "key_down"], "gesture": "gesture_drag" },
+        { "en": "Undo a move", "fil": "Ibalik ang galaw", "keys": ["key_backspace"], "gesture": "gesture_tap" }
+      ],
+      "takeaway": { "en": "Leave a damaged building right away. If you're trapped: cover your mouth, stay still, and tap or whistle for help.", "fil": "Lumabas agad sa sirang gusali. Kung naipit: takpan ang bibig, manatiling kalmado, at kumatok o pumito para humingi ng tulong." },
+      "built": false, "scripts": [], "data": ["levels.json"]
+    },
+    {
+      "id": "safe-crossing", "num": 13, "hazardId": "road-accidents", "hazardGroup": "technological",
+      "title": { "en": "Safe Crossing", "fil": "Ligtas na Pagtawid" },
+      "genre": { "en": "Lane-hopping arcade", "fil": "Pagtawid ng kalsada" },
+      "engine": "grid", "skill": "reflex", "hostRole": "logistics", "view": "top", "hearts": true, "daily": true,
+      "objective": {
+        "en": "Get to school safely: stop at the curb, look both ways, use the pedestrian lane and footbridge, and wait for the walk signal.",
+        "fil": "Makarating nang ligtas sa paaralan: huminto sa gilid, tumingin sa magkabilang direksiyon, gumamit ng pedestrian lane at footbridge, at hintayin ang signal."
+      },
+      "howTo": [
+        { "en": "Step forward, back and sideways", "fil": "Humakbang pasulong, paatras at patagilid", "keys": ["key_up", "key_down", "key_left", "key_right"], "gesture": "gesture_swipe_up" },
+        { "en": "Look left and right", "fil": "Tumingin sa kaliwa at kanan", "keys": ["key_q", "key_e"], "gesture": "gesture_tap" },
+        { "en": "Wait at the curb", "fil": "Maghintay sa gilid", "keys": ["key_space"], "gesture": "gesture_hold" }
+      ],
+      "takeaway": { "en": "Stop, look left and right, and cross at the pedestrian lane. Your phone can wait.", "fil": "Huminto, tumingin sa kaliwa at kanan, at tumawid sa pedestrian lane. Makapaghihintay ang cellphone mo." },
+      "built": false, "scripts": [], "data": ["levels.json"]
+    },
+    {
+      "id": "symbol-jigsaw", "num": 14, "hazardId": "chemical-spill", "hazardGroup": "technological",
+      "title": { "en": "Hazard Symbol Jigsaw", "fil": "Jigsaw ng mga Simbolo ng Panganib" },
+      "genre": { "en": "Jigsaw and sliding puzzle", "fil": "Jigsaw at sliding puzzle" },
+      "engine": "pieces", "skill": "planning", "hostRole": "firesafety", "view": "portrait", "hearts": false, "daily": false,
+      "objective": {
+        "en": "Put hazard signs back together, learn what each one means, and choose what to do when you see a spill.",
+        "fil": "Buuin muli ang mga senyales ng panganib, alamin ang ibig sabihin, at piliin ang gagawin kapag may natapon."
+      },
+      "howTo": [
+        { "en": "Pick up a piece", "fil": "Pumulot ng piraso", "keys": ["key_enter"], "gesture": "gesture_drag" },
+        { "en": "Turn it", "fil": "Ikutin ito", "keys": ["key_r"], "gesture": "gesture_tap" },
+        { "en": "Drop it in its place", "fil": "Ilagay sa puwesto nito", "keys": ["key_left", "key_right", "key_enter"], "gesture": "gesture_drag" }
+      ],
+      "takeaway": { "en": "See a spill or a hazard sign? Don't touch it, move upwind, and tell an adult.", "fil": "May natapon o senyales ng panganib? Huwag hawakan, lumipat sa pinanggagalingan ng hangin, at sabihin sa nakatatanda." },
+      "built": false, "scripts": [], "data": ["levels.json", "data/signs.json", "data/questions.json", "data/home-cards.json"]
+    },
+    {
+      "id": "spot-the-shock", "num": 15, "hazardId": "electrical-hazards", "hazardGroup": "technological",
+      "title": { "en": "Spot the Shock", "fil": "Hanapin ang Kuryente" },
+      "genre": { "en": "Spot the difference", "fil": "Hanapin ang pagkakaiba" },
+      "engine": "scenetap", "skill": "planning", "hostRole": "firesafety", "view": "portrait", "hearts": false, "daily": false,
+      "objective": {
+        "en": "Compare the safe room with the risky one, find every electrical hazard, and choose the right fix.",
+        "fil": "Ihambing ang ligtas na silid sa mapanganib, hanapin ang lahat ng panganib sa kuryente, at piliin ang tamang ayos."
+      },
+      "howTo": [
+        { "en": "Move the magnifier", "fil": "Igalaw ang magnifier", "keys": ["key_left", "key_right", "key_up", "key_down"], "gesture": "gesture_tap" },
+        { "en": "Mark a hazard", "fil": "Markahan ang panganib", "keys": ["key_enter"], "gesture": "gesture_tap" },
+        { "en": "Ask for a hint", "fil": "Humingi ng pahiwatig", "keys": ["key_h"], "gesture": "gesture_tap" }
+      ],
+      "takeaway": { "en": "Never touch a fallen wire, keep water away from plugs, and tell an adult when something looks wrong.", "fil": "Huwag hawakan ang nahulog na kawad, ilayo ang tubig sa saksakan, at sabihin sa nakatatanda kapag may mali." },
+      "built": false, "scripts": [], "data": ["data/fix-cards.json"]
+    },
+    {
+      "id": "lost-and-found", "num": 16, "hazardId": "missing-child", "hazardGroup": "social",
+      "title": { "en": "Lost and Found: Mall Mission", "fil": "Lost and Found: Misyon sa Mall" },
+      "genre": { "en": "Hidden object and choices", "fil": "Paghahanap at pagpili" },
+      "engine": "scenetap", "skill": "social", "hostRole": "comms", "view": "portrait", "hearts": false, "daily": false,
+      "objective": {
+        "en": "Separated from your family? Stay where you are, find a safe helper in the crowd, and tell them your name and your parent's number.",
+        "fil": "Nahiwalay sa pamilya? Manatili sa kinaroroonan, humanap ng ligtas na katulong sa dami ng tao, at sabihin ang pangalan mo at numero ng magulang."
+      },
+      "howTo": [
+        { "en": "Look around the scene", "fil": "Tumingin sa paligid", "keys": ["key_left", "key_right", "key_up", "key_down"], "gesture": "gesture_drag" },
+        { "en": "Pick a safe helper", "fil": "Pumili ng ligtas na katulong", "keys": ["key_enter"], "gesture": "gesture_tap" },
+        { "en": "Choose what to say", "fil": "Piliin ang sasabihin", "keys": ["key_1", "key_2", "key_3"], "gesture": "gesture_tap" }
+      ],
+      "takeaway": { "en": "Lost? Stop, stay, find a safe helper, and tell them your name and your parent's number.", "fil": "Nawawala? Huminto, manatili, humanap ng ligtas na katulong, at sabihin ang pangalan mo at numero ng magulang." },
+      "built": false, "scripts": [], "data": ["levels.json", "data/safe-choices.json", "data/practice-names.json"]
+    },
+    {
+      "id": "go-with-the-flow", "num": 17, "hazardId": "crowd-crush", "hazardGroup": "social",
+      "title": { "en": "Go With the Flow", "fil": "Sumabay sa Agos" },
+      "genre": { "en": "Top-down crowd navigation", "fil": "Paglakad sa dami ng tao" },
+      "engine": "sim", "skill": "reflex", "hostRole": "medic", "view": "top", "hearts": true, "daily": false,
+      "objective": {
+        "en": "Walk with the crowd and edge toward the side to reach the exit with your buddy. Don't push, and don't stop for dropped things.",
+        "fil": "Sumabay sa dami ng tao at unti-unting tumabi papunta sa labasan kasama ang buddy mo. Huwag manulak at huwag huminto para pulutin ang nahulog."
+      },
+      "howTo": [
+        { "en": "Walk", "fil": "Maglakad", "keys": ["key_up", "key_down", "key_left", "key_right"], "gesture": "gesture_drag" },
+        { "en": "Arms in front: protect your chest", "fil": "Braso sa harap: protektahan ang dibdib", "keys": ["key_space"], "gesture": "gesture_hold" },
+        { "en": "Follow the marshals to the exit", "fil": "Sundin ang mga marshal papuntang labasan", "keys": [], "gesture": null }
+      ],
+      "takeaway": { "en": "In a crowd: walk, don't push, move with the flow toward the side, and never stop to pick things up.", "fil": "Sa dami ng tao: maglakad, huwag manulak, sumabay sa agos patungo sa gilid, at huwag huminto para pumulot." },
+      "built": false, "scripts": [], "data": ["levels.json"]
+    },
+    {
+      "id": "lunch-table", "num": 18, "hazardId": "bullying", "hazardGroup": "social",
+      "title": { "en": "Lunch Table Logic", "fil": "Lohika sa Mesa ng Tanghalian" },
+      "genre": { "en": "Seating logic puzzle", "fil": "Palaisipan sa pag-upo" },
+      "engine": "grid", "skill": "social", "hostRole": "comms", "view": "portrait", "hearts": false, "daily": false,
+      "objective": {
+        "en": "Seat everyone at lunch so nobody is left out, follow the table rules, and choose how to be an upstander.",
+        "fil": "Paupuin ang lahat sa tanghalian para walang maiwan, sundin ang patakaran sa mesa, at piliin kung paano maging upstander."
+      },
+      "howTo": [
+        { "en": "Choose a student", "fil": "Pumili ng mag-aaral", "keys": ["key_tab", "key_enter"], "gesture": "gesture_tap" },
+        { "en": "Pick a seat", "fil": "Pumili ng upuan", "keys": ["key_left", "key_right", "key_enter"], "gesture": "gesture_drag" },
+        { "en": "Undo", "fil": "Ibalik", "keys": ["key_backspace"], "gesture": "gesture_tap" }
+      ],
+      "takeaway": { "en": "Be an upstander: include others, don't join in, and tell a trusted adult.", "fil": "Maging upstander: isali ang iba, huwag makisali sa pang-aapi, at sabihin sa pinagkakatiwalaang nakatatanda." },
+      "built": false, "scripts": [], "data": ["levels.json", "data/rules.json", "data/upstander.json"]
+    },
+    {
+      "id": "check-before-share", "num": 19, "hazardId": "community-conflict", "hazardGroup": "social",
+      "title": { "en": "Check Before You Share", "fil": "Suriin Bago Ibahagi" },
+      "genre": { "en": "Swipe-card sorting", "fil": "Pag-uuri ng card" },
+      "engine": "cards", "skill": "social", "hostRole": "comms", "view": "portrait", "hearts": false, "daily": false,
+      "objective": {
+        "en": "Sort messages: share what comes from trusted sources, and stop rumours before they spread.",
+        "fil": "Iuri ang mga mensahe: ibahagi ang galing sa mapagkakatiwalaan, at pigilan ang tsismis bago kumalat."
+      },
+      "howTo": [
+        { "en": "Trust it: send right", "fil": "Mapagkakatiwalaan: ipadala pakanan", "keys": ["key_right"], "gesture": "gesture_swipe_right" },
+        { "en": "Rumour: send left", "fil": "Tsismis: ipadala pakaliwa", "keys": ["key_left"], "gesture": "gesture_swipe_left" },
+        { "en": "Look for the clues", "fil": "Hanapin ang mga palatandaan", "keys": [], "gesture": null }
+      ],
+      "takeaway": { "en": "Stay calm, stay inside with family, listen to trusted adults, and check before you share.", "fil": "Manatiling kalmado, manatili sa loob kasama ang pamilya, makinig sa pinagkakatiwalaang nakatatanda, at suriin bago ibahagi." },
+      "built": false, "scripts": [], "data": ["levels.json", "data/cards.json"]
+    }
+  ]
+}

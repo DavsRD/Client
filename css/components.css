@@ -369,6 +369,22 @@ main {
   display: grid;
   gap: var(--sp-2);
 }
+
+/* Sound on/off rows (Settings → Sound). */
+.switch-row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  min-height: 40px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.switch-row input {
+  width: 22px;
+  height: 22px;
+  flex: none;
+  accent-color: var(--sky);
+}
 .theme-option {
   display: flex;
   align-items: center;
@@ -633,6 +649,10 @@ main {
 .tag--done {
   border-color: var(--success);
   color: var(--success-ink);
+}
+.tag--game {
+  border-color: var(--sunny);
+  color: var(--accent-ink);
 }
 
 .label-kicker {

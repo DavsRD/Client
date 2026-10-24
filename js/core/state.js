@@ -8,12 +8,16 @@
  *
  * Any change fires a "kalasag:statechange" event on window so open UI
  * (stats card, header) can refresh itself.
+ *
+ * The one other writer is the mini-games' AG.store (minigames/js/core/store.js), which
+ * keeps game progress under its own key, "kalasag:games" (KALASAG O6). This module reads
+ * that key for getGamesSummary() and never writes it.
  */
 
 const PREFIX = "kalasag:";
 const HEARTS_PER_ROUND = 3;
 const HURDLE_ORDER = ["locked", "encountered", "cleared"];
-const SETTINGS_KEYS = ["lang", "theme"]; // survive "Reset my progress"
+const SETTINGS_KEYS = ["lang", "theme", "sound"]; // survive "Reset my progress"
 
 const memory = { local: new Map(), session: new Map() };
 
@@ -210,6 +214,69 @@ export function getCurrentStage() {
 
 export function isUnlocked(hazardId) {
   return getHurdleStatus(hazardId) !== "locked";
+}
+
+// ---------- Mini-games ----------
+// The games keep their own progress under "kalasag:games" (written by AG.store in
+// minigames/js/core/store.js, KALASAG O6); it carries the prefix, so a reset clears it too.
+// Game XP is added to the site XP above, so there is one XP and one rank.
+
+/** The prototype's ranks, computed from the site XP. */
+const RANKS = [
+  { xp: 0, name: { en: "Cadet", fil: "Kadete" } },
+  { xp: 120, name: { en: "Helper", fil: "Katuwang" } },
+  { xp: 350, name: { en: "Responder", fil: "Tagatugon" } },
+  { xp: 700, name: { en: "Safety Hero", fil: "Bayani ng Kaligtasan" } },
+  { xp: 1200, name: { en: "Agila Ace", fil: "Alas ng Agila" } },
+];
+
+/** { name: { en, fil }, xp, next, pct } for an XP total (the site's XP by default). */
+export function rankFor(xp = getXP()) {
+  let i = 0;
+  while (i + 1 < RANKS.length && xp >= RANKS[i + 1].xp) i++;
+  const cur = RANKS[i];
+  const next = RANKS[i + 1];
+  return { name: cur.name, xp, next: next ? next.xp : null, pct: next ? (xp - cur.xp) / (next.xp - cur.xp) : 1 };
+}
+
+/** Called by the game host after every finished level. */
+export function markGamePlayed(gameId) {
+  const played = read("local", "gamesPlayed", {});
+  if (played[gameId]) return;
+  played[gameId] = true;
+  write("local", "gamesPlayed", played);
+}
+
+/** What Home and Collections show about the games, read from "kalasag:games". */
+export function getGamesSummary() {
+  const g = read("local", "games", {}) || {};
+  const stars = {};
+  let totalStars = 0;
+  for (const [id, rec] of Object.entries(g.levels || {})) {
+    const gameId = id.split(":")[0];
+    stars[gameId] = (stars[gameId] || 0) + (rec.stars || 0);
+    totalStars += rec.stars || 0;
+  }
+  return {
+    stars,
+    totalStars,
+    rank: rankFor(),
+    last: g.last || null,
+    character: g.character || "agila",
+    badges: Object.keys(g.badges || {}).length,
+    played: Object.keys(read("local", "gamesPlayed", {})).length,
+  };
+}
+
+// ---------- Sound (a setting: kept on reset) ----------
+export function getSound() {
+  return { sfx: true, music: false, ...read("local", "sound", {}) };
+}
+
+export function setSound(next) {
+  const value = { ...getSound(), ...next };
+  write("local", "sound", value);
+  window.dispatchEvent(new CustomEvent("kalasag:soundchange", { detail: value }));
 }
 
 // ---------- Language ----------
