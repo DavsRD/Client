@@ -253,12 +253,20 @@
         "fil": "Idulas ang mga bumagsak na bloke para makalabas, nang hindi ginagalaw ang sumusuporta sa bubong, saka humingi ng tulong."
       },
       "howTo": [
-        { "en": "Choose a block", "fil": "Pumili ng bloke", "keys": ["key_tab", "key_enter"], "gesture": "gesture_tap" },
-        { "en": "Slide it", "fil": "Idulas ito", "keys": ["key_left", "key_right", "key_up", "key_down"], "gesture": "gesture_drag" },
-        { "en": "Undo a move", "fil": "Ibalik ang galaw", "keys": ["key_backspace"], "gesture": "gesture_tap" }
+        { "en": "Choose a block, the mask or a photo", "fil": "Pumili ng bloke, ang mask o litrato", "keys": ["key_tab", "key_left", "key_right"], "gesture": "gesture_tap" },
+        { "en": "Grab it, slide it, drop it", "fil": "Hawakan, idulas, ibaba", "keys": ["key_enter", "key_left", "key_right", "key_enter"], "gesture": "gesture_drag" },
+        { "en": "Knock back on the pipe", "fil": "Kumatok pabalik sa tubo", "keys": ["key_space"], "gesture": "gesture_tap" },
+        { "en": "Hint", "fil": "Pahiwatig", "keys": ["key_h"], "gesture": "gesture_tap" },
+        { "en": "Undo a move (Easy)", "fil": "Ibalik ang galaw (Easy)", "keys": ["key_backspace"], "gesture": "gesture_tap" }
       ],
       "takeaway": { "en": "Leave a damaged building right away. If you're trapped: cover your mouth, stay still, and tap or whistle for help.", "fil": "Lumabas agad sa sirang gusali. Kung naipit: takpan ang bibig, manatiling kalmado, at kumatok o pumito para humingi ng tulong." },
-      "built": false, "scripts": [], "data": ["levels.json"]
+      "built": true,
+      "scripts": [
+        "minigames/js/logic/rubble-rescue/solver.js", "minigames/js/games/rubble-rescue/tuning.js",
+        "minigames/js/games/rubble-rescue/Knock.js", "minigames/js/games/rubble-rescue/RubbleRescueScene.js",
+        "minigames/js/games/rubble-rescue/index.js"
+      ],
+      "data": ["levels.json"]
     },
     {
       "id": "safe-crossing", "num": 13, "hazardId": "road-accidents", "hazardGroup": "technological",

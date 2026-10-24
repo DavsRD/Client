@@ -1,0 +1,866 @@
+[
+ {
+  "level": 1,
+  "features": [],
+  "warnScene": [
+   "jammed_door"
+  ],
+  "easy": {
+   "size": 6,
+   "escapeRow": 2,
+   "blocks": [
+    {
+     "id": "v2-1",
+     "x": 1,
+     "y": 1,
+     "len": 2,
+     "axis": "v",
+     "kind": "normal"
+    },
+    {
+     "id": "v3-1",
+     "x": 3,
+     "y": 0,
+     "len": 3,
+     "axis": "v",
+     "kind": "normal"
+    },
+    {
+     "id": "h2-1",
+     "x": 2,
+     "y": 4,
+     "len": 2,
+     "axis": "h",
+     "kind": "normal"
+    },
+    {
+     "id": "h3-1",
+     "x": 0,
+     "y": 5,
+     "len": 3,
+     "axis": "h",
+     "kind": "normal"
+    },
+    {
+     "id": "v2-2",
+     "x": 5,
+     "y": 2,
+     "len": 2,
+     "axis": "v",
+     "kind": "normal"
+    }
+   ],
+   "photos": [
+    {
+     "x": 1,
+     "y": 1
+    },
+    {
+     "x": 3,
+     "y": 0
+    },
+    {
+     "x": 2,
+     "y": 4
+    }
+   ],
+   "mask": {
+    "x": 0,
+    "y": 0
+   },
+   "match": {
+    "x": 2,
+    "y": 0
+   }
+  },
+  "advanced": {
+   "size": 6,
+   "escapeRow": 2,
+   "blocks": [
+    {
+     "id": "v2-1",
+     "x": 1,
+     "y": 1,
+     "len": 2,
+     "axis": "v",
+     "kind": "normal"
+    },
+    {
+     "id": "v3-1",
+     "x": 3,
+     "y": 0,
+     "len": 3,
+     "axis": "v",
+     "kind": "normal"
+    },
+    {
+     "id": "h2-1",
+     "x": 2,
+     "y": 4,
+     "len": 2,
+     "axis": "h",
+     "kind": "normal"
+    },
+    {
+     "id": "h3-1",
+     "x": 0,
+     "y": 5,
+     "len": 3,
+     "axis": "h",
+     "kind": "normal"
+    },
+    {
+     "id": "v2-2",
+     "x": 5,
+     "y": 2,
+     "len": 2,
+     "axis": "v",
+     "kind": "normal"
+    }
+   ],
+   "photos": [
+    {
+     "x": 1,
+     "y": 1
+    },
+    {
+     "x": 3,
+     "y": 0
+    },
+    {
+     "x": 2,
+     "y": 4
+    }
+   ],
+   "mask": {
+    "x": 0,
+    "y": 0
+   },
+   "match": {
+    "x": 2,
+    "y": 0
+   }
+  }
+ },
+ {
+  "level": 2,
+  "features": [
+   "loadBearing"
+  ],
+  "warnScene": [
+   "jammed_door"
+  ],
+  "easy": {
+   "size": 6,
+   "escapeRow": 2,
+   "blocks": [
+    {
+     "id": "v2-1",
+     "x": 1,
+     "y": 1,
+     "len": 2,
+     "axis": "v",
+     "kind": "normal"
+    },
+    {
+     "id": "v3-1",
+     "x": 3,
+     "y": 0,
+     "len": 3,
+     "axis": "v",
+     "kind": "normal"
+    },
+    {
+     "id": "h2-1",
+     "x": 2,
+     "y": 4,
+     "len": 2,
+     "axis": "h",
+     "kind": "normal"
+    },
+    {
+     "id": "c-1",
+     "x": 4,
+     "y": 5,
+     "len": 2,
+     "axis": "h",
+     "kind": "cracked"
+    },
+    {
+     "id": "slab-1",
+     "x": 4,
+     "y": 0,
+     "len": 2,
+     "axis": "h",
+     "kind": "slab"
+    },
+    {
+     "id": "h3-1",
+     "x": 0,
+     "y": 5,
+     "len": 3,
+     "axis": "h",
+     "kind": "normal"
+    },
+    {
+     "id": "v2-2",
+     "x": 5,
+     "y": 2,
+     "len": 2,
+     "axis": "v",
+     "kind": "normal"
+    }
+   ],
+   "photos": [
+    {
+     "x": 1,
+     "y": 1
+    },
+    {
+     "x": 3,
+     "y": 0
+    },
+    {
+     "x": 2,
+     "y": 4
+    }
+   ],
+   "mask": {
+    "x": 0,
+    "y": 0
+   },
+   "match": {
+    "x": 2,
+    "y": 0
+   }
+  },
+  "advanced": {
+   "size": 6,
+   "escapeRow": 2,
+   "blocks": [
+    {
+     "id": "v2-1",
+     "x": 1,
+     "y": 1,
+     "len": 2,
+     "axis": "v",
+     "kind": "normal"
+    },
+    {
+     "id": "v3-1",
+     "x": 3,
+     "y": 0,
+     "len": 3,
+     "axis": "v",
+     "kind": "normal"
+    },
+    {
+     "id": "h2-1",
+     "x": 2,
+     "y": 4,
+     "len": 2,
+     "axis": "h",
+     "kind": "normal"
+    },
+    {
+     "id": "c-1",
+     "x": 4,
+     "y": 5,
+     "len": 2,
+     "axis": "h",
+     "kind": "cracked"
+    },
+    {
+     "id": "slab-1",
+     "x": 4,
+     "y": 0,
+     "len": 2,
+     "axis": "h",
+     "kind": "slab"
+    },
+    {
+     "id": "h3-1",
+     "x": 0,
+     "y": 5,
+     "len": 3,
+     "axis": "h",
+     "kind": "normal"
+    },
+    {
+     "id": "v2-2",
+     "x": 5,
+     "y": 2,
+     "len": 2,
+     "axis": "v",
+     "kind": "normal"
+    }
+   ],
+   "photos": [
+    {
+     "x": 1,
+     "y": 1
+    },
+    {
+     "x": 3,
+     "y": 0
+    },
+    {
+     "x": 2,
+     "y": 4
+    }
+   ],
+   "mask": {
+    "x": 0,
+    "y": 0
+   },
+   "match": {
+    "x": 2,
+    "y": 0
+   }
+  }
+ },
+ {
+  "level": 3,
+  "features": [
+   "loadBearing",
+   "energy",
+   "knocks",
+   "match"
+  ],
+  "warnScene": [
+   "jammed_door"
+  ],
+  "easy": {
+   "size": 6,
+   "escapeRow": 2,
+   "blocks": [
+    {
+     "id": "v2-1",
+     "x": 1,
+     "y": 1,
+     "len": 2,
+     "axis": "v",
+     "kind": "normal"
+    },
+    {
+     "id": "v3-1",
+     "x": 3,
+     "y": 0,
+     "len": 3,
+     "axis": "v",
+     "kind": "normal"
+    },
+    {
+     "id": "h2-1",
+     "x": 2,
+     "y": 4,
+     "len": 2,
+     "axis": "h",
+     "kind": "normal"
+    },
+    {
+     "id": "c-1",
+     "x": 4,
+     "y": 5,
+     "len": 2,
+     "axis": "h",
+     "kind": "cracked"
+    },
+    {
+     "id": "slab-1",
+     "x": 4,
+     "y": 0,
+     "len": 2,
+     "axis": "h",
+     "kind": "slab"
+    },
+    {
+     "id": "h3-1",
+     "x": 0,
+     "y": 5,
+     "len": 3,
+     "axis": "h",
+     "kind": "normal"
+    },
+    {
+     "id": "v2-2",
+     "x": 5,
+     "y": 2,
+     "len": 2,
+     "axis": "v",
+     "kind": "normal"
+    }
+   ],
+   "photos": [
+    {
+     "x": 1,
+     "y": 1
+    },
+    {
+     "x": 3,
+     "y": 0
+    },
+    {
+     "x": 2,
+     "y": 4
+    }
+   ],
+   "mask": {
+    "x": 0,
+    "y": 0
+   },
+   "match": {
+    "x": 2,
+    "y": 0
+   }
+  },
+  "advanced": {
+   "size": 6,
+   "escapeRow": 2,
+   "blocks": [
+    {
+     "id": "v2-1",
+     "x": 1,
+     "y": 1,
+     "len": 2,
+     "axis": "v",
+     "kind": "normal"
+    },
+    {
+     "id": "v3-1",
+     "x": 3,
+     "y": 0,
+     "len": 3,
+     "axis": "v",
+     "kind": "normal"
+    },
+    {
+     "id": "h2-1",
+     "x": 2,
+     "y": 4,
+     "len": 2,
+     "axis": "h",
+     "kind": "normal"
+    },
+    {
+     "id": "c-1",
+     "x": 4,
+     "y": 5,
+     "len": 2,
+     "axis": "h",
+     "kind": "cracked"
+    },
+    {
+     "id": "slab-1",
+     "x": 4,
+     "y": 0,
+     "len": 2,
+     "axis": "h",
+     "kind": "slab"
+    },
+    {
+     "id": "h3-1",
+     "x": 0,
+     "y": 5,
+     "len": 3,
+     "axis": "h",
+     "kind": "normal"
+    },
+    {
+     "id": "v2-2",
+     "x": 5,
+     "y": 2,
+     "len": 2,
+     "axis": "v",
+     "kind": "normal"
+    }
+   ],
+   "photos": [
+    {
+     "x": 1,
+     "y": 1
+    },
+    {
+     "x": 3,
+     "y": 0
+    },
+    {
+     "x": 2,
+     "y": 4
+    }
+   ],
+   "mask": {
+    "x": 0,
+    "y": 0
+   },
+   "match": {
+    "x": 2,
+    "y": 0
+   }
+  }
+ },
+ {
+  "level": 4,
+  "features": [
+   "loadBearing",
+   "energy",
+   "knocks",
+   "match",
+   "dust"
+  ],
+  "warnScene": [
+   "cracks",
+   "tilting_wall"
+  ],
+  "easy": {
+   "size": 6,
+   "escapeRow": 2,
+   "blocks": [
+    {
+     "id": "v2-1",
+     "x": 1,
+     "y": 1,
+     "len": 2,
+     "axis": "v",
+     "kind": "normal"
+    },
+    {
+     "id": "v3-1",
+     "x": 3,
+     "y": 0,
+     "len": 3,
+     "axis": "v",
+     "kind": "normal"
+    },
+    {
+     "id": "h2-1",
+     "x": 2,
+     "y": 4,
+     "len": 2,
+     "axis": "h",
+     "kind": "normal"
+    },
+    {
+     "id": "c-1",
+     "x": 4,
+     "y": 5,
+     "len": 2,
+     "axis": "h",
+     "kind": "cracked"
+    },
+    {
+     "id": "slab-1",
+     "x": 4,
+     "y": 0,
+     "len": 2,
+     "axis": "h",
+     "kind": "slab"
+    },
+    {
+     "id": "h3-1",
+     "x": 0,
+     "y": 5,
+     "len": 3,
+     "axis": "h",
+     "kind": "normal"
+    },
+    {
+     "id": "v2-2",
+     "x": 5,
+     "y": 2,
+     "len": 2,
+     "axis": "v",
+     "kind": "dusty"
+    }
+   ],
+   "photos": [
+    {
+     "x": 1,
+     "y": 1
+    },
+    {
+     "x": 3,
+     "y": 0
+    },
+    {
+     "x": 2,
+     "y": 4
+    }
+   ],
+   "mask": {
+    "x": 0,
+    "y": 0
+   },
+   "match": {
+    "x": 2,
+    "y": 0
+   }
+  },
+  "advanced": {
+   "size": 6,
+   "escapeRow": 2,
+   "blocks": [
+    {
+     "id": "v2-1",
+     "x": 1,
+     "y": 1,
+     "len": 2,
+     "axis": "v",
+     "kind": "normal"
+    },
+    {
+     "id": "v3-1",
+     "x": 3,
+     "y": 0,
+     "len": 3,
+     "axis": "v",
+     "kind": "normal"
+    },
+    {
+     "id": "h2-1",
+     "x": 2,
+     "y": 4,
+     "len": 2,
+     "axis": "h",
+     "kind": "normal"
+    },
+    {
+     "id": "c-1",
+     "x": 4,
+     "y": 5,
+     "len": 2,
+     "axis": "h",
+     "kind": "cracked"
+    },
+    {
+     "id": "slab-1",
+     "x": 4,
+     "y": 0,
+     "len": 2,
+     "axis": "h",
+     "kind": "slab"
+    },
+    {
+     "id": "h3-1",
+     "x": 0,
+     "y": 5,
+     "len": 3,
+     "axis": "h",
+     "kind": "normal"
+    },
+    {
+     "id": "v2-2",
+     "x": 5,
+     "y": 2,
+     "len": 2,
+     "axis": "v",
+     "kind": "dusty"
+    }
+   ],
+   "photos": [
+    {
+     "x": 1,
+     "y": 1
+    },
+    {
+     "x": 3,
+     "y": 0
+    },
+    {
+     "x": 2,
+     "y": 4
+    }
+   ],
+   "mask": {
+    "x": 0,
+    "y": 0
+   },
+   "match": {
+    "x": 2,
+    "y": 0
+   }
+  }
+ },
+ {
+  "level": 5,
+  "features": [
+   "loadBearing",
+   "energy",
+   "knocks",
+   "match",
+   "aftershocks"
+  ],
+  "warnScene": [
+   "cracks",
+   "tilting_wall"
+  ],
+  "easy": {
+   "size": 6,
+   "escapeRow": 2,
+   "blocks": [
+    {
+     "id": "v2-1",
+     "x": 1,
+     "y": 1,
+     "len": 2,
+     "axis": "v",
+     "kind": "normal"
+    },
+    {
+     "id": "v3-1",
+     "x": 3,
+     "y": 0,
+     "len": 3,
+     "axis": "v",
+     "kind": "normal"
+    },
+    {
+     "id": "h2-1",
+     "x": 2,
+     "y": 4,
+     "len": 2,
+     "axis": "h",
+     "kind": "normal"
+    },
+    {
+     "id": "c-1",
+     "x": 4,
+     "y": 5,
+     "len": 2,
+     "axis": "h",
+     "kind": "cracked"
+    },
+    {
+     "id": "slab-1",
+     "x": 4,
+     "y": 0,
+     "len": 2,
+     "axis": "h",
+     "kind": "slab"
+    },
+    {
+     "id": "h3-1",
+     "x": 0,
+     "y": 5,
+     "len": 3,
+     "axis": "h",
+     "kind": "normal"
+    },
+    {
+     "id": "v2-2",
+     "x": 5,
+     "y": 2,
+     "len": 2,
+     "axis": "v",
+     "kind": "normal"
+    }
+   ],
+   "photos": [
+    {
+     "x": 1,
+     "y": 1
+    },
+    {
+     "x": 3,
+     "y": 0
+    },
+    {
+     "x": 2,
+     "y": 4
+    }
+   ],
+   "mask": {
+    "x": 0,
+    "y": 0
+   },
+   "match": {
+    "x": 2,
+    "y": 0
+   }
+  },
+  "advanced": {
+   "size": 6,
+   "escapeRow": 2,
+   "blocks": [
+    {
+     "id": "v2-1",
+     "x": 1,
+     "y": 1,
+     "len": 2,
+     "axis": "v",
+     "kind": "normal"
+    },
+    {
+     "id": "v3-1",
+     "x": 3,
+     "y": 0,
+     "len": 3,
+     "axis": "v",
+     "kind": "normal"
+    },
+    {
+     "id": "h2-1",
+     "x": 2,
+     "y": 4,
+     "len": 2,
+     "axis": "h",
+     "kind": "normal"
+    },
+    {
+     "id": "c-1",
+     "x": 4,
+     "y": 5,
+     "len": 2,
+     "axis": "h",
+     "kind": "cracked"
+    },
+    {
+     "id": "slab-1",
+     "x": 4,
+     "y": 0,
+     "len": 2,
+     "axis": "h",
+     "kind": "slab"
+    },
+    {
+     "id": "h3-1",
+     "x": 0,
+     "y": 5,
+     "len": 3,
+     "axis": "h",
+     "kind": "normal"
+    },
+    {
+     "id": "v2-2",
+     "x": 5,
+     "y": 2,
+     "len": 2,
+     "axis": "v",
+     "kind": "normal"
+    }
+   ],
+   "photos": [
+    {
+     "x": 1,
+     "y": 1
+    },
+    {
+     "x": 3,
+     "y": 0
+    },
+    {
+     "x": 2,
+     "y": 4
+    }
+   ],
+   "mask": {
+    "x": 0,
+    "y": 0
+   },
+   "match": {
+    "x": 2,
+    "y": 0
+   }
+  }
+ }
+]
