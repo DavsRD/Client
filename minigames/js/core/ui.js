@@ -43,7 +43,7 @@ window.AG = window.AG || {};
       opts = opts || {};
       if (!stage || !AG.dialogue) return () => {};
       const type = opts.type || 'info';
-      const box = AG.dialogue.word({ type, text, title: opts.title, speaker: opts.speaker || AG.chars.selected(), icon: opts.icon, plainFont: AG.store.setting('plainFont') });
+      const box = AG.dialogue.word({ type, text, title: opts.title, speaker: opts.speaker || AG.chars.selected(), icon: opts.icon, pose: opts.pose, plainFont: AG.store.setting('plainFont') });
       const shell = stage.closest('.ag-shell');
       const bar = !stage.classList.contains('flush') && shell && shell.querySelector('.ag-fbbar');
       let el;

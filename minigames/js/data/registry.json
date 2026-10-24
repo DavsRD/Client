@@ -8,6 +8,13 @@
       "minigames/js/engines/cards/cards.js", "minigames/js/engines/cards/letter-tiles.js",
       "minigames/js/engines/cards/swipe-stack.js", "minigames/js/engines/cards/onet-view.js",
       "minigames/js/engines/cards/widgets.js"
+    ],
+    "grid": [
+      "minigames/js/logic/grid/path.js", "minigames/js/logic/grid/procgen.js",
+      "minigames/js/logic/grid/select.js", "minigames/js/logic/grid/undo.js",
+      "minigames/js/engines/grid/tilemap.js", "minigames/js/engines/grid/camera.js",
+      "minigames/js/engines/grid/darkness.js", "minigames/js/engines/grid/mover.js",
+      "minigames/js/engines/grid/cursor.js"
     ]
   },
   "games": [
@@ -219,12 +226,22 @@
         "fil": "Sundan ang exit signs palabas ng mausok na gusali: yumuko, damhin ang pinto bago buksan, gumamit ng hagdan, at pumunta sa assembly area."
       },
       "howTo": [
-        { "en": "Walk", "fil": "Maglakad", "keys": ["key_up", "key_down", "key_left", "key_right"], "gesture": "gesture_swipe_right" },
-        { "en": "Crawl low under smoke", "fil": "Gumapang sa ilalim ng usok", "keys": ["key_shift"], "gesture": "gesture_hold" },
-        { "en": "Feel a door", "fil": "Damhin ang pinto", "keys": ["key_space"], "gesture": "gesture_tap" }
+        { "en": "Walk (hold to keep going)", "fil": "Maglakad (pindutin nang matagal para tuloy-tuloy)", "keys": ["key_up", "key_down", "key_left", "key_right"], "gesture": "gesture_swipe_right" },
+        { "en": "Crawl low under smoke", "fil": "Gumapang sa ilalim ng usok", "keys": ["key_c"], "gesture": "gesture_tap" },
+        { "en": "Feel a closed door", "fil": "Damhin ang saradong pinto", "keys": ["key_e"], "gesture": "gesture_tap" },
+        { "en": "Open the door / alert a classmate", "fil": "Buksan ang pinto / tawagin ang kaklase", "keys": ["key_enter"], "gesture": "gesture_tap" },
+        { "en": "Stop, drop and roll (when a spark lands)", "fil": "Huminto, dumapa at gumulong (kapag may tilamsik)", "keys": ["key_s", "key_d", "key_left", "key_right"], "gesture": "gesture_swipe_left" }
       ],
       "takeaway": { "en": "Get low, feel the door, use the stairs, and go straight to the assembly area.", "fil": "Yumuko, damhin ang pinto, gumamit ng hagdan, at dumiretso sa assembly area." },
-      "built": false, "scripts": [], "data": ["levels.json"]
+      "built": true,
+      "scripts": [
+        "minigames/js/logic/fire-escape/generator.js",
+        "minigames/js/games/fire-escape/tuning.js", "minigames/js/games/fire-escape/FireSpread.js",
+        "minigames/js/games/fire-escape/Doors.js", "minigames/js/games/fire-escape/Smoke.js",
+        "minigames/js/games/fire-escape/SDRQuickTime.js", "minigames/js/games/fire-escape/daily.js",
+        "minigames/js/games/fire-escape/FireEscapeScene.js", "minigames/js/games/fire-escape/index.js"
+      ],
+      "data": ["levels.json"]
     },
     {
       "id": "rubble-rescue", "num": 12, "hazardId": "structural-collapse", "hazardGroup": "technological",

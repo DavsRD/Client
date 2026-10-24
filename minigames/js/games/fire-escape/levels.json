@@ -1,0 +1,427 @@
+[
+ {
+  "world": 1,
+  "level": 1,
+  "seed": 110107,
+  "features": [],
+  "easy": {
+   "cells": 7,
+   "rooms": 2
+  },
+  "advanced": {
+   "cells": 13,
+   "rooms": 3
+  }
+ },
+ {
+  "world": 1,
+  "level": 2,
+  "seed": 110114,
+  "features": [],
+  "easy": {
+   "cells": 8,
+   "rooms": 2
+  },
+  "advanced": {
+   "cells": 15,
+   "rooms": 4
+  }
+ },
+ {
+  "world": 1,
+  "level": 3,
+  "seed": 110121,
+  "features": [],
+  "easy": {
+   "cells": 9,
+   "rooms": 3
+  },
+  "advanced": {
+   "cells": 17,
+   "rooms": 5
+  }
+ },
+ {
+  "world": 1,
+  "level": 4,
+  "seed": 110128,
+  "features": [],
+  "easy": {
+   "cells": 10,
+   "rooms": 3
+  },
+  "advanced": {
+   "cells": 19,
+   "rooms": 6
+  }
+ },
+ {
+  "world": 1,
+  "level": 5,
+  "seed": 110135,
+  "features": [],
+  "easy": {
+   "cells": 11,
+   "rooms": 4
+  },
+  "advanced": {
+   "cells": 21,
+   "rooms": 7
+  }
+ },
+ {
+  "world": 2,
+  "level": 1,
+  "seed": 110207,
+  "features": [
+   "smoke"
+  ],
+  "easy": {
+   "cells": 7,
+   "rooms": 2
+  },
+  "advanced": {
+   "cells": 13,
+   "rooms": 3
+  }
+ },
+ {
+  "world": 2,
+  "level": 2,
+  "seed": 110214,
+  "features": [
+   "smoke"
+  ],
+  "easy": {
+   "cells": 8,
+   "rooms": 2
+  },
+  "advanced": {
+   "cells": 15,
+   "rooms": 4
+  }
+ },
+ {
+  "world": 2,
+  "level": 3,
+  "seed": 110221,
+  "features": [
+   "smoke"
+  ],
+  "easy": {
+   "cells": 9,
+   "rooms": 3
+  },
+  "advanced": {
+   "cells": 17,
+   "rooms": 5
+  }
+ },
+ {
+  "world": 2,
+  "level": 4,
+  "seed": 110228,
+  "features": [
+   "smoke"
+  ],
+  "easy": {
+   "cells": 10,
+   "rooms": 3
+  },
+  "advanced": {
+   "cells": 19,
+   "rooms": 6
+  }
+ },
+ {
+  "world": 2,
+  "level": 5,
+  "seed": 110235,
+  "features": [
+   "smoke"
+  ],
+  "easy": {
+   "cells": 11,
+   "rooms": 4
+  },
+  "advanced": {
+   "cells": 21,
+   "rooms": 7
+  }
+ },
+ {
+  "world": 3,
+  "level": 1,
+  "seed": 110307,
+  "features": [
+   "smoke",
+   "doors"
+  ],
+  "easy": {
+   "cells": 7,
+   "rooms": 2
+  },
+  "advanced": {
+   "cells": 13,
+   "rooms": 3
+  }
+ },
+ {
+  "world": 3,
+  "level": 2,
+  "seed": 110314,
+  "features": [
+   "smoke",
+   "doors"
+  ],
+  "easy": {
+   "cells": 8,
+   "rooms": 2
+  },
+  "advanced": {
+   "cells": 15,
+   "rooms": 4
+  }
+ },
+ {
+  "world": 3,
+  "level": 3,
+  "seed": 110321,
+  "features": [
+   "smoke",
+   "doors"
+  ],
+  "easy": {
+   "cells": 9,
+   "rooms": 3
+  },
+  "advanced": {
+   "cells": 17,
+   "rooms": 5
+  }
+ },
+ {
+  "world": 3,
+  "level": 4,
+  "seed": 110328,
+  "features": [
+   "smoke",
+   "doors"
+  ],
+  "easy": {
+   "cells": 10,
+   "rooms": 3
+  },
+  "advanced": {
+   "cells": 19,
+   "rooms": 6
+  }
+ },
+ {
+  "world": 3,
+  "level": 5,
+  "seed": 110335,
+  "features": [
+   "smoke",
+   "doors"
+  ],
+  "easy": {
+   "cells": 11,
+   "rooms": 4
+  },
+  "advanced": {
+   "cells": 21,
+   "rooms": 7
+  }
+ },
+ {
+  "world": 4,
+  "level": 1,
+  "seed": 110407,
+  "features": [
+   "smoke",
+   "doors",
+   "fire",
+   "elevator"
+  ],
+  "easy": {
+   "cells": 7,
+   "rooms": 2
+  },
+  "advanced": {
+   "cells": 13,
+   "rooms": 3
+  }
+ },
+ {
+  "world": 4,
+  "level": 2,
+  "seed": 110414,
+  "features": [
+   "smoke",
+   "doors",
+   "fire",
+   "elevator"
+  ],
+  "easy": {
+   "cells": 8,
+   "rooms": 2
+  },
+  "advanced": {
+   "cells": 15,
+   "rooms": 4
+  }
+ },
+ {
+  "world": 4,
+  "level": 3,
+  "seed": 110421,
+  "features": [
+   "smoke",
+   "doors",
+   "fire",
+   "elevator"
+  ],
+  "easy": {
+   "cells": 9,
+   "rooms": 3
+  },
+  "advanced": {
+   "cells": 17,
+   "rooms": 5
+  }
+ },
+ {
+  "world": 4,
+  "level": 4,
+  "seed": 110428,
+  "features": [
+   "smoke",
+   "doors",
+   "fire",
+   "elevator"
+  ],
+  "easy": {
+   "cells": 10,
+   "rooms": 3
+  },
+  "advanced": {
+   "cells": 19,
+   "rooms": 6
+  }
+ },
+ {
+  "world": 4,
+  "level": 5,
+  "seed": 110435,
+  "features": [
+   "smoke",
+   "doors",
+   "fire",
+   "elevator"
+  ],
+  "easy": {
+   "cells": 11,
+   "rooms": 4
+  },
+  "advanced": {
+   "cells": 21,
+   "rooms": 7
+  }
+ },
+ {
+  "world": 5,
+  "level": 1,
+  "seed": 110507,
+  "features": [
+   "smoke",
+   "doors",
+   "dark",
+   "classmate"
+  ],
+  "easy": {
+   "cells": 7,
+   "rooms": 2
+  },
+  "advanced": {
+   "cells": 13,
+   "rooms": 3
+  }
+ },
+ {
+  "world": 5,
+  "level": 2,
+  "seed": 110514,
+  "features": [
+   "smoke",
+   "doors",
+   "dark",
+   "classmate"
+  ],
+  "easy": {
+   "cells": 8,
+   "rooms": 2
+  },
+  "advanced": {
+   "cells": 15,
+   "rooms": 4
+  }
+ },
+ {
+  "world": 5,
+  "level": 3,
+  "seed": 110521,
+  "features": [
+   "smoke",
+   "doors",
+   "dark",
+   "classmate"
+  ],
+  "easy": {
+   "cells": 9,
+   "rooms": 3
+  },
+  "advanced": {
+   "cells": 17,
+   "rooms": 5
+  }
+ },
+ {
+  "world": 5,
+  "level": 4,
+  "seed": 110528,
+  "features": [
+   "smoke",
+   "doors",
+   "dark",
+   "classmate"
+  ],
+  "easy": {
+   "cells": 10,
+   "rooms": 3
+  },
+  "advanced": {
+   "cells": 19,
+   "rooms": 6
+  }
+ },
+ {
+  "world": 5,
+  "level": 5,
+  "seed": 110535,
+  "features": [
+   "smoke",
+   "doors",
+   "dark",
+   "classmate"
+  ],
+  "easy": {
+   "cells": 11,
+   "rooms": 4
+  },
+  "advanced": {
+   "cells": 21,
+   "rooms": 7
+  }
+ }
+]

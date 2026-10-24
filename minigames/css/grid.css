@@ -1,0 +1,18 @@
+/* =============================================================
+   grid.css — E1 GRID ENGINE (the DOM side of GridCursor).
+   Added to the page by minigames/js/engines/grid/tilemap.js.
+   Every rule is under #ag-app and every class starts with agg-, like ag.css.
+   Canvas grids draw their own cursor; these rules are for DOM grids.
+   ============================================================= */
+
+#ag-app .agg-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* the cursor cell: the same 3 px vest outline as :focus-visible, shown even before focus
+   arrives (a tap, or the zone just became active), plus a ▼ marker so it never relies on colour */
+#ag-app .agg-cursor { position: relative; outline: 3px solid var(--vest); outline-offset: 2px; z-index: 1; }
+#ag-app .agg-cursor::after {
+  content: '▼'; position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+  font: 700 11px/1 var(--font-display); color: var(--vest); text-shadow: 1px 1px 0 var(--ink); pointer-events: none;
+}
+#ag-app .agg-cursor--idle { outline-style: dashed; }
+#ag-app .agg-cursor--idle::after { content: none; }
