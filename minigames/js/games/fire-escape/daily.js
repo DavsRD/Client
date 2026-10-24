@@ -1,9 +1,9 @@
 /* Fire Escape Maze — the Daily Challenge. Pure, tested in fire-escape.test.js.
  *
  *   AG.fireEscape.generateDaily(seed) → a level entry like levels.json's:
- *     { daily: true, seed, world, level, features: [2 modifiers], easy: { cells, rooms }, advanced: { … } }
+ *     { daily: true, seed, level, features: [2 modifiers], easy: { cells, rooms }, advanced: { … } }
  * seed = the date (YYYYMMDD), so every device gets the same maze and the same two of the
- * world modifiers (smoke · doors · spreading fire + elevator · power cut + classmate). */
+ * level modifiers (smoke · doors · spreading fire + elevator · power cut + classmate). */
 (function (root) {
   const AG = root.AG = root.AG || {};
   const FE = AG.fireEscape = AG.fireEscape || {};
@@ -16,7 +16,7 @@
     const level = 2 + Math.floor(rnd() * 3); // a mid-size maze: levels 2–4
     const T = FE.tuning;
     return {
-      daily: true, seed: seed >>> 0, world: features.includes('fire') ? 4 : features.includes('dark') ? 5 : features.includes('doors') ? 3 : 2, level, features,
+      daily: true, seed: seed >>> 0, level, features,
       easy: { cells: T.cells.easy[level - 1], rooms: T.rooms.easy[level - 1] },
       advanced: { cells: T.cells.advanced[level - 1], rooms: T.rooms.advanced[level - 1] }
     };

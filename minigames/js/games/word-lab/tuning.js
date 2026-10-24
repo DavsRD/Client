@@ -7,17 +7,17 @@
   const WL = AG.wordLab = AG.wordLab || {};
 
   const tuning = {
-    /* Patient Queue (worlds 1–3): 5 patients, the timer runs from the first level to the last */
+    /* Patient Queue (levels 1–3): 5 patients, the timer runs down from level 1 to level 3 */
     queue: {
       patients: 5, passWords: 3,
-      time: { easy: [150, 120], advanced: [90, 70] },     // seconds, world 1-1 → world 3-5
-      decoys: { easy: [0, 0, 0], advanced: [1, 1, 2] },   // per world
+      time: { easy: [150, 120], advanced: [90, 70] },     // seconds, level 1 → level 3
+      decoys: { easy: [0, 0, 0], advanced: [1, 1, 2] },   // per queue level
       clue: { easy: [true, true, true], advanced: [true, false, false] }, // clue icon shown?
       wordPoints: 100, starTime: [0.2, 0.4]               // targets: points + this share of the time as bonus
     },
-    /* Word Twist (world 4) */
+    /* Word Twist (level 4) */
     twist: { time: 90, pointsPerLetter: 10, bingo: 300, minLength: 3 },
-    /* Sentence Scramble (world 5) */
+    /* Sentence Scramble (level 5) */
     sentence: { time: { easy: [120, 90], advanced: [80, 60] }, points: 150, passSentences: 2, starTime: [0.2, 0.4] },
     /* everywhere */
     hintCost: 30, timeBonus: 2,      // points per second left at the end
@@ -25,17 +25,18 @@
     maxHintsFor3: 1,
     readMinMs: 300,                  // a definition box ignores Enter for this long after it opens
     reactMs: 900, leaveMs: 420,      // happy / oops face; a patient walking off
-    badges: { noHints: 10, bilingual: 5, twistLevels: 5 }
+    badges: { noHints: 5, bilingual: 5 }
   };
 
   const lerp = (a, b, t) => a + (b - a) * t;
   const rules = {
-    /** Patient Queue seconds for a level: easy 150 → 120, advanced 90 → 70 over worlds 1–3. */
-    queueTime(world, level, difficulty) {
+    /** Patient Queue seconds for a level: easy 150 → 120, advanced 90 → 70 over levels 1–3. */
+    queueTime(level, difficulty) {
       const [a, b] = tuning.queue.time[difficulty === 'advanced' ? 'advanced' : 'easy'];
-      const k = (Math.min(3, Math.max(1, world)) - 1) * 5 + (level - 1);
-      return Math.round(lerp(a, b, k / 14));
+      return Math.round(lerp(a, b, (rules.queueLevel(level) - 1) / 2));
     },
+    /** The Patient Queue step (1–3) for a level, for the per-level timer, decoys and clues. */
+    queueLevel: level => Math.min(3, Math.max(1, level || 1)),
     sentenceTime(level, difficulty) {
       const [a, b] = tuning.sentence.time[difficulty === 'advanced' ? 'advanced' : 'easy'];
       return Math.round(lerp(a, b, (level - 1) / 4));

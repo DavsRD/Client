@@ -1,4 +1,4 @@
-/* Health Center Word Lab — SENTENCE SCRAMBLE (world 5).
+/* Health Center Word Lab — SENTENCE SCRAMBLE (level 5).
  *
  * Three short health rules per level (WASH HANDS FOR 20 SECONDS; COVER YOUR COUGH WITH YOUR
  * ELBOW; STAY HOME WHEN YOU ARE SICK; …, from data/sentences.json, in the site language).

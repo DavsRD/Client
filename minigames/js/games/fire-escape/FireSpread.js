@@ -1,4 +1,4 @@
-/* Fire Escape Maze — spreading fire (World 4). Pure (no DOM), tested in fire-escape.test.js.
+/* Fire Escape Maze — spreading fire (level 4). Pure (no DOM), tested in fire-escape.test.js.
  *
  *   const fire = new AG.fireEscape.FireSpread({
  *     w, h, isFloor(x, y), passable(x, y),   // floor = may burn; passable = walkable now (fire aside)

@@ -145,22 +145,22 @@
 
 /* world map */
 #ag-app .ag-map { padding: var(--sp-4); display: flex; flex-direction: column; gap: var(--sp-3); }
-#ag-app .ag-worlds { list-style: none; padding: 0; display: grid; gap: 10px; }
-#ag-app .ag-world { display: grid; grid-template-columns: 9rem minmax(0, 1fr); gap: 12px; align-items: center; padding: 8px 10px; background: var(--panel-2); border: 2px solid var(--line); border-radius: var(--r); }
-#ag-app .ag-world.is-locked { opacity: .75; border-style: dashed; }
-#ag-app .ag-world__head { display: flex; flex-direction: column; gap: 2px; font-family: var(--font-display); }
-#ag-app .ag-world__stars { display: inline-flex; align-items: center; gap: 4px; font-size: var(--step--1); color: var(--muted); }
-#ag-app .ag-world__stars img { width: 18px; height: 18px; }
-#ag-app .ag-levels { display: grid; grid-template-columns: repeat(5, minmax(56px, 1fr)); gap: 8px; }
-#ag-app .ag-level { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; min-height: 64px; padding: 6px 4px;
+#ag-app .ag-map__stars { display: inline-flex; align-items: center; gap: 4px; font-family: var(--font-display); color: var(--muted); }
+#ag-app .ag-map__stars img { width: 18px; height: 18px; }
+#ag-app .ag-levels { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(5, minmax(56px, 1fr)); gap: 8px; }
+#ag-app .ag-levels > li { display: flex; min-width: 0; }
+#ag-app .ag-level { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; min-height: 64px; padding: 6px 4px;
   background: var(--panel); color: var(--fg); text-decoration: none; border: var(--b) solid var(--line); border-radius: var(--r); box-shadow: 3px 3px 0 var(--shadow-c); font-family: var(--font-display); }
 #ag-app .ag-level:hover { background: var(--hat); color: var(--on-hat); }
 #ag-app .ag-level:active { transform: translate(3px, 3px); box-shadow: none; }
 #ag-app .ag-level.is-played { background: var(--safe-soft); }
 #ag-app .ag-level .ag-stars img { width: 14px; height: 14px; }
-#ag-app .ag-world__locked { font-weight: 700; color: var(--muted); }
-#ag-app .ag-world__poster { align-self: flex-start; max-width: 100%; margin-top: 4px; font-family: var(--font-body); white-space: normal; text-align: left; line-height: 1.2; }
-#ag-app small.ag-world__poster { color: var(--muted); font-weight: 700; }
+#ag-app .ag-level.is-locked { opacity: .75; border-style: dashed; box-shadow: none; color: var(--muted); cursor: default; }
+#ag-app .ag-level.is-locked:hover { background: var(--panel); color: var(--muted); }
+#ag-app .ag-map__locked { font-weight: 700; color: var(--muted); }
+#ag-app .ag-posters { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+#ag-app .ag-poster { max-width: 100%; font-family: var(--font-body); white-space: normal; text-align: left; line-height: 1.2; }
+#ag-app small.ag-poster { color: var(--muted); font-weight: 700; }
 #ag-app .ag-posterdlg img { display: block; margin: 8px auto 0; border: var(--b) solid var(--ink); }
 #ag-app .ag-playrow { display: flex; justify-content: center; }
 #ag-app .ag-soon { display: flex; align-items: center; gap: var(--sp-4); padding: var(--sp-4); border-style: dashed; }
@@ -423,7 +423,6 @@
   #ag-app .ag-lineup__stage { width: 50px; height: 65px; }
   #ag-app .ag-lineup__stage img { width: 50px; height: 65px; }
   #ag-app .ag-lineup__stage img.is-agila { width: 40px; margin-bottom: 12px; }
-  #ag-app .ag-world { grid-template-columns: 1fr; }
   #ag-app .ag-result { grid-template-columns: 1fr; justify-items: start; }
   #ag-app .ag-resultchar img { width: 100px; height: 130px; }
   #ag-app .ag-resultchar img.is-agila { width: 80px; margin-bottom: 10px; }

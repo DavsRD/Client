@@ -567,7 +567,7 @@ window.AG = window.AG || {};
       const run = {
         school: won, endless: this.endless, rows: this.maxLane, score: Math.max(0, this.score), heartsLost: this.heartsLost, heartsLeft: this.hearts,
         paws: this.paws.filter(Boolean).length, pawFlags: this.paws.slice(), usedMs: this.usedMs, vest: this.vest,
-        stats: Object.assign({}, this.stats), world: this.entry.world, level: this.entry.level, night: this.night, targets: this.targets
+        stats: Object.assign({}, this.stats), level: this.entry.level, night: this.night, targets: this.targets
       };
       this.onEnd(run);
     }

@@ -7,7 +7,7 @@
  *                         a game's own scripts load later, when it is played.
  *
  * It owns the hazard page's game routes (O1): '' / #game → the overview in the Mini-game
- * section; #play/<world>-<level> and #daily → the game shell takes over <main> (the site
+ * section; #play/<level> and #daily → the game shell takes over <main> (the site
  * header, nav and footer stay). One root element, #ag-app, moves between the two places,
  * so a language switch that re-renders the lesson never interrupts a game.
  *

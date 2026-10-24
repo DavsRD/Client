@@ -19,8 +19,8 @@
     doorShare: [0.3, 0.5], hotDoors: { easy: [1, 1], advanced: [1, 3] },
     fires: { easy: 2, advanced: 3 },
     smoke: { easy: { sources: 2, radius: 3 }, advanced: { sources: 3, radius: 5 } },
-    /** The hazards each world adds (W1 signs only … W5 power cut + rescue). */
-    worlds: {
+    /** The hazards each level adds (L1 signs only … L5 power cut + rescue). */
+    levels: {
       1: [],
       2: ['smoke'],
       3: ['smoke', 'doors'],
@@ -43,10 +43,10 @@
   const lvl = n => Math.min(5, Math.max(1, n || 1)) - 1;
 
   const rules = {
-    /** The hazards for a level: its own list, else the world's. Fire brings the elevator,
-     *  the power cut brings the classmate to rescue. */
-    features(entry, world) {
-      const list = (entry && entry.features) || tuning.worlds[Math.min(5, Math.max(1, world || 1))];
+    /** The hazards for a level: its own list, else the level number's. Fire brings the
+     *  elevator, the power cut brings the classmate to rescue. */
+    features(entry, level) {
+      const list = (entry && entry.features) || tuning.levels[lvl(level) + 1];
       const f = {};
       list.forEach(k => { f[k] = true; });
       if (f.fire) f.elevator = true;
@@ -54,14 +54,14 @@
       return f;
     },
     /** Generator params for a level entry (levels.json or generateDaily) and a difficulty. */
-    params(entry, difficulty, world, level) {
+    params(entry, difficulty, level) {
       const d = difficulty === 'advanced' ? 'advanced' : 'easy', o = (entry && entry[d]) || {};
       const sm = tuning.smoke[d];
       return {
         cells: o.cells || tuning.cells[d][lvl(level)],
         rooms: o.rooms || tuning.rooms[d][lvl(level)],
         braid: o.braid != null ? o.braid : tuning.braid[d],
-        features: rules.features(entry, world),
+        features: rules.features(entry, level),
         doorShare: tuning.doorShare, hotDoors: tuning.hotDoors[d], fires: o.fires || tuning.fires[d],
         smokeSources: o.smokeSources || sm.sources, smokeRadius: o.smokeRadius || sm.radius,
         walkStepMs: tuning.speeds.walk, parMult: tuning.parMult[d], doorMs: tuning.doorMs, parMinMs: tuning.parMinMs
@@ -88,9 +88,12 @@
       const ev = [];
       if ((stats.smokeCrawled || 0) >= tuning.badges.smokeTiles) ev.push('low-and-slow');
       if ((stats.doorsFelt || 0) >= tuning.badges.doorsFelt) ev.push('door-checker');
-      if (run && run.escaped && run.world === 4 && run.mode === 'stage' && !run.elevatorHits) ev.push('stairs-not-elevator');
+      if (run && run.escaped && run.elevator && run.mode === 'stage' && !run.elevatorHits) ev.push('stairs-not-elevator');
       return ev;
     },
+    /** The level whose intro fits these hazards (fire 4, power cut 5, doors 3, smoke 2, else 1):
+     *  the stage levels map to themselves, a Daily to its strongest modifier. */
+    theme: f => (f.fire ? 4 : f.dark ? 5 : f.doors ? 3 : f.smoke ? 2 : 1),
     /** A different seed for "New maze" (n = how many new mazes asked for). */
     reseed: (seed, n) => ((seed >>> 0) + Math.imul(n, 0x9e3779b1)) >>> 0
   };

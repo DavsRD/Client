@@ -9,11 +9,11 @@
  * Screens:
  *   overview  the game card (thumbnail, genre, objective, How to play with live prompt
  *             icons, Controls help, Save for offline), then — for built games — character
- *             selection, Easy/Advanced + tutorial, the 5 × 5 world map and Play / Continue.
+ *             selection, Easy/Advanced + tutorial, the row of 5 level tiles and Play / Continue.
  *             Unbuilt games show "Coming soon" instead. With ?debug=1 an unbuilt game's
  *             overview runs the sandbox test game ("Tap the Stars").
  *   play      head bar (← overview, title, level chip, Playing-as face, ↻, ⏸, ⛶), HUD, stage,
- *             touch controls, feedback bar; the world's intro talk (player + role expert),
+ *             touch controls, feedback bar; the game's intro talk (player + role expert),
  *             the tutorial, then the game's mount(stage, ctx, done).
  *   results   the prototype's results screen; Play again · Next level · Change character ·
  *             Back to the lesson.
@@ -67,14 +67,14 @@
     if (route.unlockAll) unlockAll = true;
     if (route.view === 'play') {
       if (!game.built) return 'fallback';
-      if (!AG.progress.worldOpen(game.id, route.world, unlockAll)) return 'fallback';
-      startPlay({ world: route.world, level: route.level, mode: 'stage' });
+      if (!AG.progress.levelOpen(game.id, route.level, unlockAll)) return 'fallback';
+      startPlay({ level: route.level, mode: 'stage' });
       return true;
     }
     if (route.view === 'daily') {
       if (!game.built || !game.daily || AG.progress.dailyGame() !== game.id) return 'fallback';
       const seed = AG.progress.dailySeed();
-      startPlay({ world: (seed % AG.progress.rules.WORLDS) + 1, level: (Math.floor(seed / 5) % 5) + 1, mode: 'daily', seed });
+      startPlay({ level: (seed % AG.progress.rules.LEVELS) + 1, mode: 'daily', seed });
       return true;
     }
     if (view !== 'overview') leave();
@@ -177,7 +177,7 @@
     const talk = AG.dialogue.box({ speaker: sel, style: 'standard', text: t('pick.intro', { name: c.name, role: c.role, gear: c.gear, bio: c.bio }), plainFont: AG.store.setting('plainFont') });
     const frame = AG.progress.unlocked().filter(u => u.id.startsWith('frame-')).pop();
     if (frame) talk.dataset.frame = frame.id;
-    if (AG.progress.totalStars() >= 300) talk.dataset.plate = 'gold';
+    if (AG.progress.unlocked().some(u => u.id === 'plate-gold')) talk.dataset.plate = 'gold';
     startCycle(talk, sel);
     const ex = expertId(), exC = AG.chars.get(ex);
     const swapped = game.hostRole && ex !== game.hostRole;
@@ -223,42 +223,44 @@
       h('label', { class: 'ag-check', for: 'ag-tut' }, tut, h('span', {}, t('lvl.tutorial'))));
   }
 
+  /** One row of 5 level tiles (KALASAG O12: no worlds). Level N+1 opens at ≥ 1 star on level N. */
   function mapPanel() {
-    const P = AG.progress;
-    const worlds = h('ol', { class: 'ag-worlds' });
-    for (let w = 1; w <= P.rules.WORLDS; w++) {
-      const open = P.worldOpen(game.id, w, unlockAll);
-      const stars = P.worldStars(game.id, w);
-      const li = h('li', { class: 'ag-world' + (open ? '' : ' is-locked') },
-        h('div', { class: 'ag-world__head' }, h('b', {}, t('map.world', { n: w })), h('span', { class: 'ag-world__stars' }, AG.ui.icon('star', 18), ' ' + stars + '/15')));
-      if (open) {
-        const row = h('div', { class: 'ag-levels' });
-        for (let l = 1; l <= 5; l++) {
-          const rec = P.level(game.id, w, l);
-          row.append(h('a', { class: 'ag-level' + (rec ? ' is-played' : ''), href: AG.router.playHash(w, l), 'aria-label': t('map.level', { w, l }) + ', ' + t('map.stars', { n: rec ? rec.stars : 0 }) },
-            h('b', {}, w + '-' + l), AG.ui.stars(rec ? rec.stars : 0)));
-        }
-        li.append(row);
-        const poster = posterFor(w);
-        if (poster) li.firstChild.append(poster);
+    const P = AG.progress, N = P.rules.LEVELS;
+    const row = h('ol', { class: 'ag-levels' });
+    let firstLocked = 0;
+    for (let n = 1; n <= N; n++) {
+      const rec = P.level(game.id, n);
+      if (P.levelOpen(game.id, n, unlockAll)) {
+        row.append(h('li', {}, h('a', { class: 'ag-level' + (rec ? ' is-played' : ''), href: AG.router.playHash(n), 'aria-label': t('map.level', { n }) + ', ' + t('map.stars', { n: rec ? rec.stars : 0 }) },
+          h('b', {}, String(n)), AG.ui.stars(rec ? rec.stars : 0))));
       } else {
-        li.append(h('p', { class: 'ag-world__locked' }, '🔒 ' + t('map.locked', { n: Math.max(1, 5 - P.worldStars(game.id, w - 1)), w: w - 1 })));
+        if (!firstLocked) firstLocked = n;
+        row.append(h('li', {}, h('span', { class: 'ag-level is-locked', 'aria-label': t('map.level', { n }) + ', ' + t('map.lockedLevel') },
+          h('b', {}, String(n)), h('span', { 'aria-hidden': 'true' }, '🔒'))));
       }
-      worlds.append(li);
     }
+    const stars = P.gameStars(game.id);
     return h('section', { class: 'ag-map', 'aria-labelledby': 'ag-map-title' },
-      h('div', { class: 'ag-panelhead' }, h('h3', { id: 'ag-map-title' }, t('map.title')), unlockAll ? h('span', { class: 'ag-eyebrow' }, t('map.demo')) : null),
-      worlds);
+      h('div', { class: 'ag-panelhead' }, h('h3', { id: 'ag-map-title' }, t('map.title')),
+        h('span', { class: 'ag-map__stars' }, AG.ui.icon('star', 18), ' ' + stars + '/' + N * 3),
+        unlockAll ? h('span', { class: 'ag-eyebrow' }, t('map.demo')) : null),
+      row,
+      firstLocked ? h('p', { class: 'ag-map__locked' }, '🔒 ' + t('map.locked', { n: firstLocked - 1, m: firstLocked })) : null,
+      postersRow());
   }
 
-  /** A world's reward poster (registry "posters": { "<w>": { asset, title } }): it opens once all
-   *  five levels of the world are cleared, and shows big in a dialog. */
-  function posterFor(w) {
-    const def = game.posters && game.posters[w];
-    if (!def) return null;
-    if (!AG.progress.rules.worldCleared(AG.store.get('levels'), game.id, w)) return h('small', { class: 'ag-world__poster is-locked' }, '🔒 ' + t('map.posterLocked'));
+  /** Reward posters (registry "posters": { "<n>": { asset, title } }): each opens once its level
+   *  has a star, and shows big in a dialog. */
+  function postersRow() {
+    const defs = game.posters ? Object.keys(game.posters).map(Number).filter(n => n >= 1 && n <= AG.progress.rules.LEVELS).sort() : [];
+    if (!defs.length) return null;
+    const open = defs.filter(n => AG.progress.rules.stars(AG.store.get('levels'), game.id, n) >= 1);
+    return h('div', { class: 'ag-posters' }, open.map(n => posterButton(game.posters[n])),
+      open.length < defs.length ? h('small', { class: 'ag-poster is-locked' }, '🔒 ' + t('map.posterLocked', { n: open.length, total: defs.length })) : null);
+  }
+  function posterButton(def) {
     const src = AG.assets.url(def.asset) || AG.assets.placeholderURL(def.asset, 96, 128);
-    const btn = h('button', { type: 'button', class: 'ag-btn ag-btn--alt ag-btn--small ag-world__poster' }, '🖼 ' + t('map.poster', { title: def.title }));
+    const btn = h('button', { type: 'button', class: 'ag-btn ag-btn--alt ag-btn--small ag-poster' }, '🖼 ' + t('map.poster', { title: def.title }));
     btn.addEventListener('click', () => {
       const close = h('button', { type: 'button', class: 'ag-btn ag-btn--alt ag-btn--small' }, t('common.close'));
       const dlg = h('dialog', { class: 'ag-help ag-posterdlg', 'aria-label': pick(def.title) },
@@ -274,9 +276,8 @@
 
   function playRow() {
     const next = AG.progress.nextLevel(game.id, unlockAll);
-    const played = AG.progress.gameStars(game.id) > 0 || !!(AG.store.get('lastByGame') || {})[game.id];
-    const label = played ? t('play.continue', { w: next.world, l: next.level }) : t('play.start', { w: next.world, l: next.level });
-    return h('div', { class: 'ag-playrow' }, h('a', { class: 'ag-btn ag-btn--big ag-playbtn', href: AG.router.playHash(next.world, next.level) }, '▶ ' + label));
+    const label = AG.progress.played(game.id) ? t('play.continue', { n: next.level }) : t('play.start', { n: next.level });
+    return h('div', { class: 'ag-playrow' }, h('a', { class: 'ag-btn ag-btn--big ag-playbtn', href: AG.router.playHash(next.level) }, '▶ ' + label));
   }
 
   function soonPanel() {
@@ -343,7 +344,7 @@
     p.shell = shell; p.stage = stage;
     p.relabel = () => {
       title.textContent = spec.mode === 'daily' ? t('sh.daily') + ': ' + pick(game.title) : pick(game.title);
-      chip.textContent = (spec.mode === 'daily' ? '' : spec.world + '-' + spec.level + ' · ') + t('lvl.' + diff);
+      chip.textContent = (spec.mode === 'daily' ? '' : t('map.level', { n: spec.level }) + ' · ') + t('lvl.' + diff);
       face.querySelector('small').textContent = t('sh.playingAs');
       back.setAttribute('aria-label', t('sh.back')); back.title = t('sh.back');
       restart.setAttribute('aria-label', t('sh.restart')); restart.title = t('sh.restart');
@@ -371,15 +372,14 @@
       let levelData = null;
       try {
         const levels = mod.levels || (game.data && game.data.includes('levels.json') ? await AG.data.load(game.id, 'levels.json') : null);
-        if (levels) levelData = spec.mode === 'daily' && mod.generateDaily ? mod.generateDaily(spec.seed) : levels.find(x => x.world === spec.world && x.level === spec.level) || null;
+        if (levels) levelData = spec.mode === 'daily' && mod.generateDaily ? mod.generateDaily(spec.seed) : levels.find(x => x.level === spec.level) || null;
       } catch (err) { AG.warnOnce('levels:' + game.id, 'levels.json missing for', game.id); }
       if (spec.mode === 'daily' && !levelData && mod.generateDaily) levelData = mod.generateDaily(spec.seed);
       if (my !== session) return;
       const ctx = makeCtx(p, levelData);
       p.ctx = ctx;
       stage.replaceChildren();
-      const introKey = game.id + ':' + spec.world;
-      const needIntro = spec.mode !== 'daily' && !AG.store.get('intros')[introKey];
+      const needIntro = spec.mode !== 'daily' && !AG.store.get('intros')[game.id];
       const tutLines = tutorialWanted ? (typeof mod.tutorial === 'function' ? mod.tutorial(ctx) : mod.tutorial) : null;
       const mount = () => {
         if (my !== session) return;
@@ -397,12 +397,12 @@
         } else mount();
       };
       if (needIntro) {
-        AG.store.update('intros', x => { x[introKey] = 1; });
+        AG.store.update('intros', x => { x[game.id] = 1; });
         const lines = mod.intro ? mod.intro(ctx) : [
           { speaker: ctx.expertId, text: t('intro.default1', { title: game.title }) },
           { speaker: p.char, text: pick(game.objective) },
           { speaker: ctx.expertId, text: t('intro.default2') }];
-        talk(stage, pick(game.title) + ' · ' + t('map.world', { n: spec.world }), lines, t('intro.skip'), runTutorial);
+        talk(stage, pick(game.title), lines, t('intro.skip'), runTutorial);
       } else runTutorial();
     })();
   }
@@ -423,8 +423,8 @@
     const ex = expertId();
     const shell = p.shell;
     const ctx = {
-      gameId: game.id, hazardId: hazard.id, world: spec.world, level: spec.level, difficulty: p.diff,
-      seed: spec.seed != null ? spec.seed : AG.util.seedFromDate() * 100 + spec.world * 10 + spec.level,
+      gameId: game.id, hazardId: hazard.id, level: spec.level, difficulty: p.diff,
+      seed: spec.seed != null ? spec.seed : AG.util.seedFromDate() * 100 + spec.level,
       mode: spec.mode, levelData, characterId: p.char, expertId: ex, lang: AG.lang(),
       stage, controls: shell.querySelector('.ag-controls'), game, assets: AG.assets,
       hud(o) { const hu = AG.ui.hud(o); shell.querySelector('.ag-hudslot').replaceChildren(hu.el); return hu; },
@@ -543,11 +543,11 @@
     const stars = AG.util.clamp(res.stars | 0, 0, 3);
     const xp = AG.progress.xpFor(Object.assign({}, res, { stars }));
     const rankBefore = AG.bridge.rank(AG.bridge.getXP());
-    const rec = AG.progress.record(game.id, hazard.id, spec.world, spec.level, Object.assign({}, res, { stars }), spec.mode);
+    const rec = AG.progress.record(game.id, hazard.id, spec.level, Object.assign({}, res, { stars }), spec.mode);
     if (p.diff === 'advanced' && stars >= 3) AG.store.update('stats', s => { s.advanced3 = 1; });
     const badges = AG.progress.checkBadges(game.id, p.mod && p.mod.badges, res.badgeEvents);
     // The site adds the XP and bumps the streak (js/ui/game-host.js).
-    AG.emit('kalasag:gameresult', { gameId: game.id, hazardId: hazard.id, world: spec.world, level: spec.level, xp, stars, won: !!res.won, mode: spec.mode });
+    AG.emit('kalasag:gameresult', { gameId: game.id, hazardId: hazard.id, level: spec.level, xp, stars, won: !!res.won, mode: spec.mode });
     const rankAfter = AG.bridge.rank(AG.bridge.getXP());
     AG.sfx.play(badges.length || pick(rankAfter.name) !== pick(rankBefore.name) ? 'rank_up' : res.won ? 'win' : 'end');
     lastResult = { p, res, stars, xp, rec, badges, rankUp: pick(rankAfter.name) !== pick(rankBefore.name) ? rankAfter : null };
@@ -556,10 +556,8 @@
 
   function nextOf(spec) {
     if (spec.mode !== 'stage') return null;
-    let w = spec.world, l = spec.level + 1;
-    if (l > 5) { w++; l = 1; }
-    if (w > AG.progress.rules.WORLDS || !AG.progress.worldOpen(game.id, w, unlockAll)) return null;
-    return { world: w, level: l };
+    const n = spec.level + 1;
+    return AG.progress.levelOpen(game.id, n, unlockAll) ? n : null;
   }
 
   function renderResult(r) {
@@ -582,7 +580,7 @@
       h('section', { class: 'ag-result', 'aria-live': 'polite', 'data-won': String(!!res.won) },
         h('div', { class: 'ag-resultchar', style: { '--role': c.color } }, AG.chars.img(p.char, res.won ? 'cheer' : 'determined', 2)),
         h('div', { class: 'ag-result__copy' },
-          h('span', { class: 'ag-eyebrow' }, pick(game.title) + ' · ' + (spec.mode === 'daily' ? t('sh.daily') : spec.world + '-' + spec.level) + ' · ' + t('lvl.' + p.diff)),
+          h('span', { class: 'ag-eyebrow' }, pick(game.title) + ' · ' + (spec.mode === 'daily' ? t('sh.daily') : t('map.level', { n: spec.level })) + ' · ' + t('lvl.' + p.diff)),
           headline,
           h('div', { class: 'ag-bigstars', role: 'img', 'aria-label': t('map.stars', { n: stars }) }, [0, 1, 2].map(i => AG.ui.icon(i < stars ? 'star' : 'star_empty', 56, '', i < stars ? 'on' : ''))),
           h('div', { class: 'ag-scoreline' },
@@ -598,7 +596,7 @@
       learned.length ? h('section', { class: 'ag-learned' }, h('h3', {}, t('res.learned')), h('ul', {}, learned.map(l => h('li', {}, AG.ui.icon('check', 20), ' ' + pick(l))))) : null,
       h('p', { class: 'ag-takeaway' }, pick(mod.takeaway || game.takeaway)),
       h('div', { class: 'ag-actions' }, again,
-        next ? h('a', { class: 'ag-btn ag-btn--alt', href: AG.router.playHash(next.world, next.level) }, t('res.next') + ' ' + next.world + '-' + next.level + ' →') : null,
+        next ? h('a', { class: 'ag-btn ag-btn--alt', href: AG.router.playHash(next) }, t('res.next') + ' ' + next + ' →') : null,
         change, backBtn)));
     if (res.won && stars > 0) AG.kit.celebrate(root.querySelector('.ag-result'));
     document.removeEventListener('keydown', resultKeys);
@@ -613,7 +611,7 @@
     if (e.key === 'Enter') {
       e.preventDefault();
       const next = lastResult.res.won ? nextOf(lastResult.p.spec) : null;
-      if (next) location.hash = AG.router.playHash(next.world, next.level);
+      if (next) location.hash = AG.router.playHash(next);
       else startPlay(lastResult.p.spec);
     } else if (e.key === 'Escape') { e.preventDefault(); backToLesson(); }
   }

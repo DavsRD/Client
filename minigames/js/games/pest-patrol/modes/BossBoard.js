@@ -1,6 +1,6 @@
-/* Pest Patrol Match — BREEDING-SITE BOSS BOARD (world 5).
+/* Pest Patrol Match — BREEDING-SITE BOSS BOARD (level 5).
  *
- * An Onet board (as in world 4) where some tiles hide dirty mosquito breeding sites: an old
+ * An Onet board (as in level 4) where some tiles hide dirty mosquito breeding sites: an old
  * tire, a flower vase, a blocked gutter, an open drum. Clearing the tile on top shows the
  * site; select it (Enter or tap) to clean it: "Search & destroy!" and the clean sprite.
  * Win = the board is clear AND every site is clean. The results add the 4S anti-dengue

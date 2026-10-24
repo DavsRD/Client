@@ -1,6 +1,5 @@
 [
  {
-  "world": 1,
   "level": 1,
   "mode": "queue",
   "words": ["REST", "MASK", "SOAP", "GERM", "SICK"],
@@ -8,120 +7,21 @@
   "golden": [1, 3, 4]
  },
  {
-  "world": 1,
   "level": 2,
-  "mode": "queue",
-  "words": ["SOAP", "SICK", "REST", "FEVER", "MASK"],
-  "wordsFil": ["SIKO", "SAKIT", "UBO", "GAMOT", "TUBIG"],
-  "golden": [0, 2, 4]
- },
- {
-  "world": 1,
-  "level": 3,
-  "mode": "queue",
-  "words": ["GERM", "COUGH", "REST", "CLEAN", "SOAP"],
-  "wordsFil": ["SIPON", "LINIS", "UBO", "KAMAY", "GAMOT"],
-  "golden": [1, 2, 4]
- },
- {
-  "world": 1,
-  "level": 4,
-  "mode": "queue",
-  "words": ["FEVER", "MASK", "CLEAN", "GERM", "COUGH"],
-  "wordsFil": ["TUBIG", "GAMOT", "SIPON", "LINIS", "SAKIT"],
-  "golden": [0, 3, 4]
- },
- {
-  "world": 1,
-  "level": 5,
-  "mode": "queue",
-  "words": ["COUGH", "SICK", "FEVER", "CLEAN", "MASK"],
-  "wordsFil": ["KAMAY", "LINIS", "TUBIG", "SIKO", "GAMOT"],
-  "golden": [2, 3, 4]
- },
- {
-  "world": 2,
-  "level": 1,
-  "mode": "queue",
-  "words": ["SOAP", "RINSE", "ELBOW", "MASK", "TISSUE"],
-  "wordsFil": ["SABON", "HUGAS", "UBO", "TUBIG", "PANYO"],
-  "golden": [1, 3, 4]
- },
- {
-  "world": 2,
-  "level": 2,
-  "mode": "queue",
-  "words": ["RINSE", "TISSUE", "CLEAN", "ELBOW", "HYGIENE"],
-  "wordsFil": ["HUGAS", "PANYO", "SABON", "LINIS", "PAHINGA"],
-  "golden": [0, 2, 4]
- },
- {
-  "world": 2,
-  "level": 3,
   "mode": "queue",
   "words": ["ELBOW", "HYGIENE", "COUGH", "TISSUE", "SANITIZE"],
   "wordsFil": ["PANYO", "PAHINGA", "SABON", "HUGAS", "KALINISAN"],
   "golden": [1, 2, 4]
  },
  {
-  "world": 2,
-  "level": 4,
-  "mode": "queue",
-  "words": ["TISSUE", "SANITIZE", "RINSE", "HYGIENE", "HANDWASHING"],
-  "wordsFil": ["SABON", "KALINISAN", "PANYO", "PAHINGA", "HUGAS"],
-  "golden": [0, 3, 4]
- },
- {
-  "world": 2,
-  "level": 5,
-  "mode": "queue",
-  "words": ["HYGIENE", "ELBOW", "SANITIZE", "TISSUE", "HANDWASHING"],
-  "wordsFil": ["PAHINGA", "HUGAS", "KALINISAN", "PANYO", "SABON"],
-  "golden": [2, 3, 4]
- },
- {
-  "world": 3,
-  "level": 1,
-  "mode": "queue",
-  "words": ["FEVER", "VACCINE", "CONTACT", "REST", "SYMPTOM"],
-  "wordsFil": ["BAHAY", "LAGNAT", "BAKUNA", "SIPON", "DOKTOR"],
-  "golden": [1, 3, 4]
- },
- {
-  "world": 3,
-  "level": 2,
-  "mode": "queue",
-  "words": ["VACCINE", "SYMPTOM", "MASK", "CONTACT", "ISOLATE"],
-  "wordsFil": ["LAGNAT", "BAKUNA", "BAHAY", "DOKTOR", "MIKROBYO"],
-  "golden": [0, 2, 4]
- },
- {
-  "world": 3,
   "level": 3,
-  "mode": "queue",
-  "words": ["CONTACT", "ISOLATE", "SYMPTOM", "VACCINE", "OUTBREAK"],
-  "wordsFil": ["DOKTOR", "MIKROBYO", "LAGNAT", "BAKUNA", "SINTOMAS"],
-  "golden": [1, 2, 4]
- },
- {
-  "world": 3,
-  "level": 4,
-  "mode": "queue",
-  "words": ["SYMPTOM", "OUTBREAK", "ISOLATE", "CONTACT", "QUARANTINE"],
-  "wordsFil": ["BAKUNA", "SINTOMAS", "BAHAY", "MIKROBYO", "DOKTOR"],
-  "golden": [0, 3, 4]
- },
- {
-  "world": 3,
-  "level": 5,
   "mode": "queue",
   "words": ["VACCINE", "ISOLATE", "OUTBREAK", "SYMPTOM", "QUARANTINE"],
   "wordsFil": ["MIKROBYO", "LAGNAT", "SINTOMAS", "BAKUNA", "PAHINGA"],
   "golden": [2, 3, 4]
  },
  {
-  "world": 4,
-  "level": 1,
+  "level": 4,
   "mode": "twist",
   "seed": "PREVENTION",
   "golden": ["OVEN", "POINT", "INVENT"],
@@ -137,75 +37,6 @@
   }
  },
  {
-  "world": 4,
-  "level": 2,
-  "mode": "twist",
-  "seed": "VACCINATION",
-  "golden": ["COIN", "NATION", "VACATION"],
-  "minWords": {
-   "easy": 5,
-   "advanced": 8
-  }
- },
- {
-  "world": 4,
-  "level": 3,
-  "mode": "twist",
-  "seed": "QUARANTINE",
-  "golden": ["TRAIN", "QUIET", "NATURE"],
-  "minWords": {
-   "easy": 6,
-   "advanced": 9
-  }
- },
- {
-  "world": 4,
-  "level": 4,
-  "mode": "twist",
-  "seed": "HANDWASHING",
-  "golden": ["WAND", "SWING", "AGAIN"],
-  "minWords": {
-   "easy": 6,
-   "advanced": 9
-  }
- },
- {
-  "world": 4,
-  "level": 5,
-  "mode": "twist",
-  "seed": "OUTBREAK",
-  "golden": ["BOAT", "BREAK", "ABOUT"],
-  "minWords": {
-   "easy": 7,
-   "advanced": 10
-  }
- },
- {
-  "world": 5,
-  "level": 1,
-  "mode": "sentence",
-  "sentences": ["wash", "cough", "home"]
- },
- {
-  "world": 5,
-  "level": 2,
-  "mode": "sentence",
-  "sentences": ["mask", "tissue", "wash"]
- },
- {
-  "world": 5,
-  "level": 3,
-  "mode": "sentence",
-  "sentences": ["vaccine", "home", "cough"]
- },
- {
-  "world": 5,
-  "level": 4,
-  "mode": "sentence",
-  "sentences": ["tissue", "mask", "vaccine"]
- },
- {
-  "world": 5,
   "level": 5,
   "mode": "sentence",
   "sentences": ["cough", "vaccine", "home"]

@@ -73,7 +73,7 @@ window.AG = window.AG || {};
 #ag-app .pp .pp-gold:not([data-state="hidden"]) .agc-card__front::after,
 #ag-app .pp .pp-gold.pp-tile::after { content: ""; position: absolute; top: 2px; left: 2px; width: 18px; height: 18px; background: var(--pp-star) center / 18px 18px no-repeat; image-rendering: pixelated; }
 
-/* World 2: pests on the left, prevention tiles in the tray */
+/* Level 2: pests on the left, prevention tiles in the tray */
 #ag-app .pp-drop { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 14px; width: min(560px, 100%); }
 #ag-app .pp-drop h4 { margin: 0 0 4px; font-size: var(--step--1); color: var(--muted); text-transform: uppercase; letter-spacing: .06em; text-align: center; }
 #ag-app .pp-col { display: grid; gap: 8px; align-content: start; }
@@ -97,7 +97,7 @@ window.AG = window.AG || {};
 #ag-app .pp-tile.done { display: none; }
 #ag-app .pp-tile.is-hint, #ag-app .pp-pest.is-hint { outline: 3px dashed var(--hat); outline-offset: 3px; animation: agc-blink .8s steps(2) infinite; }
 
-/* World 5: breeding sites in cleared cells */
+/* Level 5: breeding sites in cleared cells */
 #ag-app .pp-site { display: grid; place-items: center; gap: 0; }
 #ag-app .pp-site b { font-size: 8px; font-family: var(--font-display); color: #1e1538; background: #ffe0e6; padding: 0 2px; border: 1px solid #1e1538; }
 #ag-app .pp-site.is-clean b { background: #dff7e3; }
@@ -358,15 +358,12 @@ window.AG = window.AG || {};
         message: o.message, learned: o.learned, badgeEvents: this.badgeEvents(o)
       });
     }
-    /** memory-master (every World 1 level at 3 stars), onet-pro (a 10-match chain),
+    /** memory-master (level 1 at 3 stars), onet-pro (a 10-match chain),
      *  four-s (40 breeding sites cleaned in all). Counted in stats.pestPatrol. */
     badgeEvents(o) {
-      const ev = [], { gameId, world, level } = this.ctx;
+      const ev = [];
       if (this.ctx.mode !== 'stage') return ev;
-      if (world === 1 && o.passed && o.stars === 3) {
-        const all = [1, 2, 3, 4, 5].every(l => l === level || ((AG.progress.level(gameId, 1, l) || {}).stars || 0) >= 3);
-        if (all) ev.push('memory-master');
-      }
+      if (this.ctx.level === 1 && o.passed && o.stars === 3) ev.push('memory-master');
       if (this.streak.best >= T.badges.onetChain) ev.push('onet-pro');
       const stats = AG.store.update('stats', s => {
         const p = s.pestPatrol = s.pestPatrol || { sites: 0 };

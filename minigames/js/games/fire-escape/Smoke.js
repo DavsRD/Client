@@ -1,4 +1,4 @@
-/* Fire Escape Maze — SMOKE and the COUGH meter (World 2+). Pure (no DOM), tested in
+/* Fire Escape Maze — SMOKE and the COUGH meter (level 2+). Pure (no DOM), tested in
  * fire-escape.test.js.
  *
  *   const cough = new AG.fireEscape.CoughMeter({ fillPerS: 0.25, decayPerS: 0.1, coughEveryS: 1.1 })

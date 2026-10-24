@@ -1,4 +1,4 @@
-/* Pest Patrol Match — PEST → PREVENTION (world 2).
+/* Pest Patrol Match — PEST → PREVENTION (level 2).
  *
  * The pests stand in a column; the prevention tiles wait in the tray. Drag each tile onto its
  * pest (AG.dnd: drag, or tap the tile then the pest). Keyboard: arrows move (↑/↓ in a column,

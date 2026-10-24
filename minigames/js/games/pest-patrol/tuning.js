@@ -11,8 +11,8 @@
     memoryStars: [1.3, 1.8],                 // attempts ≤ sets × 1.3 = 3 stars, ≤ × 1.8 = 2
     dropStars: [1, 3],                       // misplacements ≤ 1 = 3 stars, ≤ 3 = 2
     onet: {
-      time: { easy: 120, advanced: 80 },     // world 4 (seconds)
-      bossTime: { easy: 150, advanced: 110 },// world 5: the sites take time to clean too
+      time: { easy: 120, advanced: 80 },     // level 4 (seconds)
+      bossTime: { easy: 150, advanced: 110 },// level 5: the sites take time to clean too
       shuffles: 2,                           // S / 🔀 per level (the no-moves shuffle is free)
       passShare: 0.75,                       // time up with this share of the board cleared still passes
       starShare: [0.15, 0.4],                // time left / total (+ the chain bonus) for 2 / 3 stars
@@ -122,7 +122,7 @@
     },
     /** Phones: a board wider than 6 columns is turned on its side (6 × 8 instead of 8 × 6). */
     fitBoard(w, h, narrow) { return narrow && w > 6 && h < w ? { w: h, h: w } : { w, h }; },
-    /** Breeding-site cells for World 5: n distinct cells that hold a tile, seeded. */
+    /** Breeding-site cells for level 5: n distinct cells that hold a tile, seeded. */
     sites(board, n, rnd) {
       const O = AG.logic.onet;
       return rules.pick(O.occupied(board).map(p => p.y * board.w + p.x), n, rnd).sort((a, b) => a - b);

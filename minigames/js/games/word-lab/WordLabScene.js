@@ -29,7 +29,7 @@ window.AG = window.AG || {};
       S('Almost! Look at the clue and try another order.', 'Malapit na! Tingnan ang clue at subukan ang ibang ayos.'),
       S('Stuck? Press ? or tap 💡 for a letter.', 'Nahihirapan? Pindutin ang ? o i-tap ang 💡 para sa isang letra.')],
     lowTime: S('15 seconds left!', '15 segundo na lang!'),
-    poster: S('You cleared World {w}: a new health poster is on the world map!', 'Natapos mo ang Mundo {w}: may bagong health poster sa world map!')
+    poster: S('You unlocked a new health poster: find it under the levels!', 'May bagong health poster ka: hanapin ito sa ilalim ng mga antas!')
   };
 
   /* ---------- styles, once per page (all under #ag-app, classes wl-) ---------- */
@@ -306,7 +306,7 @@ window.AG = window.AG || {};
       const stars = R.stars(o.passed, this.score, o.targets, this.hints);
       const badgeEvents = this.badgeEvents(o.passed, !!o.bingo);
       let message = o.message;
-      if (o.passed && this.completesWorld()) message = [message, S(this.fmt(STR.poster.en, { w: String(this.ctx.world) }), this.fmt(STR.poster.fil, { w: String(this.ctx.world) }))];
+      if (stars > 0 && this.unlocksPoster()) message = [message, STR.poster];
       this.reaction = null; this.base = o.passed ? 'cheer' : 'think'; this.renderPlayer();
       this.doneFn({
         won: !!o.passed, stars, score: this.score, timeMs: Math.round(used * 1000),
@@ -316,22 +316,19 @@ window.AG = window.AG || {};
         learned: o.learned, badgeEvents, bonusXP: this.bonusXP
       });
     }
-    /** Does clearing this level finish its world (the world's poster unlocks on the map)? */
-    completesWorld() {
-      const { gameId, world, level } = this.ctx;
-      if (this.ctx.mode !== 'stage') return false;
-      for (let l = 1; l <= 5; l++) {
-        if (l === level) continue;
-        const rec = AG.progress.level(gameId, world, l);
-        if (!rec || !rec.stars) return false;
-      }
-      const mine = AG.progress.level(gameId, world, level);
+    /** Is this the level's first star (its poster opens under the level tiles)? */
+    unlocksPoster() {
+      const { gameId, level, game } = this.ctx;
+      if (this.ctx.mode !== 'stage' || !(game && game.posters && game.posters[level])) return false;
+      const mine = AG.progress.level(gameId, level);
       return !(mine && mine.stars);
     }
-    /** no-hints-needed (10 levels with 0 hints), word-wizard (BINGO in all 5 Twist levels),
-     *  bilingual (5 levels played in Filipino). Counted per level id in stats.wordLab. */
+    /** no-hints-needed (all 5 levels with 0 hints), word-wizard (BINGO in the Twist level),
+     *  bilingual (all 5 levels played in Filipino). Counted per level number in stats.wordLab;
+     *  keys from the old worlds ('w-l') are ignored. */
     badgeEvents(won, bingo) {
-      const id = this.ctx.world + '-' + this.ctx.level, ev = [];
+      const id = String(this.ctx.level), ev = [];
+      const count = o => Object.keys(o).filter(k => /^[1-5]$/.test(k)).length;
       if (this.ctx.mode !== 'stage') return ev;
       const stats = AG.store.update('stats', s => {
         const w = s.wordLab = s.wordLab || {};
@@ -340,9 +337,9 @@ window.AG = window.AG || {};
         if (bingo) w.bingo[id] = 1;
         if (won && this.fil) w.fil[id] = 1;
       }).wordLab;
-      if (Object.keys(stats.noHint).length >= T.badges.noHints) ev.push('no-hints-needed');
-      if ([1, 2, 3, 4, 5].every(l => stats.bingo['4-' + l])) ev.push('word-wizard');
-      if (Object.keys(stats.fil).length >= T.badges.bilingual) ev.push('bilingual');
+      if (count(stats.noHint) >= T.badges.noHints) ev.push('no-hints-needed');
+      if (stats.bingo['4']) ev.push('word-wizard');
+      if (count(stats.fil) >= T.badges.bilingual) ev.push('bilingual');
       return ev;
     }
 

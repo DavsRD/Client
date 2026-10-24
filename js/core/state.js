@@ -253,6 +253,7 @@ export function getGamesSummary() {
   const stars = {};
   let totalStars = 0;
   for (const [id, rec] of Object.entries(g.levels || {})) {
+    if (!/:[1-5]$/.test(id)) continue; // old "<gameId>:<w>-<l>" records (worlds) are ignored
     const gameId = id.split(":")[0];
     stars[gameId] = (stars[gameId] || 0) + (rec.stars || 0);
     totalStars += rec.stars || 0;

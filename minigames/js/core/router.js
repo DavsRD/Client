@@ -3,7 +3,8 @@
  *
  *   ''                    → { view: 'overview' }
  *   '#game'               → { view: 'overview', scroll: true }
- *   '#play/2-3'           → { view: 'play', world: 2, level: 3 }
+ *   '#play/3'             → { view: 'play', level: 3 }   (levels 1–5; '#play/2-3' or '#play/6'
+ *                                                        fall back to the overview)
  *   '#daily'              → { view: 'daily' }
  *   '#unlockAll=1'        → teacher/demo mode; combine as '#game&unlockAll=1'
  *   anything else ('#infographic') → { view: 'overview', other: 'infographic' } */
@@ -16,11 +17,11 @@
     let m;
     if (main === '') return { view: 'overview', unlockAll };
     if (main === 'game') return { view: 'overview', scroll: true, unlockAll };
-    if ((m = main.match(/^play\/([1-5])-([1-5])$/))) return { view: 'play', world: +m[1], level: +m[2], unlockAll };
+    if ((m = main.match(/^play\/([1-5])$/))) return { view: 'play', level: +m[1], unlockAll };
     if (main === 'daily') return { view: 'daily', unlockAll };
     return { view: 'overview', other: main, unlockAll };
   }
-  const playHash = (w, l) => '#play/' + w + '-' + l;
+  const playHash = n => '#play/' + n;
   AG.router = { parse, playHash };
   if (typeof module !== 'undefined') module.exports = AG.router;
 })(typeof window !== 'undefined' ? (window.AG = window.AG || {}) : {});

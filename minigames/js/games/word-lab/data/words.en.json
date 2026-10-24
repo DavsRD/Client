@@ -6,7 +6,7 @@
    "en": "Resting in bed helps your body fight germs and get better.",
    "fil": "Ang pagpapahinga sa kama ay tumutulong sa katawan na labanan ang mikrobyo at gumaling."
   },
-  "world": 1,
+  "tier": 1,
   "difficulty": 1
  },
  {
@@ -16,7 +16,7 @@
    "en": "A face mask covers your nose and mouth. Wear one when you are sick so your germs don't spread.",
    "fil": "Tinatakpan ng face mask ang ilong at bibig. Magsuot nito kapag may sakit para hindi kumalat ang mikrobyo mo."
   },
-  "world": 1,
+  "tier": 1,
   "difficulty": 1
  },
  {
@@ -26,7 +26,7 @@
    "en": "Soap and water wash germs off your hands.",
    "fil": "Natatanggal ng sabon at tubig ang mikrobyo sa mga kamay."
   },
-  "world": 1,
+  "tier": 1,
   "difficulty": 1
  },
  {
@@ -36,7 +36,7 @@
    "en": "A germ is a tiny living thing, too small to see, that can make you sick.",
    "fil": "Ang mikrobyo ay napakaliit na buhay na bagay, hindi nakikita ng mata, na puwedeng magdulot ng sakit."
   },
-  "world": 1,
+  "tier": 1,
   "difficulty": 1
  },
  {
@@ -46,7 +46,7 @@
    "en": "When you feel sick, tell a grown-up and stay home to rest.",
    "fil": "Kapag masama ang pakiramdam mo, sabihin sa nakatatanda at manatili sa bahay para magpahinga."
   },
-  "world": 1,
+  "tier": 1,
   "difficulty": 1
  },
  {
@@ -56,7 +56,7 @@
    "en": "A fever means your body is hotter than normal. Tell a grown-up, drink water and rest.",
    "fil": "Ang lagnat ay kapag mas mainit ang katawan kaysa karaniwan. Sabihin sa nakatatanda, uminom ng tubig at magpahinga."
   },
-  "world": 1,
+  "tier": 1,
   "difficulty": 2
  },
  {
@@ -66,7 +66,7 @@
    "en": "Cough into your elbow or a tissue, not into your hands.",
    "fil": "Umubo sa siko o sa tisyu, hindi sa mga kamay."
   },
-  "world": 1,
+  "tier": 1,
   "difficulty": 2
  },
  {
@@ -76,7 +76,7 @@
    "en": "Clean hands and clean tables keep germs away.",
    "fil": "Ang malinis na kamay at malinis na mesa ay naglalayo sa mikrobyo."
   },
-  "world": 1,
+  "tier": 1,
   "difficulty": 2
  },
  {
@@ -86,7 +86,7 @@
    "en": "After scrubbing with soap, rinse your hands under clean running water.",
    "fil": "Pagkatapos magsabon, banlawan ang kamay sa malinis na umaagos na tubig."
   },
-  "world": 2,
+  "tier": 2,
   "difficulty": 1
  },
  {
@@ -96,7 +96,7 @@
    "en": "No tissue? Cough or sneeze into your elbow to keep germs off your hands.",
    "fil": "Walang tisyu? Umubo o bumahing sa siko para hindi mapunta ang mikrobyo sa kamay."
   },
-  "world": 2,
+  "tier": 2,
   "difficulty": 1
  },
  {
@@ -106,7 +106,7 @@
    "en": "Cover a sneeze with a tissue, throw it in the bin, then wash your hands.",
    "fil": "Takpan ang bahing ng tisyu, itapon ito sa basurahan, saka maghugas ng kamay."
   },
-  "world": 2,
+  "tier": 2,
   "difficulty": 2
  },
  {
@@ -116,7 +116,7 @@
    "en": "Hygiene means keeping yourself and your things clean so you stay healthy.",
    "fil": "Ang kalinisan ng katawan ay ang pagpapanatiling malinis ng sarili at ng gamit para manatiling malusog."
   },
-  "world": 2,
+  "tier": 2,
   "difficulty": 2
  },
  {
@@ -126,7 +126,7 @@
    "en": "To sanitize is to kill germs on hands or tables, for example with alcohol or hand sanitizer.",
    "fil": "Ang mag-sanitize ay pumatay ng mikrobyo sa kamay o mesa, halimbawa gamit ang alkohol o hand sanitizer."
   },
-  "world": 2,
+  "tier": 2,
   "difficulty": 3
  },
  {
@@ -136,7 +136,7 @@
    "en": "Handwashing with soap and water for 20 seconds takes germs off your hands.",
    "fil": "Ang paghuhugas ng kamay gamit ang sabon at tubig nang 20 segundo ay nag-aalis ng mikrobyo."
   },
-  "world": 2,
+  "tier": 2,
   "difficulty": 3
  },
  {
@@ -146,7 +146,7 @@
    "en": "A vaccine teaches your body to fight a germ before it can make you very sick.",
    "fil": "Tinuturuan ng bakuna ang katawan na labanan ang mikrobyo bago ka pa magkasakit nang malubha."
   },
-  "world": 3,
+  "tier": 3,
   "difficulty": 2
  },
  {
@@ -156,7 +156,7 @@
    "en": "Contact means being close to someone. Some germs spread through close contact.",
    "fil": "Ang contact ay ang pagiging malapit sa ibang tao. May mga mikrobyong kumakalat sa malapitang contact."
   },
-  "world": 3,
+  "tier": 3,
   "difficulty": 2
  },
  {
@@ -166,7 +166,7 @@
    "en": "A symptom is a sign of sickness, like a fever, a cough or a runny nose.",
    "fil": "Ang sintomas ay palatandaan ng sakit, gaya ng lagnat, ubo o sipon."
   },
-  "world": 3,
+  "tier": 3,
   "difficulty": 2
  },
  {
@@ -176,7 +176,7 @@
    "en": "When you are sick, health workers may ask you to isolate: stay apart from others until you are well.",
    "fil": "Kapag may sakit ka, puwedeng ipa-isolate ka ng health worker: lumayo muna sa iba hanggang gumaling."
   },
-  "world": 3,
+  "tier": 3,
   "difficulty": 3
  },
  {
@@ -186,7 +186,7 @@
    "en": "An outbreak is when many people get the same sickness at the same time.",
    "fil": "Ang outbreak ay kapag maraming tao ang nagkakaroon ng parehong sakit nang sabay-sabay."
   },
-  "world": 3,
+  "tier": 3,
   "difficulty": 3
  },
  {
@@ -196,7 +196,7 @@
    "en": "Quarantine means staying home, away from others, after being near a sick person, in case you caught the germ.",
    "fil": "Ang quarantine ay ang pananatili sa bahay, malayo sa iba, matapos mapalapit sa taong may sakit, sakaling nahawa ka."
   },
-  "world": 3,
+  "tier": 3,
   "difficulty": 3
  }
 ]

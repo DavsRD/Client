@@ -1,11 +1,11 @@
 /* Check Before You Share: turns data/cards.json into SwipeStack cards.
  *
- *   const deck = new AG.checkShare.Deck(data, { world, expertId, golden })
+ *   const deck = new AG.checkShare.Deck(data, { level, expertId, golden })
  *   deck.cards(levelData, rnd)   → SwipeStack card specs, in play order (no long same-side runs)
  *   deck.relabel(root)           re-reads every card text after a language switch
  *   deck.clueText(card)          "ALL CAPS, no source, …" as { en, fil }
  *
- * MESSAGE cards: a chat / radio / note frame (9-slice art), the sender, the text. From World 2
+ * MESSAGE cards: a chat / radio / note frame (9-slice art), the sender, the text. From level 2
  * the sender's SOURCE BADGE shows and forwarded messages get a "forwarded many times" tag.
  * Official-radio cards show the role expert holding a radio. ACTION cards: "What should you
  * do?" with 🏠. Golden source cards carry a ⭐ in the corner. */
@@ -62,7 +62,7 @@ window.AG = window.AG || {};
           h('img', { class: 'ag-px cbs-card__icon', src: AG.pixelIcon('🏠', 36), alt: '', width: 36, height: 36 }),
           txt('p', 'cbs-card__text', c.text));
       }
-      const src = this.source(c), badges = this.opts.world >= 2;
+      const src = this.source(c), badges = this.opts.level >= 2;
       const head = h('div', { class: 'cbs-card__head' },
         badges ? h('img', { class: 'ag-px cbs-card__badge', src: assetUrl('check-before-share.badge.' + src.badge, 24, 24), alt: '', width: 48, height: 48 }) : null,
         h('span', { class: 'cbs-card__who' },

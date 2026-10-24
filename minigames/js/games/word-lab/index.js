@@ -1,9 +1,9 @@
 /* 09 Health Center Word Lab (word-lab) — Disease Outbreak · biological · words · expert MEDIC.
- * courses.html?hazard=disease-outbreak#game, play route #play/<world>-<level>.
+ * courses.html?hazard=disease-outbreak#game, play route #play/<level>.
  *
- *   W1 short words · W2 hygiene words · W3 outbreak words   PATIENT QUEUE (PatientQueue.js)
- *   W4 one long word, find the words inside it               WORD TWIST (WordTwist.js)
- *   W5 safety rules as word tiles                            SENTENCE SCRAMBLE (SentenceScramble.js)
+ *   L1 short words · L2 hygiene words · L3 outbreak words   PATIENT QUEUE (PatientQueue.js)
+ *   L4 one long word, find the words inside it               WORD TWIST (WordTwist.js)
+ *   L5 safety rules as word tiles                            SENTENCE SCRAMBLE (SentenceScramble.js)
  * All three share WordLabScene.js (counter, characters, HUD, definitions, scoring) and
  * tuning.js. Content is JSON: levels.json, data/words.en.json, data/words.fil.json,
  * data/twist.json (precomputed, kid-safe), data/sentences.json. Filipino mode follows the
@@ -21,7 +21,8 @@ window.AG = window.AG || {};
   WL.data = () => Promise.all(['data/words.en.json', 'data/words.fil.json', 'data/twist.json', 'data/sentences.json'].map(f => AG.data.load('word-lab', f)))
     .then(([en, fil, twist, sentences]) => ({ en, fil, twist, sentences }));
 
-  const MODE = w => (w <= 3 ? 'queue' : w === 4 ? 'twist' : 'sentence');
+  const MODE = n => (n <= 3 ? 'queue' : n === 4 ? 'twist' : 'sentence');
+  const modeOf = ctx => (ctx.levelData && ctx.levelData.mode) || MODE(ctx.level);
 
   AG.games['word-lab'] = {
     id: 'word-lab',
@@ -34,8 +35,8 @@ window.AG = window.AG || {};
       S('Get your vaccines, and quarantine or isolate when health workers tell you to.', 'Magpabakuna, at mag-quarantine o mag-isolate kapag sinabi ng health worker.')
     ],
     badges: [
-      { id: 'no-hints-needed', name: S('No Hints Needed', 'Walang Pahiwatig'), icon: 'check', desc: S('Clear 10 Word Lab levels without a hint.', 'Tapusin ang 10 antas ng Word Lab nang walang pahiwatig.') },
-      { id: 'word-wizard', name: S('Word Wizard', 'Salamangkero ng Salita'), icon: 'trophy', desc: S('Get the BINGO word in every World 4 level.', 'Makuha ang BINGO sa bawat antas ng Mundo 4.') },
+      { id: 'no-hints-needed', name: S('No Hints Needed', 'Walang Pahiwatig'), icon: 'check', desc: S('Clear all 5 Word Lab levels without a hint.', 'Tapusin ang 5 antas ng Word Lab nang walang pahiwatig.') },
+      { id: 'word-wizard', name: S('Word Wizard', 'Salamangkero ng Salita'), icon: 'trophy', desc: S('Get the BINGO word in level 4 (Word Twist).', 'Makuha ang BINGO sa antas 4 (Word Twist).') },
       { id: 'bilingual', name: S('Bilingual Helper', 'Bilingguwal na Katulong'), icon: 'star', desc: S('Clear 5 Word Lab levels in Filipino.', 'Tapusin ang 5 antas ng Word Lab sa Filipino.') }
     ],
     characterActions: ['idle', 'think', 'happy', 'cheer', 'mask_on'],
@@ -59,7 +60,7 @@ window.AG = window.AG || {};
           [me, S('Yes! These rules keep everyone healthy.', 'Oo! Pinapanatiling malusog ng mga tuntuning ito ang lahat.')],
           [ex, S("After each rule, I'll tell you why it matters.", 'Pagkatapos ng bawat tuntunin, sasabihin ko kung bakit ito mahalaga.')]
         ]
-      }[MODE(ctx.world)];
+      }[modeOf(ctx)];
       return lines.map(([speaker, text]) => ({ speaker, text }));
     },
 
@@ -82,7 +83,7 @@ window.AG = window.AG || {};
           S('**Backspace** or **⌫** takes the last word back.', 'Ang **Backspace** o **⌫** ay nagbabalik ng huling salita.'),
           common
         ]
-      }[MODE(ctx.world)];
+      }[modeOf(ctx)];
     },
 
     mount(stage, ctx, done) {
@@ -93,7 +94,7 @@ window.AG = window.AG || {};
       WL.data().then(data => {
         if (dead) return;
         loading.remove();
-        const Mode = { queue: WL.PatientQueue, twist: WL.WordTwist, sentence: WL.SentenceScramble }[(ctx.levelData && ctx.levelData.mode) || MODE(ctx.world)];
+        const Mode = { queue: WL.PatientQueue, twist: WL.WordTwist, sentence: WL.SentenceScramble }[modeOf(ctx)];
         mode = new Mode(scene, data);
         mode.start();
         if (AG.debug.on) WL.live = { scene, mode }; // ?debug=1: scripted browser checks

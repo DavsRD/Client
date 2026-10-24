@@ -1,11 +1,11 @@
-/* Pest Patrol Match — MEMORY FLIP (world 1).
+/* Pest Patrol Match — MEMORY FLIP (level 1).
  *
  * Identical pairs face down in a CardGrid. Flip two (arrows + Enter, or tap): the same picture
  * matches, a different one flips back after 800 ms. Easy: 4–6 very distinct pairs with labels;
  * Advanced: 8–10 pairs that always include the look-alikes (🦟 / 🪰, 🐀 / 🐁), labels only after
  * a match. Stars: attempts ≤ pairs × 1.3 = 3, ≤ × 1.8 = 2, complete = 1. Three pairs are golden
  * (⭐ in the corner once face up): matching one collects it.
- * TripleFlip (world 3) extends this class with sets of three. */
+ * TripleFlip (level 3) extends this class with sets of three. */
 window.AG = window.AG || {};
 (function (AG) {
   const PP = AG.pestPatrol, T = PP.tuning, R = PP.rules;

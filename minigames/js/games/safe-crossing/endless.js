@@ -2,7 +2,7 @@
  * same date. Pure (tested in safe-crossing.test.js with a wait-and-go bot on 50 seeds).
  *
  *   AG.safeCrossing.generateDaily(seed) → an entry like levels.json's, with endless: true
- *     { daily, endless, seed, world, level, lanes: [...], items: [...], bridges: [...] }
+ *     { daily, endless, seed, level, lanes: [...], items: [...], bridges: [...] }
  * Rules: at most 4 road lanes in a row; a safe row after every rail; a zebra on at least
  * every second road; every 40 rows the ramp goes up a step (faster, busier, then signals,
  * parked vehicles, rails, footbridges). It ends at School after tuning.endless.rows rows,
@@ -88,7 +88,7 @@
       while (bridges.some(b => b.col === col && (b.from === j || b.to === j)) || items.some(it => it.i === j && it.col === col)) col = (col + 3) % 16;
       items.push({ i: j, col, kind: 'paw' });
     }
-    return { daily: true, endless: true, seed: seed >>> 0, world: 2, level: 3, lanes, items, bridges };
+    return { daily: true, endless: true, seed: seed >>> 0, level: 3, lanes, items, bridges };
   }
 
   SC.generateDaily = generateDaily;

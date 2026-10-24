@@ -1,4 +1,4 @@
-/* Health Center Word Lab — WORD TWIST (world 4).
+/* Health Center Word Lab — WORD TWIST (level 4).
  *
  * The letters of one long word (PREVENTION, VACCINATION, QUARANTINE, HANDWASHING, OUTBREAK;
  * KALINISAN in Filipino mode where the level has one). 90 s to make words of 3+ letters;

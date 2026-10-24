@@ -1,4 +1,4 @@
-/* Fire Escape Maze — STOP, DROP and ROLL (World 4 embers). Movement freezes and a close-up
+/* Fire Escape Maze — STOP, DROP and ROLL (level 4 embers). Movement freezes and a close-up
  * panel shows the player's side-view rig.
  *
  *   AG.fireEscape.SDR — the pure steps (tested in fire-escape.test.js):

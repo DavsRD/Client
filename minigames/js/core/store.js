@@ -10,15 +10,14 @@ window.AG = window.AG || {};
     v: 1,
     character: 'agila',
     difficulty: 'easy',
-    levels: {},      // '<gameId>:<w>-<l>' → { stars, best, plays, last, collectibles }
+    levels: {},      // '<gameId>:<n>' → { stars, best, plays, last, collectibles } (old '<w>-<l>' ids are ignored)
     daily: {},       // 'YYYY-MM-DD:<gameId>' → { best }
     badges: {},      // id → timestamp
     tutorials: {},   // gameId → 1 once the tutorial was shown
-    intros: {},      // '<gameId>:<w>' → 1 once the world's intro talk was shown
+    intros: {},      // gameId → 1 once the game's intro talk was shown
     stats: { safeChoices: 0, games: 0, used: {}, advanced3: 0 },
     settings: { touchControls: 'auto', dpad: true, autoBrace: false, bigText: false, plainFont: false, typewriter: true },
-    last: null,      // { gameId, hazardId, world, level }: the last level played anywhere
-    lastByGame: {},  // gameId → { world, level }: drives "Continue 2-3" on each overview
+    last: null,      // { gameId, hazardId, level }: the last level played anywhere
     unlocks: []
   });
   let mem = null;

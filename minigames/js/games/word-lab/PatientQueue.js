@@ -1,7 +1,7 @@
-/* Health Center Word Lab — PATIENT QUEUE (worlds 1–3).
+/* Health Center Word Lab — PATIENT QUEUE (levels 1–3).
  *
  * Five patients wait at the counter. The front one shows a CLUE icon (not on Advanced from
- * world 2) and the blanks; the scrambled tiles are never in answer order, and Advanced adds
+ * level 2) and the blanks; the scrambled tiles are never in answer order, and Advanced adds
  * 1–2 decoy tiles. Filling every blank checks the word: right = the role expert reads the
  * definition and the patient leaves smiling; wrong = the tiles bounce back and the blanks
  * clear. The level ends when all five are helped (time bonus) or the timer runs out (pass at
@@ -35,7 +35,7 @@ window.AG = window.AG || {};
       this.s = scene;
       const ctx = scene.ctx, lv = ctx.levelData || {};
       const list = scene.fil ? data.fil : data.en;
-      const names = (scene.fil ? lv.wordsFil : lv.words) || list.filter(e => e.world === Math.min(3, ctx.world)).map(e => e.word);
+      const names = (scene.fil ? lv.wordsFil : lv.words) || list.filter(e => e.tier === R.queueLevel(ctx.level)).map(e => e.word);
       const golden = lv.golden || [0, 1, 2];
       this.rnd = AG.util.mulberry32(ctx.seed);
       this.queue = names.slice(0, T.queue.patients).map((w, i) => {
@@ -43,7 +43,7 @@ window.AG = window.AG || {};
         if (!entry) AG.warnOnce('wl:' + w, 'word-lab: no entry for', w);
         return { entry: entry || { word: w, clue: '⭐', definition: S('', '') }, golden: golden.indexOf(i), sprite: 'word-lab.patient.p' + (1 + ((i + ctx.level) % 4)) };
       });
-      const d = ctx.difficulty === 'advanced' ? 'advanced' : 'easy', wi = Math.min(3, ctx.world) - 1;
+      const d = ctx.difficulty === 'advanced' ? 'advanced' : 'easy', wi = R.queueLevel(ctx.level) - 1;
       this.nDecoys = T.queue.decoys[d][wi];
       this.showClue = T.queue.clue[d][wi];
       this.i = 0; this.served = 0; this.hintsWord = 0; this.busy = false;
@@ -72,7 +72,7 @@ window.AG = window.AG || {};
       }));
       s.board.append(this.lt.el);
       this.render();
-      s.startTimer(R.queueTime(ctx.world, ctx.level, ctx.difficulty), () => this.timeUp());
+      s.startTimer(R.queueTime(ctx.level, ctx.difficulty), () => this.timeUp());
       s.onRelabel = () => this.render();
       ctx.say('instruction', STR.start);
       this.lt.el.focus({ preventScroll: true });

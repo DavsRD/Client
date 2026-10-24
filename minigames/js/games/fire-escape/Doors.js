@@ -1,4 +1,4 @@
-/* Fire Escape Maze — FEEL THE DOOR (World 3+). Pure (no DOM), tested in fire-escape.test.js.
+/* Fire Escape Maze — FEEL THE DOOR (level 3+). Pure (no DOM), tested in fire-escape.test.js.
  *
  *   const doors = new AG.fireEscape.Doors(plan.doors)    // [{ x, y, hot }]
  *   doors.at(x, y)        → { x, y, hot, open, felt } or null

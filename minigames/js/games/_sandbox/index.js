@@ -1,8 +1,8 @@
 /* "Tap the Stars" (_sandbox) — the debug-only test game from GOVERNING. Not a real game and
- * never listed for pupils: courses.html?hazard=earthquake&debug=1#play/1-1.
+ * never listed for pupils: courses.html?hazard=earthquake&debug=1#play/1.
  *
  * 10 pixel stars drift on a 480×270 canvas. Arrows move the cursor to the nearest star in
- * that direction, Enter/Space grabs it; or tap a star. 30 s per level (less on later worlds
+ * that direction, Enter/Space grabs it; or tap a star. 30 s per level (less on later levels
  * and Advanced). It exercises the shell: AG.input (keys, D-pad, taps, live prompt icons),
  * the rig (the player runs to the cursor, reacts happy / oops), a deliberately missing
  * image (a labelled placeholder), word boxes from the player and the role expert, results,
@@ -33,8 +33,8 @@
       AG.input.repeat('LEFT'); AG.input.repeat('RIGHT'); AG.input.repeat('UP'); AG.input.repeat('DOWN');
 
       const N = 10;
-      const total = Math.max(15, 30 - (ctx.world - 1) * 2 - (ctx.difficulty === 'advanced' ? 5 : 0));
-      const drift = (ctx.level - 1) * 5 + (ctx.world - 1) * 6 + (ctx.difficulty === 'advanced' ? 10 : 0);
+      const total = Math.max(15, 30 - (ctx.level - 1) * 2 - (ctx.difficulty === 'advanced' ? 5 : 0));
+      const drift = (ctx.level - 1) * 8 + (ctx.difficulty === 'advanced' ? 10 : 0);
       const rnd = AG.util.mulberry32(ctx.seed);
       const stars = Array.from({ length: N }, () => ({ x: 30 + rnd() * 410, y: 24 + rnd() * 150, vx: (rnd() - 0.5) * drift, vy: (rnd() - 0.5) * drift, got: false }));
       let cursor = 0, score = 0, caught = 0, misses = 0, left = total, ended = false, t = 0, saidHalf = false, lastMissMsg = 0;

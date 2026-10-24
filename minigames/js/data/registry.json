@@ -198,7 +198,7 @@
       },
       "howTo": [
         { "en": "Move, then flip or select a card", "fil": "Gumalaw, saka magbukas o pumili ng card", "keys": ["key_left", "key_right", "key_up", "key_down", "key_enter"], "gesture": "gesture_tap" },
-        { "en": "World 2: drag each fix onto its pest (Enter picks and places, Esc puts back)", "fil": "Mundo 2: i-drag ang bawat lunas sa peste nito (Enter pumili at ilagay, Esc ibalik)", "keys": ["key_enter", "key_esc"], "gesture": "gesture_drag" },
+        { "en": "Level 2: drag each fix onto its pest (Enter picks and places, Esc puts back)", "fil": "Antas 2: i-drag ang bawat lunas sa peste nito (Enter pumili at ilagay, Esc ibalik)", "keys": ["key_enter", "key_esc"], "gesture": "gesture_drag" },
         { "en": "Ask for a hint (−50 points)", "fil": "Humingi ng pahiwatig (−50 puntos)", "keys": ["key_h"], "gesture": "gesture_tap" },
         { "en": "Shuffle the Onet board (2 per level)", "fil": "Haluin ang Onet board (2 bawat antas)", "keys": ["key_s"], "gesture": "gesture_tap" }
       ],

@@ -1,38 +1,38 @@
-/* Progress rules: level records, world unlocks, the next level to play, XP, badges, star
+/* Progress rules: level records, level unlocks, the next level to play, XP, badges, star
  * unlocks and the Daily Challenge seed. The pure rules (AG.progress.rules) take plain data
  * and are tested in kalasag-dev/minigames/tests/; the rest read and write AG.store.
  *
- * - Worlds: world 1 is open; world N+1 opens at ≥ 5 stars in world N or when all five of
- *   its levels are cleared. Teacher/demo mode (#unlockAll=1) opens everything.
+ * - Levels (KALASAG O12, no worlds): 5 levels per game, ids '<gameId>:<n>'. Level 1 is open;
+ *   level N+1 opens when level N has ≥ 1 star. Teacher/demo mode (#unlockAll=1) opens all.
+ *   Records saved under the old '<gameId>:<w>-<l>' ids are ignored (no migration).
  * - XP = max(5, round(score / 10)) + stars × 5 + bonusXP (effort is never worth zero). It is
  *   added to the SITE's XP (KALASAG O6); ranks are computed from the site XP by the host.
- * - Star unlocks (O4): 25 / 50 / 100 / 200 stars = card frames, 300 = the gold name plate. */
+ * - Star unlocks (O4): 15 / 30 / 60 / 120 stars = card frames, 200 = the gold name plate. */
 (function (AG) {
-  const WORLDS = 3, LEVELS = 5; // KALASAG: 3 worlds × 5 levels (45 stars per game)
+  const LEVELS = 5; // KALASAG O12: 5 levels per game (15 stars)
   const S = (en, fil) => ({ en, fil });
 
   const rules = {
-    WORLDS, LEVELS,
-    levelId: (gameId, w, l) => gameId + ':' + w + '-' + l,
-    worldStars(levels, gameId, w) { let n = 0; for (let l = 1; l <= LEVELS; l++) n += (levels[rules.levelId(gameId, w, l)] || {}).stars || 0; return n; },
-    worldCleared(levels, gameId, w) { for (let l = 1; l <= LEVELS; l++) if (!((levels[rules.levelId(gameId, w, l)] || {}).stars > 0)) return false; return true; },
-    worldOpen(levels, gameId, w, unlockAll) {
-      if (w > WORLDS || w < 1) return false;
-      if (w === 1 || unlockAll) return true;
-      return rules.worldStars(levels, gameId, w - 1) >= 5 || rules.worldCleared(levels, gameId, w - 1);
+    LEVELS,
+    levelId: (gameId, n) => gameId + ':' + n,
+    /** True for a current '<gameId>:<n>' record id (old '<gameId>:<w>-<l>' ids are ignored). */
+    isLevelId: id => /:[1-5]$/.test(id),
+    stars: (levels, gameId, n) => (levels[rules.levelId(gameId, n)] || {}).stars || 0,
+    levelOpen(levels, gameId, n, unlockAll) {
+      if (!Number.isInteger(n) || n < 1 || n > LEVELS) return false;
+      if (n === 1 || unlockAll) return true;
+      return rules.stars(levels, gameId, n - 1) >= 1;
     },
-    gameStars(levels, gameId) { let n = 0; for (const k in levels) if (k.startsWith(gameId + ':')) n += levels[k].stars || 0; return n; },
-    totalStars(levels) { let n = 0; for (const k in levels) n += levels[k].stars || 0; return n; },
-    /** "Play 1-1" for a new game, otherwise "Continue" at the level after the last one played. */
-    nextLevel(levels, gameId, last, unlockAll) {
-      if (!last || last.gameId !== gameId) {
-        for (let w = 1; w <= WORLDS; w++) for (let l = 1; l <= LEVELS; l++) if (!levels[rules.levelId(gameId, w, l)] && rules.worldOpen(levels, gameId, w, unlockAll)) return { world: w, level: l, fresh: w === 1 && l === 1 && !rules.gameStars(levels, gameId) };
-        return { world: 1, level: 1, fresh: false };
-      }
-      let w = last.world, l = last.level + 1;
-      if (l > LEVELS) { w++; l = 1; }
-      if (w > WORLDS || !rules.worldOpen(levels, gameId, w, unlockAll)) return { world: last.world, level: last.level, fresh: false };
-      return { world: w, level: l, fresh: false };
+    gameStars(levels, gameId) { let n = 0; for (let l = 1; l <= LEVELS; l++) n += rules.stars(levels, gameId, l); return n; },
+    totalStars(levels) { let n = 0; for (const k in levels) if (rules.isLevelId(k)) n += levels[k].stars || 0; return n; },
+    played: (levels, gameId) => { for (let l = 1; l <= LEVELS; l++) if (levels[rules.levelId(gameId, l)]) return true; return false; },
+    /** "Play level 1" for a new game, otherwise "Continue" at the next unplayed open level
+     *  (or, when every open level was played, the last open one). */
+    nextLevel(levels, gameId, unlockAll) {
+      for (let l = 1; l <= LEVELS; l++) if (!levels[rules.levelId(gameId, l)] && rules.levelOpen(levels, gameId, l, unlockAll)) return { level: l, fresh: !rules.played(levels, gameId) };
+      let l = LEVELS;
+      while (l > 1 && !rules.levelOpen(levels, gameId, l, unlockAll)) l--;
+      return { level: l, fresh: false };
     },
     xp: res => Math.max(5, Math.round((res.score || 0) / 10)) + (res.stars || 0) * 5 + (res.bonusXP || 0),
     merge(prev, res) {
@@ -51,27 +51,27 @@
     { id: 'daily', name: S('Daily Champ', 'Kampeon ng Araw'), icon: 'sun', desc: S('Finish a Daily Challenge.', 'Tapusin ang isang Hamon ng Araw.'), test: s => Object.keys(s.daily || {}).length >= 1 }
   ];
   AG.STAR_UNLOCKS = [
-    { stars: 25, id: 'frame-bronze', name: S('Bronze card frame', 'Bronseng frame ng card') },
-    { stars: 50, id: 'frame-silver', name: S('Silver card frame', 'Pilak na frame ng card') },
-    { stars: 100, id: 'frame-gold', name: S('Gold card frame', 'Gintong frame ng card') },
-    { stars: 200, id: 'frame-rainbow', name: S('Rainbow card frame', 'Bahagharing frame ng card') },
-    { stars: 300, id: 'plate-gold', name: S('Gold name plate', 'Gintong name plate') }
+    { stars: 15, id: 'frame-bronze', name: S('Bronze card frame', 'Bronseng frame ng card') },
+    { stars: 30, id: 'frame-silver', name: S('Silver card frame', 'Pilak na frame ng card') },
+    { stars: 60, id: 'frame-gold', name: S('Gold card frame', 'Gintong frame ng card') },
+    { stars: 120, id: 'frame-rainbow', name: S('Rainbow card frame', 'Bahagharing frame ng card') },
+    { stars: 200, id: 'plate-gold', name: S('Gold name plate', 'Gintong name plate') }
   ];
 
   const levels = () => AG.store.get('levels');
   AG.progress = {
     rules,
-    level: (gameId, w, l) => levels()[rules.levelId(gameId, w, l)] || null,
-    worldStars: (gameId, w) => rules.worldStars(levels(), gameId, w),
-    worldOpen: (gameId, w, unlockAll) => rules.worldOpen(levels(), gameId, w, unlockAll),
+    level: (gameId, n) => levels()[rules.levelId(gameId, n)] || null,
+    levelOpen: (gameId, n, unlockAll) => rules.levelOpen(levels(), gameId, n, unlockAll),
     gameStars: gameId => rules.gameStars(levels(), gameId),
     totalStars: () => rules.totalStars(levels()),
-    nextLevel: (gameId, unlockAll) => rules.nextLevel(levels(), gameId, (AG.store.get('lastByGame') || {})[gameId], unlockAll),
+    played: gameId => rules.played(levels(), gameId),
+    nextLevel: (gameId, unlockAll) => rules.nextLevel(levels(), gameId, unlockAll),
     xpFor: rules.xp,
     /** Saves one finished level. Returns what changed so the results screen can celebrate it. */
-    record(gameId, hazardId, w, l, res, mode) {
+    record(gameId, hazardId, n, res, mode) {
       const s = AG.store.all();
-      const id = rules.levelId(gameId, w, l);
+      const id = rules.levelId(gameId, n);
       const prev = s.levels[id];
       const starsBefore = rules.totalStars(s.levels);
       if (mode === 'daily') {
@@ -79,10 +79,8 @@
         s.daily[key] = { best: Math.max((s.daily[key] || {}).best || 0, res.score || 0) };
       } else {
         s.levels[id] = rules.merge(prev, res);
-        s.lastByGame = s.lastByGame || {};
-        s.lastByGame[gameId] = { gameId, world: w, level: l };
       }
-      s.last = { gameId, hazardId, world: w, level: l };
+      s.last = { gameId, hazardId, level: n };
       s.stats.games = (s.stats.games || 0) + 1;
       AG.store.set('stats', s.stats); // saves everything above
       const starsAfter = rules.totalStars(s.levels);

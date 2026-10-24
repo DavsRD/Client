@@ -1,11 +1,11 @@
 /* 13 Safe Crossing (safe-crossing) — Road & Traffic Accidents · technological · reflex · expert LOGISTICS.
- * courses.html?hazard=road-accidents#game, play route #play/<world>-<level>, Daily #daily (endless).
+ * courses.html?hazard=road-accidents#game, play route #play/<level>, Daily #daily (endless).
  *
- *   W1 quiet street: slow traffic, a zebra on every road, LOOK FIRST
- *   W2 walk signals and pedestrian lanes, a footbridge, the busy market road with parked
- *      jeepneys (occlusion), phones, railway crossings
- *   W3 bike world (the 🪖 helmet first, ride in the bike lane), then night (dithered dark,
- *      streetlights, the 🦺 reflective vest)
+ *   L1 quiet street: slow traffic, a zebra on every road, LOOK FIRST
+ *   L2 walk signals and pedestrian lanes, a footbridge, phones
+ *   L3 the busy market road with parked jeepneys (occlusion), railway crossings
+ *   L4 bike level (the 🪖 helmet first, ride in the bike lane)
+ *   L5 night (dithered dark, streetlights, the 🦺 reflective vest), everything above
  * Crossy Road / Frogger with a twist: crossing SAFELY scores more than surviving. Courses
  * come from levels.json (fixed lanes, seeded traffic) or endless.js (the Daily). One walk =
  * SafeCrossingScene.js; the pure parts are tuning.js, lanes/*.js, Vehicles.js, Signals.js,
@@ -35,7 +35,7 @@ window.AG = window.AG || {};
     badges: [
       { id: 'looks-both-ways', name: S('Looks Both Ways', 'Tumitingin sa Dalawang Panig'), icon: 'check', desc: S('Look both ways before 100 crossings.', 'Tumingin sa magkabilang direksiyon bago ang 100 pagtawid.') },
       { id: 'zebra-fan', name: S('Zebra Fan', 'Tagahanga ng Pedestrian Lane'), icon: 'star', desc: S('Cross 50 roads inside the pedestrian lane.', 'Tumawid sa 50 kalsada sa loob ng pedestrian lane.') },
-      { id: 'bright-at-night', name: S('Bright at Night', 'Maliwanag sa Gabi'), icon: 'vest', desc: S('Finish both night levels wearing the reflective vest.', 'Tapusin ang dalawang antas sa gabi nang suot ang reflective vest.') }
+      { id: 'bright-at-night', name: S('Bright at Night', 'Maliwanag sa Gabi'), icon: 'vest', desc: S('Finish the night level wearing the reflective vest.', 'Tapusin ang antas sa gabi nang suot ang reflective vest.') }
     ],
     characterActions: ['idle', 'hop', 'look_left', 'look_right', 'oops', 'cheer'],
     generateDaily: seed => SC.generateDaily(seed),
@@ -55,8 +55,7 @@ window.AG = window.AG || {};
           L(me, S('What about walking home at night?', 'Paano kapag pauwi na sa gabi?')),
           L(ex, S('Wear something reflective, like the vest, so drivers see you from far away.', 'Magsuot ng reflective, gaya ng vest, para makita ka agad ng mga drayber.'), point)]
       };
-      const world = (ctx.levelData && ctx.levelData.world) || ctx.world;
-      return lines[Math.min(3, Math.max(1, world))];
+      return lines[[1, 2, 2, 3, 3][Math.min(5, Math.max(1, ctx.level || 1)) - 1]];
     },
 
     tutorial(ctx) {
@@ -82,7 +81,7 @@ window.AG = window.AG || {};
         const sc = s.safeCrossing = s.safeCrossing || { looked: 0, zebra: 0, nightVest: {} };
         sc.looked = (sc.looked || 0) + run.stats.looked;
         sc.zebra = (sc.zebra || 0) + run.stats.zebra;
-        if (run.school && run.night && run.vest && ctx.mode === 'stage') { sc.nightVest = sc.nightVest || {}; sc.nightVest[run.world + '-' + run.level] = true; }
+        if (run.school && run.night && run.vest && ctx.mode === 'stage') { sc.nightVest = sc.nightVest || {}; sc.nightVest[String(run.level)] = true; }
       }).safeCrossing;
       const scene = new SC.Scene(stage, ctx, {
         entry,

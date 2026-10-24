@@ -33,18 +33,17 @@ window.AG = window.AG || {};
     'lvl.advanced': S('Advanced', 'Mahirap'),
     'lvl.tutorial': S('Show the tutorial first', 'Ipakita muna ang tutorial'),
 
-    /* world map */
-    'map.title': S('Worlds', 'Mga Mundo'),
-    'map.world': S('World {n}', 'Mundo {n}'),
-    'map.locked': S('Get {n} more ⭐ in World {w} to open', 'Kumuha ng {n} pang ⭐ sa Mundo {w} para mabuksan'),
-    'map.level': S('Level {w}-{l}', 'Antas {w}-{l}'),
+    /* level tiles */
+    'map.title': S('Levels', 'Mga Antas'),
+    'map.locked': S('Get a ⭐ on level {n} to open level {m}', 'Kumuha ng ⭐ sa antas {n} para mabuksan ang antas {m}'),
+    'map.level': S('Level {n}', 'Antas {n}'),
     'map.stars': S('{n} of 3 stars', '{n} sa 3 bituin'),
     'map.lockedLevel': S('Locked', 'Naka-lock'),
-    'map.demo': S('Teacher mode: every world is open.', 'Teacher mode: bukas ang lahat ng mundo.'),
+    'map.demo': S('Teacher mode: every level is open.', 'Teacher mode: bukas ang lahat ng antas.'),
     'map.poster': S('Poster: {title}', 'Poster: {title}'),
-    'map.posterLocked': S('Clear all 5 levels to unlock this world\'s poster', 'Tapusin ang 5 antas para mabuksan ang poster ng mundong ito'),
-    'play.start': S('Play {w}-{l}', 'Laruin ang {w}-{l}'),
-    'play.continue': S('Continue {w}-{l}', 'Ituloy ang {w}-{l}'),
+    'map.posterLocked': S('Get a ⭐ on a level to unlock its poster ({n} of {total})', 'Kumuha ng ⭐ sa isang antas para mabuksan ang poster nito ({n} sa {total})'),
+    'play.start': S('Play level {n}', 'Laruin ang antas {n}'),
+    'play.continue': S('Continue level {n}', 'Ituloy ang antas {n}'),
 
     /* play shell */
     'sh.back': S('Back to the game overview', 'Bumalik sa pangkalahatang-tanaw ng laro'),

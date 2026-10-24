@@ -1,4 +1,4 @@
-/* Pest Patrol Match — ONET CONNECT (world 4).
+/* Pest Patrol Match — ONET CONNECT (level 4).
  *
  * An OnetView of partner pairs: a pest clears with its own cause or prevention when a line
  * with ≤ 2 turns joins them. Every board starts solvable (greedy play with ≤ 2 shuffles,
@@ -6,7 +6,7 @@
  * when no move is left, a free shuffle runs with a toast. Matches within 3 s are a speed
  * chain (× 1.5). Phones turn boards wider than 6 columns on their side. Advanced shows a
  * pair type's labels only after its first match. Three tiles are golden.
- * BossBoard (world 5) extends this class. */
+ * BossBoard (level 5) extends this class. */
 window.AG = window.AG || {};
 (function (AG) {
   const PP = AG.pestPatrol, T = PP.tuning, R = PP.rules;
@@ -105,7 +105,7 @@ window.AG = window.AG || {};
     onClear() { this.finish(true); }
     timeUp() { if (!this.s.ended) this.finish(false); }
 
-    /** Extra conditions for a win (World 5: every site clean). */
+    /** Extra conditions for a win (level 5: every site clean). */
     get extraDone() { return true; }
     finish(cleared) {
       const s = this.s;

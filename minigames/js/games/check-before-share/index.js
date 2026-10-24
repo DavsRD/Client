@@ -1,12 +1,12 @@
 /* 19 Check Before You Share (check-before-share) — Community Conflict / Unrest, framed as
  * "trouble in the community" · social · expert COMMS.
- * courses.html?hazard=community-conflict#game, play route #play/<world>-<level>.
+ * courses.html?hazard=community-conflict#game, play route #play/<level>.
  *
- *   W1 obvious rumours (ALL CAPS, no source, "forward this!")
- *   W2 source badges ("forwarded many times", unknown senders)
- *   W3 too scary / too good to be true
- *   W4 what to do at home (action cards: Do it / Don't)
- *   W5 everything mixed, with a timer on every card (a timeout = "check first")
+ *   L1 obvious rumours (ALL CAPS, no source, "forward this!")
+ *   L2 source badges ("forwarded many times", unknown senders)
+ *   L3 too scary / too good to be true
+ *   L4 what to do at home (action cards: Do it / Don't)
+ *   L5 everything mixed, with a timer on every card (a timeout = "check first")
  * One scene for all five (CheckShareScene.js), cards from Deck.js, the feelings check-in in
  * Feelings.js, numbers and pure rules in tuning.js. Content is JSON: levels.json (card ids
  * per level) and data/cards.json. No violence is ever shown or described.
@@ -30,7 +30,7 @@ window.AG = window.AG || {};
     badges: [
       { id: 'fact-checker', name: S('Fact-Checker', 'Tagasuri ng Balita'), icon: 'check', desc: S('Make 100 right choices.', 'Gumawa ng 100 tamang pasya.') },
       { id: 'calm-household', name: S('Calm Household', 'Kalmadong Tahanan'), icon: 'heart', desc: S('End 5 levels with the calm meter at 90 or more.', 'Tapusin ang 5 antas na 90 pataas ang kalmado.') },
-      { id: 'source-sleuth', name: S('Source Sleuth', 'Detektib ng Pinagmulan'), icon: 'star', desc: S('Get 3 stars on every World 2 level.', 'Makakuha ng 3 bituin sa bawat antas ng Mundo 2.') }
+      { id: 'source-sleuth', name: S('Source Sleuth', 'Detektib ng Pinagmulan'), icon: 'star', desc: S('Get 3 stars on level 2 (source badges).', 'Makakuha ng 3 bituin sa antas 2 (source badges).') }
     ],
     characterActions: ['idle', 'think', 'worried', 'happy', 'hold:sign', 'point', 'hold:radio'],
 
@@ -58,14 +58,14 @@ window.AG = window.AG || {};
           [ex, S('Everything together now, and each card has a timer. If time runs out, it counts as Check first.', 'Lahat na nang sabay, at may oras ang bawat card. Kapag naubos ang oras, Suriin muna ang bilang.')],
           [me, S("I'll be quick, but I'll stay calm and careful.", 'Bibilisan ko, pero kalmado at maingat pa rin.')]
         ]
-      }[Math.min(5, Math.max(1, ctx.world))];
+      }[Math.min(5, Math.max(1, ctx.level || 1))];
       return lines.map(([speaker, text]) => ({ speaker, text }));
     },
 
     /** AGILA holds up her sign to show the two sides; the heroes point instead. */
     tutorial(ctx) {
       const pose = AG.chars.get(ctx.characterId).agila ? 'prop_on_sign_geared' : 'pose_point';
-      const actions = ctx.world === 4;
+      const actions = ctx.level === 4;
       const lines = [
         actions
           ? S('My sign has two sides: **DO IT ✔** and **DON\'T ✋**.', 'Dalawa ang panig ng karatula ko: **GAWIN ✔** at **HUWAG ✋**.')

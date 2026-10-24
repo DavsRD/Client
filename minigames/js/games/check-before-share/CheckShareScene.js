@@ -6,7 +6,7 @@
  * worried when wrong; a bust on phones), the CALM METER beside it, the two side labels, the
  * SwipeStack and its ✋ / ✔ buttons. After each swipe the role expert explains in their word
  * box; the deck waits 1.5 s or until Enter. Calm below 20 brings a "take a breath" card that
- * refills it to 50 (and caps the 3rd star). World 5 times every card: a timeout counts as
+ * refills it to 50 (and caps the 3rd star). Level 5 times every card: a timeout counts as
  * "check first". After the last card comes the feelings check-in, then done().
  *
  * Keys: → / D right, ← / A left (the stack's own LEFT / RIGHT), Enter skips the explanation,
@@ -159,7 +159,7 @@ window.AG = window.AG || {};
 
       const levelCards = (this.level.cards || []).map(id => data.cards.find(c => c.id === id)).filter(Boolean);
       this.golden = R.golden(levelCards, this.rnd);
-      this.deck = new CS.Deck(data, { world: ctx.world, expertId: ctx.expertId, golden: new Set(this.golden) });
+      this.deck = new CS.Deck(data, { level: ctx.level, expertId: ctx.expertId, golden: new Set(this.golden) });
       this.total = levelCards.length;
 
       // the player, above the stack
@@ -260,7 +260,7 @@ window.AG = window.AG || {};
     }
 
     /* ---------- one card ---------- */
-    /** The top card is up: think, the side labels, and (World 5) its own timer. */
+    /** The top card is up: think, the side labels, and (level 5) its own timer. */
     startCard() {
       if (this.ended || !this.stack.top) return;
       this.base = 'think'; this.renderPlayer();
@@ -398,11 +398,12 @@ window.AG = window.AG || {};
       });
     }
     /** fact-checker (100 right answers), calm-household (5 levels ending at calm ≥ 90),
-     *  source-sleuth (every World 2 level at 3 stars). Counted in stats.checkShare. */
+     *  source-sleuth (level 2 at 3 stars). Counted in stats.checkShare; calm keys from the
+     *  old worlds ('w-l') are ignored. */
     badgeEvents(stars) {
-      const ev = [], { gameId, world, level } = this.ctx;
+      const ev = [], { level } = this.ctx;
       if (this.ctx.mode !== 'stage') return ev;
-      const key = world + '-' + level, calmOk = this.calm >= T.badges.calmAt;
+      const key = String(level), calmOk = this.calm >= T.badges.calmAt;
       const st = AG.store.update('stats', s => {
         const c = s.checkShare = s.checkShare || { correct: 0, calm: [] };
         c.correct = (c.correct || 0) + this.correct;
@@ -410,8 +411,8 @@ window.AG = window.AG || {};
         if (calmOk && !c.calm.includes(key)) c.calm.push(key);
       }).checkShare;
       if (st.correct >= T.badges.factChecker) ev.push('fact-checker');
-      if (st.calm.length >= T.badges.calmLevels) ev.push('calm-household');
-      if (world === 2 && stars === 3 && [1, 2, 3, 4, 5].every(l => l === level || ((AG.progress.level(gameId, 2, l) || {}).stars || 0) >= 3)) ev.push('source-sleuth');
+      if (st.calm.filter(k => /^[1-5]$/.test(k)).length >= T.badges.calmLevels) ev.push('calm-household');
+      if (level === 2 && stars === 3) ev.push('source-sleuth');
       return ev;
     }
 

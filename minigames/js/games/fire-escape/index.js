@@ -1,9 +1,9 @@
 /* 11 Fire Escape Maze (fire-escape) — Fire · technological · planning · expert FIRE SAFETY.
- * courses.html?hazard=fire#game, play route #play/<world>-<level>, Daily #daily.
+ * courses.html?hazard=fire#game, play route #play/<level>, Daily #daily.
  *
- *   W1 follow the exit signs                    W2 + SMOKE: crawl low (the cough meter)
- *   W3 + FEEL THE DOOR before opening it         W4 + SPREADING FIRE, embers (Stop-Drop-Roll), the elevator trap
- *   W5 + POWER CUT and a classmate to alert
+ *   L1 follow the exit signs                    L2 + SMOKE: crawl low (the cough meter)
+ *   L3 + FEEL THE DOOR before opening it         L4 + SPREADING FIRE, embers (Stop-Drop-Roll), the elevator trap
+ *   L5 + POWER CUT and a classmate to alert
  * Every floor plan comes from the pure generator (js/logic/fire-escape/generator.js) seeded by
  * levels.json (fixed Stage seeds) or the date (daily.js). One run = FireEscapeScene.js; its
  * hazards are Smoke.js, Doors.js, FireSpread.js and SDRQuickTime.js; numbers in tuning.js.
@@ -45,7 +45,7 @@ window.AG = window.AG || {};
     badges: [
       { id: 'low-and-slow', name: S('Low and Slow', 'Mababa at Dahan-dahan'), icon: 'smoke', desc: S('Crawl through 100 smoky tiles.', 'Gumapang sa 100 mausok na tile.') },
       { id: 'door-checker', name: S('Door Checker', 'Tagadama ng Pinto'), icon: 'check', desc: S('Feel 50 doors before opening them.', 'Damhin ang 50 pinto bago buksan.') },
-      { id: 'stairs-not-elevator', name: S('Stairs, Not Elevator', 'Hagdan, Hindi Elevator'), icon: 'sign_stairs', desc: S('Escape a World 4 level without trying the elevator.', 'Makatakas sa isang antas ng Mundo 4 nang hindi sinusubukan ang elevator.') }
+      { id: 'stairs-not-elevator', name: S('Stairs, Not Elevator', 'Hagdan, Hindi Elevator'), icon: 'sign_stairs', desc: S('Escape level 4 without trying the elevator.', 'Makatakas sa antas 4 nang hindi sinusubukan ang elevator.') }
     ],
     characterActions: ['idle', 'walk', 'crawl', 'alert', 'oops', 'cheer', 'stop', 'duck_cover', 'slide'],
     generateDaily: seed => FE.generateDaily(seed),
@@ -71,12 +71,11 @@ window.AG = window.AG || {};
           L(me, S("Someone's still inside!", 'May tao pa sa loob!')),
           L(ex, S('Alert your classmate on the way out: walk up to them and press Enter or tap them.', 'Tawagin ang kaklase mo habang palabas: lumapit at pindutin ang Enter o i-tap sila.'), point)]
       };
-      const world = (ctx.levelData && ctx.levelData.world) || ctx.world;
-      return lines[Math.min(5, Math.max(1, world))];
+      return lines[R.theme(R.features(ctx.levelData, ctx.level))];
     },
 
     tutorial(ctx) {
-      const f = R.features(ctx.levelData, (ctx.levelData && ctx.levelData.world) || ctx.world);
+      const f = R.features(ctx.levelData, ctx.level);
       const out = [
         S('Walk with the **arrow keys** (or **WASD**), **swipe**, or use the **D-pad**. Hold to keep walking.', 'Maglakad gamit ang **arrow keys** (o **WASD**), **i-swipe**, o ang **D-pad**. Pindutin nang matagal para tuloy-tuloy.'),
         S('Follow the green **exit signs** to the stairs, then step out to the **assembly area**. Pick up the 3 ⭐ on the way if you have time.', 'Sundan ang berdeng **exit signs** papunta sa hagdan, saka lumabas sa **assembly area**. Kunin ang 3 ⭐ kung may oras.')

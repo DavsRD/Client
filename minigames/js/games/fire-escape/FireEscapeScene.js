@@ -5,7 +5,7 @@
  *
  * The plan comes from AG.logic.fireEscapeGen (pure, seeded). The scene builds a TileMap of
  * it (20 px tiles; floor + walls pre-rendered, doors / fire / embers on 'objects', smoke on
- * 'overlay'), a GridMover driving the player's 'top' rig, a follow camera, and the world's
+ * 'overlay'), a GridMover driving the player's 'top' rig, a follow camera, and the level's
  * hazards: smoke + the cough meter (Smoke.js), doors to feel (Doors.js), spreading fire and
  * embers (FireSpread.js) with Stop-Drop-Roll (SDRQuickTime.js), the elevator, the power cut
  * (AG.grid.Darkness) and the classmate to alert.
@@ -84,8 +84,7 @@ window.AG = window.AG || {};
       this.offs = []; this.ended = false; this.qte = null;
       this.reduce = AG.reducedMotion();
       const entry = ctx.levelData || {};
-      this.world = entry.world || ctx.world;
-      this.params = R.params(entry, ctx.difficulty, this.world, entry.level || ctx.level);
+      this.params = R.params(entry, ctx.difficulty, entry.level || ctx.level);
       this.plan = GEN.generate(this.params, this.seed);
       this.f = this.plan.features;
       this.rnd = AG.util.mulberry32(this.seed ^ 0xf17e);
@@ -202,7 +201,7 @@ window.AG = window.AG || {};
       AG.input.setView(this.view);
       this.pad = AG.input.touchControls(ctx.controls, { dpad: true, buttons: [] });
 
-      // HUD: time, stars, cough meter (worlds with smoke)
+      // HUD: time, stars, cough meter (levels with smoke)
       this.hud = ctx.hud({ score: 0, scoreLabel: STR.coins, timer: true });
       this.timeStat = this.hud.el.querySelector('.ag-stat:last-child'); this.timeStat.classList.add('fe-time');
       if (this.f.smoke) {
@@ -532,7 +531,7 @@ window.AG = window.AG || {};
         escaped: o.escaped, timedOut: !!o.timedOut, timeLeftMs: Math.max(0, this.msLeft), parMs: this.plan.par,
         coins: this.coins.filter(Boolean).length, coinFlags: this.coins.slice(), penalties: this.penalties, qte: this.qteWins,
         classmate: o.saved, needsClassmate: !!this.mate, maxCough: this.cough.max, elevatorHits: this.elevatorHits,
-        smokeCrawled: this.smokeCrawled, doorsFeltFirst: this.doors.feltFirst, world: this.world, mode: this.ctx.mode,
+        smokeCrawled: this.smokeCrawled, doorsFeltFirst: this.doors.feltFirst, elevator: !!this.f.elevator, mode: this.ctx.mode,
         usedMs: this.plan.par - this.msLeft, shortest: this.plan.shortest, seed: this.seed
       };
       this.onEnd(run);

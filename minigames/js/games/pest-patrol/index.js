@@ -1,23 +1,24 @@
 /* 10 Pest Patrol Match (pest-patrol) — Pest Infestation · biological · words · expert MEDIC.
- * courses.html?hazard=pest-infestation#game, play route #play/<world>-<level>.
+ * courses.html?hazard=pest-infestation#game, play route #play/<level>.
  *
- *   W1 identical pairs face down                     MEMORY FLIP (modes/MemoryFlip.js)
- *   W2 drag each prevention onto its pest            PEST → PREVENTION (modes/PairDrop.js)
- *   W3 pest + cause + prevention, 3 flips            TRIPLE MATCH (modes/TripleFlip.js)
- *   W4 partner pairs joined by ≤ 2 turns, timed      ONET CONNECT (modes/Onet.js)
- *   W5 Onet that uncovers breeding sites to clean    BOSS BOARD (modes/BossBoard.js)
+ *   L1 identical pairs face down                     MEMORY FLIP (modes/MemoryFlip.js)
+ *   L2 drag each prevention onto its pest            PEST → PREVENTION (modes/PairDrop.js)
+ *   L3 pest + cause + prevention, 3 flips            TRIPLE MATCH (modes/TripleFlip.js)
+ *   L4 partner pairs joined by ≤ 2 turns, timed      ONET CONNECT (modes/Onet.js)
+ *   L5 Onet that uncovers breeding sites to clean    BOSS BOARD (modes/BossBoard.js)
  * All five share PestPatrolScene.js (portraits, HUD, scoring, facts, hint/shuffle, badges) and
  * tuning.js. Content is JSON: levels.json and data/sets.json.
  *
  * Keys: arrows move (WASD off, S = shuffle), Enter / Space flips or selects, H = hint (−50),
- * S = shuffle (Onet), Esc cancels a picked tile (World 2) or pauses. Touch / mouse: tap, drag
- * (World 2), 🔀 and 💡. */
+ * S = shuffle (Onet), Esc cancels a picked tile (level 2) or pauses. Touch / mouse: tap, drag
+ * (level 2), 🔀 and 💡. */
 window.AG = window.AG || {};
 (function (AG) {
   const PP = AG.pestPatrol;
   const S = (en, fil) => ({ en, fil });
 
-  const MODE = w => ['memory', 'drop', 'triple', 'onet', 'boss'][Math.min(5, Math.max(1, w)) - 1];
+  const MODE = n => ['memory', 'drop', 'triple', 'onet', 'boss'][Math.min(5, Math.max(1, n || 1)) - 1];
+  const modeOf = ctx => (ctx.levelData && ctx.levelData.mode) || MODE(ctx.level);
 
   AG.games['pest-patrol'] = {
     id: 'pest-patrol',
@@ -28,7 +29,7 @@ window.AG = window.AG || {};
       S('Report crop pests to the farm technician early.', 'Isumbong agad sa farm technician ang peste ng pananim.')
     ],
     badges: [
-      { id: 'memory-master', name: S('Memory Master', 'Bihasa sa Memorya'), icon: 'star', desc: S('Get 3 stars on every World 1 level.', 'Makakuha ng 3 bituin sa bawat antas ng Mundo 1.') },
+      { id: 'memory-master', name: S('Memory Master', 'Bihasa sa Memorya'), icon: 'star', desc: S('Get 3 stars on level 1 (Memory Flip).', 'Makakuha ng 3 bituin sa antas 1 (Memory Flip).') },
       { id: 'onet-pro', name: S('Onet Pro', 'Onet Pro'), icon: 'trophy', desc: S('Make a speed chain of 10 matches.', 'Makagawa ng 10 sunod-sunod na mabilis na tugma.') },
       { id: 'four-s', name: S('4S Hero', 'Bayani ng 4S'), icon: 'check', desc: S('Clean 40 mosquito breeding sites.', 'Maglinis ng 40 pinamumugaran ng lamok.') }
     ],
@@ -59,7 +60,7 @@ window.AG = window.AG || {};
           [me, S("I'll clear the board and clean every breeding site!", 'Aalisin ko ang tiles at lilinisin ang bawat pinamumugaran!')],
           [ex, S('That is the first S of the 4S against dengue: Search and destroy!', 'Iyan ang unang S ng 4S laban sa dengue: Hanapin at sirain!')]
         ]
-      }[MODE(ctx.world)];
+      }[modeOf(ctx)];
       return lines.map(([speaker, text]) => ({ speaker, text }));
     },
 
@@ -87,11 +88,11 @@ window.AG = window.AG || {};
           common
         ],
         boss: [
-          S('Clear tiles like in World 4. Some tiles hide a **dirty breeding site**.', 'Mag-alis ng tiles gaya sa Mundo 4. May tiles na nagtatago ng **maruming pinamumugaran**.'),
+          S('Clear tiles like in level 4. Some tiles hide a **dirty breeding site**.', 'Mag-alis ng tiles gaya sa antas 4. May tiles na nagtatago ng **maruming pinamumugaran**.'),
           S('Select the site (**Enter** or **tap**) to clean it. Win by clearing the board **and** cleaning every site.', 'Piliin ang lugar (**Enter** o **i-tap**) para linisin. Manalo sa pag-alis ng lahat ng tiles **at** paglinis ng bawat lugar.'),
           common
         ]
-      }[MODE(ctx.world)];
+      }[modeOf(ctx)];
     },
 
     mount(stage, ctx, done) {
@@ -102,7 +103,7 @@ window.AG = window.AG || {};
         if (dead) return;
         loading.remove();
         scene = new PP.Scene(stage, ctx, done, data);
-        const Mode = { memory: PP.MemoryFlip, drop: PP.PairDrop, triple: PP.TripleFlip, onet: PP.Onet, boss: PP.BossBoard }[(ctx.levelData && ctx.levelData.mode) || MODE(ctx.world)];
+        const Mode = { memory: PP.MemoryFlip, drop: PP.PairDrop, triple: PP.TripleFlip, onet: PP.Onet, boss: PP.BossBoard }[modeOf(ctx)];
         mode = new Mode(scene, data);
         mode.start();
         if (AG.debug.on) PP.live = { scene, mode }; // ?debug=1: scripted browser checks

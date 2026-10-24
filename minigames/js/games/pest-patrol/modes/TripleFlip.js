@@ -1,8 +1,8 @@
-/* Pest Patrol Match — TRIPLE MATCH (world 3).
+/* Pest Patrol Match — TRIPLE MATCH (level 3).
  *
  * Memory flip with sets of three: a pest, what it causes and how to stop it share one key.
  * Three flips per attempt; a miss is called as soon as two face-up cards belong to different
- * sets (AG.logic.memory), so the third flip is never wasted. Stars as in world 1 (attempts ≤
+ * sets (AG.logic.memory), so the third flip is never wasted. Stars as in level 1 (attempts ≤
  * sets × 1.3 = 3 …). Three sets are golden. */
 window.AG = window.AG || {};
 (function (AG) {

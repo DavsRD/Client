@@ -11,8 +11,8 @@
     calm: { start: 70, correct: 8, shared: -15, rejected: -8, low: 20, refill: 50 },
     explainMs: 1500,                         // the deck waits this long after a swipe (or Enter)
     boxMs: 4500,                             // the explanation box stays readable this long
-    timer: { easy: 6, advanced: 4 },         // World 5, seconds per card (levels.json can override)
-    points: { correct: 100, calm: 5, speed: 10 }, // + calm at the end × 5, + whole seconds left × 10 (W5)
+    timer: { easy: 6, advanced: 4 },         // level 5, seconds per card (levels.json can override)
+    points: { correct: 100, calm: 5, speed: 10 }, // + calm at the end × 5, + whole seconds left × 10 (L5)
     stars: [
       { accuracy: 0.7 },
       { accuracy: 0.85, calm: 50 },
@@ -40,7 +40,7 @@
     clampCalm: v => Math.max(0, Math.min(100, Math.round(v))),
     /** The calm meter after one swipe; below `low` it needs the breathing card. */
     calmAfter(calm, delta) { const v = rules.clampCalm(calm + delta); return { calm: v, low: v < tuning.calm.low }; },
-    /** Seconds per card in World 5, or 0 (no timer). */
+    /** Seconds per card on level 5, or 0 (no timer). */
     timerFor(levelData, difficulty) {
       const t = levelData && levelData.timer;
       if (!t) return 0;

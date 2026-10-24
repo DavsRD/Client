@@ -39,7 +39,7 @@
     stars: { two: 0.45, three: 0.7, twoHeartsLost: 1 },   // share of the level's ideal score
     endless: { rows: 200, ramp: 40, stars: [40, 90, 150] },
     badges: { looked: 100, zebra: 50 },
-    nightLevels: ['3-4', '3-5']
+    nightLevels: ['5']
   };
 
   /** A clonable seeded random (mulberry32 with its state in .s), so traffic can be copied
