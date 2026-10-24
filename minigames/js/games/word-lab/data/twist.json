@@ -1,0 +1,32 @@
+{
+ "version": 1,
+ "built": "2026-10-24",
+ "minLength": 3,
+ "note": "Built by kalasag-dev/minigames/tools/build-twist.html from curated kid-safe word files and a blocklist. Do not edit by hand: change the word files and rebuild.",
+ "seeds": {
+  "PREVENTION": {
+   "lang": "en",
+   "words": ["NET", "ONE", "PEN", "PET", "PIE", "PIN", "PIT", "POT", "RIP", "TEN", "TIE", "TIN", "TIP", "TOE", "TON", "TOP", "VET", "EVEN", "EVER", "INTO", "IRON", "NINE", "NONE", "NOTE", "OPEN", "OVEN", "OVER", "PINE", "POET", "RENT", "RIOT", "RIPE", "ROPE", "TEEN", "TIRE", "TONE", "TORN", "TREE", "TRIP", "VEIN", "VENT", "VINE", "VOTE", "ENTER", "EVENT", "INNER", "NERVE", "NEVER", "POINT", "PRINT", "PROVE", "RIPEN", "VIPER", "VOTER", "ENTIRE", "INVENT", "PROVEN", "REOPEN", "PIONEER", "POINTER", "PREVENT", "PROTEIN", "INVENTOR", "PREVENTION"]
+  },
+  "VACCINATION": {
+   "lang": "en",
+   "words": ["ACT", "ANT", "CAN", "CAT", "COT", "OAT", "TAN", "TIN", "TON", "VAN", "COAT", "COIN", "ICON", "INTO", "TACO", "VAIN", "CACTI", "CIVIC", "TONIC", "ACTION", "CANNOT", "NATION", "VACANT", "CONTAIN", "AVIATION", "VACATION", "VACCINATION"]
+  },
+  "QUARANTINE": {
+   "lang": "en",
+   "words": ["AIR", "ANT", "ARE", "ART", "ATE", "EAR", "EAT", "NET", "NUT", "RAN", "RAT", "RUN", "TAN", "TAR", "TEA", "TEN", "TIE", "TIN", "URN", "AQUA", "AUNT", "EARN", "NEAR", "NEAT", "NINE", "QUIT", "RAIN", "RATE", "RENT", "RUIN", "TEAR", "TIRE", "TRUE", "TUNA", "TUNE", "TURN", "UNIT", "ARENA", "INNER", "QUART", "QUIET", "QUITE", "TIARA", "TRAIN", "UNITE", "UNTIE", "NATURE", "ANTIQUE", "QUARANTINE"]
+  },
+  "HANDWASHING": {
+   "lang": "en",
+   "words": ["AID", "AND", "ASH", "DIG", "GAS", "HAD", "HAS", "HID", "HIS", "SAD", "SAW", "WAG", "WAS", "WIG", "WIN", "DASH", "DAWN", "DISH", "GAIN", "HAND", "HANG", "HIGH", "SAID", "SAND", "SANG", "SHIN", "SIGH", "SIGN", "SING", "SWAN", "WAND", "WASH", "WIND", "WING", "WISH", "AGAIN", "HANDS", "SWING", "WINDS", "WINGS", "HANDING", "SANDING", "SHADING", "WASHING", "HANDWASHING"]
+  },
+  "OUTBREAK": {
+   "lang": "en",
+   "words": ["ARE", "ART", "ATE", "BAR", "BAT", "BOA", "BUT", "EAR", "EAT", "OAK", "OAR", "OAT", "OUR", "OUT", "RAT", "RUB", "TAB", "TAR", "TEA", "TOE", "TUB", "AUTO", "BAKE", "BARK", "BEAK", "BEAR", "BEAT", "BOAT", "RAKE", "RATE", "ROBE", "TAKE", "TEAR", "TOUR", "TRUE", "TUBA", "TUBE", "ABOUT", "BAKER", "BRAKE", "BREAK", "BROKE", "OUTER", "ROUTE", "OUTBREAK"]
+  },
+  "KALINISAN": {
+   "lang": "fil",
+   "words": ["ANI", "ISA", "ALIN", "ALIS", "ANAK", "ASAL", "ASIN", "ILAN", "KAIN", "KASI", "SAKA", "SALI", "SILA", "KANIN", "LAKAS", "LIKAS", "LINIS", "KALINISAN"]
+  }
+ }
+}

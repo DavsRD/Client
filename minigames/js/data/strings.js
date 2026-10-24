@@ -41,6 +41,8 @@ window.AG = window.AG || {};
     'map.stars': S('{n} of 3 stars', '{n} sa 3 bituin'),
     'map.lockedLevel': S('Locked', 'Naka-lock'),
     'map.demo': S('Teacher mode: every world is open.', 'Teacher mode: bukas ang lahat ng mundo.'),
+    'map.poster': S('Poster: {title}', 'Poster: {title}'),
+    'map.posterLocked': S('Clear all 5 levels to unlock this world\'s poster', 'Tapusin ang 5 antas para mabuksan ang poster ng mundong ito'),
     'play.start': S('Play {w}-{l}', 'Laruin ang {w}-{l}'),
     'play.continue': S('Continue {w}-{l}', 'Ituloy ang {w}-{l}'),
 

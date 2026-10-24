@@ -38,6 +38,7 @@ let hazardRef = null;
 let initPromise = null;
 let playing = false;
 let lastHash = null;
+let lastFocus = null; // the element inside #ag-app that last had focus (see restoreFocus)
 
 const main = () => document.getElementById("main");
 
@@ -111,6 +112,13 @@ function enterPlay() {
   window.scrollTo(0, 0);
 }
 
+/** Re-placing the root (the lesson re-rendered on a language switch) drops keyboard focus to
+ *  <body>, and AG only reads keys while its stage has focus: put focus back where it was. */
+function restoreFocus() {
+  const ae = document.activeElement;
+  if (lastFocus && root.contains(lastFocus) && (!ae || ae === document.body)) lastFocus.focus({ preventScroll: true });
+}
+
 function exitPlay() {
   if (!playing) return;
   playing = false;
@@ -150,9 +158,12 @@ export async function attach(slotEl, hazard) {
     root = document.createElement("div");
     root.id = "ag-app";
     root.className = "ag";
+    root.addEventListener("focusin", (e) => { lastFocus = e.target; });
   }
-  if (playing) enterPlay();
-  else slot.replaceChildren(root);
+  if (playing) {
+    enterPlay();
+    restoreFocus();
+  } else slot.replaceChildren(root);
 
   try {
     await loadCore();

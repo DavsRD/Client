@@ -239,6 +239,8 @@
             h('b', {}, w + '-' + l), AG.ui.stars(rec ? rec.stars : 0)));
         }
         li.append(row);
+        const poster = posterFor(w);
+        if (poster) li.firstChild.append(poster);
       } else {
         li.append(h('p', { class: 'ag-world__locked' }, '🔒 ' + t('map.locked', { n: Math.max(1, 5 - P.worldStars(game.id, w - 1)), w: w - 1 })));
       }
@@ -247,6 +249,27 @@
     return h('section', { class: 'ag-map', 'aria-labelledby': 'ag-map-title' },
       h('div', { class: 'ag-panelhead' }, h('h3', { id: 'ag-map-title' }, t('map.title')), unlockAll ? h('span', { class: 'ag-eyebrow' }, t('map.demo')) : null),
       worlds);
+  }
+
+  /** A world's reward poster (registry "posters": { "<w>": { asset, title } }): it opens once all
+   *  five levels of the world are cleared, and shows big in a dialog. */
+  function posterFor(w) {
+    const def = game.posters && game.posters[w];
+    if (!def) return null;
+    if (!AG.progress.rules.worldCleared(AG.store.get('levels'), game.id, w)) return h('small', { class: 'ag-world__poster is-locked' }, '🔒 ' + t('map.posterLocked'));
+    const src = AG.assets.url(def.asset) || AG.assets.placeholderURL(def.asset, 96, 128);
+    const btn = h('button', { type: 'button', class: 'ag-btn ag-btn--alt ag-btn--small ag-world__poster' }, '🖼 ' + t('map.poster', { title: def.title }));
+    btn.addEventListener('click', () => {
+      const close = h('button', { type: 'button', class: 'ag-btn ag-btn--alt ag-btn--small' }, t('common.close'));
+      const dlg = h('dialog', { class: 'ag-help ag-posterdlg', 'aria-label': pick(def.title) },
+        h('div', { class: 'ag-help__box' }, h('div', { class: 'ag-panelhead' }, h('h3', {}, pick(def.title)), close),
+          h('img', { class: 'ag-px', src, alt: pick(def.title), width: 192, height: 256 })));
+      close.addEventListener('click', () => dlg.close());
+      dlg.addEventListener('close', () => { dlg.remove(); btn.focus(); });
+      dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+      root.append(dlg); dlg.showModal(); close.focus();
+    });
+    return btn;
   }
 
   function playRow() {
@@ -275,7 +298,7 @@
         h('h4', { class: 'ag-subhead' }, t('help.thisGame') + ': ' + pick(game.title)),
         table((game.howTo || []).map(i => row(pick(i), keyImgs(i.keys), gestureImg(i.gesture)))),
         h('h4', { class: 'ag-subhead' }, t('help.everyGame')),
-        table([row(t('help.pauseRow'), keyImgs(['key_esc', 'key_p']), '⏸ ' + t('help.tapButton')),
+        table([row(t('help.pauseRow'), keyImgs(game.pauseKeys || ['key_esc', 'key_p']), '⏸ ' + t('help.tapButton')),
           row(t('help.focusRow'), '—', '⛶ ' + t('help.tapButton')),
           row(t('help.choiceRow'), keyImgs(['key_1', 'key_2', 'key_3', 'key_4']), gestureImg('gesture_tap'))]),
         h('h4', { class: 'ag-subhead' }, t('help.messages')), legend,
@@ -324,7 +347,7 @@
       face.querySelector('small').textContent = t('sh.playingAs');
       back.setAttribute('aria-label', t('sh.back')); back.title = t('sh.back');
       restart.setAttribute('aria-label', t('sh.restart')); restart.title = t('sh.restart');
-      pause.setAttribute('aria-label', AG.paused ? t('sh.resume') : t('sh.pause')); pause.title = t('sh.pause') + ' (P)';
+      pause.setAttribute('aria-label', AG.paused ? t('sh.resume') : t('sh.pause')); pause.title = t('sh.pause') + (game.pauseKeys ? ' (Esc)' : ' (P)');
       syncFocusButton();
     };
     p.relabel();
@@ -442,7 +465,7 @@
     const restart = h('button', { class: 'ag-btn ag-btn--alt', type: 'button' }, '↻ ' + t('sh.restart'));
     restart.addEventListener('click', () => startPlay(p.spec));
     const setBtn = h('button', { class: 'ag-btn ag-btn--alt', type: 'button', 'aria-expanded': 'false' }, '⚙ ' + t('pause.settings'));
-    const panel = settingsPanel(); panel.hidden = true;
+    const panel = settingsPanel(p.mod && p.mod.settings); panel.hidden = true;
     setBtn.addEventListener('click', () => { panel.hidden = !panel.hidden; setBtn.setAttribute('aria-expanded', String(!panel.hidden)); });
     const quit = h('a', { class: 'ag-btn ag-btn--alt', href: '#game' }, t('pause.quit'));
     p.stage.append(h('div', { class: 'ag-overlay ag-pausebox', role: 'dialog', 'aria-label': t('pause.title') }, h('div', { class: 'ag-box' },
@@ -451,7 +474,8 @@
     setTimeout(() => resume.focus(), 30);
   }
 
-  function settingsPanel() {
+  /** extra: a game's own switches, [{ key, label: { en, fil } }] (module "settings"). */
+  function settingsPanel(extra) {
     const seg = h('div', { class: 'ag-seg', role: 'group', 'aria-label': t('set.touch') });
     ['auto', 'always', 'never'].forEach(v => {
       const b = h('button', { type: 'button', 'aria-pressed': String(AG.store.setting('touchControls') === v) }, t('set.touch.' + v));
@@ -459,14 +483,15 @@
       seg.append(b);
     });
     const check = (key, label) => {
-      const id = 'ag-set-' + key;
+      const id = 'ag-set-' + key.replace(/\W/g, '-');
       const inp = h('input', { type: 'checkbox', id, checked: AG.store.setting(key) ? true : null });
       inp.addEventListener('change', () => AG.store.setSetting(key, inp.checked));
-      return h('label', { class: 'ag-check', for: id }, inp, h('span', {}, t(label)));
+      return h('label', { class: 'ag-check', for: id }, inp, h('span', {}, typeof label === 'string' ? t(label) : pick(label)));
     };
     return h('div', { class: 'ag-settings' },
       h('div', { class: 'ag-setup__level' }, h('span', { class: 'ag-label' }, t('set.touch')), seg),
-      check('dpad', 'set.dpad'), check('autoBrace', 'set.autoBrace'), check('bigText', 'set.bigText'), check('plainFont', 'set.plainFont'), check('typewriter', 'set.typewriter'));
+      check('dpad', 'set.dpad'), check('autoBrace', 'set.autoBrace'), check('bigText', 'set.bigText'), check('plainFont', 'set.plainFont'), check('typewriter', 'set.typewriter'),
+      ...(extra || []).map(x => check(x.key, x.label)));
   }
 
   /* ---------- focus mode: fullscreen on the shell, or a class that hides the site chrome ---------- */

@@ -30,7 +30,7 @@
  * -------------------------------------------------------------
  */
 
-const CACHE_VERSION = "v9";
+const CACHE_VERSION = "v11";
 const SHELL_CACHE = `kalasag-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `kalasag-data-${CACHE_VERSION}`;
 const SAVED_CACHE = "kalasag-saved-v1"; // same name as in js/core/offline.js
@@ -71,6 +71,13 @@ const GAME_CORE = [
   "minigames/js/core/dialogue.js", "minigames/js/core/registry.js", "minigames/js/core/router.js",
   "minigames/js/core/progress.js", "minigames/js/core/app.js",
   "minigames/js/data/registry.json",
+  // E6 cards engine: the scripts in registry.json engines.cards, plus its stylesheet
+  "minigames/css/cards.css",
+  "minigames/js/logic/cards/onet.js", "minigames/js/logic/cards/letters.js",
+  "minigames/js/logic/cards/swipe.js", "minigames/js/logic/cards/memory.js",
+  "minigames/js/engines/cards/cards.js", "minigames/js/engines/cards/letter-tiles.js",
+  "minigames/js/engines/cards/swipe-stack.js", "minigames/js/engines/cards/onet-view.js",
+  "minigames/js/engines/cards/widgets.js",
   "minigames/assets/asset-manifest.json",
 ];
 

@@ -1,0 +1,62 @@
+[
+ {
+  "id": "wash",
+  "en": "WASH HANDS FOR 20 SECONDS",
+  "fil": "MAGHUGAS NG KAMAY NANG 20 SEGUNDO",
+  "icon": "soap",
+  "tip": {
+   "en": "Scrub the backs, between the fingers and under the nails. That's about two \"Happy Birthday\" songs.",
+   "fil": "Kuskusin ang likod ng kamay, pagitan ng mga daliri at ilalim ng kuko. Mga dalawang \"Happy Birthday\" na kanta iyon."
+  }
+ },
+ {
+  "id": "cough",
+  "en": "COVER YOUR COUGH WITH YOUR ELBOW",
+  "fil": "TAKPAN ANG UBO GAMIT ANG SIKO",
+  "icon": "🤧",
+  "tip": {
+   "en": "Your elbow keeps germs off your hands, so you don't pass them to doorknobs and friends.",
+   "fil": "Hindi napupunta sa kamay ang mikrobyo kapag sa siko ka umubo, kaya hindi ito naipapasa sa doorknob at kaibigan."
+  }
+ },
+ {
+  "id": "home",
+  "en": "STAY HOME WHEN YOU ARE SICK",
+  "fil": "MANATILI SA BAHAY KAPAG MAY SAKIT",
+  "icon": "🏠",
+  "tip": {
+   "en": "Resting at home helps you get well and keeps your classmates from catching it.",
+   "fil": "Ang pagpapahinga sa bahay ay tumutulong na gumaling ka at hindi mahawa ang mga kaklase mo."
+  }
+ },
+ {
+  "id": "mask",
+  "en": "WEAR A MASK WHEN YOU ARE SICK",
+  "fil": "MAGSUOT NG MASK KAPAG MAY SAKIT",
+  "icon": "facemask",
+  "tip": {
+   "en": "A mask over your nose and mouth catches the droplets from coughs and sneezes.",
+   "fil": "Sinasalo ng mask sa ilong at bibig ang mga patak mula sa ubo at bahing."
+  }
+ },
+ {
+  "id": "vaccine",
+  "en": "GET YOUR VACCINES ON TIME",
+  "fil": "MAGPABAKUNA SA TAMANG PANAHON",
+  "icon": "💉",
+  "tip": {
+   "en": "The health center keeps a vaccine card for you. Ask a grown-up when your next one is.",
+   "fil": "May vaccine card ka sa health center. Itanong sa nakatatanda kung kailan ang susunod mong bakuna."
+  }
+ },
+ {
+  "id": "tissue",
+  "en": "THROW USED TISSUES IN THE BIN",
+  "fil": "ITAPON ANG GINAMIT NA TISYU SA BASURAHAN",
+  "icon": "tissue",
+  "tip": {
+   "en": "A used tissue is full of germs. Bin it, then wash your hands.",
+   "fil": "Puno ng mikrobyo ang ginamit na tisyu. Itapon ito, saka maghugas ng kamay."
+  }
+ }
+]

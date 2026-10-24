@@ -1,7 +1,15 @@
 {
   "version": 1,
   "daily": ["fire-escape", "safe-crossing", "wave-runner", "evac-convoy"],
-  "engines": {},
+  "engines": {
+    "cards": [
+      "minigames/js/logic/cards/onet.js", "minigames/js/logic/cards/letters.js",
+      "minigames/js/logic/cards/swipe.js", "minigames/js/logic/cards/memory.js",
+      "minigames/js/engines/cards/cards.js", "minigames/js/engines/cards/letter-tiles.js",
+      "minigames/js/engines/cards/swipe-stack.js", "minigames/js/engines/cards/onet-view.js",
+      "minigames/js/engines/cards/widgets.js"
+    ]
+  },
   "games": [
     {
       "id": "drop-cover-hold", "num": 1, "hazardId": "earthquake", "hazardGroup": "geological",
@@ -151,10 +159,26 @@
       "howTo": [
         { "en": "Type letters or tap the tiles", "fil": "Mag-type ng letra o pindutin ang tiles", "keys": ["key_a", "key_e"], "gesture": "gesture_tap" },
         { "en": "Remove a letter", "fil": "Magbura ng letra", "keys": ["key_backspace"], "gesture": "gesture_tap" },
-        { "en": "Shuffle the tiles", "fil": "Haluin ang tiles", "keys": ["key_space"], "gesture": "gesture_tap" }
+        { "en": "Shuffle the tiles", "fil": "Haluin ang tiles", "keys": ["key_space"], "gesture": "gesture_tap" },
+        { "en": "Get a hint (−30 points)", "fil": "Humingi ng pahiwatig (−30 puntos)", "keys": ["key_question"], "gesture": "gesture_tap" },
+        { "en": "Pause (P and H are letters here)", "fil": "Huminto (letra ang P at H dito)", "keys": ["key_esc"], "gesture": "gesture_tap" }
       ],
-      "takeaway": { "en": "Wash hands, cover coughs, get vaccinated, and stay home when sick. That's how outbreaks stop.", "fil": "Maghugas ng kamay, takpan ang ubo, magpabakuna, at manatili sa bahay kapag may sakit. Ganyan napipigil ang outbreak." },
-      "built": false, "scripts": [], "data": ["levels.json", "data/words.en.json", "data/words.fil.json"]
+      "pauseKeys": ["key_esc"],
+      "posters": {
+        "1": { "asset": "word-lab.poster.handwash", "title": { "en": "Wash your hands", "fil": "Maghugas ng kamay" } },
+        "2": { "asset": "word-lab.poster.cough", "title": { "en": "Cover your cough", "fil": "Takpan ang ubo" } },
+        "3": { "asset": "word-lab.poster.mask", "title": { "en": "Wear a mask when sick", "fil": "Mag-mask kapag may sakit" } },
+        "4": { "asset": "word-lab.poster.vaccine", "title": { "en": "Get vaccinated", "fil": "Magpabakuna" } },
+        "5": { "asset": "word-lab.poster.rest", "title": { "en": "Stay home and rest", "fil": "Magpahinga sa bahay" } }
+      },
+      "takeaway": { "en": "Wash hands, cover coughs, get vaccinated, and stay home when sick — that's how outbreaks stop.", "fil": "Maghugas ng kamay, takpan ang ubo, magpabakuna, at manatili sa bahay kapag may sakit — ganyan napipigil ang outbreak." },
+      "built": true,
+      "scripts": [
+        "minigames/js/games/word-lab/tuning.js", "minigames/js/games/word-lab/WordLabScene.js",
+        "minigames/js/games/word-lab/PatientQueue.js", "minigames/js/games/word-lab/WordTwist.js",
+        "minigames/js/games/word-lab/SentenceScramble.js", "minigames/js/games/word-lab/index.js"
+      ],
+      "data": ["levels.json", "data/words.en.json", "data/words.fil.json", "data/twist.json", "data/sentences.json"]
     },
     {
       "id": "pest-patrol", "num": 10, "hazardId": "pest-infestation", "hazardGroup": "biological",

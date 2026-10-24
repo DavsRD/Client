@@ -1,0 +1,192 @@
+[
+ {
+  "word": "UBO",
+  "clue": "🤧",
+  "definition": {
+   "en": "A cough (ubo). Cough into your elbow, not your hands.",
+   "fil": "Ubo. Umubo sa siko, hindi sa kamay."
+  },
+  "world": 1,
+  "difficulty": 1
+ },
+ {
+  "word": "SIKO",
+  "clue": "💪",
+  "definition": {
+   "en": "Your elbow (siko). Cough or sneeze into it when you have no tissue.",
+   "fil": "Siko. Dito umubo o bumahing kapag walang tisyu."
+  },
+  "world": 1,
+  "difficulty": 1
+ },
+ {
+  "word": "SIPON",
+  "clue": "🤧",
+  "definition": {
+   "en": "A cold or runny nose (sipon). Use a tissue and wash your hands.",
+   "fil": "Sipon. Gumamit ng tisyu at maghugas ng kamay."
+  },
+  "world": 1,
+  "difficulty": 1
+ },
+ {
+  "word": "SAKIT",
+  "clue": "🤒",
+  "definition": {
+   "en": "Sickness (sakit). When you are sick, tell a grown-up and rest at home.",
+   "fil": "Sakit. Kapag may sakit ka, sabihin sa nakatatanda at magpahinga sa bahay."
+  },
+  "world": 1,
+  "difficulty": 1
+ },
+ {
+  "word": "GAMOT",
+  "clue": "medicine",
+  "definition": {
+   "en": "Medicine (gamot). Take it only when a grown-up or a doctor gives it to you.",
+   "fil": "Gamot. Inumin lang kapag ibinigay ng nakatatanda o ng doktor."
+  },
+  "world": 1,
+  "difficulty": 2
+ },
+ {
+  "word": "KAMAY",
+  "clue": "🖐️",
+  "definition": {
+   "en": "Hands (kamay). Wash them with soap often, and before you eat.",
+   "fil": "Kamay. Hugasan ito ng sabon nang madalas, at bago kumain."
+  },
+  "world": 1,
+  "difficulty": 2
+ },
+ {
+  "word": "TUBIG",
+  "clue": "tap",
+  "definition": {
+   "en": "Water (tubig). Rinse your hands under clean running water.",
+   "fil": "Tubig. Banlawan ang kamay sa malinis na umaagos na tubig."
+  },
+  "world": 1,
+  "difficulty": 2
+ },
+ {
+  "word": "LINIS",
+  "clue": "sanitizer",
+  "definition": {
+   "en": "Clean (linis). Clean hands and clean tables keep germs away.",
+   "fil": "Linis. Ang malinis na kamay at mesa ay naglalayo sa mikrobyo."
+  },
+  "world": 1,
+  "difficulty": 2
+ },
+ {
+  "word": "SABON",
+  "clue": "soap",
+  "definition": {
+   "en": "Soap (sabon). Soap and water wash germs off your hands.",
+   "fil": "Sabon. Natatanggal ng sabon at tubig ang mikrobyo sa kamay."
+  },
+  "world": 2,
+  "difficulty": 1
+ },
+ {
+  "word": "HUGAS",
+  "clue": "🧼",
+  "definition": {
+   "en": "Wash (hugas). Wash your hands for 20 seconds.",
+   "fil": "Hugas. Maghugas ng kamay nang 20 segundo."
+  },
+  "world": 2,
+  "difficulty": 1
+ },
+ {
+  "word": "PANYO",
+  "clue": "tissue",
+  "definition": {
+   "en": "A handkerchief (panyo). Cover your cough or sneeze with it, then wash it.",
+   "fil": "Panyo. Takpan nito ang ubo o bahing, saka labhan."
+  },
+  "world": 2,
+  "difficulty": 2
+ },
+ {
+  "word": "PAHINGA",
+  "clue": "🛌",
+  "definition": {
+   "en": "Rest (pahinga). Resting helps your body get better.",
+   "fil": "Pahinga. Ang pagpapahinga ay tumutulong sa katawan na gumaling."
+  },
+  "world": 2,
+  "difficulty": 2
+ },
+ {
+  "word": "KALINISAN",
+  "clue": "🧴",
+  "definition": {
+   "en": "Cleanliness (kalinisan): keeping yourself and your things clean so you stay healthy.",
+   "fil": "Kalinisan: ang pagpapanatiling malinis ng sarili at ng gamit para manatiling malusog."
+  },
+  "world": 2,
+  "difficulty": 3
+ },
+ {
+  "word": "LAGNAT",
+  "clue": "thermometer",
+  "definition": {
+   "en": "A fever (lagnat): your body is hotter than normal. Tell a grown-up, drink water and rest.",
+   "fil": "Lagnat: mas mainit ang katawan kaysa karaniwan. Sabihin sa nakatatanda, uminom ng tubig at magpahinga."
+  },
+  "world": 3,
+  "difficulty": 1
+ },
+ {
+  "word": "BAHAY",
+  "clue": "🏠",
+  "definition": {
+   "en": "Home (bahay). Stay home when you are sick.",
+   "fil": "Bahay. Manatili sa bahay kapag may sakit."
+  },
+  "world": 3,
+  "difficulty": 1
+ },
+ {
+  "word": "BAKUNA",
+  "clue": "💉",
+  "definition": {
+   "en": "A vaccine (bakuna) teaches your body to fight a germ before it makes you very sick.",
+   "fil": "Tinuturuan ng bakuna ang katawan na labanan ang mikrobyo bago ka magkasakit nang malubha."
+  },
+  "world": 3,
+  "difficulty": 2
+ },
+ {
+  "word": "DOKTOR",
+  "clue": "🩺",
+  "definition": {
+   "en": "A doctor (doktor) checks you and tells you how to get well.",
+   "fil": "Sinusuri ka ng doktor at sinasabi kung paano gagaling."
+  },
+  "world": 3,
+  "difficulty": 2
+ },
+ {
+  "word": "MIKROBYO",
+  "clue": "🦠",
+  "definition": {
+   "en": "A germ (mikrobyo): a tiny living thing, too small to see, that can make you sick.",
+   "fil": "Mikrobyo: napakaliit na buhay na bagay, hindi nakikita ng mata, na puwedeng magdulot ng sakit."
+  },
+  "world": 3,
+  "difficulty": 3
+ },
+ {
+  "word": "SINTOMAS",
+  "clue": "thermometer",
+  "definition": {
+   "en": "Symptoms (sintomas): signs of sickness, like a fever, a cough or a runny nose.",
+   "fil": "Sintomas: mga palatandaan ng sakit, gaya ng lagnat, ubo o sipon."
+  },
+  "world": 3,
+  "difficulty": 3
+ }
+]

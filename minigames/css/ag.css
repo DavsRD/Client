@@ -159,6 +159,9 @@
 #ag-app .ag-level.is-played { background: var(--safe-soft); }
 #ag-app .ag-level .ag-stars img { width: 14px; height: 14px; }
 #ag-app .ag-world__locked { font-weight: 700; color: var(--muted); }
+#ag-app .ag-world__poster { align-self: flex-start; max-width: 100%; margin-top: 4px; font-family: var(--font-body); white-space: normal; text-align: left; line-height: 1.2; }
+#ag-app small.ag-world__poster { color: var(--muted); font-weight: 700; }
+#ag-app .ag-posterdlg img { display: block; margin: 8px auto 0; border: var(--b) solid var(--ink); }
 #ag-app .ag-playrow { display: flex; justify-content: center; }
 #ag-app .ag-soon { display: flex; align-items: center; gap: var(--sp-4); padding: var(--sp-4); border-style: dashed; }
 #ag-app .ag-soon img { width: 80px; height: 80px; flex: none; }
