@@ -270,12 +270,21 @@
         "fil": "Makarating nang ligtas sa paaralan: huminto sa gilid, tumingin sa magkabilang direksiyon, gumamit ng pedestrian lane at footbridge, at hintayin ang signal."
       },
       "howTo": [
-        { "en": "Step forward, back and sideways", "fil": "Humakbang pasulong, paatras at patagilid", "keys": ["key_up", "key_down", "key_left", "key_right"], "gesture": "gesture_swipe_up" },
-        { "en": "Look left and right", "fil": "Tumingin sa kaliwa at kanan", "keys": ["key_q", "key_e"], "gesture": "gesture_tap" },
-        { "en": "Wait at the curb", "fil": "Maghintay sa gilid", "keys": ["key_space"], "gesture": "gesture_hold" }
+        { "en": "Hop forward, sideways and back", "fil": "Lumundag pasulong, patagilid at paatras", "keys": ["key_up", "key_left", "key_down", "key_right"], "gesture": "gesture_tap" },
+        { "en": "Swipe to go sideways or back", "fil": "I-swipe para patagilid o paatras", "keys": [], "gesture": "gesture_swipe_left" },
+        { "en": "Wait at the curb to look left and right (no button)", "fil": "Maghintay sa gilid para tumingin sa kaliwa at kanan (walang pindutan)", "keys": [], "gesture": "gesture_hold" },
+        { "en": "Put the phone away", "fil": "Itabi ang cellphone", "keys": ["key_q"], "gesture": "gesture_tap" }
       ],
-      "takeaway": { "en": "Stop, look left and right, and cross at the pedestrian lane. Your phone can wait.", "fil": "Huminto, tumingin sa kaliwa at kanan, at tumawid sa pedestrian lane. Makapaghihintay ang cellphone mo." },
-      "built": false, "scripts": [], "data": ["levels.json"]
+      "takeaway": { "en": "Stop, look left and right, and cross at the pedestrian lane — your phone can wait.", "fil": "Huminto, tumingin sa kaliwa at kanan, at tumawid sa pedestrian lane — makapaghihintay ang cellphone mo." },
+      "built": true,
+      "scripts": [
+        "minigames/js/games/safe-crossing/tuning.js", "minigames/js/games/safe-crossing/lanes/types.js",
+        "minigames/js/games/safe-crossing/lanes/course.js", "minigames/js/games/safe-crossing/Signals.js",
+        "minigames/js/games/safe-crossing/Vehicles.js", "minigames/js/games/safe-crossing/Occlusion.js",
+        "minigames/js/games/safe-crossing/endless.js", "minigames/js/games/safe-crossing/SafeCrossingScene.js",
+        "minigames/js/games/safe-crossing/index.js"
+      ],
+      "data": ["levels.json"]
     },
     {
       "id": "symbol-jigsaw", "num": 14, "hazardId": "chemical-spill", "hazardGroup": "technological",

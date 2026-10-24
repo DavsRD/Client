@@ -74,7 +74,7 @@
     if (route.view === 'daily') {
       if (!game.built || !game.daily || AG.progress.dailyGame() !== game.id) return 'fallback';
       const seed = AG.progress.dailySeed();
-      startPlay({ world: (seed % 5) + 1, level: (Math.floor(seed / 5) % 5) + 1, mode: 'daily', seed });
+      startPlay({ world: (seed % AG.progress.rules.WORLDS) + 1, level: (Math.floor(seed / 5) % 5) + 1, mode: 'daily', seed });
       return true;
     }
     if (view !== 'overview') leave();
@@ -226,7 +226,7 @@
   function mapPanel() {
     const P = AG.progress;
     const worlds = h('ol', { class: 'ag-worlds' });
-    for (let w = 1; w <= 5; w++) {
+    for (let w = 1; w <= P.rules.WORLDS; w++) {
       const open = P.worldOpen(game.id, w, unlockAll);
       const stars = P.worldStars(game.id, w);
       const li = h('li', { class: 'ag-world' + (open ? '' : ' is-locked') },
@@ -558,7 +558,7 @@
     if (spec.mode !== 'stage') return null;
     let w = spec.world, l = spec.level + 1;
     if (l > 5) { w++; l = 1; }
-    if (w > 5 || !AG.progress.worldOpen(game.id, w, unlockAll)) return null;
+    if (w > AG.progress.rules.WORLDS || !AG.progress.worldOpen(game.id, w, unlockAll)) return null;
     return { world: w, level: l };
   }
 

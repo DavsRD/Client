@@ -8,7 +8,7 @@
  *   added to the SITE's XP (KALASAG O6); ranks are computed from the site XP by the host.
  * - Star unlocks (O4): 25 / 50 / 100 / 200 stars = card frames, 300 = the gold name plate. */
 (function (AG) {
-  const WORLDS = 5, LEVELS = 5;
+  const WORLDS = 3, LEVELS = 5; // KALASAG: 3 worlds × 5 levels (45 stars per game)
   const S = (en, fil) => ({ en, fil });
 
   const rules = {

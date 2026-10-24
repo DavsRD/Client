@@ -9,7 +9,7 @@ import { fetchJSON } from "./data.js";
 
 export const REGISTRY_URL = "minigames/js/data/registry.json";
 const MANIFEST_URL = "minigames/assets/asset-manifest.json";
-const STARS_PER_GAME = 75; // 5 worlds × 5 levels × 3 stars
+const STARS_PER_GAME = 45; // 3 worlds × 5 levels × 3 stars
 
 let registry = null;
 
