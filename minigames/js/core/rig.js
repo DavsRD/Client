@@ -52,10 +52,11 @@ window.AG = window.AG || {};
     think: { frame: 'expr_determined' },
     happy: { frame: 'expr_happy' }, cheer: { frame: 'pose_cheer' }, wink: { frame: 'expr_wink' }
   };
-  /* hold:<prop>: heroes have six prop frames; AGILA has no geared prop frames, so she
-   * (and any other prop) stands idle with the prop's icon beside her. */
+  /* hold:<prop>: heroes have six prop frames; AGILA has only the geared sign, so with any
+   * other prop she stands idle with the prop's icon beside her. */
   const SQUAD_PROPS = { radio: 'prop_radio', first_aid: 'prop_first_aid', go_bag: 'prop_go_bag', flashlight: 'prop_flashlight', megaphone: 'prop_megaphone', extinguisher: 'prop_extinguisher' };
-  const ACTIONS = Object.keys(AGILA).concat(['hold:radio', 'hold:first_aid', 'hold:go_bag', 'hold:flashlight', 'hold:whistle', 'carry:water']);
+  const AGILA_PROPS = { sign: G('prop_on_sign') }; // her one geared prop frame (game 19's tutorial sign)
+  const ACTIONS = Object.keys(AGILA).concat(['hold:radio', 'hold:first_aid', 'hold:go_bag', 'hold:flashlight', 'hold:whistle', 'hold:sign', 'carry:water']);
 
   /** Pure lookup: which frame and extras an action uses for a character. */
   function resolve(characterId, action, t) {
@@ -64,7 +65,7 @@ window.AG = window.AG || {};
     let row, extra = {};
     if (action && action.startsWith('hold:')) {
       const prop = action.slice(5);
-      row = !c.agila && SQUAD_PROPS[prop] ? { frame: SQUAD_PROPS[prop] } : { frame: idle, icon: prop, at: 'side' };
+      row = !c.agila && SQUAD_PROPS[prop] ? { frame: SQUAD_PROPS[prop] } : c.agila && AGILA_PROPS[prop] ? { frame: AGILA_PROPS[prop] } : { frame: idle, icon: prop, at: 'side' };
     } else if (action && action.startsWith('carry:')) {
       row = { frame: idle, moving: !c.agila, icon: action.slice(6), at: 'above' };
     } else row = table[action];

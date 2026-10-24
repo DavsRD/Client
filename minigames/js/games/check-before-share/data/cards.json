@@ -1,0 +1,1184 @@
+{
+ "sources": {
+  "barangay": {
+   "badge": "barangay",
+   "name": {
+    "en": "Barangay Masigla Hall",
+    "fil": "Bulwagan ng Barangay Masigla"
+   },
+   "official": true
+  },
+  "school": {
+   "badge": "school",
+   "name": {
+    "en": "Bituin Elementary School",
+    "fil": "Paaralang Elementarya ng Bituin"
+   },
+   "official": true
+  },
+  "radio": {
+   "badge": "radio",
+   "name": {
+    "en": "Radyo Masigla · official news",
+    "fil": "Radyo Masigla · opisyal na balita"
+   },
+   "official": true
+  },
+  "teacher": {
+   "badge": "school",
+   "name": {
+    "en": "Teacher Ana",
+    "fil": "Titser Ana"
+   },
+   "official": true
+  },
+  "mama": {
+   "badge": "parent",
+   "name": {
+    "en": "Mama",
+    "fil": "Mama"
+   },
+   "official": true
+  },
+  "papa": {
+   "badge": "parent",
+   "name": {
+    "en": "Papa",
+    "fil": "Papa"
+   },
+   "official": true
+  },
+  "lola": {
+   "badge": "parent",
+   "name": {
+    "en": "Lola",
+    "fil": "Lola"
+   },
+   "official": true
+  },
+  "unknown": {
+   "badge": "unknown",
+   "name": {
+    "en": "Unknown number",
+    "fil": "Hindi kilalang numero"
+   },
+   "official": false
+  },
+  "groupchat": {
+   "badge": "unknown",
+   "name": {
+    "en": "Group chat: Chika Corner",
+    "fil": "Group chat: Chika Corner"
+   },
+   "official": false
+  },
+  "forwarded": {
+   "badge": "forwarded",
+   "name": {
+    "en": "Forwarded message",
+    "fil": "Ipinasang mensahe"
+   },
+   "official": false
+  },
+  "noname": {
+   "badge": "unknown",
+   "name": {
+    "en": "No name",
+    "fil": "Walang pangalan"
+   },
+   "official": false
+  }
+ },
+ "clues": {
+  "caps": {
+   "en": "ALL CAPS",
+   "fil": "PURO MALALAKING TITIK"
+  },
+  "nosource": {
+   "en": "no source",
+   "fil": "walang pinagmulan"
+  },
+  "forward": {
+   "en": "“forward this!”",
+   "fil": "“ipasa ito!”"
+  },
+  "forwarded": {
+   "en": "forwarded many times",
+   "fil": "maraming beses nang naipasa"
+  },
+  "unknown": {
+   "en": "unknown sender",
+   "fil": "hindi kilalang nagpadala"
+  },
+  "scary": {
+   "en": "too scary",
+   "fil": "sobrang nakakatakot"
+  },
+  "toogood": {
+   "en": "too good to be true",
+   "fil": "masyadong maganda para maging totoo"
+  }
+ },
+ "cards": [
+  {
+   "id": "t-curfew",
+   "type": "message",
+   "frame": "note",
+   "source": "barangay",
+   "text": {
+    "en": "Curfew tonight starts at 8:00 PM. Please stay inside with your family.",
+    "fil": "Magsisimula ang curfew ngayong gabi nang 8:00 PM. Manatili sa loob kasama ang pamilya."
+   },
+   "trusted": true,
+   "clues": [],
+   "explain": {
+    "en": "The barangay gives official news. Following the curfew keeps everyone safe.",
+    "fil": "Opisyal na balita ang galing sa barangay. Ligtas ang lahat kapag sinusunod ang curfew."
+   }
+  },
+  {
+   "id": "t-radio-indoors",
+   "type": "message",
+   "frame": "radio",
+   "source": "radio",
+   "text": {
+    "en": "Official update: stay indoors and away from windows. Next update at 6:00 PM.",
+    "fil": "Opisyal na balita: manatili sa loob at lumayo sa bintana. Susunod na balita sa 6:00 PM."
+   },
+   "trusted": true,
+   "clues": [],
+   "explain": {
+    "en": "Official radio news is a trusted source. Keep listening for the next update.",
+    "fil": "Mapagkakatiwalaan ang opisyal na balita sa radyo. Patuloy na makinig sa susunod na balita."
+   }
+  },
+  {
+   "id": "t-school-noclass",
+   "type": "message",
+   "frame": "note",
+   "source": "school",
+   "text": {
+    "en": "No classes tomorrow. Stay safe at home and wait for our next update.",
+    "fil": "Walang pasok bukas. Manatiling ligtas sa bahay at hintayin ang susunod naming balita."
+   },
+   "trusted": true,
+   "clues": [],
+   "explain": {
+    "en": "News from your school is trusted. It's good to share it with your family.",
+    "fil": "Mapagkakatiwalaan ang balita mula sa paaralan. Mabuting ibahagi ito sa pamilya."
+   }
+  },
+  {
+   "id": "t-mama-home",
+   "type": "message",
+   "frame": "chat",
+   "source": "mama",
+   "text": {
+    "en": "Anak, I'm on my way home. Stay inside with Kuya and keep the door closed.",
+    "fil": "Anak, pauwi na ako. Manatili sa loob kasama si Kuya at isara ang pinto."
+   },
+   "trusted": true,
+   "clues": [],
+   "explain": {
+    "en": "Mama is a trusted adult. Do what she says and stay inside.",
+    "fil": "Pinagkakatiwalaang nakatatanda si Mama. Sundin siya at manatili sa loob."
+   }
+  },
+  {
+   "id": "t-teacher-feel",
+   "type": "message",
+   "frame": "chat",
+   "source": "teacher",
+   "text": {
+    "en": "Hi class! Stay home with your family today. You can tell me how you feel when school opens.",
+    "fil": "Hi, klase! Manatili sa bahay kasama ang pamilya ngayon. Puwede ninyong sabihin sa akin ang nararamdaman ninyo pagbukas ng paaralan."
+   },
+   "trusted": true,
+   "clues": [],
+   "explain": {
+    "en": "Your teacher is a trusted adult. Talking about your feelings helps.",
+    "fil": "Pinagkakatiwalaang nakatatanda ang titser mo. Nakatutulong ang pagsasabi ng nararamdaman."
+   }
+  },
+  {
+   "id": "t-radio-plaza",
+   "type": "message",
+   "frame": "radio",
+   "source": "radio",
+   "text": {
+    "en": "Official update: the streets near the plaza are closed. Please stay home and keep your radio on.",
+    "fil": "Opisyal na balita: sarado ang mga kalye malapit sa plaza. Manatili sa bahay at panatilihing bukas ang radyo."
+   },
+   "trusted": true,
+   "clues": [],
+   "explain": {
+    "en": "This is official news. Staying home and listening to the radio is the safe thing to do.",
+    "fil": "Opisyal na balita ito. Ligtas ang manatili sa bahay at makinig sa radyo."
+   }
+  },
+  {
+   "id": "t-brgy-help",
+   "type": "message",
+   "frame": "note",
+   "source": "barangay",
+   "text": {
+    "en": "The barangay hall is open for families who need help. Ask a grown-up to contact us.",
+    "fil": "Bukas ang barangay hall para sa mga pamilyang nangangailangan ng tulong. Magpatulong sa nakatatanda para makipag-ugnayan."
+   },
+   "trusted": true,
+   "clues": [],
+   "explain": {
+    "en": "The barangay is there to help. A grown-up can contact them for your family.",
+    "fil": "Nandiyan ang barangay para tumulong. Ang nakatatanda ang makikipag-ugnayan para sa pamilya."
+   }
+  },
+  {
+   "id": "t-papa-work",
+   "type": "message",
+   "frame": "chat",
+   "source": "papa",
+   "text": {
+    "en": "I'm safe at work. I'll come home when the barangay says the roads are clear.",
+    "fil": "Ligtas ako sa trabaho. Uuwi ako kapag sinabi ng barangay na maayos na ang daan."
+   },
+   "trusted": true,
+   "clues": [],
+   "explain": {
+    "en": "Papa is a trusted adult, and he is listening to the barangay too.",
+    "fil": "Pinagkakatiwalaang nakatatanda si Papa, at nakikinig din siya sa barangay."
+   }
+  },
+  {
+   "id": "t-school-pickup",
+   "type": "message",
+   "frame": "note",
+   "source": "school",
+   "text": {
+    "en": "Parents: pick-up is at the back gate today at 2:00 PM. Teachers will stay with the children.",
+    "fil": "Mga magulang: sa likod na gate ang sundo ngayon nang 2:00 PM. Kasama ng mga bata ang mga guro."
+   },
+   "trusted": true,
+   "clues": [],
+   "explain": {
+    "en": "Official news from your school. Your parents need to know it, so it's good to share.",
+    "fil": "Opisyal na balita mula sa paaralan. Kailangan itong malaman ng magulang mo, kaya mabuting ibahagi."
+   }
+  },
+  {
+   "id": "t-radio-lifted",
+   "type": "message",
+   "frame": "radio",
+   "source": "radio",
+   "text": {
+    "en": "Official update: the curfew ends at 6:00 AM. Wait for your parents before going out.",
+    "fil": "Opisyal na balita: matatapos ang curfew nang 6:00 AM. Hintayin ang magulang bago lumabas."
+   },
+   "trusted": true,
+   "clues": [],
+   "explain": {
+    "en": "Official radio news is trusted. Even after the curfew, go out only with your parents.",
+    "fil": "Mapagkakatiwalaan ang opisyal na balita sa radyo. Kahit tapos na ang curfew, lumabas lang kasama ang magulang."
+   }
+  },
+  {
+   "id": "t-brgy-tanod",
+   "type": "message",
+   "frame": "note",
+   "source": "barangay",
+   "text": {
+    "en": "Thank you for staying calm. Barangay tanods are on duty all night. Please stay indoors.",
+    "fil": "Salamat sa pananatiling kalmado. Nagbabantay ang mga tanod buong gabi. Manatili sa loob."
+   },
+   "trusted": true,
+   "clues": [],
+   "explain": {
+    "en": "The barangay is keeping the community safe. Follow what they say.",
+    "fil": "Pinananatiling ligtas ng barangay ang komunidad. Sundin ang sinasabi nila."
+   }
+  },
+  {
+   "id": "t-teacher-ask",
+   "type": "message",
+   "frame": "chat",
+   "source": "teacher",
+   "text": {
+    "en": "Remember our class rule: when you hear news, ask a grown-up first.",
+    "fil": "Tandaan ang tuntunin natin: kapag may narinig na balita, magtanong muna sa nakatatanda."
+   },
+   "trusted": true,
+   "clues": [],
+   "explain": {
+    "en": "Good advice from a trusted teacher. Asking first stops rumours.",
+    "fil": "Mabuting payo mula sa pinagkakatiwalaang titser. Napipigil ang tsismis kapag nagtatanong muna."
+   }
+  },
+  {
+   "id": "t-brgy-water",
+   "type": "message",
+   "frame": "note",
+   "source": "barangay",
+   "text": {
+    "en": "Water and electricity are working. If anything changes, we will post it here.",
+    "fil": "Gumagana ang tubig at kuryente. Kapag may nagbago, ipapaskil namin dito."
+   },
+   "trusted": true,
+   "clues": [],
+   "explain": {
+    "en": "This comes straight from the barangay. Official news is safe to follow.",
+    "fil": "Direktang galing ito sa barangay. Ligtas sundin ang opisyal na balita."
+   }
+  },
+  {
+   "id": "t-radio-trust",
+   "type": "message",
+   "frame": "radio",
+   "source": "radio",
+   "text": {
+    "en": "Official update: only trust news from the barangay, the school and this station.",
+    "fil": "Opisyal na balita: magtiwala lang sa balita mula sa barangay, sa paaralan at sa istasyong ito."
+   },
+   "trusted": true,
+   "clues": [],
+   "explain": {
+    "en": "Yes! Trusted sources are the barangay, the school, official radio, parents and teachers.",
+    "fil": "Tama! Ang mapagkakatiwalaan ay ang barangay, paaralan, opisyal na radyo, magulang at guro."
+   }
+  },
+  {
+   "id": "t-lola-radio",
+   "type": "message",
+   "frame": "chat",
+   "source": "lola",
+   "text": {
+    "en": "Apo, come sit with me inside. Let's listen to the radio together.",
+    "fil": "Apo, halika, umupo tayo sa loob. Makinig tayo sa radyo nang magkasama."
+   },
+   "trusted": true,
+   "clues": [],
+   "explain": {
+    "en": "Lola is family. Staying together and listening to the radio is safe.",
+    "fil": "Pamilya si Lola. Ligtas ang magkasama at makinig sa radyo."
+   }
+  },
+  {
+   "id": "t-radio-quiet",
+   "type": "message",
+   "frame": "radio",
+   "source": "radio",
+   "text": {
+    "en": "Official update: things are quiet now. Keep staying inside until morning.",
+    "fil": "Opisyal na balita: tahimik na ngayon. Manatili pa rin sa loob hanggang umaga."
+   },
+   "trusted": true,
+   "clues": [],
+   "explain": {
+    "en": "Calm, clear news from an official source. Easy to trust.",
+    "fil": "Kalmado at malinaw na balita mula sa opisyal na pinagmulan. Madaling pagkatiwalaan."
+   }
+  },
+  {
+   "id": "t-brgy-relief",
+   "type": "message",
+   "frame": "note",
+   "source": "barangay",
+   "text": {
+    "en": "Rice and water packs at the barangay hall tomorrow, 9:00 AM. One pack per family.",
+    "fil": "May rice at water pack sa barangay hall bukas, 9:00 AM. Isang pack bawat pamilya."
+   },
+   "trusted": true,
+   "clues": [],
+   "explain": {
+    "en": "It's from the barangay, it gives a time and place, and it isn't too good to be true.",
+    "fil": "Galing sa barangay, may oras at lugar, at hindi masyadong maganda para maging totoo."
+   }
+  },
+  {
+   "id": "t-school-monday",
+   "type": "message",
+   "frame": "note",
+   "source": "school",
+   "text": {
+    "en": "School opens again on Monday. Your teachers are ready to help you.",
+    "fil": "Magbubukas muli ang paaralan sa Lunes. Handang tumulong ang mga guro ninyo."
+   },
+   "trusted": true,
+   "clues": [],
+   "explain": {
+    "en": "Official news from your school. It's good to tell your family.",
+    "fil": "Opisyal na balita mula sa paaralan. Mabuting sabihin sa pamilya."
+   }
+  },
+  {
+   "id": "t-brgy-tonight",
+   "type": "message",
+   "frame": "note",
+   "source": "barangay",
+   "text": {
+    "en": "Our community is safe right now. Please stay home tonight and listen for updates.",
+    "fil": "Ligtas ang komunidad natin ngayon. Manatili sa bahay ngayong gabi at makinig sa balita."
+   },
+   "trusted": true,
+   "clues": [],
+   "explain": {
+    "en": "The barangay's own message. Follow it and stay home.",
+    "fil": "Mismong mensahe ng barangay. Sundin ito at manatili sa bahay."
+   }
+  },
+  {
+   "id": "r-closed",
+   "type": "message",
+   "frame": "chat",
+   "source": "noname",
+   "text": {
+    "en": "URGENT!!! THE WHOLE TOWN IS CLOSED!!! FORWARD THIS TO 10 PEOPLE NOW!!!",
+    "fil": "URGENT!!! SARADO ANG BUONG BAYAN!!! IPASA ITO SA 10 TAO NGAYON!!!"
+   },
+   "trusted": false,
+   "clues": [
+    "caps",
+    "nosource",
+    "forward"
+   ],
+   "explain": {
+    "en": "Real news doesn't shout or ask you to forward it.",
+    "fil": "Hindi sumisigaw ang totoong balita at hindi ka nito pinapapasa."
+   }
+  },
+  {
+   "id": "r-someone",
+   "type": "message",
+   "frame": "chat",
+   "source": "noname",
+   "text": {
+    "en": "Someone said there is big trouble everywhere. Share this with everyone!",
+    "fil": "May nagsabi na may malaking gulo kahit saan. Ibahagi ito sa lahat!"
+   },
+   "trusted": false,
+   "clues": [
+    "nosource",
+    "forward"
+   ],
+   "explain": {
+    "en": "“Someone said” is not a source. Ask a trusted adult instead.",
+    "fil": "Hindi pinagmulan ang “may nagsabi.” Magtanong sa pinagkakatiwalaang nakatatanda."
+   }
+  },
+  {
+   "id": "r-share-now",
+   "type": "message",
+   "frame": "chat",
+   "source": "noname",
+   "text": {
+    "en": "SHARE NOW OR YOU WILL BE IN TROUBLE!!!",
+    "fil": "IBAHAGI NGAYON O MAPAPAHAMAK KA!!!"
+   },
+   "trusted": false,
+   "clues": [
+    "caps",
+    "forward",
+    "scary"
+   ],
+   "explain": {
+    "en": "Messages that scare you into sharing are rumours. Nothing bad happens if you don't share.",
+    "fil": "Tsismis ang mensaheng tinatakot ka para magbahagi. Walang masamang mangyayari kung hindi mo ibabahagi."
+   }
+  },
+  {
+   "id": "r-cousin",
+   "type": "message",
+   "frame": "chat",
+   "source": "noname",
+   "text": {
+    "en": "My friend's cousin said all the shops will close forever. Pass it on!",
+    "fil": "Sabi ng pinsan ng kaibigan ko, magsasara na habambuhay ang lahat ng tindahan. Ipasa mo!"
+   },
+   "trusted": false,
+   "clues": [
+    "nosource",
+    "forward",
+    "scary"
+   ],
+   "explain": {
+    "en": "A friend's cousin is not a trusted source. Shops don't close forever.",
+    "fil": "Hindi mapagkakatiwalaan ang pinsan ng kaibigan. Hindi nagsasara habambuhay ang mga tindahan."
+   }
+  },
+  {
+   "id": "r-water",
+   "type": "message",
+   "frame": "chat",
+   "source": "noname",
+   "text": {
+    "en": "BREAKING!!! NO WATER FOR ONE MONTH!!! SEND TO ALL YOUR CONTACTS!!!",
+    "fil": "BREAKING!!! WALANG TUBIG NANG ISANG BUWAN!!! IPADALA SA LAHAT NG CONTACTS MO!!!"
+   },
+   "trusted": false,
+   "clues": [
+    "caps",
+    "nosource",
+    "forward",
+    "scary"
+   ],
+   "explain": {
+    "en": "Shouting, no source and “send to all”: check with the barangay first.",
+    "fil": "Pasigaw, walang pinagmulan at “ipadala sa lahat”: alamin muna sa barangay."
+   }
+  },
+  {
+   "id": "r-year",
+   "type": "message",
+   "frame": "chat",
+   "source": "noname",
+   "text": {
+    "en": "I heard schools are closed for a whole year. Don't ask anyone, just share it.",
+    "fil": "Narinig ko, sarado ang paaralan nang isang buong taon. Huwag nang magtanong, ibahagi na lang."
+   },
+   "trusted": false,
+   "clues": [
+    "nosource",
+    "scary"
+   ],
+   "explain": {
+    "en": "“Don't ask anyone” is a big clue. Always ask your school or a grown-up.",
+    "fil": "Malaking palatandaan ang “huwag nang magtanong.” Laging magtanong sa paaralan o nakatatanda."
+   }
+  },
+  {
+   "id": "r-plaza",
+   "type": "message",
+   "frame": "chat",
+   "source": "noname",
+   "text": {
+    "en": "ATTENTION!!! EVERYBODY GO TO THE PLAZA AND WATCH!!!",
+    "fil": "ATENSIYON!!! PUMUNTA ANG LAHAT SA PLAZA AT MANOOD!!!"
+   },
+   "trusted": false,
+   "clues": [
+    "caps",
+    "nosource"
+   ],
+   "explain": {
+    "en": "Never go outside to watch. Stay inside with your family.",
+    "fil": "Huwag lumabas para manood. Manatili sa loob kasama ang pamilya."
+   }
+  },
+  {
+   "id": "r-stop",
+   "type": "message",
+   "frame": "chat",
+   "source": "noname",
+   "text": {
+    "en": "Forward this to 10 friends and the trouble will stop!",
+    "fil": "Ipasa ito sa 10 kaibigan at titigil ang gulo!"
+   },
+   "trusted": false,
+   "clues": [
+    "forward",
+    "toogood"
+   ],
+   "explain": {
+    "en": "Forwarding a message can't stop trouble. Trusted adults and the barangay handle it.",
+    "fil": "Hindi napipigil ng pagpasa ng mensahe ang gulo. Ang nakatatanda at barangay ang umaasikaso."
+   }
+  },
+  {
+   "id": "r-donttrust",
+   "type": "message",
+   "frame": "chat",
+   "source": "noname",
+   "text": {
+    "en": "WARNING!!! DON'T LISTEN TO THE BARANGAY!!! ONLY TRUST THIS MESSAGE!!!",
+    "fil": "BABALA!!! HUWAG MAKINIG SA BARANGAY!!! ITO LANG ANG PANIWALAAN!!!"
+   },
+   "trusted": false,
+   "clues": [
+    "caps",
+    "nosource"
+   ],
+   "explain": {
+    "en": "A message that says “only trust me” is a rumour. Keep listening to official news.",
+    "fil": "Tsismis ang mensaheng nagsasabing “ako lang ang paniwalaan.” Patuloy na makinig sa opisyal na balita."
+   }
+  },
+  {
+   "id": "r-nocurfew",
+   "type": "message",
+   "frame": "chat",
+   "source": "forwarded",
+   "text": {
+    "en": "The barangay says there is no curfew tonight. Everyone can go out.",
+    "fil": "Sabi raw ng barangay, walang curfew ngayong gabi. Puwedeng lumabas ang lahat."
+   },
+   "trusted": false,
+   "clues": [
+    "forwarded",
+    "nosource"
+   ],
+   "explain": {
+    "en": "It says “the barangay” but it wasn't sent by the barangay. Check their own message.",
+    "fil": "Sinasabing “barangay” pero hindi barangay ang nagpadala. Tingnan ang mismong mensahe nila."
+   },
+   "forwarded": true
+  },
+  {
+   "id": "r-address",
+   "type": "message",
+   "frame": "chat",
+   "source": "unknown",
+   "text": {
+    "en": "This is your school. Please send me your full name and address.",
+    "fil": "Ito ang paaralan mo. Ipadala mo ang buong pangalan at tirahan mo."
+   },
+   "trusted": false,
+   "clues": [
+    "unknown"
+   ],
+   "explain": {
+    "en": "Your school wouldn't text from an unknown number. Never send your name or address; tell a grown-up.",
+    "fil": "Hindi magte-text ang paaralan mula sa hindi kilalang numero. Huwag ibigay ang pangalan o tirahan; sabihin sa nakatatanda."
+   }
+  },
+  {
+   "id": "r-market",
+   "type": "message",
+   "frame": "chat",
+   "source": "groupchat",
+   "text": {
+    "en": "People are saying the market will close tomorrow. I don't know who said it.",
+    "fil": "Sabi-sabi, magsasara raw ang palengke bukas. Hindi ko alam kung sino ang nagsabi."
+   },
+   "trusted": false,
+   "clues": [
+    "unknown",
+    "nosource"
+   ],
+   "explain": {
+    "en": "Even the sender doesn't know who said it. Check with a trusted source.",
+    "fil": "Kahit ang nagpadala ay hindi alam kung sino ang nagsabi. Alamin sa mapagkakatiwalaang pinagmulan."
+   }
+  },
+  {
+   "id": "r-leave",
+   "type": "message",
+   "frame": "chat",
+   "source": "forwarded",
+   "text": {
+    "en": "Radio says everyone must leave their houses now!",
+    "fil": "Sabi raw sa radyo, kailangang lumabas ng bahay ang lahat ngayon!"
+   },
+   "trusted": false,
+   "clues": [
+    "forwarded",
+    "nosource"
+   ],
+   "explain": {
+    "en": "The official radio says to stay indoors. Ask your parents before doing anything.",
+    "fil": "Sinasabi ng opisyal na radyo na manatili sa loob. Magtanong sa magulang bago kumilos."
+   },
+   "forwarded": true
+  },
+  {
+   "id": "r-meet",
+   "type": "message",
+   "frame": "chat",
+   "source": "unknown",
+   "text": {
+    "en": "Hi, I'm from the barangay. Come outside and meet me.",
+    "fil": "Hi, taga-barangay ako. Lumabas ka at magkita tayo."
+   },
+   "trusted": false,
+   "clues": [
+    "unknown"
+   ],
+   "explain": {
+    "en": "Never go out to meet someone you don't know. Show the message to a grown-up.",
+    "fil": "Huwag lumabas para makipagkita sa hindi kilala. Ipakita ang mensahe sa nakatatanda."
+   }
+  },
+  {
+   "id": "r-bridge",
+   "type": "message",
+   "frame": "chat",
+   "source": "forwarded",
+   "text": {
+    "en": "The bridge is closed forever.",
+    "fil": "Sarado na habambuhay ang tulay."
+   },
+   "trusted": false,
+   "clues": [
+    "forwarded",
+    "scary"
+   ],
+   "explain": {
+    "en": "Forwarded many times, and “forever” is too scary. Wait for official news.",
+    "fil": "Maraming beses nang naipasa, at sobrang nakakatakot ang “habambuhay.” Hintayin ang opisyal na balita."
+   },
+   "forwarded": true
+  },
+  {
+   "id": "r-photo",
+   "type": "message",
+   "frame": "chat",
+   "source": "groupchat",
+   "text": {
+    "en": "Someone posted a photo of the trouble. Share it so everyone can see!",
+    "fil": "May nag-post ng litrato ng gulo. Ibahagi para makita ng lahat!"
+   },
+   "trusted": false,
+   "clues": [
+    "unknown",
+    "forward"
+   ],
+   "explain": {
+    "en": "Sharing photos of trouble scares people and spreads rumours. Don't share it.",
+    "fil": "Nakakatakot sa iba at nagkakalat ng tsismis ang pagbabahagi ng litrato ng gulo. Huwag ibahagi."
+   }
+  },
+  {
+   "id": "r-mama-plaza",
+   "type": "message",
+   "frame": "chat",
+   "source": "unknown",
+   "text": {
+    "en": "Your Mama told me to tell you to go to the plaza.",
+    "fil": "Sabi ng Mama mo, pumunta ka raw sa plaza."
+   },
+   "trusted": false,
+   "clues": [
+    "unknown"
+   ],
+   "explain": {
+    "en": "If Mama wants you somewhere, she will tell you herself. Stay inside and check with her.",
+    "fil": "Kung may gusto si Mama, siya mismo ang magsasabi. Manatili sa loob at alamin sa kanya."
+   }
+  },
+  {
+   "id": "r-month",
+   "type": "message",
+   "frame": "chat",
+   "source": "forwarded",
+   "text": {
+    "en": "A teacher said classes are cancelled for the whole month.",
+    "fil": "Sabi raw ng isang titser, walang pasok nang buong buwan."
+   },
+   "trusted": false,
+   "clues": [
+    "forwarded",
+    "nosource"
+   ],
+   "explain": {
+    "en": "“A teacher” with no name, forwarded many times. Wait for your school's own message.",
+    "fil": "“Isang titser” na walang pangalan, at maraming beses nang naipasa. Hintayin ang mensahe ng paaralan."
+   },
+   "forwarded": true
+  },
+  {
+   "id": "r-tablet",
+   "type": "message",
+   "frame": "chat",
+   "source": "forwarded",
+   "text": {
+    "en": "Everyone who shares this gets a free tablet!",
+    "fil": "Lahat ng magbabahagi nito ay may libreng tablet!"
+   },
+   "trusted": false,
+   "clues": [
+    "toogood",
+    "forward"
+   ],
+   "explain": {
+    "en": "Too good to be true! Sharing never wins you a prize.",
+    "fil": "Masyadong maganda para maging totoo! Walang premyo sa pagbabahagi."
+   },
+   "forwarded": true
+  },
+  {
+   "id": "r-everyhouse",
+   "type": "message",
+   "frame": "chat",
+   "source": "noname",
+   "text": {
+    "en": "The trouble will reach every house tonight!!!",
+    "fil": "Aabot ang gulo sa bawat bahay ngayong gabi!!!"
+   },
+   "trusted": false,
+   "clues": [
+    "scary",
+    "nosource"
+   ],
+   "explain": {
+    "en": "Too scary, with no source. Listen to the official radio and stay calm.",
+    "fil": "Sobrang nakakatakot at walang pinagmulan. Makinig sa opisyal na radyo at manatiling kalmado."
+   }
+  },
+  {
+   "id": "r-load",
+   "type": "message",
+   "frame": "chat",
+   "source": "unknown",
+   "text": {
+    "en": "Free 1,000 pesos load if you forward this in 5 minutes!",
+    "fil": "Libreng 1,000 pisong load kapag ipinasa mo ito sa loob ng 5 minuto!"
+   },
+   "trusted": false,
+   "clues": [
+    "toogood",
+    "forward",
+    "unknown"
+   ],
+   "explain": {
+    "en": "Free money and a rush: two big rumour clues.",
+    "fil": "Libreng pera at pagmamadali: dalawang malaking palatandaan ng tsismis."
+   }
+  },
+  {
+   "id": "r-neversafe",
+   "type": "message",
+   "frame": "chat",
+   "source": "noname",
+   "text": {
+    "en": "Nobody will ever be safe again!",
+    "fil": "Wala nang magiging ligtas kahit kailan!"
+   },
+   "trusted": false,
+   "clues": [
+    "scary",
+    "nosource"
+   ],
+   "explain": {
+    "en": "That's too scary to be true. Trouble passes, and grown-ups are working on it.",
+    "fil": "Sobrang nakakatakot para maging totoo. Lumilipas ang gulo, at inaasikaso ito ng nakatatanda."
+   }
+  },
+  {
+   "id": "r-rice",
+   "type": "message",
+   "frame": "chat",
+   "source": "forwarded",
+   "text": {
+    "en": "Share this and your family gets free rice for a whole year!",
+    "fil": "Ibahagi ito at may libreng bigas ang pamilya mo nang isang taon!"
+   },
+   "trusted": false,
+   "clues": [
+    "toogood",
+    "forward"
+   ],
+   "explain": {
+    "en": "Real help comes from the barangay with a time and place, not from sharing.",
+    "fil": "Galing sa barangay ang totoong tulong, may oras at lugar, hindi sa pagbabahagi."
+   },
+   "forwarded": true
+  },
+  {
+   "id": "r-country",
+   "type": "message",
+   "frame": "chat",
+   "source": "noname",
+   "text": {
+    "en": "All the roads in the whole country are closed!",
+    "fil": "Sarado ang lahat ng kalsada sa buong bansa!"
+   },
+   "trusted": false,
+   "clues": [
+    "scary",
+    "nosource"
+   ],
+   "explain": {
+    "en": "Too big and too scary, with no source. Check official news.",
+    "fil": "Masyadong malaki at nakakatakot, walang pinagmulan. Alamin sa opisyal na balita."
+   }
+  },
+  {
+   "id": "r-magic",
+   "type": "message",
+   "frame": "chat",
+   "source": "unknown",
+   "text": {
+    "en": "Magic water makes all trouble go away. Buy it now!",
+    "fil": "Napapawala ng mahiwagang tubig ang lahat ng gulo. Bilhin na!"
+   },
+   "trusted": false,
+   "clues": [
+    "toogood",
+    "unknown"
+   ],
+   "explain": {
+    "en": "There's no magic fix. Too good to be true means check first.",
+    "fil": "Walang mahiwagang lunas. Kapag masyadong maganda, suriin muna."
+   }
+  },
+  {
+   "id": "r-awake",
+   "type": "message",
+   "frame": "chat",
+   "source": "noname",
+   "text": {
+    "en": "Stay awake all night or something bad will happen!",
+    "fil": "Huwag matulog buong gabi o may masamang mangyayari!"
+   },
+   "trusted": false,
+   "clues": [
+    "scary",
+    "nosource"
+   ],
+   "explain": {
+    "en": "Scary messages want you to panic. Rest, stay with family, and talk to a grown-up.",
+    "fil": "Gusto ng nakakatakot na mensahe na mataranta ka. Magpahinga, manatili sa pamilya, at kausapin ang nakatatanda."
+   }
+  },
+  {
+   "id": "r-bike",
+   "type": "message",
+   "frame": "chat",
+   "source": "unknown",
+   "text": {
+    "en": "The barangay is giving every kid a new bike! Send your address!",
+    "fil": "Bibigyan daw ng barangay ng bagong bisikleta ang bawat bata! Ipadala ang tirahan mo!"
+   },
+   "trusted": false,
+   "clues": [
+    "toogood",
+    "unknown"
+   ],
+   "explain": {
+    "en": "Too good to be true, from an unknown number, and it asks for your address. Tell a grown-up.",
+    "fil": "Masyadong maganda, galing sa hindi kilalang numero, at hinihingi ang tirahan mo. Sabihin sa nakatatanda."
+   }
+  },
+  {
+   "id": "a-inside",
+   "type": "action",
+   "text": {
+    "en": "Stay inside your house.",
+    "fil": "Manatili sa loob ng bahay."
+   },
+   "safe": true,
+   "explain": {
+    "en": "Inside with your family is the safest place to be.",
+    "fil": "Pinakaligtas sa loob kasama ang pamilya."
+   }
+  },
+  {
+   "id": "a-windows",
+   "type": "action",
+   "text": {
+    "en": "Move away from the windows.",
+    "fil": "Lumayo sa mga bintana."
+   },
+   "safe": true,
+   "explain": {
+    "en": "Staying away from windows keeps you safer.",
+    "fil": "Mas ligtas ka kapag malayo sa bintana."
+   }
+  },
+  {
+   "id": "a-family",
+   "type": "action",
+   "text": {
+    "en": "Stay together with your family.",
+    "fil": "Manatiling magkakasama ang pamilya."
+   },
+   "safe": true,
+   "explain": {
+    "en": "Families stay calmer and safer together.",
+    "fil": "Mas kalmado at ligtas ang pamilyang magkakasama."
+   }
+  },
+  {
+   "id": "a-radio",
+   "type": "action",
+   "text": {
+    "en": "Keep the radio on for official news.",
+    "fil": "Panatilihing bukas ang radyo para sa opisyal na balita."
+   },
+   "safe": true,
+   "explain": {
+    "en": "Official radio tells you what's really happening.",
+    "fil": "Sinasabi ng opisyal na radyo ang totoong nangyayari."
+   }
+  },
+  {
+   "id": "a-gobag",
+   "type": "action",
+   "text": {
+    "en": "Check that the go bag is ready.",
+    "fil": "Tingnan kung handa ang go bag."
+   },
+   "safe": true,
+   "explain": {
+    "en": "A ready go bag helps if your family has to move.",
+    "fil": "Nakatutulong ang handang go bag kung kailangang lumipat ng pamilya."
+   }
+  },
+  {
+   "id": "a-curfew",
+   "type": "action",
+   "text": {
+    "en": "Follow the curfew: be home before 8:00 PM.",
+    "fil": "Sundin ang curfew: nasa bahay na bago mag-8:00 PM."
+   },
+   "safe": true,
+   "explain": {
+    "en": "Curfews keep the community safe. Follow the announcements.",
+    "fil": "Pinananatiling ligtas ng curfew ang komunidad. Sundin ang anunsiyo."
+   }
+  },
+  {
+   "id": "a-tell",
+   "type": "action",
+   "text": {
+    "en": "Tell a grown-up if you feel scared.",
+    "fil": "Sabihin sa nakatatanda kapag natatakot ka."
+   },
+   "safe": true,
+   "explain": {
+    "en": "Talking to a trusted adult helps you feel better.",
+    "fil": "Gumagaan ang loob kapag nakikipag-usap sa pinagkakatiwalaang nakatatanda."
+   }
+  },
+  {
+   "id": "a-askfirst",
+   "type": "action",
+   "text": {
+    "en": "Ask Mama or Papa before sharing a message.",
+    "fil": "Magtanong kay Mama o Papa bago magbahagi ng mensahe."
+   },
+   "safe": true,
+   "explain": {
+    "en": "Asking first is how you check before you share.",
+    "fil": "Ganito ang pagsusuri bago magbahagi: magtanong muna."
+   }
+  },
+  {
+   "id": "a-door",
+   "type": "action",
+   "text": {
+    "en": "Keep the door closed and stay calm.",
+    "fil": "Panatilihing sarado ang pinto at manatiling kalmado."
+   },
+   "safe": true,
+   "explain": {
+    "en": "A closed door and a calm family keep you safe.",
+    "fil": "Ligtas kapag sarado ang pinto at kalmado ang pamilya."
+   }
+  },
+  {
+   "id": "a-breathe",
+   "type": "action",
+   "text": {
+    "en": "Take slow, deep breaths when you feel worried.",
+    "fil": "Huminga nang dahan-dahan at malalim kapag nag-aalala."
+   },
+   "safe": true,
+   "explain": {
+    "en": "Slow breaths help your body feel calm.",
+    "fil": "Nakatutulong ang mabagal na paghinga para kumalma ang katawan."
+   }
+  },
+  {
+   "id": "u-watch",
+   "type": "action",
+   "text": {
+    "en": "Go outside to watch what's happening.",
+    "fil": "Lumabas para panoorin ang nangyayari."
+   },
+   "safe": false,
+   "explain": {
+    "en": "Never go outside to watch. Stay inside with your family.",
+    "fil": "Huwag lumabas para manood. Manatili sa loob kasama ang pamilya."
+   }
+  },
+  {
+   "id": "u-forward",
+   "type": "action",
+   "text": {
+    "en": "Forward a scary message to all your friends.",
+    "fil": "Ipasa ang nakakatakot na mensahe sa lahat ng kaibigan."
+   },
+   "safe": false,
+   "explain": {
+    "en": "Scary messages spread fear. Check with a grown-up instead.",
+    "fil": "Nagkakalat ng takot ang nakakatakot na mensahe. Magtanong muna sa nakatatanda."
+   }
+  },
+  {
+   "id": "u-photos",
+   "type": "action",
+   "text": {
+    "en": "Post photos of the trouble online.",
+    "fil": "Mag-post ng litrato ng gulo online."
+   },
+   "safe": false,
+   "explain": {
+    "en": "Photos of trouble can scare people and spread rumours.",
+    "fil": "Puwedeng makatakot at magkalat ng tsismis ang litrato ng gulo."
+   }
+  },
+  {
+   "id": "u-window",
+   "type": "action",
+   "text": {
+    "en": "Stand by the window to look outside.",
+    "fil": "Tumayo sa tabi ng bintana para sumilip."
+   },
+   "safe": false,
+   "explain": {
+    "en": "Stay away from windows. Listen to the radio instead.",
+    "fil": "Lumayo sa bintana. Makinig na lang sa radyo."
+   }
+  },
+  {
+   "id": "u-plaza",
+   "type": "action",
+   "text": {
+    "en": "Go to the plaza with your friends to see.",
+    "fil": "Pumunta sa plaza kasama ang mga kaibigan para tumingin."
+   },
+   "safe": false,
+   "explain": {
+    "en": "Stay home. Grown-ups and the barangay take care of the trouble.",
+    "fil": "Manatili sa bahay. Ang nakatatanda at barangay ang umaasikaso sa gulo."
+   }
+  },
+  {
+   "id": "u-snacks",
+   "type": "action",
+   "text": {
+    "en": "Go out during curfew to buy snacks.",
+    "fil": "Lumabas habang may curfew para bumili ng meryenda."
+   },
+   "safe": false,
+   "explain": {
+    "en": "During curfew, everyone stays home. The snacks can wait!",
+    "fil": "Habang may curfew, nasa bahay ang lahat. Makapaghihintay ang meryenda!"
+   }
+  },
+  {
+   "id": "u-sharefirst",
+   "type": "action",
+   "text": {
+    "en": "Share a message before checking who sent it.",
+    "fil": "Ibahagi ang mensahe bago alamin kung sino ang nagpadala."
+   },
+   "safe": false,
+   "explain": {
+    "en": "Always check the source first. That's how rumours stop.",
+    "fil": "Laging alamin muna ang pinagmulan. Ganito napipigil ang tsismis."
+   }
+  },
+  {
+   "id": "u-secret",
+   "type": "action",
+   "text": {
+    "en": "Keep your worries a secret from everyone.",
+    "fil": "Itago sa lahat ang iyong pag-aalala."
+   },
+   "safe": false,
+   "explain": {
+    "en": "Your feelings matter. Tell a trusted adult how you feel.",
+    "fil": "Mahalaga ang nararamdaman mo. Sabihin ito sa pinagkakatiwalaang nakatatanda."
+   }
+  }
+ ]
+}

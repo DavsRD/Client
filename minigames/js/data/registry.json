@@ -355,12 +355,20 @@
         "fil": "Iuri ang mga mensahe: ibahagi ang galing sa mapagkakatiwalaan, at pigilan ang tsismis bago kumalat."
       },
       "howTo": [
-        { "en": "Trust it: send right", "fil": "Mapagkakatiwalaan: ipadala pakanan", "keys": ["key_right"], "gesture": "gesture_swipe_right" },
-        { "en": "Rumour: send left", "fil": "Tsismis: ipadala pakaliwa", "keys": ["key_left"], "gesture": "gesture_swipe_left" },
-        { "en": "Look for the clues", "fil": "Hanapin ang mga palatandaan", "keys": [], "gesture": null }
+        { "en": "Trusted message or safe action: send it right", "fil": "Mapagkakatiwalaang mensahe o ligtas na gawain: ipadala pakanan", "keys": ["key_right", "key_d"], "gesture": "gesture_swipe_right" },
+        { "en": "Rumour or unsafe action: send it left (check first)", "fil": "Tsismis o hindi ligtas: ipadala pakaliwa (suriin muna)", "keys": ["key_left", "key_a"], "gesture": "gesture_swipe_left" },
+        { "en": "Skip the explanation", "fil": "Laktawan ang paliwanag", "keys": ["key_enter"], "gesture": "gesture_tap" },
+        { "en": "Say how you feel at the end", "fil": "Sabihin ang nararamdaman sa dulo", "keys": ["key_1", "key_2", "key_3", "key_4"], "gesture": "gesture_tap" }
       ],
-      "takeaway": { "en": "Stay calm, stay inside with family, listen to trusted adults, and check before you share.", "fil": "Manatiling kalmado, manatili sa loob kasama ang pamilya, makinig sa pinagkakatiwalaang nakatatanda, at suriin bago ibahagi." },
-      "built": false, "scripts": [], "data": ["levels.json", "data/cards.json"]
+      "takeaway": { "en": "Stay calm, stay inside with family, listen to trusted adults — and check before you share.", "fil": "Manatiling kalmado, manatili sa loob kasama ang pamilya, makinig sa pinagkakatiwalaang nakatatanda — at suriin bago ibahagi." },
+      "built": true,
+      "scripts": [
+        "minigames/js/games/check-before-share/tuning.js",
+        "minigames/js/games/check-before-share/Deck.js",
+        "minigames/js/games/check-before-share/Feelings.js",
+        "minigames/js/games/check-before-share/CheckShareScene.js",
+        "minigames/js/games/check-before-share/index.js"
+      ], "data": ["levels.json", "data/cards.json"]
     }
   ]
 }

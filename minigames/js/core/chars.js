@@ -22,7 +22,7 @@ window.AG = window.AG || {};
   const AGILA_FRAMES = ['pose_idle_geared', 'pose_run_flap_1_geared', 'pose_run_flap_2_geared', 'pose_closed_wings_geared',
     'pose_low_crawl_geared', 'pose_duck_cover_geared', 'pose_wing_over_beak_geared', 'pose_stop_wing_geared', 'pose_point_geared',
     'pose_head_flip_1_geared', 'pose_head_flip_2_geared', 'pose_alert_geared', 'prop_on_sweat_drop_geared',
-    'prop_on_magnifier_geared', 'prop_on_face_mask_geared', 'expr_happy_geared', 'expr_wink_geared'];
+    'prop_on_magnifier_geared', 'prop_on_face_mask_geared', 'prop_on_sign_geared', 'expr_happy_geared', 'expr_wink_geared'];
 
   /* Menu / dialogue states → frames. The rig has the full gameplay action table. */
   const SQUAD_STATE = {
