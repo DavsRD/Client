@@ -76,8 +76,16 @@
         { "en": "Catch the safety gear, dodge the ash", "fil": "Saluhin ang gamit pangkaligtasan, iwasan ang abo", "keys": [], "gesture": null },
         { "en": "Watch the alert level", "fil": "Bantayan ang alert level", "keys": [], "gesture": null }
       ],
-      "takeaway": { "en": "During ashfall: mask on, goggles on, stay indoors, and leave right away when told to evacuate.", "fil": "Habang may ashfall: magsuot ng mask at goggles, manatili sa loob, at umalis agad kapag pinalikas." },
-      "built": false, "scripts": [], "data": ["levels.json"]
+      "takeaway": { "en": "During ashfall: mask on, goggles on, stay indoors \u2014 and leave right away when told to evacuate.", "fil": "Habang may ashfall: magsuot ng mask at goggles, manatili sa loob, at umalis agad kapag pinalikas." },
+      "built": true,
+      "scripts": [
+        "minigames/js/engines/grid/darkness.js",
+        "minigames/js/games/ashfall/tuning.js",
+        "minigames/js/games/ashfall/AshfallRun.js",
+        "minigames/js/games/ashfall/AshfallScene.js",
+        "minigames/js/games/ashfall/index.js"
+      ],
+      "data": ["levels.json"]
     },
     {
       "id": "wave-runner", "num": 3, "hazardId": "tsunami", "hazardGroup": "geological",

@@ -1,0 +1,683 @@
+[
+ {
+  "level": 1,
+  "waves": [
+   {
+    "alert": 1,
+    "durationMs": 12000,
+    "table": {
+     "good": {
+      "mask": 3,
+      "goggles": 3,
+      "water": 2
+     },
+     "bad": {
+      "ash": 4,
+      "ember": 1
+     },
+     "power": [
+      "hardhat"
+     ]
+    },
+    "order": {
+     "need": {
+      "mask": 2
+     }
+    }
+   },
+   {
+    "alert": 1,
+    "durationMs": 12000,
+    "table": {
+     "good": {
+      "mask": 3,
+      "goggles": 3,
+      "water": 2
+     },
+     "bad": {
+      "ash": 4,
+      "ember": 1
+     },
+     "power": [
+      "hardhat"
+     ]
+    }
+   },
+   {
+    "alert": 2,
+    "durationMs": 12000,
+    "table": {
+     "good": {
+      "mask": 3,
+      "goggles": 3,
+      "water": 2
+     },
+     "bad": {
+      "ash": 4,
+      "ember": 1
+     },
+     "power": [
+      "hardhat",
+      "slowmo"
+     ]
+    },
+    "order": {
+     "need": {
+      "mask": 1,
+      "goggles": 1
+     }
+    }
+   },
+   {
+    "alert": 2,
+    "durationMs": 12000,
+    "table": {
+     "good": {
+      "mask": 3,
+      "goggles": 3,
+      "water": 2
+     },
+     "bad": {
+      "ash": 3,
+      "ember": 1
+     },
+     "power": [
+      "hardhat",
+      "slowmo"
+     ]
+    }
+   }
+  ],
+  "photoTimesMs": [
+   9000,
+   24000,
+   39000
+  ],
+  "target2": 3100,
+  "target3": 4350,
+  "advanced": {
+   "target2": 4000,
+   "target3": 5650
+  }
+ },
+ {
+  "level": 2,
+  "waves": [
+   {
+    "alert": 1,
+    "durationMs": 12000,
+    "table": {
+     "good": {
+      "mask": 3,
+      "goggles": 3,
+      "water": 2,
+      "flashlight": 1,
+      "coconut": 1
+     },
+     "bad": {
+      "rock": 2,
+      "ash": 3,
+      "ember": 1
+     },
+     "power": [
+      "hardhat"
+     ]
+    },
+    "order": {
+     "need": {
+      "mask": 2
+     }
+    }
+   },
+   {
+    "alert": 2,
+    "durationMs": 12000,
+    "table": {
+     "good": {
+      "mask": 3,
+      "goggles": 3,
+      "water": 2,
+      "flashlight": 1,
+      "coconut": 1
+     },
+     "bad": {
+      "rock": 3,
+      "ash": 3,
+      "ember": 1
+     },
+     "power": [
+      "hardhat",
+      "slowmo"
+     ]
+    }
+   },
+   {
+    "alert": 2,
+    "durationMs": 12000,
+    "table": {
+     "good": {
+      "mask": 3,
+      "goggles": 3,
+      "water": 2,
+      "flashlight": 1,
+      "coconut": 1
+     },
+     "bad": {
+      "rock": 3,
+      "ash": 2,
+      "ember": 1
+     },
+     "power": [
+      "hardhat",
+      "slowmo"
+     ]
+    },
+    "order": {
+     "need": {
+      "mask": 1,
+      "goggles": 2
+     }
+    }
+   },
+   {
+    "alert": 3,
+    "durationMs": 12000,
+    "table": {
+     "good": {
+      "mask": 3,
+      "goggles": 3,
+      "water": 2,
+      "flashlight": 1,
+      "coconut": 1
+     },
+     "bad": {
+      "rock": 3,
+      "ash": 2,
+      "ember": 2
+     },
+     "power": [
+      "hardhat",
+      "slowmo",
+      "magnet"
+     ]
+    }
+   }
+  ],
+  "photoTimesMs": [
+   9000,
+   24000,
+   39000
+  ],
+  "target2": 3150,
+  "target3": 4450,
+  "advanced": {
+   "target2": 2800,
+   "target3": 3950
+  }
+ },
+ {
+  "level": 3,
+  "waves": [
+   {
+    "alert": 2,
+    "durationMs": 12000,
+    "table": {
+     "good": {
+      "mask": 3,
+      "goggles": 3,
+      "water": 2,
+      "flashlight": 2,
+      "radio": 1,
+      "coconut": 1
+     },
+     "bad": {
+      "rock": 2,
+      "ash": 3,
+      "ember": 1
+     },
+     "power": [
+      "hardhat"
+     ]
+    },
+    "order": {
+     "need": {
+      "goggles": 2
+     }
+    }
+   },
+   {
+    "alert": 2,
+    "durationMs": 12000,
+    "table": {
+     "good": {
+      "mask": 3,
+      "goggles": 3,
+      "water": 2,
+      "flashlight": 2,
+      "radio": 1,
+      "coconut": 1
+     },
+     "bad": {
+      "rock": 3,
+      "ash": 3,
+      "ember": 1
+     },
+     "power": [
+      "hardhat",
+      "slowmo"
+     ]
+    }
+   },
+   {
+    "alert": 3,
+    "durationMs": 12000,
+    "table": {
+     "good": {
+      "mask": 3,
+      "goggles": 3,
+      "water": 2,
+      "flashlight": 2,
+      "radio": 1,
+      "coconut": 1
+     },
+     "bad": {
+      "rock": 3,
+      "ash": 3,
+      "ember": 2
+     },
+     "power": [
+      "hardhat",
+      "slowmo",
+      "magnet"
+     ]
+    },
+    "order": {
+     "need": {
+      "mask": 2,
+      "flashlight": 1
+     }
+    }
+   },
+   {
+    "alert": 3,
+    "durationMs": 12000,
+    "table": {
+     "good": {
+      "mask": 3,
+      "goggles": 3,
+      "water": 2,
+      "flashlight": 2,
+      "radio": 1,
+      "coconut": 1
+     },
+     "bad": {
+      "rock": 3,
+      "ash": 2,
+      "ember": 2
+     },
+     "power": [
+      "hardhat",
+      "slowmo",
+      "magnet"
+     ]
+    }
+   },
+   {
+    "alert": 4,
+    "durationMs": 12000,
+    "table": {
+     "good": {
+      "mask": 3,
+      "goggles": 3,
+      "water": 2,
+      "flashlight": 2,
+      "radio": 1,
+      "coconut": 1
+     },
+     "bad": {
+      "rock": 3,
+      "ash": 2,
+      "ember": 2
+     },
+     "power": [
+      "hardhat",
+      "slowmo",
+      "magnet"
+     ]
+    },
+    "order": {
+     "need": {
+      "goggles": 1,
+      "radio": 1
+     }
+    }
+   }
+  ],
+  "photoTimesMs": [
+   12000,
+   32000,
+   52000
+  ],
+  "target2": 3900,
+  "target3": 5550,
+  "advanced": {
+   "target2": 4850,
+   "target3": 6850
+  },
+  "darkness": true
+ },
+ {
+  "level": 4,
+  "laharSide": "left",
+  "laharWaves": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "waves": [
+   {
+    "alert": 2,
+    "durationMs": 12000,
+    "table": {
+     "good": {
+      "mask": 3,
+      "goggles": 3,
+      "water": 2,
+      "flashlight": 2,
+      "radio": 1,
+      "coconut": 1
+     },
+     "bad": {
+      "rock": 2,
+      "ash": 3,
+      "ember": 1
+     },
+     "power": [
+      "hardhat"
+     ]
+    },
+    "order": {
+     "need": {
+      "mask": 2
+     }
+    }
+   },
+   {
+    "alert": 3,
+    "durationMs": 12000,
+    "table": {
+     "good": {
+      "mask": 3,
+      "goggles": 3,
+      "water": 2,
+      "flashlight": 2,
+      "radio": 1,
+      "coconut": 1
+     },
+     "bad": {
+      "rock": 3,
+      "ash": 3,
+      "ember": 1
+     },
+     "power": [
+      "hardhat",
+      "slowmo"
+     ]
+    }
+   },
+   {
+    "alert": 3,
+    "durationMs": 12000,
+    "table": {
+     "good": {
+      "mask": 3,
+      "goggles": 3,
+      "water": 2,
+      "flashlight": 2,
+      "radio": 1,
+      "coconut": 1
+     },
+     "bad": {
+      "rock": 3,
+      "ash": 2,
+      "ember": 2
+     },
+     "power": [
+      "hardhat",
+      "slowmo",
+      "magnet"
+     ]
+    },
+    "order": {
+     "need": {
+      "goggles": 2,
+      "water": 1
+     }
+    }
+   },
+   {
+    "alert": 4,
+    "durationMs": 12000,
+    "table": {
+     "good": {
+      "mask": 3,
+      "goggles": 3,
+      "water": 2,
+      "flashlight": 2,
+      "radio": 1,
+      "coconut": 1
+     },
+     "bad": {
+      "rock": 3,
+      "ash": 2,
+      "ember": 2
+     },
+     "power": [
+      "hardhat",
+      "slowmo",
+      "magnet"
+     ]
+    }
+   },
+   {
+    "alert": 4,
+    "durationMs": 12000,
+    "table": {
+     "good": {
+      "mask": 3,
+      "goggles": 3,
+      "water": 2,
+      "flashlight": 2,
+      "radio": 1,
+      "coconut": 1
+     },
+     "bad": {
+      "rock": 3,
+      "ash": 2,
+      "ember": 2
+     },
+     "power": [
+      "hardhat",
+      "slowmo",
+      "magnet"
+     ]
+    },
+    "order": {
+     "need": {
+      "mask": 1,
+      "radio": 1
+     }
+    }
+   }
+  ],
+  "photoTimesMs": [
+   13000,
+   33000,
+   53000
+  ],
+  "target2": 4400,
+  "target3": 6250,
+  "advanced": {
+   "target2": 6350,
+   "target3": 9000
+  }
+ },
+ {
+  "level": 5,
+  "laharSide": "right",
+  "laharWaves": [
+   1,
+   3
+  ],
+  "evac": true,
+  "waves": [
+   {
+    "alert": 3,
+    "durationMs": 12000,
+    "table": {
+     "good": {
+      "mask": 3,
+      "goggles": 3,
+      "water": 2,
+      "flashlight": 2,
+      "radio": 1,
+      "coconut": 1
+     },
+     "bad": {
+      "rock": 3,
+      "ash": 2,
+      "ember": 2
+     },
+     "power": [
+      "hardhat"
+     ]
+    },
+    "order": {
+     "need": {
+      "mask": 2
+     }
+    }
+   },
+   {
+    "alert": 3,
+    "durationMs": 12000,
+    "table": {
+     "good": {
+      "mask": 3,
+      "goggles": 3,
+      "water": 2,
+      "flashlight": 2,
+      "radio": 1,
+      "coconut": 1
+     },
+     "bad": {
+      "rock": 3,
+      "ash": 2,
+      "ember": 2
+     },
+     "power": [
+      "hardhat",
+      "slowmo"
+     ]
+    }
+   },
+   {
+    "alert": 4,
+    "durationMs": 12000,
+    "table": {
+     "good": {
+      "mask": 3,
+      "goggles": 3,
+      "water": 2,
+      "flashlight": 2,
+      "radio": 1,
+      "coconut": 1
+     },
+     "bad": {
+      "rock": 3,
+      "ash": 2,
+      "ember": 2
+     },
+     "power": [
+      "hardhat",
+      "slowmo",
+      "magnet"
+     ]
+    },
+    "order": {
+     "need": {
+      "goggles": 2,
+      "flashlight": 1
+     }
+    }
+   },
+   {
+    "alert": 4,
+    "durationMs": 12000,
+    "table": {
+     "good": {
+      "mask": 3,
+      "goggles": 3,
+      "water": 2,
+      "flashlight": 2,
+      "radio": 1,
+      "coconut": 1
+     },
+     "bad": {
+      "rock": 3,
+      "ash": 2,
+      "ember": 2
+     },
+     "power": [
+      "hardhat",
+      "slowmo",
+      "magnet"
+     ]
+    }
+   },
+   {
+    "alert": 5,
+    "durationMs": 12000,
+    "table": {
+     "good": {
+      "mask": 3,
+      "goggles": 3,
+      "water": 2,
+      "flashlight": 2,
+      "radio": 1,
+      "coconut": 1
+     },
+     "bad": {
+      "rock": 3,
+      "ash": 2,
+      "ember": 3
+     },
+     "power": [
+      "hardhat",
+      "slowmo",
+      "magnet"
+     ]
+    },
+    "order": {
+     "need": {
+      "mask": 1,
+      "goggles": 1,
+      "water": 1
+     }
+    }
+   }
+  ],
+  "photoTimesMs": [
+   13000,
+   33000,
+   53000
+  ],
+  "target2": 3200,
+  "target3": 4550,
+  "advanced": {
+   "target2": 4450,
+   "target3": 6300
+  }
+ }
+]
