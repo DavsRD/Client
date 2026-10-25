@@ -630,6 +630,7 @@
       h('div', { class: 'ag-resultsay' }, AG.dialogue.box({ speaker: p.char, style: res.won ? 'congratulations' : 'encouragement', text: say, typewriter: AG.store.setting('typewriter') !== false && !AG.reducedMotion(), plainFont: AG.store.setting('plainFont') })),
       learned.length ? h('section', { class: 'ag-learned' }, h('h3', {}, t('res.learned')), h('ul', {}, learned.map(l => h('li', {}, AG.ui.icon('check', 20), ' ' + pick(l))))) : null,
       h('p', { class: 'ag-takeaway' }, pick(mod.takeaway || game.takeaway)),
+      res.note ? h('p', { class: 'ag-resultnote' }, pick(res.note)) : null,
       h('div', { class: 'ag-actions' }, again,
         next ? h('a', { class: 'ag-btn ag-btn--alt', href: AG.router.playHash(next) }, t('res.next') + ' ' + next + ' →') : null,
         change, backBtn)));

@@ -1,0 +1,92 @@
+{
+  "_note": "All safety wording for Lost & Found, in one place for counselor review. General rules only; calm, never frightening.",
+
+  "stopStay": {
+    "levels": {
+      "1": { "ask": { "en": "You can't see Mama! What do you do first?" }, "outside": { "en": "Go outside to look" } },
+      "2": { "ask": { "en": "You can't see Papa in the busy market! What do you do first?" }, "outside": { "en": "Walk out to the street to look" } },
+      "3": { "ask": { "en": "The fiesta is so busy, and you can't see Lola! What do you do first?" }, "outside": { "en": "Walk home by myself" } },
+      "4": { "ask": { "en": "You can't see Tito by the umbrellas! What do you do first?" }, "outside": { "en": "Walk far down the beach to look" } },
+      "5": { "ask": { "en": "The crowd is so big, and you can't see Ate! What do you do first?" }, "outside": { "en": "Go out of the gate to look" } }
+    },
+    "right": { "text": { "en": "Stop and stay close to where I am" }, "why": { "en": "Yes! When you stop and stay close by, your family can find you faster. Next, look for a safe helper." } },
+    "run": { "text": { "en": "Run around looking everywhere" }, "why": { "en": "Running around makes it harder for your family to find you." } },
+    "outsideWhy": { "en": "Going away from here takes you farther from your family." }
+  },
+
+  "helpers": {
+    "guard": { "name": { "en": "a guard" }, "label": { "en": "Guard" }, "why": { "en": "Guards work here and can call your parent." } },
+    "cashier": { "name": { "en": "a cashier" }, "label": { "en": "Cashier" }, "why": { "en": "Cashiers work here. They can call the info desk for you." } },
+    "infodesk": { "name": { "en": "the info desk" }, "label": { "en": "Info desk" }, "why": { "en": "The people at the info desk work here. They can call your family." } },
+    "employee": { "name": { "en": "a worker with a name tag" }, "label": { "en": "Worker with a name tag" }, "why": { "en": "An apron and a name tag mean this person works here and can help you." } },
+    "parent": { "name": { "en": "a parent with kids" }, "label": { "en": "Parent with kids" }, "why": { "en": "A mom or dad with children is a safe helper too." } },
+    "police": { "name": { "en": "a police officer" }, "label": { "en": "Police officer" }, "why": { "en": "Police officers keep people safe and can help you find your family." } },
+    "lifeguard": { "name": { "en": "a lifeguard" }, "label": { "en": "Lifeguard" }, "why": { "en": "Lifeguards work at the beach and can help you find your family." } }
+  },
+  "shopper": { "en": "They might be nice, but look for someone who WORKS here — like a guard or a cashier." },
+  "extraHelper": { "en": "Yes, {name} can help too! For this mission, find the helpers on the list." },
+  "empty": { "en": "Keep looking for someone who works here." },
+
+  "cards": [
+    {
+      "id": "go-outside", "art": "say_no",
+      "title": { "en": "Safe Choices" },
+      "text": { "en": "Someone you don't know says they'll take you outside to find your parent. What is the best choice?" },
+      "choices": [
+        { "text": { "en": "Say no, stay inside, and go to the info desk or a guard" }, "ok": true, "why": { "en": "Right! Say no and stay inside. Workers like a guard or the info desk can call your family." } },
+        { "text": { "en": "Go outside with them" }, "ok": false, "why": { "en": "Never go anywhere with someone you don't know, even if they seem kind. Stay inside and find a worker." } },
+        { "text": { "en": "Wait outside by the door alone" }, "ok": false, "why": { "en": "Outside is farther from your family. Stay inside and go to a guard or the info desk." } }
+      ]
+    },
+    {
+      "id": "password", "art": "family_password",
+      "title": { "en": "Safe Choices" },
+      "text": { "en": "Your family has a secret family password. What is it for?" },
+      "choices": [
+        { "text": { "en": "So I can tell if a grown-up was really sent by my family" }, "ok": true, "why": { "en": "Yes! If someone says your family sent them but doesn't know the password, say no, go, and tell a trusted adult." } },
+        { "text": { "en": "To tell anyone who asks for it" }, "ok": false, "why": { "en": "The password is a secret for your family only. Don't tell it to others." } },
+        { "text": { "en": "To unlock the doors of the mall" }, "ok": false, "why": { "en": "A family password is a secret word that only your family knows, to keep you safe." } }
+      ]
+    },
+    {
+      "id": "no-go-tell", "art": "say_no",
+      "title": { "en": "No, Go, Tell" },
+      "text": { "en": "Someone you don't know asks you to come and see some puppies. What do you do?" },
+      "choices": [
+        { "text": { "en": "Say NO, go away, and tell a trusted adult" }, "ok": true, "why": { "en": "That's it: No, Go, Tell! You can always say no and go to a trusted adult." } },
+        { "text": { "en": "Go quickly to see the puppies" }, "ok": false, "why": { "en": "Don't go anywhere with someone you don't know. Say no, go away, and tell a trusted adult." } },
+        { "text": { "en": "Keep it a secret" }, "ok": false, "why": { "en": "Never keep this kind of thing a secret. Telling a trusted adult keeps you safe." } }
+      ]
+    },
+    {
+      "id": "meeting-spot", "art": "info_desk",
+      "title": { "en": "Safe Choices" },
+      "text": { "en": "Your family is going to a busy place. What can you plan before you go in?" },
+      "choices": [
+        { "text": { "en": "A meeting spot, like the info desk, in case we get separated" }, "ok": true, "why": { "en": "Great plan! A meeting spot helps your family find you fast." } },
+        { "text": { "en": "Nothing, we will figure it out later" }, "ok": false, "why": { "en": "Planning first makes it easier. Pick a meeting spot, like the info desk." } },
+        { "text": { "en": "To meet in the parking lot by myself" }, "ok": false, "why": { "en": "The parking lot has cars and is far away. A meeting spot inside, like the info desk, is safer." } }
+      ]
+    },
+    {
+      "id": "tell-number", "art": "call_family",
+      "title": { "en": "Safe Choices" },
+      "text": { "en": "A guard asks for your parent's phone number so they can call. What helps most?" },
+      "choices": [
+        { "text": { "en": "Say the number I practised at home" }, "ok": true, "why": { "en": "Yes! Practise your parent's number at home, so you can tell a safe helper." } },
+        { "text": { "en": "Walk away to find a phone myself" }, "ok": false, "why": { "en": "Stay with the safe helper. They can call your family for you." } },
+        { "text": { "en": "Say nothing and wait" }, "ok": false, "why": { "en": "It's okay to talk to a safe helper. Tell them your name and your parent's number." } }
+      ]
+    },
+    {
+      "id": "stay-put", "art": "stay_put",
+      "title": { "en": "Safe Choices" },
+      "text": { "en": "A worker is helping you, and your family is on the way. What do you do now?" },
+      "choices": [
+        { "text": { "en": "Stay with the worker until my family comes" }, "ok": true, "why": { "en": "Right! Stay put with the safe helper. Your family knows where to find you." } },
+        { "text": { "en": "Go off to look for them again" }, "ok": false, "why": { "en": "If you walk away, your family may miss you. Stay with the helper." } },
+        { "text": { "en": "Leave with the first grown-up who waves" }, "ok": false, "why": { "en": "Only go with your own family, or someone they really sent. Stay with the helper." } }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+[
+  { "level": 1, "scene": "mall", "place": { "en": "Mall" }, "start": [0.5, 0.62],
+    "find": { "easy": ["guard", "infodesk"], "advanced": ["guard", "infodesk", "cashier"] } },
+  { "level": 2, "scene": "market", "place": { "en": "Wet market" }, "start": [0.5, 0.62],
+    "find": { "easy": ["guard", "cashier"], "advanced": ["guard", "cashier", "police"] } },
+  { "level": 3, "scene": "park", "place": { "en": "Park fiesta" }, "start": [0.5, 0.62],
+    "find": { "easy": ["police", "infodesk", "parent"], "advanced": ["police", "infodesk", "parent", "employee"] } },
+  { "level": 4, "scene": "beach", "place": { "en": "Beach" }, "start": [0.5, 0.62],
+    "find": { "easy": ["lifeguard", "infodesk", "police"], "advanced": ["lifeguard", "infodesk", "police", "parent"] } },
+  { "level": 5, "scene": "event", "place": { "en": "Big event" }, "start": [0.5, 0.62],
+    "find": { "easy": ["employee", "guard", "infodesk"], "advanced": ["employee", "guard", "police", "parent"] } }
+]

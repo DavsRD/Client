@@ -398,7 +398,15 @@
         { "en": "Choose what to say", "fil": "Piliin ang sasabihin", "keys": ["key_1", "key_2", "key_3"], "gesture": "gesture_tap" }
       ],
       "takeaway": { "en": "Lost? Stop, stay, find a safe helper, and tell them your name and your parent's number.", "fil": "Nawawala? Huminto, manatili, humanap ng ligtas na katulong, at sabihin ang pangalan mo at numero ng magulang." },
-      "built": false, "scripts": [], "data": ["levels.json", "data/safe-choices.json", "data/practice-names.json"]
+      "built": true,
+      "scripts": [
+        "minigames/js/games/lost-and-found/tuning.js",
+        "minigames/js/games/lost-and-found/LostFoundScene.js",
+        "minigames/js/games/lost-and-found/phases/StopStay.js",
+        "minigames/js/games/lost-and-found/phases/HelperSearch.js",
+        "minigames/js/games/lost-and-found/phases/TellHelper.js",
+        "minigames/js/games/lost-and-found/index.js"
+      ], "data": ["levels.json", "data/safe-choices.json", "data/practice-names.json"]
     },
     {
       "id": "go-with-the-flow", "num": 17, "hazardId": "crowd-crush", "hazardGroup": "social",
