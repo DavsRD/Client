@@ -108,7 +108,16 @@
         { "en": "Keep running uphill", "fil": "Patuloy na tumakbo paakyat", "keys": [], "gesture": null }
       ],
       "takeaway": { "en": "If the ground shakes or the sea pulls back, run to high ground. Don't wait, and don't go back.", "fil": "Kapag yumanig ang lupa o umurong ang dagat, tumakbo sa mataas na lugar. Huwag maghintay at huwag bumalik." },
-      "built": false, "scripts": [], "data": ["levels.json", "chunks.json"]
+      "built": true,
+      "scripts": [
+        "minigames/js/games/wave-runner/tuning.js",
+        "minigames/js/games/wave-runner/rules.js",
+        "minigames/js/games/wave-runner/daily.js",
+        "minigames/js/games/wave-runner/IntroScene.js",
+        "minigames/js/games/wave-runner/WaveRunnerScene.js",
+        "minigames/js/games/wave-runner/index.js"
+      ],
+      "data": ["levels.json", "chunks.json"]
     },
     {
       "id": "slope-defense", "num": 4, "hazardId": "landslide", "hazardGroup": "geological",
