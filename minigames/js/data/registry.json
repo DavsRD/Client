@@ -135,7 +135,13 @@
         { "en": "Bring them to the evacuation center", "fil": "Dalhin sila sa evacuation center", "keys": [], "gesture": null }
       ],
       "takeaway": { "en": "Storm surge can rise faster than you can run. Coastal families must leave early, and help those who need it first.", "fil": "Mas mabilis tumaas ang daluyong kaysa sa takbo mo. Dapat umalis nang maaga ang mga nasa baybayin, at unahin ang nangangailangan." },
-      "built": false, "scripts": [], "data": ["levels.json"]
+      "built": true,
+      "scripts": [
+        "minigames/js/games/evac-convoy/tuning.js", "minigames/js/games/evac-convoy/Surge.js",
+        "minigames/js/games/evac-convoy/daily.js", "minigames/js/games/evac-convoy/Headcount.js",
+        "minigames/js/games/evac-convoy/EvacConvoyScene.js", "minigames/js/games/evac-convoy/index.js"
+      ],
+      "data": ["levels.json", "data/templates.json"]
     },
     {
       "id": "water-ways", "num": 8, "hazardId": "el-nino", "hazardGroup": "hydrometeorological",
