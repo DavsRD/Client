@@ -30,7 +30,7 @@
  * -------------------------------------------------------------
  */
 
-const CACHE_VERSION = "v24";
+const CACHE_VERSION = "v25";
 const SHELL_CACHE = `kalasag-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `kalasag-data-${CACHE_VERSION}`;
 const SAVED_CACHE = "kalasag-saved-v1"; // same name as in js/core/offline.js
@@ -93,6 +93,12 @@ const GAME_CORE = [
   "minigames/js/engines/pieces/grid-board.js", "minigames/js/engines/pieces/slot-board.js",
   "minigames/js/engines/pieces/play.js", "minigames/js/engines/pieces/cutter.js",
   "minigames/js/engines/pieces/sliding-board.js",
+  // E2 scene-tap engine: the scripts in registry.json engines.scenetap (darkness.js is above), plus its stylesheet
+  "minigames/css/scenetap.css",
+  "minigames/js/logic/scenetap/zones.js", "minigames/js/logic/scenetap/camera.js",
+  "minigames/js/engines/scenetap/scene-view.js", "minigames/js/engines/scenetap/objects.js",
+  "minigames/js/engines/scenetap/lens.js", "minigames/js/engines/scenetap/paired.js",
+  "minigames/js/engines/scenetap/scenario-card.js",
   "minigames/assets/asset-manifest.json",
 ];
 

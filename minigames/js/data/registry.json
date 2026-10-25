@@ -24,6 +24,13 @@
       "minigames/js/engines/pieces/grid-board.js", "minigames/js/engines/pieces/slot-board.js",
       "minigames/js/engines/pieces/play.js", "minigames/js/engines/pieces/cutter.js",
       "minigames/js/engines/pieces/sliding-board.js"
+    ],
+    "scenetap": [
+      "minigames/js/logic/scenetap/zones.js", "minigames/js/logic/scenetap/camera.js",
+      "minigames/js/engines/grid/darkness.js",
+      "minigames/js/engines/scenetap/scene-view.js", "minigames/js/engines/scenetap/objects.js",
+      "minigames/js/engines/scenetap/lens.js", "minigames/js/engines/scenetap/paired.js",
+      "minigames/js/engines/scenetap/scenario-card.js"
     ]
   },
   "games": [

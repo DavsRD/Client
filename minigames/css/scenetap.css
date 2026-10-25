@@ -1,0 +1,36 @@
+/* =============================================================
+   scenetap.css — E2 SCENE-TAP ENGINE (SceneView, PairedScenes, ScenarioCard).
+   Added to the page by minigames/js/engines/scenetap/scene-view.js.
+   Every rule is under #ag-app and every class starts with ags-, like ag.css.
+   The prototype's panel style: ink borders, hard offset shadows. Canvases stay pixelated.
+   ============================================================= */
+
+#ag-app .ags-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* ---------- SceneView: the canvas fills its box (16:9 by default) ---------- */
+#ag-app .ags-view { position: relative; display: flex; justify-content: center; width: 100%; min-width: 0; }
+#ag-app .ags-view > canvas { display: block; touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+
+/* ---------- PairedScenes: side by side (landscape) or stacked (portrait) ---------- */
+#ag-app .ags-pair { display: flex; gap: 12px; width: 100%; min-width: 0; justify-content: center; align-items: flex-start; }
+#ag-app .ags-pair--col { flex-direction: column; align-items: center; }
+#ag-app .ags-pair__side { flex: 1 1 0; min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 3px; border: 3px dashed transparent; border-radius: var(--r); }
+#ag-app .ags-pair--col .ags-pair__side { flex: none; width: 100%; max-width: 560px; }
+#ag-app .ags-pair__side.is-active { border-color: var(--vest); }
+#ag-app .ags-pair__cap { font-family: var(--font-display); font-weight: 700; font-size: var(--step--1); color: var(--fg); }
+#ag-app .ags-pair__side.is-active .ags-pair__cap::before { content: '▶ '; }
+
+/* ---------- ScenarioCard: art beside the text when there is room, else above it ---------- */
+#ag-app .ags-card {
+  display: grid; gap: 12px; align-items: start; width: 100%; box-sizing: border-box;
+  padding: 12px; background: var(--panel); color: var(--fg);
+  border: var(--b) solid var(--ink); border-radius: var(--r); box-shadow: 6px 6px 0 var(--shadow-c);
+}
+#ag-app .ags-card__art { margin: 0; display: flex; justify-content: center; min-width: 0; }
+#ag-app .ags-card__art canvas { border: 2px solid var(--ink); background: var(--paper); }
+#ag-app .ags-card__body { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+#ag-app .ags-card__title { margin: 0; font-family: var(--font-display); font-size: var(--step-1); }
+#ag-app .ags-card__text { margin: 0; }
+@container (min-width: 640px) {
+  #ag-app .ags-card:has(.ags-card__art) { grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); }
+}
