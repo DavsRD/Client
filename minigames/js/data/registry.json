@@ -31,6 +31,10 @@
       "minigames/js/engines/scenetap/scene-view.js", "minigames/js/engines/scenetap/objects.js",
       "minigames/js/engines/scenetap/lens.js", "minigames/js/engines/scenetap/paired.js",
       "minigames/js/engines/scenetap/scenario-card.js"
+    ],
+    "falling": [
+      "minigames/js/logic/falling/spawner.js", "minigames/js/logic/falling/rules.js",
+      "minigames/js/engines/falling/mover.js", "minigames/js/engines/falling/field.js"
     ]
   },
   "games": [
