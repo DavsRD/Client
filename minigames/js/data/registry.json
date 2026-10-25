@@ -48,8 +48,15 @@
         { "en": "Hold on while it shakes", "fil": "Kumapit habang yumayanig", "keys": ["key_space"], "gesture": "gesture_hold" },
         { "en": "Let go when the shaking stops, then pick the safe exit", "fil": "Bumitaw kapag tumigil ang yanig, saka piliin ang ligtas na labasan", "keys": ["key_enter"], "gesture": "gesture_tap" }
       ],
-      "takeaway": { "en": "When the ground shakes: Drop, Cover, Hold, and stay put until it stops.", "fil": "Kapag yumanig ang lupa: Dumapa, Magtakip, Kumapit, at manatili hanggang tumigil ito." },
-      "built": false, "scripts": [], "data": ["levels.json"]
+      "takeaway": { "en": "When the ground shakes: Drop, Cover, Hold — and stay put until it stops.", "fil": "Kapag yumanig ang lupa: Dumapa, Magtakip, Kumapit, at manatili hanggang tumigil ito." },
+      "built": true,
+      "scripts": [
+        "minigames/js/logic/drop-cover-hold/roundMachine.js",
+        "minigames/js/games/drop-cover-hold/tuning.js",
+        "minigames/js/games/drop-cover-hold/DropCoverHoldScene.js",
+        "minigames/js/games/drop-cover-hold/index.js"
+      ],
+      "data": ["levels.json"]
     },
     {
       "id": "ashfall", "num": 2, "hazardId": "volcanic-eruption", "hazardGroup": "geological",

@@ -1,0 +1,591 @@
+[
+ {
+  "level": 1,
+  "rounds": [
+   {
+    "room": "classroom",
+    "exits": [
+     "door_field",
+     "windows"
+    ],
+    "spots": [
+     "desk_1",
+     "desk_2",
+     "window",
+     "bookshelf",
+     "doorway"
+    ],
+    "decoys": 1
+   },
+   {
+    "room": "library",
+    "exits": [
+     "aisle",
+     "shelves"
+    ],
+    "spots": [
+     "table",
+     "window",
+     "bookshelf_1",
+     "bookshelf_2"
+    ]
+   },
+   {
+    "room": "classroom",
+    "exits": [
+     "door_field",
+     "windows"
+    ],
+    "spots": [
+     "desk_1",
+     "desk_2",
+     "bookshelf",
+     "window",
+     "light",
+     "doorway"
+    ]
+   },
+   {
+    "room": "library",
+    "exits": [
+     "aisle",
+     "shelves"
+    ],
+    "spots": [
+     "table",
+     "bookshelf_1",
+     "window",
+     "bookshelf_2"
+    ]
+   },
+   {
+    "room": "classroom",
+    "exits": [
+     "door_field",
+     "windows"
+    ],
+    "spots": [
+     "desk_2",
+     "desk_1",
+     "window",
+     "light",
+     "bookshelf",
+     "doorway"
+    ]
+   },
+   {
+    "room": "library",
+    "exits": [
+     "aisle",
+     "big_window"
+    ],
+    "spots": [
+     "table",
+     "bookshelf_2",
+     "window",
+     "bookshelf_1"
+    ]
+   }
+  ]
+ },
+ {
+  "level": 2,
+  "rounds": [
+   {
+    "room": "living",
+    "spots": [
+     "table",
+     "glass_table",
+     "bookshelf",
+     "window",
+     "doorway"
+    ],
+    "exits": [
+     "front_door",
+     "glass"
+    ]
+   },
+   {
+    "room": "bedroom",
+    "spots": [
+     "desk",
+     "window",
+     "bookshelf",
+     "light"
+    ],
+    "exits": [
+     "hall",
+     "window"
+    ]
+   },
+   {
+    "room": "canteen",
+    "spots": [
+     "long_table",
+     "table",
+     "window",
+     "light",
+     "shelf"
+    ],
+    "exits": [
+     "side_door",
+     "kitchen"
+    ]
+   },
+   {
+    "room": "living",
+    "spots": [
+     "table",
+     "glass_table",
+     "bookshelf",
+     "window",
+     "doorway"
+    ],
+    "exits": [
+     "front_door",
+     "glass"
+    ]
+   },
+   {
+    "room": "bedroom",
+    "spots": [
+     "desk",
+     "bookshelf",
+     "light",
+     "window"
+    ],
+    "exits": [
+     "hall",
+     "window"
+    ]
+   },
+   {
+    "room": "canteen",
+    "spots": [
+     "table",
+     "long_table",
+     "light",
+     "shelf",
+     "window"
+    ],
+    "exits": [
+     "side_door",
+     "kitchen"
+    ]
+   },
+   {
+    "room": "living",
+    "spots": [
+     "table",
+     "window",
+     "glass_table",
+     "bookshelf",
+     "doorway"
+    ],
+    "exits": [
+     "front_door",
+     "glass"
+    ]
+   }
+  ]
+ },
+ {
+  "level": 3,
+  "rounds": [
+   {
+    "room": "playground",
+    "spots": [
+     "open_ground",
+     "tree",
+     "pole",
+     "wall"
+    ],
+    "exits": [
+     "field",
+     "building"
+    ]
+   },
+   {
+    "room": "schoolyard",
+    "spots": [
+     "open_ground",
+     "pole",
+     "wall",
+     "tree"
+    ],
+    "exits": [
+     "field",
+     "wall"
+    ]
+   },
+   {
+    "room": "playground",
+    "spots": [
+     "open_ground",
+     "wall",
+     "tree",
+     "pole"
+    ],
+    "exits": [
+     "field",
+     "building"
+    ]
+   },
+   {
+    "room": "schoolyard",
+    "spots": [
+     "open_ground",
+     "tree",
+     "wall",
+     "pole"
+    ],
+    "exits": [
+     "field",
+     "wall"
+    ]
+   },
+   {
+    "room": "playground",
+    "spots": [
+     "open_ground",
+     "tree",
+     "pole",
+     "wall"
+    ],
+    "exits": [
+     "field",
+     "pole"
+    ]
+   },
+   {
+    "room": "schoolyard",
+    "spots": [
+     "open_ground",
+     "pole",
+     "wall",
+     "tree"
+    ],
+    "exits": [
+     "field",
+     "tree"
+    ]
+   },
+   {
+    "room": "playground",
+    "spots": [
+     "open_ground",
+     "pole",
+     "wall",
+     "tree"
+    ],
+    "exits": [
+     "field",
+     "building"
+    ]
+   },
+   {
+    "room": "schoolyard",
+    "spots": [
+     "open_ground",
+     "pole",
+     "wall",
+     "tree"
+    ],
+    "exits": [
+     "field",
+     "wall"
+    ]
+   }
+  ]
+ },
+ {
+  "level": 4,
+  "rounds": [
+   {
+    "room": "classroom",
+    "exits": [
+     "door_field",
+     "windows"
+    ],
+    "spots": [
+     "desk_1",
+     "desk_2",
+     "window",
+     "bookshelf",
+     "light",
+     "doorway"
+    ]
+   },
+   {
+    "room": "living",
+    "spots": [
+     "table",
+     "glass_table",
+     "bookshelf",
+     "window",
+     "doorway"
+    ],
+    "exits": [
+     "front_door",
+     "glass"
+    ],
+    "aftershock": true
+   },
+   {
+    "room": "playground",
+    "spots": [
+     "open_ground",
+     "tree",
+     "pole",
+     "wall"
+    ],
+    "exits": [
+     "field",
+     "building"
+    ]
+   },
+   {
+    "room": "canteen",
+    "spots": [
+     "long_table",
+     "table",
+     "window",
+     "light",
+     "shelf"
+    ],
+    "exits": [
+     "side_door",
+     "kitchen"
+    ],
+    "aftershock": true
+   },
+   {
+    "room": "library",
+    "exits": [
+     "aisle",
+     "shelves"
+    ],
+    "spots": [
+     "table",
+     "window",
+     "bookshelf_1",
+     "bookshelf_2"
+    ]
+   },
+   {
+    "room": "bedroom",
+    "spots": [
+     "desk",
+     "window",
+     "bookshelf",
+     "light"
+    ],
+    "exits": [
+     "hall",
+     "window"
+    ],
+    "aftershock": true
+   },
+   {
+    "room": "schoolyard",
+    "spots": [
+     "open_ground",
+     "pole",
+     "wall",
+     "tree"
+    ],
+    "exits": [
+     "field",
+     "wall"
+    ]
+   },
+   {
+    "room": "classroom",
+    "exits": [
+     "door_field",
+     "windows"
+    ],
+    "spots": [
+     "desk_2",
+     "desk_1",
+     "light",
+     "window",
+     "bookshelf",
+     "doorway"
+    ],
+    "aftershock": true
+   },
+   {
+    "room": "living",
+    "spots": [
+     "table",
+     "glass_table",
+     "window",
+     "bookshelf",
+     "doorway"
+    ],
+    "exits": [
+     "front_door",
+     "glass"
+    ]
+   }
+  ]
+ },
+ {
+  "level": 5,
+  "rounds": [
+   {
+    "room": "bedroom",
+    "spots": [
+     "bed",
+     "desk",
+     "window",
+     "bookshelf"
+    ],
+    "exits": [
+     "hall",
+     "window"
+    ],
+    "special": "bed",
+    "override": {
+     "desk": {
+      "kind": "decoy",
+      "feedback": {
+       "en": "In bed? Stay there and cover your head with a pillow."
+      }
+     }
+    }
+   },
+   {
+    "room": "classroom",
+    "spots": [
+     "desk_1"
+    ],
+    "exits": [
+     "door_field",
+     "windows"
+    ],
+    "special": "wheelchair"
+   },
+   {
+    "room": "mall",
+    "spots": [
+     "open_area",
+     "shelf_1",
+     "shelf_2",
+     "storefront",
+     "light"
+    ],
+    "exits": [
+     "open_hall",
+     "shop"
+    ],
+    "special": "mall"
+   },
+   {
+    "room": "canteen",
+    "spots": [
+     "long_table",
+     "table",
+     "window",
+     "light",
+     "shelf"
+    ],
+    "exits": [
+     "side_door",
+     "kitchen"
+    ],
+    "aftershock": true
+   },
+   {
+    "room": "bedroom",
+    "spots": [
+     "bed",
+     "desk",
+     "bookshelf",
+     "window"
+    ],
+    "exits": [
+     "hall",
+     "window"
+    ],
+    "special": "bed",
+    "override": {
+     "desk": {
+      "kind": "decoy",
+      "feedback": {
+       "en": "In bed? Stay there and cover your head with a pillow."
+      }
+     }
+    }
+   },
+   {
+    "room": "classroom",
+    "spots": [
+     "desk_1"
+    ],
+    "exits": [
+     "door_field",
+     "windows"
+    ],
+    "special": "wheelchair"
+   },
+   {
+    "room": "mall",
+    "spots": [
+     "open_area",
+     "shelf_2",
+     "light",
+     "shelf_1",
+     "storefront"
+    ],
+    "exits": [
+     "open_hall",
+     "elevator"
+    ],
+    "special": "mall"
+   },
+   {
+    "room": "playground",
+    "spots": [
+     "open_ground",
+     "tree",
+     "pole",
+     "wall"
+    ],
+    "exits": [
+     "field",
+     "building"
+    ],
+    "aftershock": true
+   },
+   {
+    "room": "living",
+    "spots": [
+     "table",
+     "glass_table",
+     "bookshelf",
+     "window",
+     "doorway"
+    ],
+    "exits": [
+     "front_door",
+     "glass"
+    ]
+   },
+   {
+    "room": "library",
+    "exits": [
+     "aisle",
+     "big_window"
+    ],
+    "spots": [
+     "table",
+     "bookshelf_1",
+     "bookshelf_2",
+     "window"
+    ]
+   }
+  ]
+ }
+]

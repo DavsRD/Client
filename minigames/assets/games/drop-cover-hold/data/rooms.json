@@ -4,6 +4,7 @@
   "floorY": 190,
   "objects": [
    {
+    "id": "desk_1",
     "obj": "desk",
     "x": 70,
     "y": 150,
@@ -20,6 +21,7 @@
     ]
    },
    {
+    "id": "desk_2",
     "obj": "desk",
     "x": 200,
     "y": 150,
@@ -36,6 +38,7 @@
     ]
    },
    {
+    "id": "window",
     "obj": "window",
     "x": 380,
     "y": 50,
@@ -43,7 +46,9 @@
     "h": 56,
     "kind": "decoy",
     "pose": null,
-    "feedback": "Glass can break \u2014 move away from windows.",
+    "feedback": {
+     "en": "Glass can break — move away from windows."
+    },
     "zone": [
      0.792,
      0.185,
@@ -52,6 +57,7 @@
     ]
    },
    {
+    "id": "bookshelf",
     "obj": "bookshelf",
     "x": 300,
     "y": 90,
@@ -59,7 +65,9 @@
     "h": 100,
     "kind": "decoy",
     "pose": null,
-    "feedback": "Tall furniture can tip over.",
+    "feedback": {
+     "en": "Tall furniture can tip over."
+    },
     "zone": [
      0.625,
      0.333,
@@ -68,6 +76,7 @@
     ]
    },
    {
+    "id": "light",
     "obj": "light",
     "x": 140,
     "y": 0,
@@ -75,7 +84,9 @@
     "h": 44,
     "kind": "decoy",
     "pose": null,
-    "feedback": "Things can fall from the ceiling.",
+    "feedback": {
+     "en": "Things can fall from the ceiling."
+    },
     "zone": [
      0.292,
      0.0,
@@ -84,6 +95,7 @@
     ]
    },
    {
+    "id": "doorway",
     "obj": "doorway",
     "x": 12,
     "y": 104,
@@ -91,7 +103,9 @@
     "h": 86,
     "kind": "myth",
     "pose": null,
-    "feedback": "Doorways aren't the safest spot in modern buildings. Get under a sturdy table.",
+    "feedback": {
+     "en": "Doorways aren't the safest spot in modern buildings. Get under a sturdy table."
+    },
     "zone": [
      0.025,
      0.385,
@@ -103,26 +117,68 @@
   "exits": [
    {
     "id": "door_field",
-    "label": "Out the door to the open field",
+    "label": {
+     "en": "Out the door to the open field"
+    },
+    "tag": {
+     "en": "Field"
+    },
     "kind": "safe",
     "zone": [
      0.0,
      0.38,
      0.12,
      0.33
-    ]
+    ],
+    "why": {
+     "en": "Yes! Walk out calmly to open ground, away from glass, walls and posts."
+    }
    },
    {
     "id": "windows",
-    "label": "Past the windows",
+    "label": {
+     "en": "Past the windows"
+    },
+    "tag": {
+     "en": "Windows"
+    },
     "kind": "unsafe",
     "zone": [
      0.78,
      0.18,
      0.15,
      0.25
-    ]
+    ],
+    "why": {
+     "en": "Glass can still fall after the shaking. Walk away from windows."
+    }
+   },
+   {
+    "id": "shelf_gap",
+    "label": {
+     "en": "Squeeze past the tall shelf"
+    },
+    "tag": {
+     "en": "Shelf"
+    },
+    "kind": "unsafe",
+    "zone": [
+     0.62,
+     0.33,
+     0.11,
+     0.37
+    ],
+    "why": {
+     "en": "Tall furniture can still tip over. Use the clear way out."
+    }
    }
+  ],
+  "start": 360,
+  "outdoor": false,
+  "debris": [
+   "ceiling",
+   "frame",
+   "light"
   ]
  },
  "library": {
@@ -130,6 +186,7 @@
   "floorY": 190,
   "objects": [
    {
+    "id": "table",
     "obj": "table",
     "x": 110,
     "y": 154,
@@ -146,6 +203,7 @@
     ]
    },
    {
+    "id": "bookshelf_1",
     "obj": "bookshelf",
     "x": 230,
     "y": 90,
@@ -153,7 +211,9 @@
     "h": 100,
     "kind": "decoy",
     "pose": null,
-    "feedback": "Tall furniture can tip over.",
+    "feedback": {
+     "en": "Tall furniture can tip over."
+    },
     "zone": [
      0.479,
      0.333,
@@ -162,6 +222,7 @@
     ]
    },
    {
+    "id": "bookshelf_2",
     "obj": "bookshelf",
     "x": 290,
     "y": 90,
@@ -169,7 +230,9 @@
     "h": 100,
     "kind": "decoy",
     "pose": null,
-    "feedback": "Tall furniture can tip over.",
+    "feedback": {
+     "en": "Tall furniture can tip over."
+    },
     "zone": [
      0.604,
      0.333,
@@ -178,6 +241,7 @@
     ]
    },
    {
+    "id": "window",
     "obj": "window",
     "x": 350,
     "y": 40,
@@ -185,7 +249,9 @@
     "h": 56,
     "kind": "decoy",
     "pose": null,
-    "feedback": "Glass can break \u2014 move away from windows.",
+    "feedback": {
+     "en": "Glass can break — move away from windows."
+    },
     "zone": [
      0.729,
      0.148,
@@ -197,26 +263,67 @@
   "exits": [
    {
     "id": "aisle",
-    "label": "Down the clear aisle",
+    "label": {
+     "en": "Down the clear aisle"
+    },
+    "tag": {
+     "en": "Aisle"
+    },
     "kind": "safe",
     "zone": [
      0.36,
      0.7,
      0.2,
      0.3
-    ]
+    ],
+    "why": {
+     "en": "Yes! Walk out calmly to open ground, away from glass, walls and posts."
+    }
    },
    {
     "id": "shelves",
-    "label": "Between the tall shelves",
+    "label": {
+     "en": "Between the tall shelves"
+    },
+    "tag": {
+     "en": "Shelves"
+    },
     "kind": "unsafe",
     "zone": [
      0.47,
      0.33,
      0.25,
      0.37
-    ]
+    ],
+    "why": {
+     "en": "Tall shelves can still tip and drop books. Use the clear aisle."
+    }
+   },
+   {
+    "id": "big_window",
+    "label": {
+     "en": "Past the big window"
+    },
+    "tag": {
+     "en": "Window"
+    },
+    "kind": "unsafe",
+    "zone": [
+     0.73,
+     0.15,
+     0.13,
+     0.21
+    ],
+    "why": {
+     "en": "Glass can still fall after the shaking. Walk away from windows."
+    }
    }
+  ],
+  "start": 440,
+  "outdoor": false,
+  "debris": [
+   "ceiling",
+   "frame"
   ]
  },
  "bedroom": {
@@ -224,6 +331,7 @@
   "floorY": 190,
   "objects": [
    {
+    "id": "bed",
     "obj": "bed",
     "x": 40,
     "y": 144,
@@ -240,6 +348,7 @@
     ]
    },
    {
+    "id": "desk",
     "obj": "desk",
     "x": 330,
     "y": 150,
@@ -256,6 +365,7 @@
     ]
    },
    {
+    "id": "window",
     "obj": "window",
     "x": 190,
     "y": 40,
@@ -263,7 +373,9 @@
     "h": 56,
     "kind": "decoy",
     "pose": null,
-    "feedback": "Glass can break \u2014 move away from windows.",
+    "feedback": {
+     "en": "Glass can break — move away from windows."
+    },
     "zone": [
      0.396,
      0.148,
@@ -272,6 +384,7 @@
     ]
    },
    {
+    "id": "bookshelf",
     "obj": "bookshelf",
     "x": 420,
     "y": 90,
@@ -279,38 +392,101 @@
     "h": 100,
     "kind": "decoy",
     "pose": null,
-    "feedback": "Tall furniture can tip over.",
+    "feedback": {
+     "en": "Tall furniture can tip over."
+    },
     "zone": [
      0.875,
      0.333,
      0.1,
      0.37
     ]
+   },
+   {
+    "id": "light",
+    "obj": "light",
+    "x": 280,
+    "y": 0,
+    "w": 24,
+    "h": 44,
+    "kind": "decoy",
+    "pose": null,
+    "feedback": {
+     "en": "Things can fall from the ceiling."
+    },
+    "zone": [
+     0.583,
+     0.0,
+     0.05,
+     0.704
+    ]
    }
   ],
   "exits": [
    {
     "id": "hall",
-    "label": "Out to the hall and outside",
+    "label": {
+     "en": "Out to the hall and outside"
+    },
+    "tag": {
+     "en": "Hall"
+    },
     "kind": "safe",
     "zone": [
      0.86,
      0.5,
      0.14,
      0.2
-    ]
+    ],
+    "why": {
+     "en": "Yes! Walk out calmly to open ground, away from glass, walls and posts."
+    }
    },
    {
     "id": "window",
-    "label": "Past the window",
+    "label": {
+     "en": "Past the window"
+    },
+    "tag": {
+     "en": "Window"
+    },
     "kind": "unsafe",
     "zone": [
      0.39,
      0.14,
      0.14,
      0.21
-    ]
+    ],
+    "why": {
+     "en": "Glass can still fall after the shaking. Walk away from windows."
+    }
+   },
+   {
+    "id": "shelf",
+    "label": {
+     "en": "Past the bookshelf"
+    },
+    "tag": {
+     "en": "Shelf"
+    },
+    "kind": "unsafe",
+    "zone": [
+     0.875,
+     0.33,
+     0.1,
+     0.17
+    ],
+    "why": {
+     "en": "Tall furniture can still tip over. Go the clear way."
+    }
    }
+  ],
+  "start": 170,
+  "outdoor": false,
+  "debris": [
+   "ceiling",
+   "frame",
+   "light"
   ]
  },
  "living": {
@@ -318,6 +494,7 @@
   "floorY": 190,
   "objects": [
    {
+    "id": "table",
     "obj": "table",
     "x": 150,
     "y": 154,
@@ -334,6 +511,7 @@
     ]
    },
    {
+    "id": "glass_table",
     "obj": "glass_table",
     "x": 300,
     "y": 194,
@@ -341,7 +519,9 @@
     "h": 30,
     "kind": "decoy",
     "pose": null,
-    "feedback": "Glass can shatter \u2014 find a sturdy table.",
+    "feedback": {
+     "en": "Glass can shatter — find a sturdy table."
+    },
     "zone": [
      0.625,
      0.719,
@@ -350,6 +530,7 @@
     ]
    },
    {
+    "id": "bookshelf",
     "obj": "bookshelf",
     "x": 410,
     "y": 90,
@@ -357,7 +538,9 @@
     "h": 100,
     "kind": "decoy",
     "pose": null,
-    "feedback": "Tall furniture can tip over.",
+    "feedback": {
+     "en": "Tall furniture can tip over."
+    },
     "zone": [
      0.854,
      0.333,
@@ -366,6 +549,7 @@
     ]
    },
    {
+    "id": "window",
     "obj": "window",
     "x": 200,
     "y": 40,
@@ -373,7 +557,9 @@
     "h": 56,
     "kind": "decoy",
     "pose": null,
-    "feedback": "Glass can break \u2014 move away from windows.",
+    "feedback": {
+     "en": "Glass can break — move away from windows."
+    },
     "zone": [
      0.417,
      0.148,
@@ -382,6 +568,7 @@
     ]
    },
    {
+    "id": "doorway",
     "obj": "doorway",
     "x": 90,
     "y": 104,
@@ -389,7 +576,9 @@
     "h": 86,
     "kind": "myth",
     "pose": null,
-    "feedback": "Doorways aren't the safest spot in modern buildings. Get under a sturdy table.",
+    "feedback": {
+     "en": "Doorways aren't the safest spot in modern buildings. Get under a sturdy table."
+    },
     "zone": [
      0.188,
      0.385,
@@ -401,26 +590,67 @@
   "exits": [
    {
     "id": "front_door",
-    "label": "Out the front door to the yard",
+    "label": {
+     "en": "Out the front door to the yard"
+    },
+    "tag": {
+     "en": "Yard"
+    },
     "kind": "safe",
     "zone": [
      0.18,
      0.38,
      0.1,
      0.33
-    ]
+    ],
+    "why": {
+     "en": "Yes! Walk out calmly to open ground, away from glass, walls and posts."
+    }
    },
    {
     "id": "glass",
-    "label": "Past the glass cabinet",
+    "label": {
+     "en": "Past the glass cabinet"
+    },
+    "tag": {
+     "en": "Glass"
+    },
     "kind": "unsafe",
     "zone": [
      0.85,
      0.33,
      0.12,
      0.37
-    ]
+    ],
+    "why": {
+     "en": "Glass can still break after the shaking. Go the clear way."
+    }
+   },
+   {
+    "id": "window",
+    "label": {
+     "en": "Past the window"
+    },
+    "tag": {
+     "en": "Window"
+    },
+    "kind": "unsafe",
+    "zone": [
+     0.42,
+     0.15,
+     0.13,
+     0.21
+    ],
+    "why": {
+     "en": "Glass can still fall after the shaking. Walk away from windows."
+    }
    }
+  ],
+  "start": 40,
+  "outdoor": false,
+  "debris": [
+   "ceiling",
+   "frame"
   ]
  },
  "canteen": {
@@ -428,6 +658,7 @@
   "floorY": 190,
   "objects": [
    {
+    "id": "long_table",
     "obj": "long_table",
     "x": 40,
     "y": 156,
@@ -444,6 +675,7 @@
     ]
    },
    {
+    "id": "table",
     "obj": "table",
     "x": 190,
     "y": 154,
@@ -460,6 +692,7 @@
     ]
    },
    {
+    "id": "window",
     "obj": "window",
     "x": 60,
     "y": 40,
@@ -467,7 +700,9 @@
     "h": 56,
     "kind": "decoy",
     "pose": null,
-    "feedback": "Glass can break \u2014 move away from windows.",
+    "feedback": {
+     "en": "Glass can break — move away from windows."
+    },
     "zone": [
      0.125,
      0.148,
@@ -476,6 +711,7 @@
     ]
    },
    {
+    "id": "light",
     "obj": "light",
     "x": 300,
     "y": 0,
@@ -483,38 +719,101 @@
     "h": 44,
     "kind": "decoy",
     "pose": null,
-    "feedback": "Things can fall from the ceiling.",
+    "feedback": {
+     "en": "Things can fall from the ceiling."
+    },
     "zone": [
      0.625,
      0.0,
      0.05,
      0.704
     ]
+   },
+   {
+    "id": "shelf",
+    "obj": "shelf",
+    "x": 380,
+    "y": 94,
+    "w": 72,
+    "h": 96,
+    "kind": "decoy",
+    "pose": null,
+    "feedback": {
+     "en": "Shelves can tip and drop things."
+    },
+    "zone": [
+     0.792,
+     0.348,
+     0.15,
+     0.356
+    ]
    }
   ],
   "exits": [
    {
     "id": "side_door",
-    "label": "Out the side door to the field",
+    "label": {
+     "en": "Out the side door to the field"
+    },
+    "tag": {
+     "en": "Field"
+    },
     "kind": "safe",
     "zone": [
      0.9,
      0.38,
      0.1,
      0.33
-    ]
+    ],
+    "why": {
+     "en": "Yes! Walk out calmly to open ground, away from glass, walls and posts."
+    }
    },
    {
     "id": "kitchen",
-    "label": "Through the kitchen",
+    "label": {
+     "en": "Through the kitchen"
+    },
+    "tag": {
+     "en": "Kitchen"
+    },
     "kind": "unsafe",
     "zone": [
      0.58,
      0.5,
      0.35,
      0.2
-    ]
+    ],
+    "why": {
+     "en": "Kitchens have hot pans, gas and glass. Use the clear door to the field."
+    }
+   },
+   {
+    "id": "under_lights",
+    "label": {
+     "en": "Under the hanging lights"
+    },
+    "tag": {
+     "en": "Lights"
+    },
+    "kind": "unsafe",
+    "zone": [
+     0.6,
+     0.0,
+     0.1,
+     0.2
+    ],
+    "why": {
+     "en": "Hanging lights can still fall. Walk out the clear way."
+    }
    }
+  ],
+  "start": 352,
+  "outdoor": false,
+  "debris": [
+   "ceiling",
+   "frame",
+   "light"
   ]
  },
  "playground": {
@@ -522,6 +821,7 @@
   "floorY": 190,
   "objects": [
    {
+    "id": "open_ground",
     "obj": "open_ground",
     "x": 170,
     "y": 196,
@@ -538,6 +838,7 @@
     ]
    },
    {
+    "id": "tree",
     "obj": "tree",
     "x": 40,
     "y": 96,
@@ -545,7 +846,9 @@
     "h": 110,
     "kind": "decoy",
     "pose": null,
-    "feedback": "Branches can fall. Move to open ground.",
+    "feedback": {
+     "en": "Branches can fall. Move to open ground."
+    },
     "zone": [
      0.083,
      0.356,
@@ -554,6 +857,7 @@
     ]
    },
    {
+    "id": "pole",
     "obj": "pole",
     "x": 300,
     "y": 52,
@@ -561,7 +865,9 @@
     "h": 150,
     "kind": "decoy",
     "pose": null,
-    "feedback": "Power lines can fall. Move away.",
+    "feedback": {
+     "en": "Power lines can fall. Move away."
+    },
     "zone": [
      0.625,
      0.193,
@@ -570,6 +876,7 @@
     ]
    },
    {
+    "id": "wall",
     "obj": "wall",
     "x": 340,
     "y": 140,
@@ -577,7 +884,9 @@
     "h": 64,
     "kind": "decoy",
     "pose": null,
-    "feedback": "Walls can crack and fall. Move to open ground.",
+    "feedback": {
+     "en": "Walls can crack and fall. Move to open ground."
+    },
     "zone": [
      0.708,
      0.519,
@@ -589,33 +898,72 @@
   "exits": [
    {
     "id": "field",
-    "label": "Stay on the open field",
+    "label": {
+     "en": "Stay on the open field"
+    },
+    "tag": {
+     "en": "Field"
+    },
     "kind": "safe",
     "zone": [
      0.3,
      0.72,
      0.3,
      0.2
-    ]
+    ],
+    "why": {
+     "en": "Yes! Walk out calmly to open ground, away from glass, walls and posts."
+    }
    },
    {
     "id": "building",
-    "label": "Run into the building",
+    "label": {
+     "en": "Run into the building"
+    },
+    "tag": {
+     "en": "Building"
+    },
     "kind": "unsafe",
     "zone": [
      0.69,
      0.27,
      0.29,
      0.44
-    ]
+    ],
+    "why": {
+     "en": "Don't run into a building right after shaking. Stay out in the open."
+    }
+   },
+   {
+    "id": "pole",
+    "label": {
+     "en": "Wait by the power pole"
+    },
+    "tag": {
+     "en": "Pole"
+    },
+    "kind": "unsafe",
+    "zone": [
+     0.6,
+     0.19,
+     0.13,
+     0.25
+    ],
+    "why": {
+     "en": "Power lines can fall. Stay far from poles."
+    }
    }
-  ]
+  ],
+  "start": 136,
+  "outdoor": true,
+  "debris": []
  },
  "mall": {
   "bg": "drop-cover-hold.room.mall",
   "floorY": 190,
   "objects": [
    {
+    "id": "shelf_1",
     "obj": "shelf",
     "x": 20,
     "y": 96,
@@ -623,7 +971,9 @@
     "h": 96,
     "kind": "decoy",
     "pose": null,
-    "feedback": "Shelves can tip and drop things.",
+    "feedback": {
+     "en": "Shelves can tip and drop things."
+    },
     "zone": [
      0.042,
      0.356,
@@ -632,6 +982,7 @@
     ]
    },
    {
+    "id": "shelf_2",
     "obj": "shelf",
     "x": 100,
     "y": 96,
@@ -639,7 +990,9 @@
     "h": 96,
     "kind": "decoy",
     "pose": null,
-    "feedback": "Shelves can tip and drop things.",
+    "feedback": {
+     "en": "Shelves can tip and drop things."
+    },
     "zone": [
      0.208,
      0.356,
@@ -648,6 +1001,7 @@
     ]
    },
    {
+    "id": "open_area",
     "obj": "open_area",
     "x": 220,
     "y": 196,
@@ -664,6 +1018,7 @@
     ]
    },
    {
+    "id": "storefront",
     "obj": "storefront",
     "x": 340,
     "y": 50,
@@ -671,7 +1026,9 @@
     "h": 80,
     "kind": "decoy",
     "pose": null,
-    "feedback": "Glass can break \u2014 move away from windows.",
+    "feedback": {
+     "en": "Glass can break — move away from windows."
+    },
     "zone": [
      0.708,
      0.185,
@@ -680,6 +1037,7 @@
     ]
    },
    {
+    "id": "light",
     "obj": "light",
     "x": 260,
     "y": 0,
@@ -687,7 +1045,9 @@
     "h": 44,
     "kind": "decoy",
     "pose": null,
-    "feedback": "Things can fall from the ceiling.",
+    "feedback": {
+     "en": "Things can fall from the ceiling."
+    },
     "zone": [
      0.542,
      0.0,
@@ -699,26 +1059,210 @@
   "exits": [
    {
     "id": "open_hall",
-    "label": "Through the open hall to the exit",
+    "label": {
+     "en": "Through the open hall to the exit"
+    },
+    "tag": {
+     "en": "Exit"
+    },
     "kind": "safe",
     "zone": [
      0.42,
      0.6,
      0.25,
      0.3
-    ]
+    ],
+    "why": {
+     "en": "Yes! Walk out calmly to open ground, away from glass, walls and posts."
+    }
    },
    {
     "id": "shop",
-    "label": "Into the glass shop",
+    "label": {
+     "en": "Into the glass shop"
+    },
+    "tag": {
+     "en": "Shop"
+    },
     "kind": "unsafe",
     "zone": [
      0.7,
      0.18,
      0.26,
      0.3
+    ],
+    "why": {
+     "en": "Glass shops can still have falling glass. Walk the open hall to the exit."
+    }
+   },
+   {
+    "id": "elevator",
+    "label": {
+     "en": "Take the elevator"
+    },
+    "tag": {
+     "en": "Lift"
+    },
+    "kind": "unsafe",
+    "zone": [
+     0.22,
+     0.08,
+     0.12,
+     0.2
+    ],
+    "why": {
+     "en": "Never use the elevator after an earthquake. Walk out the clear way."
+    }
+   }
+  ],
+  "start": 192,
+  "outdoor": false,
+  "debris": [
+   "ceiling",
+   "light",
+   "frame"
+  ]
+ },
+ "schoolyard": {
+  "bg": "drop-cover-hold.room.playground",
+  "floorY": 190,
+  "objects": [
+   {
+    "id": "pole",
+    "obj": "pole",
+    "x": 24,
+    "y": 52,
+    "w": 40,
+    "h": 150,
+    "kind": "decoy",
+    "pose": null,
+    "feedback": {
+     "en": "Power lines can fall. Move away."
+    },
+    "zone": [
+     0.05,
+     0.193,
+     0.083,
+     0.556
+    ]
+   },
+   {
+    "id": "wall",
+    "obj": "wall",
+    "x": 84,
+    "y": 140,
+    "w": 120,
+    "h": 64,
+    "kind": "decoy",
+    "pose": null,
+    "feedback": {
+     "en": "Walls can crack and fall. Move to open ground."
+    },
+    "zone": [
+     0.175,
+     0.519,
+     0.25,
+     0.237
+    ]
+   },
+   {
+    "id": "open_ground",
+    "obj": "open_ground",
+    "x": 236,
+    "y": 196,
+    "w": 96,
+    "h": 22,
+    "kind": "safe",
+    "pose": "cover_head",
+    "feedback": null,
+    "zone": [
+     0.492,
+     0.726,
+     0.2,
+     0.081
+    ]
+   },
+   {
+    "id": "tree",
+    "obj": "tree",
+    "x": 384,
+    "y": 96,
+    "w": 64,
+    "h": 110,
+    "kind": "decoy",
+    "pose": null,
+    "feedback": {
+     "en": "Branches can fall. Move to open ground."
+    },
+    "zone": [
+     0.8,
+     0.356,
+     0.133,
+     0.407
     ]
    }
-  ]
+  ],
+  "exits": [
+   {
+    "id": "field",
+    "label": {
+     "en": "Walk to the middle of the field"
+    },
+    "tag": {
+     "en": "Field"
+    },
+    "kind": "safe",
+    "zone": [
+     0.46,
+     0.66,
+     0.24,
+     0.2
+    ],
+    "why": {
+     "en": "Yes! Walk out calmly to open ground, away from glass, walls and posts."
+    }
+   },
+   {
+    "id": "wall",
+    "label": {
+     "en": "Wait by the wall"
+    },
+    "tag": {
+     "en": "Wall"
+    },
+    "kind": "unsafe",
+    "zone": [
+     0.17,
+     0.5,
+     0.25,
+     0.25
+    ],
+    "why": {
+     "en": "Walls can crack and fall. Stay out in the open."
+    }
+   },
+   {
+    "id": "tree",
+    "label": {
+     "en": "Rest under the tree"
+    },
+    "tag": {
+     "en": "Tree"
+    },
+    "kind": "unsafe",
+    "zone": [
+     0.8,
+     0.36,
+     0.13,
+     0.4
+    ],
+    "why": {
+     "en": "Branches can fall. Stay out in the open."
+    }
+   }
+  ],
+  "start": 214,
+  "outdoor": true,
+  "debris": []
  }
 }
