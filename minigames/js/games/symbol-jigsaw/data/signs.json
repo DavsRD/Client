@@ -1,0 +1,199 @@
+[
+ {
+  "id": "flammable",
+  "name": {
+   "en": "Flammable"
+  },
+  "meaning": {
+   "en": "It can catch fire very easily. Keep it away from flames, sparks and heat."
+  },
+  "category": "chemical",
+  "scene": "tanker",
+  "art": "symbol-jigsaw.sign.flammable",
+  "danger": true,
+  "decoys": [
+   "symbol-jigsaw.sign.decoy_nofire",
+   "symbol-jigsaw.sign.decoy_oxidizer"
+  ]
+ },
+ {
+  "id": "toxic",
+  "name": {
+   "en": "Toxic (poison)"
+  },
+  "meaning": {
+   "en": "It is poison. It can make you very sick if it touches you, you breathe it or you swallow it."
+  },
+  "category": "chemical",
+  "scene": "warehouse",
+  "art": "symbol-jigsaw.sign.toxic",
+  "danger": true,
+  "decoys": []
+ },
+ {
+  "id": "corrosive",
+  "name": {
+   "en": "Corrosive"
+  },
+  "meaning": {
+   "en": "It can burn skin and eyes and eat away metal. Never touch it."
+  },
+  "category": "chemical",
+  "scene": "warehouse",
+  "art": "symbol-jigsaw.sign.corrosive",
+  "danger": true,
+  "decoys": []
+ },
+ {
+  "id": "health",
+  "name": {
+   "en": "Health hazard"
+  },
+  "meaning": {
+   "en": "Breathing it or touching it can hurt your body, like your lungs, even later on."
+  },
+  "category": "chemical",
+  "scene": "warehouse",
+  "art": "symbol-jigsaw.sign.health",
+  "danger": true,
+  "decoys": [
+   "symbol-jigsaw.sign.decoy_first_aid"
+  ]
+ },
+ {
+  "id": "harmful",
+  "name": {
+   "en": "Harmful"
+  },
+  "meaning": {
+   "en": "It can make your skin, eyes or nose sting or itch, or make you feel sick."
+  },
+  "category": "chemical",
+  "scene": "warehouse",
+  "art": "symbol-jigsaw.sign.harmful",
+  "danger": true,
+  "decoys": []
+ },
+ {
+  "id": "gas",
+  "name": {
+   "en": "Gas under pressure"
+  },
+  "meaning": {
+   "en": "The gas is squeezed inside. The container can burst if it is dropped or gets hot."
+  },
+  "category": "chemical",
+  "scene": "warehouse",
+  "art": "symbol-jigsaw.sign.gas",
+  "danger": true,
+  "decoys": []
+ },
+ {
+  "id": "explosive",
+  "name": {
+   "en": "Explosive"
+  },
+  "meaning": {
+   "en": "It can blow up if it is hit, dropped or heated. Stay far away."
+  },
+  "category": "chemical",
+  "scene": "warehouse",
+  "art": "symbol-jigsaw.sign.explosive",
+  "danger": true,
+  "decoys": [
+   "symbol-jigsaw.sign.decoy_oxidizer"
+  ]
+ },
+ {
+  "id": "bleach",
+  "name": {
+   "en": "Bleach"
+  },
+  "meaning": {
+   "en": "A strong cleaner that stings skin and eyes. Never mix it with other cleaners."
+  },
+  "category": "household",
+  "scene": "cabinet",
+  "art": "symbol-jigsaw.sign.bleach",
+  "danger": true,
+  "decoys": [
+   "symbol-jigsaw.sign.decoy_first_aid"
+  ]
+ },
+ {
+  "id": "kerosene",
+  "name": {
+   "en": "Kerosene"
+  },
+  "meaning": {
+   "en": "Fuel for lamps and stoves. It burns easily and is poison to swallow."
+  },
+  "category": "household",
+  "scene": "cabinet",
+  "art": "symbol-jigsaw.sign.kerosene",
+  "danger": true,
+  "decoys": [
+   "symbol-jigsaw.sign.decoy_nofire"
+  ]
+ },
+ {
+  "id": "insecticide",
+  "name": {
+   "en": "Insecticide"
+  },
+  "meaning": {
+   "en": "Bug spray is poison. Keep it away from food, pets and little kids."
+  },
+  "category": "household",
+  "scene": "cabinet",
+  "art": "symbol-jigsaw.sign.insecticide",
+  "danger": true,
+  "decoys": []
+ },
+ {
+  "id": "environment",
+  "name": {
+   "en": "Bad for nature"
+  },
+  "meaning": {
+   "en": "It can hurt fish, plants and animals if it gets into water or soil."
+  },
+  "category": "beach",
+  "scene": "beach",
+  "art": "symbol-jigsaw.sign.environment",
+  "danger": false,
+  "decoys": []
+ },
+ {
+  "id": "keepout",
+  "name": {
+   "en": "Keep out"
+  },
+  "meaning": {
+   "en": "Do not walk into this area. There is a spill or danger here."
+  },
+  "category": "beach",
+  "scene": "tanker",
+  "art": "symbol-jigsaw.sign.keepout",
+  "danger": false,
+  "decoys": [
+   "symbol-jigsaw.sign.decoy_nofire"
+  ]
+ },
+ {
+  "id": "noswim",
+  "name": {
+   "en": "No swimming"
+  },
+  "meaning": {
+   "en": "The water here is not safe. Stay out of it."
+  },
+  "category": "beach",
+  "scene": "beach",
+  "art": "symbol-jigsaw.sign.noswim",
+  "danger": false,
+  "decoys": [
+   "symbol-jigsaw.sign.decoy_swim_ok"
+  ]
+ }
+]

@@ -277,7 +277,35 @@
   function playRow() {
     const next = AG.progress.nextLevel(game.id, unlockAll);
     const label = AG.progress.played(game.id) ? t('play.continue', { n: next.level }) : t('play.start', { n: next.level });
-    return h('div', { class: 'ag-playrow' }, h('a', { class: 'ag-btn ag-btn--big ag-playbtn', href: AG.router.playHash(next.level) }, '▶ ' + label));
+    return h('div', { class: 'ag-playrow' }, h('a', { class: 'ag-btn ag-btn--big ag-playbtn', href: AG.router.playHash(next.level) }, '▶ ' + label),
+      (game.overviewExtras || []).map(extraButton));
+  }
+
+  /** Registry "overviewExtras": [{ label, sceneKey }]. Each is a button beside Play that opens the game's own scene
+   *  (module "extras": { <sceneKey>: { mount(body, { characterId, expertId, close }) → cleanup } }) in a dialog. */
+  function extraButton(def) {
+    const btn = h('button', { type: 'button', class: 'ag-btn ag-btn--alt ag-btn--big ag-extrabtn', 'aria-haspopup': 'dialog' }, '📖 ' + pick(def.label));
+    btn.addEventListener('click', () => openExtra(def, btn));
+    return btn;
+  }
+  async function openExtra(def, btn) {
+    btn.disabled = true;
+    let mod = null;
+    try { mod = await AG.registry.load(game.id); } catch (err) { console.error(err); }
+    btn.disabled = false;
+    const scene = mod && mod.extras && mod.extras[def.sceneKey];
+    if (!scene || view !== 'overview') return;
+    const body = h('div', { class: 'ag-extra__body' });
+    const close = h('button', { type: 'button', class: 'ag-btn ag-btn--alt ag-btn--small' }, t('common.close'));
+    const dlg = h('dialog', { class: 'ag-help ag-extradlg', 'aria-label': pick(def.label) },
+      h('div', { class: 'ag-help__box' }, h('div', { class: 'ag-panelhead' }, h('h3', {}, pick(def.label)), close), body));
+    let cleanup = null;
+    close.addEventListener('click', () => dlg.close());
+    dlg.addEventListener('close', () => { try { if (cleanup) cleanup(); } catch (err) { console.error(err); } dlg.remove(); btn.focus(); });
+    dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+    root.append(dlg);
+    dlg.showModal();
+    cleanup = scene.mount(body, { characterId: me(), expertId: expertId(), close: () => dlg.close() }) || null;
   }
 
   function soonPanel() {

@@ -1,0 +1,457 @@
+{
+ "ask": {
+  "en": "What should you do when you see this?"
+ },
+ "questions": [
+  {
+   "sign": "flammable",
+   "choices": [
+    {
+     "text": {
+      "en": "Stay away from fire and sparks, don't touch it, and tell an adult."
+     },
+     "ok": true,
+     "why": {
+      "en": "Yes! Flammable things can catch fire from a tiny spark. Keep your distance and let an adult handle it."
+     }
+    },
+    {
+     "text": {
+      "en": "Light a candle so you can see it better."
+     },
+     "ok": false,
+     "why": {
+      "en": "Flames and sparks can set flammable things on fire. Keep every flame far away."
+     }
+    },
+    {
+     "text": {
+      "en": "Wipe it up with a paper towel."
+     },
+     "ok": false,
+     "why": {
+      "en": "Never wipe up a spill yourself. The fumes can make you sick. Tell an adult."
+     }
+    }
+   ]
+  },
+  {
+   "sign": "toxic",
+   "choices": [
+    {
+     "text": {
+      "en": "Don't touch or sniff it, move upwind and away, and tell an adult."
+     },
+     "ok": true,
+     "why": {
+      "en": "Yes! Poison can get into your body through your skin and your nose. Move away and tell an adult."
+     }
+    },
+    {
+     "text": {
+      "en": "Sniff it to find out what it is."
+     },
+     "ok": false,
+     "why": {
+      "en": "Never sniff a spill. Breathing poison can make you very sick."
+     }
+    },
+    {
+     "text": {
+      "en": "Poke it with a stick to see what happens."
+     },
+     "ok": false,
+     "why": {
+      "en": "Don't play with a spill. It can splash or make fumes. Stay back."
+     }
+    }
+   ]
+  },
+  {
+   "sign": "corrosive",
+   "choices": [
+    {
+     "text": {
+      "en": "Stay back, don't touch it, and tell an adult right away."
+     },
+     "ok": true,
+     "why": {
+      "en": "Yes! Corrosive things can burn your skin. Keep away and get an adult."
+     }
+    },
+    {
+     "text": {
+      "en": "Touch a tiny drop with one finger to check."
+     },
+     "ok": false,
+     "why": {
+      "en": "Even a tiny drop can burn your skin. Never touch it."
+     }
+    },
+    {
+     "text": {
+      "en": "Step over it to get to the other side."
+     },
+     "ok": false,
+     "why": {
+      "en": "Shoes and clothes can carry it around. Walk the other way and tell an adult."
+     }
+    }
+   ]
+  },
+  {
+   "sign": "health",
+   "choices": [
+    {
+     "text": {
+      "en": "Don't breathe it in or touch it, move upwind and away, and tell an adult."
+     },
+     "ok": true,
+     "why": {
+      "en": "Yes! This kind of chemical can hurt your body, so keep far away and let an adult deal with it."
+     }
+    },
+    {
+     "text": {
+      "en": "Hold your breath and clean it up yourself."
+     },
+     "ok": false,
+     "why": {
+      "en": "You can't be sure you are safe, even if you hold your breath. Let an adult do it."
+     }
+    },
+    {
+     "text": {
+      "en": "Move closer to read the small writing."
+     },
+     "ok": false,
+     "why": {
+      "en": "Stay back. An adult can read it safely with the right gear."
+     }
+    }
+   ]
+  },
+  {
+   "sign": "harmful",
+   "choices": [
+    {
+     "text": {
+      "en": "Keep away, don't touch your face or eyes, and tell an adult."
+     },
+     "ok": true,
+     "why": {
+      "en": "Yes! It can sting or itch, so keep it off your skin and eyes. Tell an adult."
+     }
+    },
+    {
+     "text": {
+      "en": "Touch it. It looks like just a little."
+     },
+     "ok": false,
+     "why": {
+      "en": "A little can still sting or make you sick. Don't touch it."
+     }
+    },
+    {
+     "text": {
+      "en": "Splash water on it to wash it away."
+     },
+     "ok": false,
+     "why": {
+      "en": "Water can spread it around. Stay back and tell an adult."
+     }
+    }
+   ]
+  },
+  {
+   "sign": "gas",
+   "choices": [
+    {
+     "text": {
+      "en": "Stay away from the container, don't touch it, and tell an adult."
+     },
+     "ok": true,
+     "why": {
+      "en": "Yes! A damaged gas container can burst or leak. Back away and tell an adult."
+     }
+    },
+    {
+     "text": {
+      "en": "Shake it to see if it is empty."
+     },
+     "ok": false,
+     "why": {
+      "en": "Shaking or moving it could make it burst. Leave it alone."
+     }
+    },
+    {
+     "text": {
+      "en": "Put it in the sun to dry."
+     },
+     "ok": false,
+     "why": {
+      "en": "Heat can make a gas container burst. Keep it away from heat."
+     }
+    }
+   ]
+  },
+  {
+   "sign": "explosive",
+   "choices": [
+    {
+     "text": {
+      "en": "Don't touch or move it. Walk away calmly and tell an adult."
+     },
+     "ok": true,
+     "why": {
+      "en": "Yes! Things that can explode must be left alone. Walk away and let the grown-ups call for help."
+     }
+    },
+    {
+     "text": {
+      "en": "Pick it up and carry it to a grown-up."
+     },
+     "ok": false,
+     "why": {
+      "en": "Never carry it. A bump can set it off. Walk to the grown-up instead."
+     }
+    },
+    {
+     "text": {
+      "en": "Throw it far away so it is gone."
+     },
+     "ok": false,
+     "why": {
+      "en": "Throwing it could set it off. Leave it where it is."
+     }
+    }
+   ]
+  },
+  {
+   "sign": "bleach",
+   "choices": [
+    {
+     "text": {
+      "en": "Don't touch it, never mix it with other cleaners, and tell an adult."
+     },
+     "ok": true,
+     "why": {
+      "en": "Yes! Bleach is strong, and mixing it with other cleaners can make poison gas. Tell an adult."
+     }
+    },
+    {
+     "text": {
+      "en": "Pour another cleaner on it to clean it faster."
+     },
+     "ok": false,
+     "why": {
+      "en": "Mixing bleach with other cleaners makes poison gas. Never mix them."
+     }
+    },
+    {
+     "text": {
+      "en": "Wipe it up with your bare hands."
+     },
+     "ok": false,
+     "why": {
+      "en": "Bleach can sting and burn your skin. Tell an adult."
+     }
+    }
+   ]
+  },
+  {
+   "sign": "kerosene",
+   "choices": [
+    {
+     "text": {
+      "en": "Keep away from fire and stoves, don't touch it, and tell an adult."
+     },
+     "ok": true,
+     "why": {
+      "en": "Yes! Kerosene burns easily and its fumes are not safe. Keep flames away and tell an adult."
+     }
+    },
+    {
+     "text": {
+      "en": "Turn on the stove to dry the floor."
+     },
+     "ok": false,
+     "why": {
+      "en": "A flame near kerosene can start a fire. Keep fire away."
+     }
+    },
+    {
+     "text": {
+      "en": "Pour it into a drink bottle to save it."
+     },
+     "ok": false,
+     "why": {
+      "en": "Never put fuel in a bottle used for drinks. Someone might drink it."
+     }
+    }
+   ]
+  },
+  {
+   "sign": "insecticide",
+   "choices": [
+    {
+     "text": {
+      "en": "Keep away, don't breathe the spray, and tell an adult."
+     },
+     "ok": true,
+     "why": {
+      "en": "Yes! Bug spray is poison for people and pets too. Keep away and tell an adult."
+     }
+    },
+    {
+     "text": {
+      "en": "Spray more so the spill is gone."
+     },
+     "ok": false,
+     "why": {
+      "en": "More spray means more poison in the air. Don't touch the can."
+     }
+    },
+    {
+     "text": {
+      "en": "Pick up the can and shake it."
+     },
+     "ok": false,
+     "why": {
+      "en": "Don't pick it up. It could spray into your face."
+     }
+    }
+   ]
+  },
+  {
+   "sign": "environment",
+   "choices": [
+    {
+     "text": {
+      "en": "Stay out of the spill, keep pets away, and tell an adult so it can be cleaned up safely."
+     },
+     "ok": true,
+     "why": {
+      "en": "Yes! Oil and chemicals hurt nature. Trained helpers know how to clean it up safely."
+     }
+    },
+    {
+     "text": {
+      "en": "Splash in the water to wash it away."
+     },
+     "ok": false,
+     "why": {
+      "en": "Splashing spreads it and gets it on you. Stay out and tell an adult."
+     }
+    },
+    {
+     "text": {
+      "en": "Catch the animals and wash them yourself."
+     },
+     "ok": false,
+     "why": {
+      "en": "Hurt animals need helpers who know how. Tell an adult so they can call for help."
+     }
+    }
+   ]
+  },
+  {
+   "sign": "keepout",
+   "choices": [
+    {
+     "text": {
+      "en": "Stay out of the area, step back, and tell an adult."
+     },
+     "ok": true,
+     "why": {
+      "en": "Yes! Keep-out signs protect you. Step back and tell an adult."
+     }
+    },
+    {
+     "text": {
+      "en": "Walk through quickly."
+     },
+     "ok": false,
+     "why": {
+      "en": "Even a quick walk can put you in danger. Keep out."
+     }
+    },
+    {
+     "text": {
+      "en": "Go in to take a photo."
+     },
+     "ok": false,
+     "why": {
+      "en": "Don't go in. Stay behind the sign and tell an adult."
+     }
+    }
+   ]
+  },
+  {
+   "sign": "noswim",
+   "choices": [
+    {
+     "text": {
+      "en": "Stay out of the water and tell an adult."
+     },
+     "ok": true,
+     "why": {
+      "en": "Yes! The water may be dirty or dangerous. Stay out and tell an adult."
+     }
+    },
+    {
+     "text": {
+      "en": "Swim anyway. The water looks fine."
+     },
+     "ok": false,
+     "why": {
+      "en": "Water can look fine and still be unsafe. Stay out."
+     }
+    },
+    {
+     "text": {
+      "en": "Dip a toe in to check."
+     },
+     "ok": false,
+     "why": {
+      "en": "Even your toe can be harmed. Stay out of the water."
+     }
+    }
+   ]
+  }
+ ],
+ "home": {
+  "ask": {
+   "en": "A bottle spilled in the kitchen at home. What do you do first?"
+  },
+  "choices": [
+   {
+    "text": {
+     "en": "Stay back and tell an adult right away."
+    },
+    "ok": true,
+    "why": {
+     "en": "Yes! An adult knows how to clean it safely. Keep little brothers and sisters away too."
+    }
+   },
+   {
+    "text": {
+     "en": "Wipe it up with your bare hands."
+    },
+    "ok": false,
+    "why": {
+     "en": "A spilled cleaner can sting or burn your skin. Let an adult handle it."
+    }
+   },
+   {
+    "text": {
+     "en": "Mix it with another cleaner to wash it away."
+    },
+    "ok": false,
+    "why": {
+     "en": "Mixing cleaners can make poison gas. Never mix them."
+    }
+   }
+  ]
+ }
+}

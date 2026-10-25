@@ -1,0 +1,128 @@
+[
+ {
+  "id": "never-mix",
+  "icon": "warning",
+  "title": {
+   "en": "Never mix cleaners"
+  },
+  "ask": {
+   "en": "You want to clean the bathroom. What is safe?"
+  },
+  "choices": [
+   {
+    "text": {
+     "en": "Use one cleaner at a time. Never mix bleach with other cleaners."
+    },
+    "ok": true,
+    "why": {
+     "en": "Yes! Mixing bleach with other cleaners can make a poison gas."
+    }
+   },
+   {
+    "text": {
+     "en": "Mix bleach and another cleaner so it is extra strong."
+    },
+    "ok": false,
+    "why": {
+     "en": "Stronger is not safer. Mixing cleaners can make poison gas."
+    }
+   },
+   {
+    "text": {
+     "en": "Pour bleach in, then add another cleaner after."
+    },
+    "ok": false,
+    "why": {
+     "en": "The order does not matter. Mixing them can still make poison gas."
+    }
+   }
+  ],
+  "tip": {
+   "en": "Never mix bleach with other cleaners."
+  }
+ },
+ {
+  "id": "labelled-bottles",
+  "icon": "bulb",
+  "title": {
+   "en": "Keep the label on"
+  },
+  "ask": {
+   "en": "A cleaner is in an old juice bottle. What should happen?"
+  },
+  "choices": [
+   {
+    "text": {
+     "en": "Keep products in their own labelled bottles."
+    },
+    "ok": true,
+    "why": {
+     "en": "Yes! The label tells everyone what is inside and how to stay safe."
+    }
+   },
+   {
+    "text": {
+     "en": "Leave it in the juice bottle. It is easier to carry."
+    },
+    "ok": false,
+    "why": {
+     "en": "Someone might think it is juice and drink it. Always keep the original bottle."
+    }
+   },
+   {
+    "text": {
+     "en": "Draw a smiley on the bottle so everyone knows."
+    },
+    "ok": false,
+    "why": {
+     "en": "A smiley does not tell anyone what is inside. Keep the original label."
+    }
+   }
+  ],
+  "tip": {
+   "en": "Keep products in their original labelled bottles."
+  }
+ },
+ {
+  "id": "out-of-reach",
+  "icon": "sign_keepout",
+  "title": {
+   "en": "Out of reach"
+  },
+  "ask": {
+   "en": "Your baby sister crawls everywhere. Where do the cleaners go?"
+  },
+  "choices": [
+   {
+    "text": {
+     "en": "High up, or in a cupboard that is locked."
+    },
+    "ok": true,
+    "why": {
+     "en": "Yes! Little kids touch and taste everything, so keep products out of their reach."
+    }
+   },
+   {
+    "text": {
+     "en": "On the floor under the sink."
+    },
+    "ok": false,
+    "why": {
+     "en": "A crawling baby can reach the floor easily. Store products up high or locked away."
+    }
+   },
+   {
+    "text": {
+     "en": "In the bathroom, next to the toys."
+    },
+    "ok": false,
+    "why": {
+     "en": "Products must never be near toys. Store them high or locked away."
+    }
+   }
+  ],
+  "tip": {
+   "en": "Store products high or locked away from little siblings."
+  }
+ }
+]

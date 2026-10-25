@@ -1,0 +1,32 @@
+[
+  {
+    "level": 1, "mode": "jigsaw", "seed": 101,
+    "pool": ["flammable", "toxic", "corrosive", "keepout", "noswim"],
+    "easy": { "cols": 2, "rows": 2, "ghost": 0.25, "rotate": false, "decoys": 0, "par": 30 },
+    "advanced": { "cols": 2, "rows": 2, "ghost": 0, "rotate": false, "decoys": 0, "par": 24 }
+  },
+  {
+    "level": 2, "mode": "jigsaw", "seed": 202,
+    "pool": ["harmful", "gas", "explosive", "health", "bleach"],
+    "easy": { "cols": 3, "rows": 3, "ghost": 0, "rotate": false, "decoys": 0, "par": 60 },
+    "advanced": { "cols": 3, "rows": 4, "ghost": 0, "rotate": false, "decoys": 0, "par": 70 }
+  },
+  {
+    "level": 3, "mode": "jigsaw", "seed": 303,
+    "pool": ["environment", "kerosene", "insecticide", "corrosive", "toxic"],
+    "easy": { "cols": 4, "rows": 4, "ghost": 0, "rotate": true, "decoys": 0, "par": 120 },
+    "advanced": { "cols": 4, "rows": 4, "ghost": 0, "rotate": true, "decoys": 0, "par": 100 }
+  },
+  {
+    "level": 4, "mode": "jigsaw", "seed": 404,
+    "pool": ["flammable", "health", "noswim", "keepout", "explosive"],
+    "easy": { "cols": 3, "rows": 3, "ghost": 0, "rotate": false, "decoys": 2, "par": 75 },
+    "advanced": { "cols": 3, "rows": 3, "ghost": 0, "rotate": false, "decoys": 4, "par": 65 }
+  },
+  {
+    "level": 5, "mode": "slide", "seed": 505,
+    "pool": ["gas", "bleach", "kerosene", "harmful", "environment"],
+    "easy": { "cols": 3, "rows": 3, "par": 90 },
+    "advanced": { "cols": 4, "rows": 4, "par": 150 }
+  }
+]

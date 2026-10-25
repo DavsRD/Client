@@ -341,7 +341,17 @@
         { "en": "Drop it in its place", "fil": "Ilagay sa puwesto nito", "keys": ["key_left", "key_right", "key_enter"], "gesture": "gesture_drag" }
       ],
       "takeaway": { "en": "See a spill or a hazard sign? Don't touch it, move upwind, and tell an adult.", "fil": "May natapon o senyales ng panganib? Huwag hawakan, lumipat sa pinanggagalingan ng hangin, at sabihin sa nakatatanda." },
-      "built": false, "scripts": [], "data": ["levels.json", "data/signs.json", "data/questions.json", "data/home-cards.json"]
+      "overviewExtras": [{ "label": { "en": "Sign Album" }, "sceneKey": "SignAlbumScene" }],
+      "built": true,
+      "scripts": [
+        "minigames/js/games/symbol-jigsaw/tuning.js",
+        "minigames/js/games/symbol-jigsaw/Windsock.js",
+        "minigames/js/games/symbol-jigsaw/JigsawScene.js",
+        "minigames/js/games/symbol-jigsaw/SlideScene.js",
+        "minigames/js/games/symbol-jigsaw/SignAlbumScene.js",
+        "minigames/js/games/symbol-jigsaw/index.js"
+      ],
+      "data": ["levels.json", "data/signs.json", "data/questions.json", "data/home-cards.json"]
     },
     {
       "id": "spot-the-shock", "num": 15, "hazardId": "electrical-hazards", "hazardGroup": "technological",
