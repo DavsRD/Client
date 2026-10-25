@@ -30,7 +30,7 @@
  * -------------------------------------------------------------
  */
 
-const CACHE_VERSION = "v30";
+const CACHE_VERSION = "v31";
 const SHELL_CACHE = `kalasag-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `kalasag-data-${CACHE_VERSION}`;
 const SAVED_CACHE = "kalasag-saved-v1"; // same name as in js/core/offline.js
@@ -102,6 +102,10 @@ const GAME_CORE = [
   // E4 falling engine: the scripts in registry.json engines.falling
   "minigames/js/logic/falling/spawner.js", "minigames/js/logic/falling/rules.js",
   "minigames/js/engines/falling/mover.js", "minigames/js/engines/falling/field.js",
+  // E3 side-scroll engine: the scripts in registry.json engines.sidescroll (darkness.js is above)
+  "minigames/js/logic/sidescroll/jump.js", "minigames/js/logic/sidescroll/chunks.js",
+  "minigames/js/engines/sidescroll/world.js", "minigames/js/engines/sidescroll/runner.js",
+  "minigames/js/engines/sidescroll/chaser.js", "minigames/js/engines/sidescroll/course.js",
   "minigames/assets/asset-manifest.json",
 ];
 

@@ -35,6 +35,12 @@
     "falling": [
       "minigames/js/logic/falling/spawner.js", "minigames/js/logic/falling/rules.js",
       "minigames/js/engines/falling/mover.js", "minigames/js/engines/falling/field.js"
+    ],
+    "sidescroll": [
+      "minigames/js/logic/sidescroll/jump.js", "minigames/js/logic/sidescroll/chunks.js",
+      "minigames/js/engines/grid/darkness.js",
+      "minigames/js/engines/sidescroll/world.js", "minigames/js/engines/sidescroll/runner.js",
+      "minigames/js/engines/sidescroll/chaser.js", "minigames/js/engines/sidescroll/course.js"
     ]
   },
   "games": [
