@@ -57,8 +57,27 @@ window.AG = window.AG || {};
       });
     },
     /** Warm the cache (e.g. a game's sounds when it mounts). */
-    preload(names) { if (ensure()) names.forEach(n => { const src = srcFor(n); if (src) buffer(src); }); }
+    preload(names) { if (ensure()) names.forEach(n => { const src = srcFor(n); if (src) buffer(src); }); },
+    /** A sound that loops until stop() (wind, rain): → { volume(v), stop() }. Silent while sound effects are off. */
+    loop(name, opts) {
+      const lp = {
+        node: null, gain: null, vol: (opts && opts.volume) != null ? opts.volume : 1, stopped: false,
+        volume(v) { if (v != null) this.vol = v; if (this.gain) this.gain.gain.value = prefs.sfx ? this.vol : 0; return this; },
+        stop() { this.stopped = true; loops.delete(this); if (this.node) { try { this.node.stop(); } catch (e) { /* already stopped */ } } this.node = null; }
+      };
+      const src = name && srcFor(name);
+      if (!src || !ensure()) return lp;
+      resume(); loops.add(lp);
+      buffer(src).then(buf => {
+        if (!buf || lp.stopped) return;
+        const s = ctx.createBufferSource(), g = ctx.createGain();
+        s.buffer = buf; s.loop = true; lp.node = s; lp.gain = g; lp.volume();
+        s.connect(g).connect(master); s.start();
+      });
+      return lp;
+    }
   };
+  const loops = new Set();
 
   let current = null; // { key, node }
   let wanted = null;  // key the shell asked for
@@ -94,6 +113,6 @@ window.AG = window.AG || {};
 
   AG.sound = {
     prefs: () => Object.assign({}, prefs),
-    setPrefs(p) { if (p) { if ('sfx' in p) prefs.sfx = !!p.sfx; if ('music' in p) prefs.music = !!p.music; } sync(); }
+    setPrefs(p) { if (p) { if ('sfx' in p) prefs.sfx = !!p.sfx; if ('music' in p) prefs.music = !!p.music; } sync(); loops.forEach(l => l.volume()); }
   };
 })(window.AG);

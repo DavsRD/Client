@@ -1,0 +1,10 @@
+[
+  { "id": "lola", "who": { "en": "Lola" }, "card": "go-bag-tetris.card.lola", "title": { "en": "Lola comes too" },
+    "text": { "en": "Lola takes medicine every morning. Pack her **extra medicines**." }, "items": ["extrameds"] },
+  { "id": "baby", "who": { "en": "the baby" }, "card": "go-bag-tetris.card.baby", "title": { "en": "Baby on board" },
+    "text": { "en": "Your baby brother comes too. Pack **baby milk** and **diapers**." }, "items": ["milk", "diapers"] },
+  { "id": "dog", "who": { "en": "Bantay" }, "card": "go-bag-tetris.card.dog", "title": { "en": "Bantay the dog" },
+    "text": { "en": "Bantay is part of the family. Pack his **pet food**." }, "items": ["petfood"] },
+  { "id": "tito", "who": { "en": "Tito" }, "card": "go-bag-tetris.card.tito", "title": { "en": "Tito's wheelchair" },
+    "text": { "en": "Tito uses a wheelchair. Pack his **spare wheelchair batteries** and **medical documents**." }, "items": ["sparebatt", "meddocs"] }
+]

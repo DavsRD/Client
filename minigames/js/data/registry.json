@@ -110,7 +110,16 @@
         { "en": "Place it in the bag", "fil": "Ilagay sa bag", "keys": ["key_left", "key_right", "key_enter"], "gesture": "gesture_drag" }
       ],
       "takeaway": { "en": "Pack what keeps you safe, not what's fun. A go bag should be ready before the signal goes up.", "fil": "Iimpake ang nagpapanatiling ligtas, hindi ang pampalibang. Dapat handa ang go bag bago tumaas ang signal." },
-      "built": false, "scripts": [], "data": ["levels.json", "data/items.json", "data/scenarios.json"]
+      "built": true,
+      "scripts": [
+        "minigames/js/logic/go-bag-tetris/solve.js",
+        "minigames/js/games/go-bag-tetris/tuning.js",
+        "minigames/js/games/go-bag-tetris/PackPuzzle.js",
+        "minigames/js/games/go-bag-tetris/ConveyorRush.js",
+        "minigames/js/games/go-bag-tetris/GoBagScene.js",
+        "minigames/js/games/go-bag-tetris/index.js"
+      ],
+      "data": ["levels.json", "data/items.json", "data/scenarios.json"]
     },
     {
       "id": "rising-water-house", "num": 6, "hazardId": "severe-flooding", "hazardGroup": "hydrometeorological",
