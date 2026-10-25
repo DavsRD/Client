@@ -1,0 +1,23 @@
+{
+  "adult": "Teacher Mae",
+  "templates": {
+    "nobodyAlone": { "en": "Nobody sits alone. Every table needs at least two friends." },
+    "tableSize": { "en": "Keep tables cosy: {min} to {max} friends at each one." },
+    "tableSizeMax": { "en": "No more than {max} at a table, so everyone can join the chat." },
+    "withFriendly": { "en": "{a} would love a friendly face 😊 at the table." },
+    "sameTable": { "en": "{a} and {b} are working together. Seat them at the same table." },
+    "shareInterest": { "en": "{a} and {b} both love {icon} {trait}. Seat them together!" },
+    "apart": { "en": "{a} and {b} had a hard morning, so let's give them space today. {adult} is helping them talk it out." },
+    "besides": { "en": "{a} and {b} are seat buddies. Seat them side by side." },
+    "accessibleSeat": { "en": "{a} uses a wheelchair ♿. Pick a seat at the end of a row, where there is room." },
+    "fairTeams": { "en": "Make the teams fair! The ⭐ totals can differ by at most {tol}, so the game is fun for everyone." }
+  },
+  "traits": {
+    "sports": { "icon": "⚽", "en": "sports" },
+    "art": { "icon": "🎨", "en": "art" },
+    "books": { "icon": "📚", "en": "reading" },
+    "music": { "icon": "🎵", "en": "music" },
+    "new": { "icon": "🆕", "en": "new here" },
+    "friendly": { "icon": "😊", "en": "friendly" }
+  }
+}

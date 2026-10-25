@@ -1,0 +1,121 @@
+[
+  {
+    "level": 1,
+    "layout": "classroom",
+    "title": { "en": "Classroom groups" },
+    "intro": { "en": "Group work today! Seat all four classmates so nobody is left alone." },
+    "cols": 5, "rows": 1,
+    "tables": [
+      { "id": "t1", "name": { "en": "Group 1" }, "shape": "row", "n": 2, "x": 0, "y": 0, "art": "long" },
+      { "id": "t2", "name": { "en": "Group 2" }, "shape": "row", "n": 2, "x": 3, "y": 0, "art": "long" }
+    ],
+    "students": ["ana", "ben", "leo", "mia"],
+    "rules": [
+      { "type": "nobodyAlone" },
+      { "type": "apart", "a": "ben", "b": "leo", "adult": "Teacher Mae" },
+      { "type": "withFriendly", "id": "leo" }
+    ],
+    "par": 4,
+    "solution": { "leo": "t1.1", "ana": "t1.2", "ben": "t2.1", "mia": "t2.2" },
+    "upstander": ["u1"]
+  },
+  {
+    "level": 2,
+    "layout": "canteen",
+    "title": { "en": "The canteen" },
+    "intro": { "en": "Lunchtime! Eight classmates, three tables. Everyone needs a seat with company." },
+    "cols": 6, "rows": 3,
+    "tables": [
+      { "id": "a", "name": { "en": "Table 1" }, "shape": "ring", "cols": 2, "rows": 2, "x": 0, "y": 0, "art": "round" },
+      { "id": "b", "name": { "en": "Table 2" }, "shape": "ring", "cols": 2, "rows": 2, "x": 4, "y": 0, "art": "round" },
+      { "id": "c", "name": { "en": "Long table" }, "shape": "row", "n": 4, "x": 1, "y": 2, "aisle": "ends", "art": "long" }
+    ],
+    "students": ["ana", "ben", "leo", "mia", "rico", "tala", "h1", "h2"],
+    "rules": [
+      { "type": "nobodyAlone" },
+      { "type": "tableSize", "min": 1, "max": 3 },
+      { "type": "apart", "a": "ben", "b": "leo", "adult": "Teacher Mae" },
+      { "type": "shareInterest", "a": "rico", "b": "leo", "trait": "music" },
+      { "type": "shareInterest", "a": "mia", "b": "h2", "trait": "books" },
+      { "type": "accessibleSeat", "id": "tala" }
+    ],
+    "par": 8,
+    "solution": { "tala": "c.1", "ben": "c.2", "ana": "c.3", "rico": "a.1", "leo": "a.2", "h1": "a.3", "mia": "b.1", "h2": "b.2" },
+    "upstander": ["u2"]
+  },
+  {
+    "level": 3,
+    "layout": "bus",
+    "title": { "en": "Field-trip bus" },
+    "intro": { "en": "The bus seats come in pairs. Seat buddies sit side by side, and nobody rides alone." },
+    "cols": 5, "rows": 3,
+    "tables": [
+      { "id": "p1", "name": { "en": "Row 1 left" }, "shape": "row", "n": 2, "x": 0, "y": 0, "aisle": [2], "art": "bus_seat" },
+      { "id": "p2", "name": { "en": "Row 1 right" }, "shape": "row", "n": 2, "x": 3, "y": 0, "aisle": [1], "art": "bus_seat" },
+      { "id": "p3", "name": { "en": "Row 2 left" }, "shape": "row", "n": 2, "x": 0, "y": 1, "aisle": [2], "art": "bus_seat" },
+      { "id": "p4", "name": { "en": "Row 2 right" }, "shape": "row", "n": 2, "x": 3, "y": 1, "aisle": [1], "art": "bus_seat" },
+      { "id": "p5", "name": { "en": "Row 3 left" }, "shape": "row", "n": 2, "x": 0, "y": 2, "aisle": [2], "art": "bus_seat" },
+      { "id": "p6", "name": { "en": "Row 3 right" }, "shape": "row", "n": 2, "x": 3, "y": 2, "aisle": [1], "art": "bus_seat" }
+    ],
+    "students": ["ana", "bea", "tala", "h1", "ben", "h2", "leo", "nico"],
+    "rules": [
+      { "type": "nobodyAlone" },
+      { "type": "besides", "a": "ana", "b": "bea", "text": { "en": "{b} is new on this trip. Seat {a} beside them, so they have a seat buddy." } },
+      { "type": "besides", "a": "tala", "b": "h1" },
+      { "type": "accessibleSeat", "id": "tala" },
+      { "type": "apart", "a": "ben", "b": "leo", "adult": "Teacher Dan" },
+      { "type": "withFriendly", "id": "leo" }
+    ],
+    "par": 8,
+    "solution": { "h1": "p1.1", "tala": "p1.2", "ana": "p2.1", "bea": "p2.2", "ben": "p3.1", "nico": "p3.2", "leo": "p4.1", "h2": "p4.2" },
+    "upstander": ["u3"]
+  },
+  {
+    "level": 4,
+    "layout": "court",
+    "title": { "en": "Picking teams" },
+    "intro": { "en": "Time for a game! Pick two fair teams so everyone gets a turn to shine." },
+    "cols": 5, "rows": 2,
+    "tables": [
+      { "id": "sun", "name": { "en": "Team Sun" }, "shape": "ring", "cols": 2, "rows": 2, "x": 0, "y": 0, "art": "round" },
+      { "id": "moon", "name": { "en": "Team Moon" }, "shape": "ring", "cols": 2, "rows": 2, "x": 3, "y": 0, "art": "round" }
+    ],
+    "students": ["ben", "leo", "rico", "paolo", "joy", "h1", "h2", "h3"],
+    "attrs": { "stars": { "ben": 3, "leo": 2, "rico": 1, "paolo": 3, "joy": 1, "h1": 2, "h2": 3, "h3": 1 } },
+    "rules": [
+      { "type": "nobodyAlone" },
+      { "type": "fairTeams", "attr": "stars", "tol": 1 },
+      { "type": "sameTable", "a": "joy", "b": "rico", "text": { "en": "{a} and {b} are practice buddies. Pick them for the same team." } },
+      { "type": "apart", "a": "ben", "b": "leo", "adult": "Coach Ray" },
+      { "type": "shareInterest", "a": "h1", "b": "paolo", "trait": "sports" }
+    ],
+    "par": 8,
+    "solution": { "ben": "sun.1", "joy": "sun.2", "rico": "sun.3", "h2": "sun.4", "leo": "moon.1", "h1": "moon.2", "paolo": "moon.3", "h3": "moon.4" },
+    "upstander": ["u4"]
+  },
+  {
+    "level": 5,
+    "layout": "chat",
+    "title": { "en": "Class group chat" },
+    "intro": { "en": "Project groups are forming in the class group chat. Make the groups, then handle what pops up in the chat." },
+    "cols": 3, "rows": 3,
+    "tables": [
+      { "id": "ga", "name": { "en": "Group A" }, "shape": "col", "n": 3, "x": 0, "y": 0, "art": "none" },
+      { "id": "gb", "name": { "en": "Group B" }, "shape": "col", "n": 3, "x": 1, "y": 0, "art": "none" },
+      { "id": "gc", "name": { "en": "Group C" }, "shape": "col", "n": 3, "x": 2, "y": 0, "art": "none" }
+    ],
+    "students": ["ana", "bea", "sam", "nico", "rico", "joy", "h1", "h2"],
+    "rules": [
+      { "type": "nobodyAlone" },
+      { "type": "tableSize", "min": 2, "max": 3 },
+      { "type": "shareInterest", "a": "sam", "b": "nico", "trait": "books" },
+      { "type": "shareInterest", "a": "joy", "b": "bea", "trait": "art" },
+      { "type": "apart", "a": "rico", "b": "nico", "adult": "Teacher Mae" },
+      { "type": "withFriendly", "id": "rico" },
+      { "type": "sameTable", "a": "ana", "b": "h2", "text": { "en": "{a} and {b} are making the slides together. Seat them in the same group." } }
+    ],
+    "par": 8,
+    "solution": { "sam": "ga.1", "nico": "ga.2", "h1": "ga.3", "joy": "gb.1", "bea": "gb.2", "rico": "gb.3", "ana": "gc.1", "h2": "gc.2" },
+    "upstander": ["u5a", "u5b"]
+  }
+]

@@ -1,50 +1,131 @@
 [
  {
   "id": "ana",
-  "portrait": "lunch-table.student.ana"
+  "name": "Ana",
+  "portrait": "lunch-table.student.ana",
+  "traits": [
+   "art",
+   "friendly"
+  ]
  },
  {
   "id": "ben",
-  "portrait": "lunch-table.student.ben"
+  "name": "Ben",
+  "portrait": "lunch-table.student.ben",
+  "traits": [
+   "sports"
+  ]
  },
  {
   "id": "leo",
-  "portrait": "lunch-table.student.leo"
+  "name": "Leo",
+  "portrait": "lunch-table.student.leo",
+  "traits": [
+   "sports",
+   "music"
+  ]
  },
  {
   "id": "mia",
-  "portrait": "lunch-table.student.mia"
+  "name": "Mia",
+  "portrait": "lunch-table.student.mia",
+  "traits": [
+   "books",
+   "art"
+  ]
  },
  {
   "id": "rico",
-  "portrait": "lunch-table.student.rico"
+  "name": "Rico",
+  "portrait": "lunch-table.student.rico",
+  "traits": [
+   "music",
+   "sports"
+  ]
  },
  {
   "id": "joy",
-  "portrait": "lunch-table.student.joy"
+  "name": "Joy",
+  "portrait": "lunch-table.student.joy",
+  "traits": [
+   "art",
+   "friendly"
+  ]
  },
  {
   "id": "paolo",
-  "portrait": "lunch-table.student.paolo"
+  "name": "Paolo",
+  "portrait": "lunch-table.student.paolo",
+  "traits": [
+   "sports"
+  ]
  },
  {
   "id": "lia",
-  "portrait": "lunch-table.student.lia"
+  "name": "Lia",
+  "portrait": "lunch-table.student.lia",
+  "traits": [
+   "books"
+  ]
  },
  {
   "id": "nico",
-  "portrait": "lunch-table.student.nico"
+  "name": "Nico",
+  "portrait": "lunch-table.student.nico",
+  "traits": [
+   "music",
+   "books"
+  ]
  },
  {
   "id": "bea",
-  "portrait": "lunch-table.student.bea"
+  "name": "Bea",
+  "portrait": "lunch-table.student.bea",
+  "traits": [
+   "new",
+   "art"
+  ]
  },
  {
   "id": "sam",
-  "portrait": "lunch-table.student.sam"
+  "name": "Sam",
+  "portrait": "lunch-table.student.sam",
+  "traits": [
+   "books",
+   "new"
+  ]
  },
  {
   "id": "tala",
-  "portrait": "lunch-table.student.tala"
+  "name": "Tala",
+  "portrait": "lunch-table.student.tala",
+  "traits": [
+   "music"
+  ],
+  "wheelchair": true
+ },
+ {
+  "id": "h1",
+  "hero": true,
+  "traits": [
+   "friendly",
+   "sports"
+  ]
+ },
+ {
+  "id": "h2",
+  "hero": true,
+  "traits": [
+   "friendly",
+   "books"
+  ]
+ },
+ {
+  "id": "h3",
+  "hero": true,
+  "traits": [
+   "friendly",
+   "music"
+  ]
  }
 ]

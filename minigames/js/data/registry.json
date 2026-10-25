@@ -388,10 +388,17 @@
       "howTo": [
         { "en": "Choose a student", "fil": "Pumili ng mag-aaral", "keys": ["key_tab", "key_enter"], "gesture": "gesture_tap" },
         { "en": "Pick a seat", "fil": "Pumili ng upuan", "keys": ["key_left", "key_right", "key_enter"], "gesture": "gesture_drag" },
-        { "en": "Undo", "fil": "Ibalik", "keys": ["key_backspace"], "gesture": "gesture_tap" }
+        { "en": "Undo", "fil": "Ibalik", "keys": ["key_backspace"], "gesture": "gesture_tap" },
+        { "en": "Hint", "fil": "Pahiwatig", "keys": ["key_h"], "gesture": "gesture_tap" },
+        { "en": "Choose an upstander action", "fil": "Pumili ng gagawin ng upstander", "keys": ["key_1", "key_2", "key_3"], "gesture": "gesture_tap" }
       ],
       "takeaway": { "en": "Be an upstander: include others, don't join in, and tell a trusted adult.", "fil": "Maging upstander: isali ang iba, huwag makisali sa pang-aapi, at sabihin sa pinagkakatiwalaang nakatatanda." },
-      "built": false, "scripts": [], "data": ["levels.json", "data/rules.json", "data/upstander.json"]
+      "built": true,
+      "scripts": [
+        "minigames/js/logic/lunch-table/rules.js", "minigames/js/logic/lunch-table/solver.js",
+        "minigames/js/games/lunch-table/tuning.js", "minigames/js/games/lunch-table/LunchTableScene.js",
+        "minigames/js/games/lunch-table/Upstander.js", "minigames/js/games/lunch-table/index.js"
+      ], "data": ["levels.json", "data/rules.json", "data/upstander.json"]
     },
     {
       "id": "check-before-share", "num": 19, "hazardId": "community-conflict", "hazardGroup": "social",

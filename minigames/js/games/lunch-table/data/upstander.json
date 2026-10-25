@@ -1,0 +1,82 @@
+[
+  {
+    "id": "u1", "scene": "playground",
+    "cast": [{ "id": "sam", "mood": "lonely" }, { "id": "mia", "mood": "neutral" }, { "id": "joy", "mood": "happy" }],
+    "setting": { "en": "It's recess. A group is playing tag, and Sam is standing by the fence, all alone." },
+    "ask": { "en": "What would you do?" },
+    "choices": [
+      { "rank": "best", "text": { "en": "Walk over, say hi, and invite Sam to play with you." }, "why": { "en": "Inviting someone who is alone shows them they belong. One kind hello can turn a whole recess around." } },
+      { "rank": "second", "text": { "en": "Ask Teacher Mae to help everyone find a game to join." }, "why": { "en": "Telling a trusted adult is a good idea! Asking Sam yourself works even faster, because Sam feels included right away." } },
+      { "rank": "third", "text": { "en": "Keep playing. Sam will find something to do." }, "why": { "en": "It's easy to keep playing, but Sam may still feel alone. A quick hello makes a big difference." } }
+    ]
+  },
+  {
+    "id": "u2", "scene": "hallway",
+    "cast": [{ "id": "leo", "mood": "sad" }, { "id": "mia", "mood": "neutral" }, { "id": "rico", "mood": "neutral" }],
+    "setting": { "en": "In the hallway, someone makes a joke about Leo's lunch box, and a few classmates giggle. Leo goes quiet." },
+    "ask": { "en": "What would you do?" },
+    "choices": [
+      { "rank": "best", "text": { "en": "Don't laugh. Stand next to Leo, then go together to tell Teacher Mae what happened." }, "why": { "en": "Standing next to Leo shows that nobody has to face this alone, and a trusted adult can help it stop." } },
+      { "rank": "second", "text": { "en": "Don't laugh, and quietly walk away." }, "why": { "en": "Not laughing is a good start! Standing next to Leo, or telling an adult, would help even more." } },
+      { "rank": "third", "text": { "en": "Giggle a little so nobody teases you too." }, "why": { "en": "Laughing along can feel safer, but it makes the joke seem okay and it hurts Leo. Next time, try not laughing and standing with Leo." } }
+    ]
+  },
+  {
+    "id": "u3", "scene": "hallway",
+    "cast": [{ "id": "bea", "mood": "sad" }, { "id": "ana", "mood": "neutral" }, { "id": "nico", "mood": "neutral" }],
+    "setting": { "en": "After the trip, a classmate keeps whispering a nickname that Bea doesn't like. Bea asks for it to stop, but it goes on." },
+    "ask": { "en": "What would you do?" },
+    "choices": [
+      { "rank": "best", "text": { "en": "Tell Bea, \"That's not okay, I'm with you,\" and go together to tell Teacher Dan." }, "why": { "en": "Speaking up kindly and telling a trusted adult together gives Bea real support." } },
+      { "rank": "second", "text": { "en": "Sit with Bea at lunch and talk about something fun." }, "why": { "en": "Being a friend helps a lot. Telling a trusted adult too means the nickname can really be stopped." } },
+      { "rank": "third", "text": { "en": "Say nothing. It's only a nickname." }, "why": { "en": "A nickname someone doesn't like can still hurt, even when it sounds small. Next time, check in with Bea." } }
+    ]
+  },
+  {
+    "id": "u4", "scene": "playground",
+    "cast": [{ "id": "rico", "mood": "lonely" }, { "id": "joy", "mood": "neutral" }, { "id": "paolo", "mood": "neutral" }],
+    "setting": { "en": "Two captains are picking teams. Rico is the last one waiting, and a few classmates start to giggle." },
+    "ask": { "en": "What would you do?" },
+    "choices": [
+      { "rank": "best", "text": { "en": "Say, \"I'll pick Rico!\" Cheer Rico on, and tell Coach Ray if it keeps happening." }, "why": { "en": "Choosing Rico shows everyone belongs on a team. Telling Coach Ray means the grown-ups can help make picking fair." } },
+      { "rank": "second", "text": { "en": "Don't giggle, and give Rico a friendly smile." }, "why": { "en": "A kind smile helps! Choosing Rico out loud helps even more, because Rico gets a spot right away." } },
+      { "rank": "third", "text": { "en": "Look away and wait for it to be over." }, "why": { "en": "Waiting can leave Rico feeling left out. Speaking up for a teammate is brave and kind." } }
+    ]
+  },
+  {
+    "id": "u5a", "scene": "chat",
+    "cast": [{ "id": "sam", "mood": "sad" }],
+    "chat": {
+      "title": { "en": "Class 5 group chat" },
+      "messages": [
+        { "from": "joy", "text": { "en": "Who has the poster paper?" } },
+        { "from": null, "name": { "en": "Unknown account" }, "text": { "en": "LOL 😂" }, "photo": { "en": "A photo of Sam that Sam didn't share" }, "reactions": "😂 😂 😂" }
+      ]
+    },
+    "setting": { "en": "A photo of Sam shows up in the class group chat. Sam didn't share it, and the 😂 reactions are piling up. Sam goes quiet." },
+    "ask": { "en": "What would you do?" },
+    "choices": [
+      { "rank": "best", "text": { "en": "Don't react or forward it. Take a screenshot, block and report the account, and show a trusted adult." }, "why": { "en": "A screenshot is proof, blocking stops more messages, and a trusted adult can really help. Not reacting keeps the photo from spreading." } },
+      { "rank": "second", "text": { "en": "Send Sam a private message: \"That wasn't okay. I'm here for you.\"" }, "why": { "en": "A kind message can mean the world to Sam. A screenshot, a report and a trusted adult would help stop it, too." } },
+      { "rank": "third", "text": { "en": "React with 😂 so you don't stand out." }, "why": { "en": "A reaction can feel harmless, but it helps the photo spread and hurts Sam. Try skipping the reaction and telling a trusted adult." } }
+    ]
+  },
+  {
+    "id": "u5b", "scene": "chat",
+    "cast": [{ "id": "nico", "mood": "sad" }],
+    "chat": {
+      "title": { "en": "Class 5 group chat" },
+      "messages": [
+        { "from": "ana", "text": { "en": "My group is meeting after lunch!" } },
+        { "from": null, "name": { "en": "Unknown account" }, "text": { "en": "FORWARD THIS to everyone! 😂" }, "photo": { "en": "A meme making fun of Nico" }, "reactions": "↪ forwarded many times" }
+      ]
+    },
+    "setting": { "en": "A meme about Nico is going around the chat with the words \"Forward this to everyone!\"" },
+    "ask": { "en": "What would you do?" },
+    "choices": [
+      { "rank": "best", "text": { "en": "Don't forward it. Take a screenshot, report it, and tell a trusted adult." }, "why": { "en": "Forwarding keeps unkind messages going. A report and a trusted adult help them stop." } },
+      { "rank": "second", "text": { "en": "Delete it and don't say anything." }, "why": { "en": "Not forwarding is a good start! A screenshot and a trusted adult would help it stop for everyone." } },
+      { "rank": "third", "text": { "en": "Forward it. It's only a meme." }, "why": { "en": "Memes about a person can hurt, and every forward makes them spread further. Next time, stop it with you and tell an adult." } }
+    ]
+  }
+]
