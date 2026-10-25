@@ -3,3932 +3,3411 @@
   224,
   168
  ],
- "fixes": {
-  "unplug": "Unplug it",
-  "move_cord": "Move the cord",
-  "call_adult": "Call an adult",
-  "move_away": "Move it away from water",
-  "cover": "Put a cover on"
- },
+ "note": "Spot the Shock: 5 levels; each play picks one pair from the level pool (normalised coords, circle r = share of the width). Texts: js/games/spot-the-shock/data/fix-cards.json.",
  "levels": [
   {
-   "world": 1,
    "level": 1,
-   "scene": "home",
-   "a": "spot-the-shock.pair.1-1_a",
-   "b": "spot-the-shock.pair.1-1_b",
-   "night": {
-    "a": "spot-the-shock.pair.1-1_a_night",
-    "b": "spot-the-shock.pair.1-1_b_night"
-   },
+   "theme": "home",
    "timeMs": 120000,
-   "differences": [
+   "night": false,
+   "fixIt": false,
+   "pairs": [
     {
-     "id": "toy",
-     "hazard": "toy",
-     "label": "Something stuck in an outlet",
-     "fixCard": "Never put anything into an outlet. Tell an adult right away.",
-     "shape": "circle",
-     "x": 0.884,
-     "y": 0.673,
-     "r": 0.045,
-     "rect": [
-      0.866,
-      0.637,
-      0.04,
-      0.077
+     "id": "1-1",
+     "scene": "home",
+     "a": "spot-the-shock.pair.1-1_a",
+     "b": "spot-the-shock.pair.1-1_b",
+     "night": {
+      "a": "spot-the-shock.pair.1-1_a_night",
+      "b": "spot-the-shock.pair.1-1_b_night"
+     },
+     "differences": [
+      {
+       "id": "toy",
+       "hazard": "toy",
+       "shape": "circle",
+       "x": 0.884,
+       "y": 0.673,
+       "r": 0.045,
+       "rect": [
+        0.866,
+        0.637,
+        0.04,
+        0.077
+       ],
+       "fixCard": "fix.toy",
+       "fixOptions": [
+        "move_cord",
+        "move_away",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "frayed",
+       "hazard": "frayed",
+       "shape": "circle",
+       "x": 0.712,
+       "y": 0.717,
+       "r": 0.033,
+       "rect": [
+        0.701,
+        0.696,
+        0.027,
+        0.048
+       ],
+       "fixCard": "fix.frayed",
+       "fixOptions": [
+        "move_cord",
+        "move_away",
+        "unplug"
+       ],
+       "correctFix": "unplug"
+      },
+      {
+       "id": "wet",
+       "hazard": "wet",
+       "shape": "rect",
+       "rect": [
+        0.629,
+        0.8333,
+        0.134,
+        0.0714
+       ],
+       "fixCard": "fix.wet",
+       "fixOptions": [
+        "move_away",
+        "cover",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "rug",
+       "hazard": "rug",
+       "shape": "rect",
+       "rect": [
+        0.268,
+        0.72,
+        0.362,
+        0.167
+       ],
+       "fixCard": "fix.rug",
+       "fixOptions": [
+        "cover",
+        "move_cord",
+        "unplug"
+       ],
+       "correctFix": "move_cord"
+      },
+      {
+       "id": "panel",
+       "hazard": "panel",
+       "shape": "circle",
+       "x": 0.598,
+       "y": 0.244,
+       "r": 0.071,
+       "rect": [
+        0.545,
+        0.179,
+        0.112,
+        0.137
+       ],
+       "fixCard": "fix.panel",
+       "fixOptions": [
+        "call_adult",
+        "move_away",
+        "cover"
+       ],
+       "correctFix": "call_adult"
+      }
      ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "move_cord",
-      "move_away",
-      "call_adult"
+     "stars": [
+      {
+       "x": 0.929,
+       "y": 0.071,
+       "r": 0.03
+      },
+      {
+       "x": 0.045,
+       "y": 0.893,
+       "r": 0.03
+      },
+      {
+       "x": 0.071,
+       "y": 0.06,
+       "r": 0.03
+      }
      ]
     },
     {
-     "id": "frayed",
-     "hazard": "frayed",
-     "label": "Frayed cord",
-     "fixCard": "A damaged cord can shock you. Unplug it and ask an adult to replace it.",
-     "shape": "circle",
-     "x": 0.712,
-     "y": 0.717,
-     "r": 0.033,
-     "rect": [
-      0.701,
-      0.696,
-      0.027,
-      0.048
+     "id": "1-2",
+     "scene": "home",
+     "a": "spot-the-shock.pair.1-2_a",
+     "b": "spot-the-shock.pair.1-2_b",
+     "night": {
+      "a": "spot-the-shock.pair.1-2_a_night",
+      "b": "spot-the-shock.pair.1-2_b_night"
+     },
+     "differences": [
+      {
+       "id": "frayed",
+       "hazard": "frayed",
+       "shape": "circle",
+       "x": 0.777,
+       "y": 0.717,
+       "r": 0.036,
+       "rect": [
+        0.759,
+        0.696,
+        0.04,
+        0.048
+       ],
+       "fixCard": "fix.frayed",
+       "fixOptions": [
+        "move_away",
+        "unplug",
+        "move_cord"
+       ],
+       "correctFix": "unplug"
+      },
+      {
+       "id": "panel",
+       "hazard": "panel",
+       "shape": "circle",
+       "x": 0.598,
+       "y": 0.244,
+       "r": 0.071,
+       "rect": [
+        0.545,
+        0.179,
+        0.112,
+        0.137
+       ],
+       "fixCard": "fix.panel",
+       "fixOptions": [
+        "call_adult",
+        "cover",
+        "move_away"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "toy",
+       "hazard": "toy",
+       "shape": "circle",
+       "x": 0.884,
+       "y": 0.673,
+       "r": 0.045,
+       "rect": [
+        0.866,
+        0.637,
+        0.04,
+        0.077
+       ],
+       "fixCard": "fix.toy",
+       "fixOptions": [
+        "unplug",
+        "cover",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "rug",
+       "hazard": "rug",
+       "shape": "rect",
+       "rect": [
+        0.268,
+        0.72,
+        0.362,
+        0.167
+       ],
+       "fixCard": "fix.rug",
+       "fixOptions": [
+        "cover",
+        "move_away",
+        "move_cord"
+       ],
+       "correctFix": "move_cord"
+      },
+      {
+       "id": "octopus",
+       "hazard": "octopus",
+       "shape": "circle",
+       "x": 0.219,
+       "y": 0.705,
+       "r": 0.107,
+       "rect": [
+        0.129,
+        0.601,
+        0.183,
+        0.214
+       ],
+       "fixCard": "fix.octopus",
+       "fixOptions": [
+        "cover",
+        "unplug",
+        "move_cord"
+       ],
+       "correctFix": "unplug"
+      }
      ],
-     "correctFix": "unplug",
-     "fixOptions": [
-      "call_adult",
-      "move_away",
-      "unplug"
+     "stars": [
+      {
+       "x": 0.5,
+       "y": 0.06,
+       "r": 0.03
+      },
+      {
+       "x": 0.929,
+       "y": 0.071,
+       "r": 0.03
+      },
+      {
+       "x": 0.179,
+       "y": 0.417,
+       "r": 0.03
+      }
      ]
     },
     {
-     "id": "wet",
-     "hazard": "wet",
-     "label": "Water near a plugged-in appliance",
-     "fixCard": "Water and electricity don't mix. Keep the floor dry near plugs.",
-     "shape": "circle",
-     "x": 0.694,
-     "y": 0.866,
-     "r": 0.083,
-     "rect": [
-      0.629,
-      0.845,
-      0.134,
-      0.048
+     "id": "1-4",
+     "scene": "home",
+     "a": "spot-the-shock.pair.1-4_a",
+     "b": "spot-the-shock.pair.1-4_b",
+     "night": {
+      "a": "spot-the-shock.pair.1-4_a_night",
+      "b": "spot-the-shock.pair.1-4_b_night"
+     },
+     "differences": [
+      {
+       "id": "octopus",
+       "hazard": "octopus",
+       "shape": "circle",
+       "x": 0.219,
+       "y": 0.705,
+       "r": 0.107,
+       "rect": [
+        0.129,
+        0.601,
+        0.183,
+        0.214
+       ],
+       "fixCard": "fix.octopus",
+       "fixOptions": [
+        "move_cord",
+        "unplug",
+        "cover"
+       ],
+       "correctFix": "unplug"
+      },
+      {
+       "id": "frayed",
+       "hazard": "frayed",
+       "shape": "circle",
+       "x": 0.739,
+       "y": 0.717,
+       "r": 0.033,
+       "rect": [
+        0.728,
+        0.696,
+        0.027,
+        0.048
+       ],
+       "fixCard": "fix.frayed",
+       "fixOptions": [
+        "move_away",
+        "unplug",
+        "cover"
+       ],
+       "correctFix": "unplug"
+      },
+      {
+       "id": "panel",
+       "hazard": "panel",
+       "shape": "circle",
+       "x": 0.598,
+       "y": 0.244,
+       "r": 0.071,
+       "rect": [
+        0.545,
+        0.179,
+        0.112,
+        0.137
+       ],
+       "fixCard": "fix.panel",
+       "fixOptions": [
+        "unplug",
+        "cover",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "missing_cover",
+       "hazard": "missing_cover",
+       "shape": "circle",
+       "x": 0.685,
+       "y": 0.562,
+       "r": 0.038,
+       "rect": [
+        0.67,
+        0.536,
+        0.036,
+        0.06
+       ],
+       "fixCard": "fix.missing_cover",
+       "fixOptions": [
+        "call_adult",
+        "move_away",
+        "move_cord"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "toy",
+       "hazard": "toy",
+       "shape": "circle",
+       "x": 0.884,
+       "y": 0.673,
+       "r": 0.045,
+       "rect": [
+        0.866,
+        0.637,
+        0.04,
+        0.077
+       ],
+       "fixCard": "fix.toy",
+       "fixOptions": [
+        "move_cord",
+        "move_away",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      }
      ],
-     "correctFix": "unplug",
-     "fixOptions": [
-      "move_away",
-      "cover",
-      "unplug"
+     "stars": [
+      {
+       "x": 0.955,
+       "y": 0.929,
+       "r": 0.03
+      },
+      {
+       "x": 0.929,
+       "y": 0.071,
+       "r": 0.03
+      },
+      {
+       "x": 0.5,
+       "y": 0.06,
+       "r": 0.03
+      }
      ]
-    },
-    {
-     "id": "rug",
-     "hazard": "rug",
-     "label": "Cord under a rug",
-     "fixCard": "Cords under rugs can overheat and get damaged. Keep cords out in the open.",
-     "shape": "circle",
-     "x": 0.446,
-     "y": 0.801,
-     "r": 0.196,
-     "rect": [
-      0.268,
-      0.72,
-      0.362,
-      0.167
-     ],
-     "correctFix": "move_cord",
-     "fixOptions": [
-      "cover",
-      "move_cord",
-      "unplug"
-     ]
-    },
-    {
-     "id": "panel",
-     "hazard": "panel",
-     "label": "Open electrical panel",
-     "fixCard": "Keep electrical panels closed. Only adults should open them.",
-     "shape": "circle",
-     "x": 0.598,
-     "y": 0.244,
-     "r": 0.071,
-     "rect": [
-      0.545,
-      0.179,
-      0.112,
-      0.137
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "move_away",
-      "cover"
-     ]
-    }
-   ],
-   "stars": [
-    {
-     "x": 0.929,
-     "y": 0.071,
-     "r": 0.03
-    },
-    {
-     "x": 0.036,
-     "y": 0.893,
-     "r": 0.03
-    },
-    {
-     "x": 0.071,
-     "y": 0.06,
-     "r": 0.03
     }
    ]
   },
   {
-   "world": 1,
    "level": 2,
-   "scene": "home",
-   "a": "spot-the-shock.pair.1-2_a",
-   "b": "spot-the-shock.pair.1-2_b",
-   "night": {
-    "a": "spot-the-shock.pair.1-2_a_night",
-    "b": "spot-the-shock.pair.1-2_b_night"
-   },
-   "timeMs": 120000,
-   "differences": [
+   "theme": "school",
+   "timeMs": 110000,
+   "night": false,
+   "fixIt": false,
+   "pairs": [
     {
-     "id": "frayed",
-     "hazard": "frayed",
-     "label": "Frayed cord",
-     "fixCard": "A damaged cord can shock you. Unplug it and ask an adult to replace it.",
-     "shape": "circle",
-     "x": 0.777,
-     "y": 0.717,
-     "r": 0.036,
-     "rect": [
-      0.759,
-      0.696,
-      0.04,
-      0.048
+     "id": "2-1",
+     "scene": "school",
+     "a": "spot-the-shock.pair.2-1_a",
+     "b": "spot-the-shock.pair.2-1_b",
+     "night": {
+      "a": "spot-the-shock.pair.2-1_a_night",
+      "b": "spot-the-shock.pair.2-1_b_night"
+     },
+     "differences": [
+      {
+       "id": "octopus",
+       "hazard": "octopus",
+       "shape": "circle",
+       "x": 0.219,
+       "y": 0.693,
+       "r": 0.107,
+       "rect": [
+        0.129,
+        0.589,
+        0.183,
+        0.214
+       ],
+       "fixCard": "fix.octopus",
+       "fixOptions": [
+        "move_away",
+        "move_cord",
+        "unplug"
+       ],
+       "correctFix": "unplug"
+      },
+      {
+       "id": "panel",
+       "hazard": "panel",
+       "shape": "circle",
+       "x": 0.768,
+       "y": 0.399,
+       "r": 0.071,
+       "rect": [
+        0.714,
+        0.333,
+        0.112,
+        0.137
+       ],
+       "fixCard": "fix.panel",
+       "fixOptions": [
+        "cover",
+        "move_away",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "aisle",
+       "hazard": "aisle",
+       "shape": "rect",
+       "rect": [
+        0.268,
+        0.708,
+        0.629,
+        0.244
+       ],
+       "fixCard": "fix.aisle",
+       "fixOptions": [
+        "cover",
+        "unplug",
+        "move_cord"
+       ],
+       "correctFix": "move_cord"
+      },
+      {
+       "id": "missing_cover",
+       "hazard": "missing_cover",
+       "shape": "circle",
+       "x": 0.73,
+       "y": 0.527,
+       "r": 0.038,
+       "rect": [
+        0.714,
+        0.5,
+        0.036,
+        0.06
+       ],
+       "fixCard": "fix.missing_cover",
+       "fixOptions": [
+        "cover",
+        "call_adult",
+        "unplug"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "spill",
+       "hazard": "spill",
+       "shape": "rect",
+       "rect": [
+        0.045,
+        0.881,
+        0.152,
+        0.089
+       ],
+       "fixCard": "fix.spill",
+       "fixOptions": [
+        "cover",
+        "call_adult",
+        "move_cord"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "frayed",
+       "hazard": "frayed",
+       "shape": "circle",
+       "x": 0.808,
+       "y": 0.729,
+       "r": 0.036,
+       "rect": [
+        0.79,
+        0.708,
+        0.04,
+        0.048
+       ],
+       "fixCard": "fix.frayed",
+       "fixOptions": [
+        "move_cord",
+        "cover",
+        "unplug"
+       ],
+       "correctFix": "unplug"
+      }
      ],
-     "correctFix": "unplug",
-     "fixOptions": [
-      "move_away",
-      "unplug",
-      "call_adult"
+     "stars": [
+      {
+       "x": 0.5,
+       "y": 0.06,
+       "r": 0.03
+      },
+      {
+       "x": 0.911,
+       "y": 0.488,
+       "r": 0.03
+      },
+      {
+       "x": 0.929,
+       "y": 0.071,
+       "r": 0.03
+      }
      ]
     },
     {
-     "id": "panel",
-     "hazard": "panel",
-     "label": "Open electrical panel",
-     "fixCard": "Keep electrical panels closed. Only adults should open them.",
-     "shape": "circle",
-     "x": 0.598,
-     "y": 0.244,
-     "r": 0.071,
-     "rect": [
-      0.545,
-      0.179,
-      0.112,
-      0.137
+     "id": "2-2",
+     "scene": "school",
+     "a": "spot-the-shock.pair.2-2_a",
+     "b": "spot-the-shock.pair.2-2_b",
+     "night": {
+      "a": "spot-the-shock.pair.2-2_a_night",
+      "b": "spot-the-shock.pair.2-2_b_night"
+     },
+     "differences": [
+      {
+       "id": "spill",
+       "hazard": "spill",
+       "shape": "rect",
+       "rect": [
+        0.045,
+        0.881,
+        0.152,
+        0.089
+       ],
+       "fixCard": "fix.spill",
+       "fixOptions": [
+        "cover",
+        "call_adult",
+        "move_away"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "missing_cover",
+       "hazard": "missing_cover",
+       "shape": "circle",
+       "x": 0.73,
+       "y": 0.527,
+       "r": 0.038,
+       "rect": [
+        0.714,
+        0.5,
+        0.036,
+        0.06
+       ],
+       "fixCard": "fix.missing_cover",
+       "fixOptions": [
+        "unplug",
+        "call_adult",
+        "cover"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "panel",
+       "hazard": "panel",
+       "shape": "circle",
+       "x": 0.768,
+       "y": 0.399,
+       "r": 0.071,
+       "rect": [
+        0.714,
+        0.333,
+        0.112,
+        0.137
+       ],
+       "fixCard": "fix.panel",
+       "fixOptions": [
+        "cover",
+        "unplug",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "toy",
+       "hazard": "toy",
+       "shape": "circle",
+       "x": 0.556,
+       "y": 0.637,
+       "r": 0.049,
+       "rect": [
+        0.54,
+        0.595,
+        0.036,
+        0.089
+       ],
+       "fixCard": "fix.toy",
+       "fixOptions": [
+        "call_adult",
+        "cover",
+        "move_cord"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "octopus",
+       "hazard": "octopus",
+       "shape": "circle",
+       "x": 0.219,
+       "y": 0.693,
+       "r": 0.107,
+       "rect": [
+        0.129,
+        0.589,
+        0.183,
+        0.214
+       ],
+       "fixCard": "fix.octopus",
+       "fixOptions": [
+        "unplug",
+        "cover",
+        "move_cord"
+       ],
+       "correctFix": "unplug"
+      },
+      {
+       "id": "aisle",
+       "hazard": "aisle",
+       "shape": "rect",
+       "rect": [
+        0.268,
+        0.708,
+        0.629,
+        0.244
+       ],
+       "fixCard": "fix.aisle",
+       "fixOptions": [
+        "move_cord",
+        "cover",
+        "move_away"
+       ],
+       "correctFix": "move_cord"
+      }
      ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "cover",
-      "move_away"
+     "stars": [
+      {
+       "x": 0.911,
+       "y": 0.488,
+       "r": 0.03
+      },
+      {
+       "x": 0.045,
+       "y": 0.583,
+       "r": 0.03
+      },
+      {
+       "x": 0.071,
+       "y": 0.06,
+       "r": 0.03
+      }
      ]
     },
     {
-     "id": "toy",
-     "hazard": "toy",
-     "label": "Something stuck in an outlet",
-     "fixCard": "Never put anything into an outlet. Tell an adult right away.",
-     "shape": "circle",
-     "x": 0.884,
-     "y": 0.673,
-     "r": 0.045,
-     "rect": [
-      0.866,
-      0.637,
-      0.04,
-      0.077
+     "id": "2-3",
+     "scene": "school",
+     "a": "spot-the-shock.pair.2-3_a",
+     "b": "spot-the-shock.pair.2-3_b",
+     "night": {
+      "a": "spot-the-shock.pair.2-3_a_night",
+      "b": "spot-the-shock.pair.2-3_b_night"
+     },
+     "differences": [
+      {
+       "id": "octopus",
+       "hazard": "octopus",
+       "shape": "circle",
+       "x": 0.219,
+       "y": 0.693,
+       "r": 0.107,
+       "rect": [
+        0.129,
+        0.589,
+        0.183,
+        0.214
+       ],
+       "fixCard": "fix.octopus",
+       "fixOptions": [
+        "unplug",
+        "move_cord",
+        "cover"
+       ],
+       "correctFix": "unplug"
+      },
+      {
+       "id": "spill",
+       "hazard": "spill",
+       "shape": "rect",
+       "rect": [
+        0.045,
+        0.881,
+        0.152,
+        0.089
+       ],
+       "fixCard": "fix.spill",
+       "fixOptions": [
+        "call_adult",
+        "unplug",
+        "cover"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "missing_cover",
+       "hazard": "missing_cover",
+       "shape": "circle",
+       "x": 0.73,
+       "y": 0.527,
+       "r": 0.038,
+       "rect": [
+        0.714,
+        0.5,
+        0.036,
+        0.06
+       ],
+       "fixCard": "fix.missing_cover",
+       "fixOptions": [
+        "call_adult",
+        "cover",
+        "move_cord"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "frayed",
+       "hazard": "frayed",
+       "shape": "circle",
+       "x": 0.808,
+       "y": 0.729,
+       "r": 0.036,
+       "rect": [
+        0.79,
+        0.708,
+        0.04,
+        0.048
+       ],
+       "fixCard": "fix.frayed",
+       "fixOptions": [
+        "move_cord",
+        "cover",
+        "unplug"
+       ],
+       "correctFix": "unplug"
+      },
+      {
+       "id": "panel",
+       "hazard": "panel",
+       "shape": "circle",
+       "x": 0.768,
+       "y": 0.399,
+       "r": 0.071,
+       "rect": [
+        0.714,
+        0.333,
+        0.112,
+        0.137
+       ],
+       "fixCard": "fix.panel",
+       "fixOptions": [
+        "move_away",
+        "call_adult",
+        "move_cord"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "toy",
+       "hazard": "toy",
+       "shape": "circle",
+       "x": 0.556,
+       "y": 0.637,
+       "r": 0.049,
+       "rect": [
+        0.54,
+        0.595,
+        0.036,
+        0.089
+       ],
+       "fixCard": "fix.toy",
+       "fixOptions": [
+        "cover",
+        "call_adult",
+        "move_away"
+       ],
+       "correctFix": "call_adult"
+      }
      ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "unplug",
-      "cover",
-      "call_adult"
+     "stars": [
+      {
+       "x": 0.179,
+       "y": 0.417,
+       "r": 0.03
+      },
+      {
+       "x": 0.071,
+       "y": 0.06,
+       "r": 0.03
+      },
+      {
+       "x": 0.955,
+       "y": 0.929,
+       "r": 0.03
+      }
      ]
     },
     {
-     "id": "rug",
-     "hazard": "rug",
-     "label": "Cord under a rug",
-     "fixCard": "Cords under rugs can overheat and get damaged. Keep cords out in the open.",
-     "shape": "circle",
-     "x": 0.446,
-     "y": 0.801,
-     "r": 0.196,
-     "rect": [
-      0.268,
-      0.72,
-      0.362,
-      0.167
+     "id": "2-4",
+     "scene": "school",
+     "a": "spot-the-shock.pair.2-4_a",
+     "b": "spot-the-shock.pair.2-4_b",
+     "night": {
+      "a": "spot-the-shock.pair.2-4_a_night",
+      "b": "spot-the-shock.pair.2-4_b_night"
+     },
+     "differences": [
+      {
+       "id": "missing_cover",
+       "hazard": "missing_cover",
+       "shape": "circle",
+       "x": 0.73,
+       "y": 0.527,
+       "r": 0.038,
+       "rect": [
+        0.714,
+        0.5,
+        0.036,
+        0.06
+       ],
+       "fixCard": "fix.missing_cover",
+       "fixOptions": [
+        "cover",
+        "unplug",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "octopus",
+       "hazard": "octopus",
+       "shape": "circle",
+       "x": 0.219,
+       "y": 0.693,
+       "r": 0.107,
+       "rect": [
+        0.129,
+        0.589,
+        0.183,
+        0.214
+       ],
+       "fixCard": "fix.octopus",
+       "fixOptions": [
+        "move_cord",
+        "unplug",
+        "cover"
+       ],
+       "correctFix": "unplug"
+      },
+      {
+       "id": "toy",
+       "hazard": "toy",
+       "shape": "circle",
+       "x": 0.556,
+       "y": 0.637,
+       "r": 0.049,
+       "rect": [
+        0.54,
+        0.595,
+        0.036,
+        0.089
+       ],
+       "fixCard": "fix.toy",
+       "fixOptions": [
+        "cover",
+        "call_adult",
+        "unplug"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "frayed",
+       "hazard": "frayed",
+       "shape": "circle",
+       "x": 0.808,
+       "y": 0.729,
+       "r": 0.036,
+       "rect": [
+        0.79,
+        0.708,
+        0.04,
+        0.048
+       ],
+       "fixCard": "fix.frayed",
+       "fixOptions": [
+        "move_away",
+        "move_cord",
+        "unplug"
+       ],
+       "correctFix": "unplug"
+      },
+      {
+       "id": "panel",
+       "hazard": "panel",
+       "shape": "circle",
+       "x": 0.768,
+       "y": 0.399,
+       "r": 0.071,
+       "rect": [
+        0.714,
+        0.333,
+        0.112,
+        0.137
+       ],
+       "fixCard": "fix.panel",
+       "fixOptions": [
+        "cover",
+        "move_away",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "spill",
+       "hazard": "spill",
+       "shape": "rect",
+       "rect": [
+        0.045,
+        0.881,
+        0.152,
+        0.089
+       ],
+       "fixCard": "fix.spill",
+       "fixOptions": [
+        "call_adult",
+        "unplug",
+        "cover"
+       ],
+       "correctFix": "call_adult"
+      }
      ],
-     "correctFix": "move_cord",
-     "fixOptions": [
-      "cover",
-      "move_away",
-      "move_cord"
+     "stars": [
+      {
+       "x": 0.911,
+       "y": 0.488,
+       "r": 0.03
+      },
+      {
+       "x": 0.5,
+       "y": 0.06,
+       "r": 0.03
+      },
+      {
+       "x": 0.929,
+       "y": 0.071,
+       "r": 0.03
+      }
      ]
     },
     {
-     "id": "octopus",
-     "hazard": "octopus",
-     "label": "Overloaded outlet (\"octopus wiring\")",
-     "fixCard": "Too many plugs in one outlet can overheat. Unplug some!",
-     "shape": "circle",
-     "x": 0.219,
-     "y": 0.705,
-     "r": 0.107,
-     "rect": [
-      0.129,
-      0.601,
-      0.183,
-      0.214
+     "id": "2-5",
+     "scene": "school",
+     "a": "spot-the-shock.pair.2-5_a",
+     "b": "spot-the-shock.pair.2-5_b",
+     "night": {
+      "a": "spot-the-shock.pair.2-5_a_night",
+      "b": "spot-the-shock.pair.2-5_b_night"
+     },
+     "differences": [
+      {
+       "id": "missing_cover",
+       "hazard": "missing_cover",
+       "shape": "circle",
+       "x": 0.73,
+       "y": 0.527,
+       "r": 0.038,
+       "rect": [
+        0.714,
+        0.5,
+        0.036,
+        0.06
+       ],
+       "fixCard": "fix.missing_cover",
+       "fixOptions": [
+        "move_cord",
+        "cover",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "spill",
+       "hazard": "spill",
+       "shape": "rect",
+       "rect": [
+        0.045,
+        0.881,
+        0.152,
+        0.089
+       ],
+       "fixCard": "fix.spill",
+       "fixOptions": [
+        "cover",
+        "unplug",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "octopus",
+       "hazard": "octopus",
+       "shape": "circle",
+       "x": 0.219,
+       "y": 0.693,
+       "r": 0.107,
+       "rect": [
+        0.129,
+        0.589,
+        0.183,
+        0.214
+       ],
+       "fixCard": "fix.octopus",
+       "fixOptions": [
+        "unplug",
+        "move_cord",
+        "move_away"
+       ],
+       "correctFix": "unplug"
+      },
+      {
+       "id": "panel",
+       "hazard": "panel",
+       "shape": "circle",
+       "x": 0.768,
+       "y": 0.399,
+       "r": 0.071,
+       "rect": [
+        0.714,
+        0.333,
+        0.112,
+        0.137
+       ],
+       "fixCard": "fix.panel",
+       "fixOptions": [
+        "cover",
+        "call_adult",
+        "move_away"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "frayed",
+       "hazard": "frayed",
+       "shape": "circle",
+       "x": 0.808,
+       "y": 0.729,
+       "r": 0.036,
+       "rect": [
+        0.79,
+        0.708,
+        0.04,
+        0.048
+       ],
+       "fixCard": "fix.frayed",
+       "fixOptions": [
+        "move_cord",
+        "unplug",
+        "cover"
+       ],
+       "correctFix": "unplug"
+      },
+      {
+       "id": "toy",
+       "hazard": "toy",
+       "shape": "circle",
+       "x": 0.556,
+       "y": 0.637,
+       "r": 0.049,
+       "rect": [
+        0.54,
+        0.595,
+        0.036,
+        0.089
+       ],
+       "fixCard": "fix.toy",
+       "fixOptions": [
+        "unplug",
+        "cover",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      }
      ],
-     "correctFix": "unplug",
-     "fixOptions": [
-      "cover",
-      "unplug",
-      "move_cord"
+     "stars": [
+      {
+       "x": 0.179,
+       "y": 0.417,
+       "r": 0.03
+      },
+      {
+       "x": 0.911,
+       "y": 0.488,
+       "r": 0.03
+      },
+      {
+       "x": 0.071,
+       "y": 0.06,
+       "r": 0.03
+      }
      ]
-    }
-   ],
-   "stars": [
-    {
-     "x": 0.5,
-     "y": 0.048,
-     "r": 0.03
-    },
-    {
-     "x": 0.929,
-     "y": 0.071,
-     "r": 0.03
-    },
-    {
-     "x": 0.179,
-     "y": 0.417,
-     "r": 0.03
     }
    ]
   },
   {
-   "world": 1,
    "level": 3,
-   "scene": "kitchen",
-   "a": "spot-the-shock.pair.1-3_a",
-   "b": "spot-the-shock.pair.1-3_b",
-   "night": {
-    "a": "spot-the-shock.pair.1-3_a_night",
-    "b": "spot-the-shock.pair.1-3_b_night"
-   },
-   "timeMs": 120000,
-   "differences": [
+   "theme": "street",
+   "timeMs": 110000,
+   "night": false,
+   "fixIt": false,
+   "pairs": [
     {
-     "id": "sink",
-     "hazard": "sink",
-     "label": "Appliance next to the sink",
-     "fixCard": "Keep plugged-in things away from water.",
-     "shape": "circle",
-     "x": 0.864,
-     "y": 0.47,
-     "r": 0.114,
-     "rect": [
-      0.768,
-      0.405,
-      0.196,
-      0.137
+     "id": "3-1",
+     "scene": "street",
+     "a": "spot-the-shock.pair.3-1_a",
+     "b": "spot-the-shock.pair.3-1_b",
+     "night": {
+      "a": "spot-the-shock.pair.3-1_a_night",
+      "b": "spot-the-shock.pair.3-1_b_night"
+     },
+     "differences": [
+      {
+       "id": "post",
+       "hazard": "post",
+       "shape": "rect",
+       "rect": [
+        0.808,
+        0.256,
+        0.094,
+        0.458
+       ],
+       "fixCard": "fix.post",
+       "fixOptions": [
+        "cover",
+        "move_away",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "ladder",
+       "hazard": "ladder",
+       "shape": "rect",
+       "rect": [
+        0.272,
+        0.452,
+        0.062,
+        0.304
+       ],
+       "fixCard": "fix.ladder",
+       "fixOptions": [
+        "call_adult",
+        "cover",
+        "move_cord"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "branch",
+       "hazard": "branch",
+       "shape": "circle",
+       "x": 0.435,
+       "y": 0.259,
+       "r": 0.06,
+       "rect": [
+        0.393,
+        0.202,
+        0.089,
+        0.119
+       ],
+       "fixCard": "fix.branch",
+       "fixOptions": [
+        "call_adult",
+        "unplug",
+        "cover"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "meter",
+       "hazard": "meter",
+       "shape": "circle",
+       "x": 0.185,
+       "y": 0.586,
+       "r": 0.038,
+       "rect": [
+        0.17,
+        0.56,
+        0.036,
+        0.06
+       ],
+       "fixCard": "fix.meter",
+       "fixOptions": [
+        "unplug",
+        "move_cord",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "fallen",
+       "hazard": "fallen",
+       "shape": "rect",
+       "rect": [
+        0.312,
+        0.274,
+        0.205,
+        0.548
+       ],
+       "fixCard": "fix.fallen",
+       "fixOptions": [
+        "call_adult",
+        "move_cord",
+        "move_away"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "kite",
+       "hazard": "kite",
+       "shape": "circle",
+       "x": 0.67,
+       "y": 0.298,
+       "r": 0.08,
+       "rect": [
+        0.638,
+        0.214,
+        0.067,
+        0.173
+       ],
+       "fixCard": "fix.kite",
+       "fixOptions": [
+        "cover",
+        "call_adult",
+        "move_away"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "climb",
+       "hazard": "climb",
+       "shape": "circle",
+       "x": 0.536,
+       "y": 0.449,
+       "r": 0.051,
+       "rect": [
+        0.518,
+        0.405,
+        0.04,
+        0.095
+       ],
+       "fixCard": "fix.climb",
+       "fixOptions": [
+        "cover",
+        "move_away",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      }
      ],
-     "correctFix": "move_away",
-     "fixOptions": [
-      "call_adult",
-      "cover",
-      "move_away"
+     "stars": [
+      {
+       "x": 0.929,
+       "y": 0.071,
+       "r": 0.03
+      },
+      {
+       "x": 0.955,
+       "y": 0.929,
+       "r": 0.03
+      },
+      {
+       "x": 0.134,
+       "y": 0.381,
+       "r": 0.03
+      }
      ]
     },
     {
-     "id": "frayed",
-     "hazard": "frayed",
-     "label": "Frayed cord",
-     "fixCard": "A damaged cord can shock you. Unplug it and ask an adult to replace it.",
-     "shape": "circle",
-     "x": 0.712,
-     "y": 0.699,
-     "r": 0.025,
-     "rect": [
-      0.705,
-      0.696,
-      0.018,
-      0.012
+     "id": "3-2",
+     "scene": "street",
+     "a": "spot-the-shock.pair.3-2_a",
+     "b": "spot-the-shock.pair.3-2_b",
+     "night": {
+      "a": "spot-the-shock.pair.3-2_a_night",
+      "b": "spot-the-shock.pair.3-2_b_night"
+     },
+     "differences": [
+      {
+       "id": "meter",
+       "hazard": "meter",
+       "shape": "circle",
+       "x": 0.185,
+       "y": 0.586,
+       "r": 0.038,
+       "rect": [
+        0.17,
+        0.56,
+        0.036,
+        0.06
+       ],
+       "fixCard": "fix.meter",
+       "fixOptions": [
+        "move_cord",
+        "cover",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "branch",
+       "hazard": "branch",
+       "shape": "circle",
+       "x": 0.435,
+       "y": 0.259,
+       "r": 0.06,
+       "rect": [
+        0.393,
+        0.202,
+        0.089,
+        0.119
+       ],
+       "fixCard": "fix.branch",
+       "fixOptions": [
+        "call_adult",
+        "unplug",
+        "cover"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "ladder",
+       "hazard": "ladder",
+       "shape": "rect",
+       "rect": [
+        0.272,
+        0.452,
+        0.062,
+        0.304
+       ],
+       "fixCard": "fix.ladder",
+       "fixOptions": [
+        "move_cord",
+        "call_adult",
+        "unplug"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "post",
+       "hazard": "post",
+       "shape": "rect",
+       "rect": [
+        0.808,
+        0.256,
+        0.094,
+        0.458
+       ],
+       "fixCard": "fix.post",
+       "fixOptions": [
+        "move_away",
+        "move_cord",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "climb",
+       "hazard": "climb",
+       "shape": "circle",
+       "x": 0.536,
+       "y": 0.449,
+       "r": 0.051,
+       "rect": [
+        0.518,
+        0.405,
+        0.04,
+        0.095
+       ],
+       "fixCard": "fix.climb",
+       "fixOptions": [
+        "call_adult",
+        "cover",
+        "move_away"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "kite",
+       "hazard": "kite",
+       "shape": "circle",
+       "x": 0.67,
+       "y": 0.298,
+       "r": 0.08,
+       "rect": [
+        0.638,
+        0.214,
+        0.067,
+        0.173
+       ],
+       "fixCard": "fix.kite",
+       "fixOptions": [
+        "call_adult",
+        "cover",
+        "move_away"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "fallen",
+       "hazard": "fallen",
+       "shape": "rect",
+       "rect": [
+        0.312,
+        0.274,
+        0.205,
+        0.548
+       ],
+       "fixCard": "fix.fallen",
+       "fixOptions": [
+        "call_adult",
+        "move_cord",
+        "unplug"
+       ],
+       "correctFix": "call_adult"
+      }
      ],
-     "correctFix": "unplug",
-     "fixOptions": [
-      "move_cord",
-      "unplug",
-      "cover"
+     "stars": [
+      {
+       "x": 0.071,
+       "y": 0.06,
+       "r": 0.03
+      },
+      {
+       "x": 0.5,
+       "y": 0.06,
+       "r": 0.03
+      },
+      {
+       "x": 0.955,
+       "y": 0.929,
+       "r": 0.03
+      }
      ]
     },
     {
-     "id": "octopus",
-     "hazard": "octopus",
-     "label": "Overloaded outlet (\"octopus wiring\")",
-     "fixCard": "Too many plugs in one outlet can overheat. Unplug some!",
-     "shape": "circle",
-     "x": 0.219,
-     "y": 0.705,
-     "r": 0.107,
-     "rect": [
-      0.129,
-      0.601,
-      0.183,
-      0.214
+     "id": "3-3",
+     "scene": "street",
+     "a": "spot-the-shock.pair.3-3_a",
+     "b": "spot-the-shock.pair.3-3_b",
+     "night": {
+      "a": "spot-the-shock.pair.3-3_a_night",
+      "b": "spot-the-shock.pair.3-3_b_night"
+     },
+     "differences": [
+      {
+       "id": "kite",
+       "hazard": "kite",
+       "shape": "circle",
+       "x": 0.67,
+       "y": 0.298,
+       "r": 0.08,
+       "rect": [
+        0.638,
+        0.214,
+        0.067,
+        0.173
+       ],
+       "fixCard": "fix.kite",
+       "fixOptions": [
+        "cover",
+        "unplug",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "climb",
+       "hazard": "climb",
+       "shape": "circle",
+       "x": 0.536,
+       "y": 0.449,
+       "r": 0.051,
+       "rect": [
+        0.518,
+        0.405,
+        0.04,
+        0.095
+       ],
+       "fixCard": "fix.climb",
+       "fixOptions": [
+        "call_adult",
+        "move_cord",
+        "unplug"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "ladder",
+       "hazard": "ladder",
+       "shape": "rect",
+       "rect": [
+        0.272,
+        0.452,
+        0.062,
+        0.304
+       ],
+       "fixCard": "fix.ladder",
+       "fixOptions": [
+        "call_adult",
+        "move_away",
+        "move_cord"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "branch",
+       "hazard": "branch",
+       "shape": "circle",
+       "x": 0.435,
+       "y": 0.259,
+       "r": 0.06,
+       "rect": [
+        0.393,
+        0.202,
+        0.089,
+        0.119
+       ],
+       "fixCard": "fix.branch",
+       "fixOptions": [
+        "call_adult",
+        "cover",
+        "move_away"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "fallen",
+       "hazard": "fallen",
+       "shape": "rect",
+       "rect": [
+        0.312,
+        0.274,
+        0.205,
+        0.548
+       ],
+       "fixCard": "fix.fallen",
+       "fixOptions": [
+        "move_away",
+        "cover",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "meter",
+       "hazard": "meter",
+       "shape": "circle",
+       "x": 0.185,
+       "y": 0.586,
+       "r": 0.038,
+       "rect": [
+        0.17,
+        0.56,
+        0.036,
+        0.06
+       ],
+       "fixCard": "fix.meter",
+       "fixOptions": [
+        "unplug",
+        "move_cord",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "post",
+       "hazard": "post",
+       "shape": "rect",
+       "rect": [
+        0.808,
+        0.256,
+        0.094,
+        0.458
+       ],
+       "fixCard": "fix.post",
+       "fixOptions": [
+        "move_cord",
+        "unplug",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      }
      ],
-     "correctFix": "unplug",
-     "fixOptions": [
-      "unplug",
-      "cover",
-      "move_away"
+     "stars": [
+      {
+       "x": 0.956,
+       "y": 0.143,
+       "r": 0.03
+      },
+      {
+       "x": 0.071,
+       "y": 0.06,
+       "r": 0.03
+      },
+      {
+       "x": 0.849,
+       "y": 0.059,
+       "r": 0.03
+      }
      ]
     },
     {
-     "id": "missing_cover",
-     "hazard": "missing_cover",
-     "label": "Missing outlet cover",
-     "fixCard": "Open wires are dangerous. Tell an adult to put a cover on.",
-     "shape": "circle",
-     "x": 0.685,
-     "y": 0.562,
-     "r": 0.038,
-     "rect": [
-      0.67,
-      0.536,
-      0.036,
-      0.06
+     "id": "3-4",
+     "scene": "street",
+     "a": "spot-the-shock.pair.3-4_a",
+     "b": "spot-the-shock.pair.3-4_b",
+     "night": {
+      "a": "spot-the-shock.pair.3-4_a_night",
+      "b": "spot-the-shock.pair.3-4_b_night"
+     },
+     "differences": [
+      {
+       "id": "climb",
+       "hazard": "climb",
+       "shape": "circle",
+       "x": 0.536,
+       "y": 0.449,
+       "r": 0.051,
+       "rect": [
+        0.518,
+        0.405,
+        0.04,
+        0.095
+       ],
+       "fixCard": "fix.climb",
+       "fixOptions": [
+        "call_adult",
+        "move_cord",
+        "unplug"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "branch",
+       "hazard": "branch",
+       "shape": "circle",
+       "x": 0.435,
+       "y": 0.259,
+       "r": 0.06,
+       "rect": [
+        0.393,
+        0.202,
+        0.089,
+        0.119
+       ],
+       "fixCard": "fix.branch",
+       "fixOptions": [
+        "move_cord",
+        "move_away",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "post",
+       "hazard": "post",
+       "shape": "rect",
+       "rect": [
+        0.808,
+        0.256,
+        0.094,
+        0.458
+       ],
+       "fixCard": "fix.post",
+       "fixOptions": [
+        "move_away",
+        "cover",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "meter",
+       "hazard": "meter",
+       "shape": "circle",
+       "x": 0.185,
+       "y": 0.586,
+       "r": 0.038,
+       "rect": [
+        0.17,
+        0.56,
+        0.036,
+        0.06
+       ],
+       "fixCard": "fix.meter",
+       "fixOptions": [
+        "cover",
+        "move_away",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "kite",
+       "hazard": "kite",
+       "shape": "circle",
+       "x": 0.67,
+       "y": 0.298,
+       "r": 0.08,
+       "rect": [
+        0.638,
+        0.214,
+        0.067,
+        0.173
+       ],
+       "fixCard": "fix.kite",
+       "fixOptions": [
+        "move_cord",
+        "call_adult",
+        "unplug"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "fallen",
+       "hazard": "fallen",
+       "shape": "rect",
+       "rect": [
+        0.312,
+        0.274,
+        0.205,
+        0.548
+       ],
+       "fixCard": "fix.fallen",
+       "fixOptions": [
+        "unplug",
+        "call_adult",
+        "move_cord"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "ladder",
+       "hazard": "ladder",
+       "shape": "rect",
+       "rect": [
+        0.272,
+        0.452,
+        0.062,
+        0.304
+       ],
+       "fixCard": "fix.ladder",
+       "fixOptions": [
+        "call_adult",
+        "unplug",
+        "cover"
+       ],
+       "correctFix": "call_adult"
+      }
      ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "call_adult",
-      "unplug"
+     "stars": [
+      {
+       "x": 0.955,
+       "y": 0.929,
+       "r": 0.03
+      },
+      {
+       "x": 0.5,
+       "y": 0.06,
+       "r": 0.03
+      },
+      {
+       "x": 0.045,
+       "y": 0.893,
+       "r": 0.03
+      }
      ]
-    }
-   ],
-   "stars": [
-    {
-     "x": 0.179,
-     "y": 0.417,
-     "r": 0.03
     },
     {
-     "x": 0.893,
-     "y": 0.476,
-     "r": 0.03
-    },
-    {
-     "x": 0.929,
-     "y": 0.071,
-     "r": 0.03
+     "id": "3-5",
+     "scene": "street",
+     "a": "spot-the-shock.pair.3-5_a",
+     "b": "spot-the-shock.pair.3-5_b",
+     "night": {
+      "a": "spot-the-shock.pair.3-5_a_night",
+      "b": "spot-the-shock.pair.3-5_b_night"
+     },
+     "differences": [
+      {
+       "id": "climb",
+       "hazard": "climb",
+       "shape": "circle",
+       "x": 0.536,
+       "y": 0.449,
+       "r": 0.051,
+       "rect": [
+        0.518,
+        0.405,
+        0.04,
+        0.095
+       ],
+       "fixCard": "fix.climb",
+       "fixOptions": [
+        "move_away",
+        "move_cord",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "meter",
+       "hazard": "meter",
+       "shape": "circle",
+       "x": 0.185,
+       "y": 0.586,
+       "r": 0.038,
+       "rect": [
+        0.17,
+        0.56,
+        0.036,
+        0.06
+       ],
+       "fixCard": "fix.meter",
+       "fixOptions": [
+        "cover",
+        "call_adult",
+        "move_away"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "ladder",
+       "hazard": "ladder",
+       "shape": "rect",
+       "rect": [
+        0.272,
+        0.452,
+        0.062,
+        0.304
+       ],
+       "fixCard": "fix.ladder",
+       "fixOptions": [
+        "move_away",
+        "call_adult",
+        "cover"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "post",
+       "hazard": "post",
+       "shape": "rect",
+       "rect": [
+        0.808,
+        0.256,
+        0.094,
+        0.458
+       ],
+       "fixCard": "fix.post",
+       "fixOptions": [
+        "call_adult",
+        "move_cord",
+        "unplug"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "fallen",
+       "hazard": "fallen",
+       "shape": "rect",
+       "rect": [
+        0.312,
+        0.274,
+        0.205,
+        0.548
+       ],
+       "fixCard": "fix.fallen",
+       "fixOptions": [
+        "call_adult",
+        "unplug",
+        "move_cord"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "branch",
+       "hazard": "branch",
+       "shape": "circle",
+       "x": 0.435,
+       "y": 0.259,
+       "r": 0.06,
+       "rect": [
+        0.393,
+        0.202,
+        0.089,
+        0.119
+       ],
+       "fixCard": "fix.branch",
+       "fixOptions": [
+        "call_adult",
+        "unplug",
+        "cover"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "kite",
+       "hazard": "kite",
+       "shape": "circle",
+       "x": 0.67,
+       "y": 0.298,
+       "r": 0.08,
+       "rect": [
+        0.638,
+        0.214,
+        0.067,
+        0.173
+       ],
+       "fixCard": "fix.kite",
+       "fixOptions": [
+        "call_adult",
+        "move_cord",
+        "move_away"
+       ],
+       "correctFix": "call_adult"
+      }
+     ],
+     "stars": [
+      {
+       "x": 0.045,
+       "y": 0.893,
+       "r": 0.03
+      },
+      {
+       "x": 0.929,
+       "y": 0.071,
+       "r": 0.03
+      },
+      {
+       "x": 0.134,
+       "y": 0.381,
+       "r": 0.03
+      }
+     ]
     }
    ]
   },
   {
-   "world": 1,
    "level": 4,
-   "scene": "home",
-   "a": "spot-the-shock.pair.1-4_a",
-   "b": "spot-the-shock.pair.1-4_b",
-   "night": {
-    "a": "spot-the-shock.pair.1-4_a_night",
-    "b": "spot-the-shock.pair.1-4_b_night"
-   },
-   "timeMs": 120000,
-   "differences": [
-    {
-     "id": "octopus",
-     "hazard": "octopus",
-     "label": "Overloaded outlet (\"octopus wiring\")",
-     "fixCard": "Too many plugs in one outlet can overheat. Unplug some!",
-     "shape": "circle",
-     "x": 0.219,
-     "y": 0.705,
-     "r": 0.107,
-     "rect": [
-      0.129,
-      0.601,
-      0.183,
-      0.214
-     ],
-     "correctFix": "unplug",
-     "fixOptions": [
-      "move_cord",
-      "unplug",
-      "cover"
-     ]
-    },
-    {
-     "id": "frayed",
-     "hazard": "frayed",
-     "label": "Frayed cord",
-     "fixCard": "A damaged cord can shock you. Unplug it and ask an adult to replace it.",
-     "shape": "circle",
-     "x": 0.739,
-     "y": 0.717,
-     "r": 0.033,
-     "rect": [
-      0.728,
-      0.696,
-      0.027,
-      0.048
-     ],
-     "correctFix": "unplug",
-     "fixOptions": [
-      "move_away",
-      "unplug",
-      "cover"
-     ]
-    },
-    {
-     "id": "panel",
-     "hazard": "panel",
-     "label": "Open electrical panel",
-     "fixCard": "Keep electrical panels closed. Only adults should open them.",
-     "shape": "circle",
-     "x": 0.598,
-     "y": 0.244,
-     "r": 0.071,
-     "rect": [
-      0.545,
-      0.179,
-      0.112,
-      0.137
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "unplug",
-      "cover",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "missing_cover",
-     "hazard": "missing_cover",
-     "label": "Missing outlet cover",
-     "fixCard": "Open wires are dangerous. Tell an adult to put a cover on.",
-     "shape": "circle",
-     "x": 0.685,
-     "y": 0.562,
-     "r": 0.038,
-     "rect": [
-      0.67,
-      0.536,
-      0.036,
-      0.06
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "move_away",
-      "move_cord"
-     ]
-    },
-    {
-     "id": "toy",
-     "hazard": "toy",
-     "label": "Something stuck in an outlet",
-     "fixCard": "Never put anything into an outlet. Tell an adult right away.",
-     "shape": "circle",
-     "x": 0.884,
-     "y": 0.673,
-     "r": 0.045,
-     "rect": [
-      0.866,
-      0.637,
-      0.04,
-      0.077
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "move_cord",
-      "move_away",
-      "call_adult"
-     ]
-    }
-   ],
-   "stars": [
-    {
-     "x": 0.964,
-     "y": 0.929,
-     "r": 0.03
-    },
-    {
-     "x": 0.929,
-     "y": 0.071,
-     "r": 0.03
-    },
-    {
-     "x": 0.5,
-     "y": 0.048,
-     "r": 0.03
-    }
-   ]
-  },
-  {
-   "world": 1,
-   "level": 5,
-   "scene": "kitchen",
-   "a": "spot-the-shock.pair.1-5_a",
-   "b": "spot-the-shock.pair.1-5_b",
-   "night": {
-    "a": "spot-the-shock.pair.1-5_a_night",
-    "b": "spot-the-shock.pair.1-5_b_night"
-   },
-   "timeMs": 120000,
-   "differences": [
-    {
-     "id": "panel",
-     "hazard": "panel",
-     "label": "Open electrical panel",
-     "fixCard": "Keep electrical panels closed. Only adults should open them.",
-     "shape": "circle",
-     "x": 0.598,
-     "y": 0.244,
-     "r": 0.071,
-     "rect": [
-      0.545,
-      0.179,
-      0.112,
-      0.137
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "cover",
-      "move_away"
-     ]
-    },
-    {
-     "id": "missing_cover",
-     "hazard": "missing_cover",
-     "label": "Missing outlet cover",
-     "fixCard": "Open wires are dangerous. Tell an adult to put a cover on.",
-     "shape": "circle",
-     "x": 0.685,
-     "y": 0.562,
-     "r": 0.038,
-     "rect": [
-      0.67,
-      0.536,
-      0.036,
-      0.06
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "unplug",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "wet",
-     "hazard": "wet",
-     "label": "Water near a plugged-in appliance",
-     "fixCard": "Water and electricity don't mix. Keep the floor dry near plugs.",
-     "shape": "circle",
-     "x": 0.699,
-     "y": 0.866,
-     "r": 0.083,
-     "rect": [
-      0.634,
-      0.845,
-      0.134,
-      0.048
-     ],
-     "correctFix": "unplug",
-     "fixOptions": [
-      "move_away",
-      "unplug",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "octopus",
-     "hazard": "octopus",
-     "label": "Overloaded outlet (\"octopus wiring\")",
-     "fixCard": "Too many plugs in one outlet can overheat. Unplug some!",
-     "shape": "circle",
-     "x": 0.219,
-     "y": 0.705,
-     "r": 0.107,
-     "rect": [
-      0.129,
-      0.601,
-      0.183,
-      0.214
-     ],
-     "correctFix": "unplug",
-     "fixOptions": [
-      "call_adult",
-      "unplug",
-      "move_away"
-     ]
-    }
-   ],
-   "stars": [
-    {
-     "x": 0.179,
-     "y": 0.417,
-     "r": 0.03
-    },
-    {
-     "x": 0.036,
-     "y": 0.893,
-     "r": 0.03
-    },
-    {
-     "x": 0.893,
-     "y": 0.476,
-     "r": 0.03
-    }
-   ]
-  },
-  {
-   "world": 2,
-   "level": 1,
-   "scene": "school",
-   "a": "spot-the-shock.pair.2-1_a",
-   "b": "spot-the-shock.pair.2-1_b",
-   "night": {
-    "a": "spot-the-shock.pair.2-1_a_night",
-    "b": "spot-the-shock.pair.2-1_b_night"
-   },
-   "timeMs": 110000,
-   "differences": [
-    {
-     "id": "octopus",
-     "hazard": "octopus",
-     "label": "Overloaded outlet (\"octopus wiring\")",
-     "fixCard": "Too many plugs in one outlet can overheat. Unplug some!",
-     "shape": "circle",
-     "x": 0.219,
-     "y": 0.693,
-     "r": 0.107,
-     "rect": [
-      0.129,
-      0.589,
-      0.183,
-      0.214
-     ],
-     "correctFix": "unplug",
-     "fixOptions": [
-      "move_away",
-      "move_cord",
-      "unplug"
-     ]
-    },
-    {
-     "id": "panel",
-     "hazard": "panel",
-     "label": "Open electrical panel",
-     "fixCard": "Keep electrical panels closed. Only adults should open them.",
-     "shape": "circle",
-     "x": 0.768,
-     "y": 0.399,
-     "r": 0.071,
-     "rect": [
-      0.714,
-      0.333,
-      0.112,
-      0.137
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "move_away",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "aisle",
-     "hazard": "aisle",
-     "label": "Cord across the walkway",
-     "fixCard": "People can trip and pull the cord. Run cords along the wall.",
-     "shape": "circle",
-     "x": 0.58,
-     "y": 0.827,
-     "r": 0.33,
-     "rect": [
-      0.268,
-      0.708,
-      0.629,
-      0.244
-     ],
-     "correctFix": "move_cord",
-     "fixOptions": [
-      "cover",
-      "unplug",
-      "move_cord"
-     ]
-    },
-    {
-     "id": "missing_cover",
-     "hazard": "missing_cover",
-     "label": "Missing outlet cover",
-     "fixCard": "Open wires are dangerous. Tell an adult to put a cover on.",
-     "shape": "circle",
-     "x": 0.73,
-     "y": 0.527,
-     "r": 0.038,
-     "rect": [
-      0.714,
-      0.5,
-      0.036,
-      0.06
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "call_adult",
-      "unplug"
-     ]
-    },
-    {
-     "id": "spill",
-     "hazard": "spill",
-     "label": "Spill near a plug",
-     "fixCard": "Water near plugs is dangerous. Tell an adult and keep away.",
-     "shape": "circle",
-     "x": 0.118,
-     "y": 0.923,
-     "r": 0.092,
-     "rect": [
-      0.045,
-      0.881,
-      0.152,
-      0.089
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "call_adult",
-      "move_cord"
-     ]
-    },
-    {
-     "id": "frayed",
-     "hazard": "frayed",
-     "label": "Frayed cord",
-     "fixCard": "A damaged cord can shock you. Unplug it and ask an adult to replace it.",
-     "shape": "circle",
-     "x": 0.808,
-     "y": 0.729,
-     "r": 0.036,
-     "rect": [
-      0.79,
-      0.708,
-      0.04,
-      0.048
-     ],
-     "correctFix": "unplug",
-     "fixOptions": [
-      "move_cord",
-      "cover",
-      "unplug"
-     ]
-    }
-   ],
-   "stars": [
-    {
-     "x": 0.5,
-     "y": 0.048,
-     "r": 0.03
-    },
-    {
-     "x": 0.893,
-     "y": 0.476,
-     "r": 0.03
-    },
-    {
-     "x": 0.929,
-     "y": 0.071,
-     "r": 0.03
-    }
-   ]
-  },
-  {
-   "world": 2,
-   "level": 2,
-   "scene": "school",
-   "a": "spot-the-shock.pair.2-2_a",
-   "b": "spot-the-shock.pair.2-2_b",
-   "night": {
-    "a": "spot-the-shock.pair.2-2_a_night",
-    "b": "spot-the-shock.pair.2-2_b_night"
-   },
-   "timeMs": 110000,
-   "differences": [
-    {
-     "id": "spill",
-     "hazard": "spill",
-     "label": "Spill near a plug",
-     "fixCard": "Water near plugs is dangerous. Tell an adult and keep away.",
-     "shape": "circle",
-     "x": 0.118,
-     "y": 0.923,
-     "r": 0.092,
-     "rect": [
-      0.045,
-      0.881,
-      0.152,
-      0.089
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "call_adult",
-      "move_away"
-     ]
-    },
-    {
-     "id": "missing_cover",
-     "hazard": "missing_cover",
-     "label": "Missing outlet cover",
-     "fixCard": "Open wires are dangerous. Tell an adult to put a cover on.",
-     "shape": "circle",
-     "x": 0.73,
-     "y": 0.527,
-     "r": 0.038,
-     "rect": [
-      0.714,
-      0.5,
-      0.036,
-      0.06
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "unplug",
-      "call_adult",
-      "cover"
-     ]
-    },
-    {
-     "id": "panel",
-     "hazard": "panel",
-     "label": "Open electrical panel",
-     "fixCard": "Keep electrical panels closed. Only adults should open them.",
-     "shape": "circle",
-     "x": 0.768,
-     "y": 0.399,
-     "r": 0.071,
-     "rect": [
-      0.714,
-      0.333,
-      0.112,
-      0.137
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "unplug",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "toy",
-     "hazard": "toy",
-     "label": "Something stuck in an outlet",
-     "fixCard": "Never put anything into an outlet. Tell an adult right away.",
-     "shape": "circle",
-     "x": 0.556,
-     "y": 0.637,
-     "r": 0.049,
-     "rect": [
-      0.54,
-      0.595,
-      0.036,
-      0.089
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "cover",
-      "move_cord"
-     ]
-    },
-    {
-     "id": "octopus",
-     "hazard": "octopus",
-     "label": "Overloaded outlet (\"octopus wiring\")",
-     "fixCard": "Too many plugs in one outlet can overheat. Unplug some!",
-     "shape": "circle",
-     "x": 0.219,
-     "y": 0.693,
-     "r": 0.107,
-     "rect": [
-      0.129,
-      0.589,
-      0.183,
-      0.214
-     ],
-     "correctFix": "unplug",
-     "fixOptions": [
-      "unplug",
-      "cover",
-      "move_cord"
-     ]
-    },
-    {
-     "id": "aisle",
-     "hazard": "aisle",
-     "label": "Cord across the walkway",
-     "fixCard": "People can trip and pull the cord. Run cords along the wall.",
-     "shape": "circle",
-     "x": 0.58,
-     "y": 0.827,
-     "r": 0.33,
-     "rect": [
-      0.268,
-      0.708,
-      0.629,
-      0.244
-     ],
-     "correctFix": "move_cord",
-     "fixOptions": [
-      "move_cord",
-      "call_adult",
-      "move_away"
-     ]
-    }
-   ],
-   "stars": [
-    {
-     "x": 0.893,
-     "y": 0.476,
-     "r": 0.03
-    },
-    {
-     "x": 0.036,
-     "y": 0.893,
-     "r": 0.03
-    },
-    {
-     "x": 0.071,
-     "y": 0.06,
-     "r": 0.03
-    }
-   ]
-  },
-  {
-   "world": 2,
-   "level": 3,
-   "scene": "school",
-   "a": "spot-the-shock.pair.2-3_a",
-   "b": "spot-the-shock.pair.2-3_b",
-   "night": {
-    "a": "spot-the-shock.pair.2-3_a_night",
-    "b": "spot-the-shock.pair.2-3_b_night"
-   },
-   "timeMs": 110000,
-   "differences": [
-    {
-     "id": "octopus",
-     "hazard": "octopus",
-     "label": "Overloaded outlet (\"octopus wiring\")",
-     "fixCard": "Too many plugs in one outlet can overheat. Unplug some!",
-     "shape": "circle",
-     "x": 0.219,
-     "y": 0.693,
-     "r": 0.107,
-     "rect": [
-      0.129,
-      0.589,
-      0.183,
-      0.214
-     ],
-     "correctFix": "unplug",
-     "fixOptions": [
-      "unplug",
-      "move_cord",
-      "cover"
-     ]
-    },
-    {
-     "id": "spill",
-     "hazard": "spill",
-     "label": "Spill near a plug",
-     "fixCard": "Water near plugs is dangerous. Tell an adult and keep away.",
-     "shape": "circle",
-     "x": 0.118,
-     "y": 0.923,
-     "r": 0.092,
-     "rect": [
-      0.045,
-      0.881,
-      0.152,
-      0.089
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "unplug",
-      "cover"
-     ]
-    },
-    {
-     "id": "missing_cover",
-     "hazard": "missing_cover",
-     "label": "Missing outlet cover",
-     "fixCard": "Open wires are dangerous. Tell an adult to put a cover on.",
-     "shape": "circle",
-     "x": 0.73,
-     "y": 0.527,
-     "r": 0.038,
-     "rect": [
-      0.714,
-      0.5,
-      0.036,
-      0.06
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "cover",
-      "move_cord"
-     ]
-    },
-    {
-     "id": "frayed",
-     "hazard": "frayed",
-     "label": "Frayed cord",
-     "fixCard": "A damaged cord can shock you. Unplug it and ask an adult to replace it.",
-     "shape": "circle",
-     "x": 0.808,
-     "y": 0.729,
-     "r": 0.036,
-     "rect": [
-      0.79,
-      0.708,
-      0.04,
-      0.048
-     ],
-     "correctFix": "unplug",
-     "fixOptions": [
-      "move_cord",
-      "cover",
-      "unplug"
-     ]
-    },
-    {
-     "id": "panel",
-     "hazard": "panel",
-     "label": "Open electrical panel",
-     "fixCard": "Keep electrical panels closed. Only adults should open them.",
-     "shape": "circle",
-     "x": 0.768,
-     "y": 0.399,
-     "r": 0.071,
-     "rect": [
-      0.714,
-      0.333,
-      0.112,
-      0.137
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "move_away",
-      "call_adult",
-      "move_cord"
-     ]
-    },
-    {
-     "id": "toy",
-     "hazard": "toy",
-     "label": "Something stuck in an outlet",
-     "fixCard": "Never put anything into an outlet. Tell an adult right away.",
-     "shape": "circle",
-     "x": 0.556,
-     "y": 0.637,
-     "r": 0.049,
-     "rect": [
-      0.54,
-      0.595,
-      0.036,
-      0.089
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "call_adult",
-      "move_away"
-     ]
-    }
-   ],
-   "stars": [
-    {
-     "x": 0.179,
-     "y": 0.417,
-     "r": 0.03
-    },
-    {
-     "x": 0.071,
-     "y": 0.06,
-     "r": 0.03
-    },
-    {
-     "x": 0.964,
-     "y": 0.929,
-     "r": 0.03
-    }
-   ]
-  },
-  {
-   "world": 2,
-   "level": 4,
-   "scene": "school",
-   "a": "spot-the-shock.pair.2-4_a",
-   "b": "spot-the-shock.pair.2-4_b",
-   "night": {
-    "a": "spot-the-shock.pair.2-4_a_night",
-    "b": "spot-the-shock.pair.2-4_b_night"
-   },
-   "timeMs": 110000,
-   "differences": [
-    {
-     "id": "missing_cover",
-     "hazard": "missing_cover",
-     "label": "Missing outlet cover",
-     "fixCard": "Open wires are dangerous. Tell an adult to put a cover on.",
-     "shape": "circle",
-     "x": 0.73,
-     "y": 0.527,
-     "r": 0.038,
-     "rect": [
-      0.714,
-      0.5,
-      0.036,
-      0.06
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "unplug",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "octopus",
-     "hazard": "octopus",
-     "label": "Overloaded outlet (\"octopus wiring\")",
-     "fixCard": "Too many plugs in one outlet can overheat. Unplug some!",
-     "shape": "circle",
-     "x": 0.219,
-     "y": 0.693,
-     "r": 0.107,
-     "rect": [
-      0.129,
-      0.589,
-      0.183,
-      0.214
-     ],
-     "correctFix": "unplug",
-     "fixOptions": [
-      "call_adult",
-      "unplug",
-      "cover"
-     ]
-    },
-    {
-     "id": "toy",
-     "hazard": "toy",
-     "label": "Something stuck in an outlet",
-     "fixCard": "Never put anything into an outlet. Tell an adult right away.",
-     "shape": "circle",
-     "x": 0.556,
-     "y": 0.637,
-     "r": 0.049,
-     "rect": [
-      0.54,
-      0.595,
-      0.036,
-      0.089
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "call_adult",
-      "unplug"
-     ]
-    },
-    {
-     "id": "frayed",
-     "hazard": "frayed",
-     "label": "Frayed cord",
-     "fixCard": "A damaged cord can shock you. Unplug it and ask an adult to replace it.",
-     "shape": "circle",
-     "x": 0.808,
-     "y": 0.729,
-     "r": 0.036,
-     "rect": [
-      0.79,
-      0.708,
-      0.04,
-      0.048
-     ],
-     "correctFix": "unplug",
-     "fixOptions": [
-      "move_away",
-      "call_adult",
-      "unplug"
-     ]
-    },
-    {
-     "id": "panel",
-     "hazard": "panel",
-     "label": "Open electrical panel",
-     "fixCard": "Keep electrical panels closed. Only adults should open them.",
-     "shape": "circle",
-     "x": 0.768,
-     "y": 0.399,
-     "r": 0.071,
-     "rect": [
-      0.714,
-      0.333,
-      0.112,
-      0.137
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "move_away",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "spill",
-     "hazard": "spill",
-     "label": "Spill near a plug",
-     "fixCard": "Water near plugs is dangerous. Tell an adult and keep away.",
-     "shape": "circle",
-     "x": 0.118,
-     "y": 0.923,
-     "r": 0.092,
-     "rect": [
-      0.045,
-      0.881,
-      0.152,
-      0.089
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "unplug",
-      "cover"
-     ]
-    }
-   ],
-   "stars": [
-    {
-     "x": 0.893,
-     "y": 0.476,
-     "r": 0.03
-    },
-    {
-     "x": 0.5,
-     "y": 0.048,
-     "r": 0.03
-    },
-    {
-     "x": 0.929,
-     "y": 0.071,
-     "r": 0.03
-    }
-   ]
-  },
-  {
-   "world": 2,
-   "level": 5,
-   "scene": "school",
-   "a": "spot-the-shock.pair.2-5_a",
-   "b": "spot-the-shock.pair.2-5_b",
-   "night": {
-    "a": "spot-the-shock.pair.2-5_a_night",
-    "b": "spot-the-shock.pair.2-5_b_night"
-   },
-   "timeMs": 110000,
-   "differences": [
-    {
-     "id": "missing_cover",
-     "hazard": "missing_cover",
-     "label": "Missing outlet cover",
-     "fixCard": "Open wires are dangerous. Tell an adult to put a cover on.",
-     "shape": "circle",
-     "x": 0.73,
-     "y": 0.527,
-     "r": 0.038,
-     "rect": [
-      0.714,
-      0.5,
-      0.036,
-      0.06
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "move_cord",
-      "cover",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "spill",
-     "hazard": "spill",
-     "label": "Spill near a plug",
-     "fixCard": "Water near plugs is dangerous. Tell an adult and keep away.",
-     "shape": "circle",
-     "x": 0.118,
-     "y": 0.923,
-     "r": 0.092,
-     "rect": [
-      0.045,
-      0.881,
-      0.152,
-      0.089
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "unplug",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "octopus",
-     "hazard": "octopus",
-     "label": "Overloaded outlet (\"octopus wiring\")",
-     "fixCard": "Too many plugs in one outlet can overheat. Unplug some!",
-     "shape": "circle",
-     "x": 0.219,
-     "y": 0.693,
-     "r": 0.107,
-     "rect": [
-      0.129,
-      0.589,
-      0.183,
-      0.214
-     ],
-     "correctFix": "unplug",
-     "fixOptions": [
-      "unplug",
-      "call_adult",
-      "move_away"
-     ]
-    },
-    {
-     "id": "panel",
-     "hazard": "panel",
-     "label": "Open electrical panel",
-     "fixCard": "Keep electrical panels closed. Only adults should open them.",
-     "shape": "circle",
-     "x": 0.768,
-     "y": 0.399,
-     "r": 0.071,
-     "rect": [
-      0.714,
-      0.333,
-      0.112,
-      0.137
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "call_adult",
-      "move_away"
-     ]
-    },
-    {
-     "id": "frayed",
-     "hazard": "frayed",
-     "label": "Frayed cord",
-     "fixCard": "A damaged cord can shock you. Unplug it and ask an adult to replace it.",
-     "shape": "circle",
-     "x": 0.808,
-     "y": 0.729,
-     "r": 0.036,
-     "rect": [
-      0.79,
-      0.708,
-      0.04,
-      0.048
-     ],
-     "correctFix": "unplug",
-     "fixOptions": [
-      "move_cord",
-      "unplug",
-      "cover"
-     ]
-    },
-    {
-     "id": "toy",
-     "hazard": "toy",
-     "label": "Something stuck in an outlet",
-     "fixCard": "Never put anything into an outlet. Tell an adult right away.",
-     "shape": "circle",
-     "x": 0.556,
-     "y": 0.637,
-     "r": 0.049,
-     "rect": [
-      0.54,
-      0.595,
-      0.036,
-      0.089
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "unplug",
-      "cover",
-      "call_adult"
-     ]
-    }
-   ],
-   "stars": [
-    {
-     "x": 0.179,
-     "y": 0.417,
-     "r": 0.03
-    },
-    {
-     "x": 0.893,
-     "y": 0.476,
-     "r": 0.03
-    },
-    {
-     "x": 0.071,
-     "y": 0.06,
-     "r": 0.03
-    }
-   ]
-  },
-  {
-   "world": 3,
-   "level": 1,
-   "scene": "street",
-   "a": "spot-the-shock.pair.3-1_a",
-   "b": "spot-the-shock.pair.3-1_b",
-   "night": {
-    "a": "spot-the-shock.pair.3-1_a_night",
-    "b": "spot-the-shock.pair.3-1_b_night"
-   },
-   "timeMs": 110000,
-   "differences": [
-    {
-     "id": "post",
-     "hazard": "post",
-     "label": "Damaged, leaning post",
-     "fixCard": "A leaning post can fall. Stay away and report it.",
-     "shape": "circle",
-     "x": 0.853,
-     "y": 0.482,
-     "r": 0.188,
-     "rect": [
-      0.808,
-      0.256,
-      0.094,
-      0.458
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "move_away",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "ladder",
-     "hazard": "ladder",
-     "label": "Ladder against a power pole",
-     "fixCard": "Never climb near power lines.",
-     "shape": "circle",
-     "x": 0.301,
-     "y": 0.601,
-     "r": 0.129,
-     "rect": [
-      0.272,
-      0.452,
-      0.062,
-      0.304
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "cover",
-      "move_cord"
-     ]
-    },
-    {
-     "id": "branch",
-     "hazard": "branch",
-     "label": "Branch on a power line",
-     "fixCard": "Branches on wires can spark. Stay away and report it.",
-     "shape": "circle",
-     "x": 0.435,
-     "y": 0.259,
-     "r": 0.06,
-     "rect": [
-      0.393,
-      0.202,
-      0.089,
-      0.119
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "unplug",
-      "cover"
-     ]
-    },
-    {
-     "id": "meter",
-     "hazard": "meter",
-     "label": "Open meter box",
-     "fixCard": "Don't touch open electrical boxes. Tell an adult.",
-     "shape": "circle",
-     "x": 0.185,
-     "y": 0.586,
-     "r": 0.038,
-     "rect": [
-      0.17,
-      0.56,
-      0.036,
-      0.06
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "unplug",
-      "move_cord",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "fallen",
-     "hazard": "fallen",
-     "label": "Fallen power line in water",
-     "fixCard": "Stay far away from fallen wires and the water around them. Call an adult.",
-     "shape": "circle",
-     "x": 0.413,
-     "y": 0.545,
-     "r": 0.221,
-     "rect": [
-      0.312,
-      0.274,
-      0.205,
-      0.548
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "move_cord",
-      "move_away"
-     ]
-    },
-    {
-     "id": "kite",
-     "hazard": "kite",
-     "label": "Kite caught on a power line",
-     "fixCard": "Never try to get a kite off a power line. Fly kites in open fields.",
-     "shape": "circle",
-     "x": 0.67,
-     "y": 0.298,
-     "r": 0.08,
-     "rect": [
-      0.638,
-      0.214,
-      0.067,
-      0.173
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "call_adult",
-      "move_away"
-     ]
-    },
-    {
-     "id": "climb",
-     "hazard": "climb",
-     "label": "Climbing a tree near power lines",
-     "fixCard": "Never climb trees near power lines.",
-     "shape": "circle",
-     "x": 0.536,
-     "y": 0.449,
-     "r": 0.051,
-     "rect": [
-      0.518,
-      0.405,
-      0.04,
-      0.095
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "move_away",
-      "call_adult"
-     ]
-    }
-   ],
-   "stars": [
-    {
-     "x": 0.929,
-     "y": 0.071,
-     "r": 0.03
-    },
-    {
-     "x": 0.964,
-     "y": 0.929,
-     "r": 0.03
-    },
-    {
-     "x": 0.179,
-     "y": 0.417,
-     "r": 0.03
-    }
-   ]
-  },
-  {
-   "world": 3,
-   "level": 2,
-   "scene": "street",
-   "a": "spot-the-shock.pair.3-2_a",
-   "b": "spot-the-shock.pair.3-2_b",
-   "night": {
-    "a": "spot-the-shock.pair.3-2_a_night",
-    "b": "spot-the-shock.pair.3-2_b_night"
-   },
-   "timeMs": 110000,
-   "differences": [
-    {
-     "id": "meter",
-     "hazard": "meter",
-     "label": "Open meter box",
-     "fixCard": "Don't touch open electrical boxes. Tell an adult.",
-     "shape": "circle",
-     "x": 0.185,
-     "y": 0.586,
-     "r": 0.038,
-     "rect": [
-      0.17,
-      0.56,
-      0.036,
-      0.06
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "move_cord",
-      "cover",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "branch",
-     "hazard": "branch",
-     "label": "Branch on a power line",
-     "fixCard": "Branches on wires can spark. Stay away and report it.",
-     "shape": "circle",
-     "x": 0.435,
-     "y": 0.259,
-     "r": 0.06,
-     "rect": [
-      0.393,
-      0.202,
-      0.089,
-      0.119
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "unplug",
-      "cover"
-     ]
-    },
-    {
-     "id": "ladder",
-     "hazard": "ladder",
-     "label": "Ladder against a power pole",
-     "fixCard": "Never climb near power lines.",
-     "shape": "circle",
-     "x": 0.301,
-     "y": 0.601,
-     "r": 0.129,
-     "rect": [
-      0.272,
-      0.452,
-      0.062,
-      0.304
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "move_cord",
-      "call_adult",
-      "unplug"
-     ]
-    },
-    {
-     "id": "post",
-     "hazard": "post",
-     "label": "Damaged, leaning post",
-     "fixCard": "A leaning post can fall. Stay away and report it.",
-     "shape": "circle",
-     "x": 0.853,
-     "y": 0.482,
-     "r": 0.188,
-     "rect": [
-      0.808,
-      0.256,
-      0.094,
-      0.458
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "move_away",
-      "move_cord",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "climb",
-     "hazard": "climb",
-     "label": "Climbing a tree near power lines",
-     "fixCard": "Never climb trees near power lines.",
-     "shape": "circle",
-     "x": 0.536,
-     "y": 0.449,
-     "r": 0.051,
-     "rect": [
-      0.518,
-      0.405,
-      0.04,
-      0.095
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "cover",
-      "move_away"
-     ]
-    },
-    {
-     "id": "kite",
-     "hazard": "kite",
-     "label": "Kite caught on a power line",
-     "fixCard": "Never try to get a kite off a power line. Fly kites in open fields.",
-     "shape": "circle",
-     "x": 0.67,
-     "y": 0.298,
-     "r": 0.08,
-     "rect": [
-      0.638,
-      0.214,
-      0.067,
-      0.173
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "cover",
-      "move_away"
-     ]
-    },
-    {
-     "id": "fallen",
-     "hazard": "fallen",
-     "label": "Fallen power line in water",
-     "fixCard": "Stay far away from fallen wires and the water around them. Call an adult.",
-     "shape": "circle",
-     "x": 0.413,
-     "y": 0.545,
-     "r": 0.221,
-     "rect": [
-      0.312,
-      0.274,
-      0.205,
-      0.548
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "move_cord",
-      "unplug"
-     ]
-    }
-   ],
-   "stars": [
-    {
-     "x": 0.071,
-     "y": 0.06,
-     "r": 0.03
-    },
-    {
-     "x": 0.5,
-     "y": 0.048,
-     "r": 0.03
-    },
-    {
-     "x": 0.964,
-     "y": 0.929,
-     "r": 0.03
-    }
-   ]
-  },
-  {
-   "world": 3,
-   "level": 3,
-   "scene": "street",
-   "a": "spot-the-shock.pair.3-3_a",
-   "b": "spot-the-shock.pair.3-3_b",
-   "night": {
-    "a": "spot-the-shock.pair.3-3_a_night",
-    "b": "spot-the-shock.pair.3-3_b_night"
-   },
-   "timeMs": 110000,
-   "differences": [
-    {
-     "id": "kite",
-     "hazard": "kite",
-     "label": "Kite caught on a power line",
-     "fixCard": "Never try to get a kite off a power line. Fly kites in open fields.",
-     "shape": "circle",
-     "x": 0.67,
-     "y": 0.298,
-     "r": 0.08,
-     "rect": [
-      0.638,
-      0.214,
-      0.067,
-      0.173
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "unplug",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "climb",
-     "hazard": "climb",
-     "label": "Climbing a tree near power lines",
-     "fixCard": "Never climb trees near power lines.",
-     "shape": "circle",
-     "x": 0.536,
-     "y": 0.449,
-     "r": 0.051,
-     "rect": [
-      0.518,
-      0.405,
-      0.04,
-      0.095
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "move_cord",
-      "unplug"
-     ]
-    },
-    {
-     "id": "ladder",
-     "hazard": "ladder",
-     "label": "Ladder against a power pole",
-     "fixCard": "Never climb near power lines.",
-     "shape": "circle",
-     "x": 0.301,
-     "y": 0.601,
-     "r": 0.129,
-     "rect": [
-      0.272,
-      0.452,
-      0.062,
-      0.304
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "move_away",
-      "move_cord"
-     ]
-    },
-    {
-     "id": "branch",
-     "hazard": "branch",
-     "label": "Branch on a power line",
-     "fixCard": "Branches on wires can spark. Stay away and report it.",
-     "shape": "circle",
-     "x": 0.435,
-     "y": 0.259,
-     "r": 0.06,
-     "rect": [
-      0.393,
-      0.202,
-      0.089,
-      0.119
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "cover",
-      "move_away"
-     ]
-    },
-    {
-     "id": "fallen",
-     "hazard": "fallen",
-     "label": "Fallen power line in water",
-     "fixCard": "Stay far away from fallen wires and the water around them. Call an adult.",
-     "shape": "circle",
-     "x": 0.413,
-     "y": 0.545,
-     "r": 0.221,
-     "rect": [
-      0.312,
-      0.274,
-      0.205,
-      0.548
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "move_away",
-      "cover",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "meter",
-     "hazard": "meter",
-     "label": "Open meter box",
-     "fixCard": "Don't touch open electrical boxes. Tell an adult.",
-     "shape": "circle",
-     "x": 0.185,
-     "y": 0.586,
-     "r": 0.038,
-     "rect": [
-      0.17,
-      0.56,
-      0.036,
-      0.06
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "unplug",
-      "move_cord",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "post",
-     "hazard": "post",
-     "label": "Damaged, leaning post",
-     "fixCard": "A leaning post can fall. Stay away and report it.",
-     "shape": "circle",
-     "x": 0.853,
-     "y": 0.482,
-     "r": 0.188,
-     "rect": [
-      0.808,
-      0.256,
-      0.094,
-      0.458
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "move_cord",
-      "unplug",
-      "call_adult"
-     ]
-    }
-   ],
-   "stars": [
-    {
-     "x": 0.893,
-     "y": 0.476,
-     "r": 0.03
-    },
-    {
-     "x": 0.071,
-     "y": 0.06,
-     "r": 0.03
-    },
-    {
-     "x": 0.929,
-     "y": 0.071,
-     "r": 0.03
-    }
-   ]
-  },
-  {
-   "world": 3,
-   "level": 4,
-   "scene": "street",
-   "a": "spot-the-shock.pair.3-4_a",
-   "b": "spot-the-shock.pair.3-4_b",
-   "night": {
-    "a": "spot-the-shock.pair.3-4_a_night",
-    "b": "spot-the-shock.pair.3-4_b_night"
-   },
-   "timeMs": 110000,
-   "differences": [
-    {
-     "id": "climb",
-     "hazard": "climb",
-     "label": "Climbing a tree near power lines",
-     "fixCard": "Never climb trees near power lines.",
-     "shape": "circle",
-     "x": 0.536,
-     "y": 0.449,
-     "r": 0.051,
-     "rect": [
-      0.518,
-      0.405,
-      0.04,
-      0.095
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "move_cord",
-      "unplug"
-     ]
-    },
-    {
-     "id": "branch",
-     "hazard": "branch",
-     "label": "Branch on a power line",
-     "fixCard": "Branches on wires can spark. Stay away and report it.",
-     "shape": "circle",
-     "x": 0.435,
-     "y": 0.259,
-     "r": 0.06,
-     "rect": [
-      0.393,
-      0.202,
-      0.089,
-      0.119
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "move_cord",
-      "move_away",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "post",
-     "hazard": "post",
-     "label": "Damaged, leaning post",
-     "fixCard": "A leaning post can fall. Stay away and report it.",
-     "shape": "circle",
-     "x": 0.853,
-     "y": 0.482,
-     "r": 0.188,
-     "rect": [
-      0.808,
-      0.256,
-      0.094,
-      0.458
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "move_away",
-      "cover",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "meter",
-     "hazard": "meter",
-     "label": "Open meter box",
-     "fixCard": "Don't touch open electrical boxes. Tell an adult.",
-     "shape": "circle",
-     "x": 0.185,
-     "y": 0.586,
-     "r": 0.038,
-     "rect": [
-      0.17,
-      0.56,
-      0.036,
-      0.06
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "move_away",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "kite",
-     "hazard": "kite",
-     "label": "Kite caught on a power line",
-     "fixCard": "Never try to get a kite off a power line. Fly kites in open fields.",
-     "shape": "circle",
-     "x": 0.67,
-     "y": 0.298,
-     "r": 0.08,
-     "rect": [
-      0.638,
-      0.214,
-      0.067,
-      0.173
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "move_cord",
-      "call_adult",
-      "unplug"
-     ]
-    },
-    {
-     "id": "fallen",
-     "hazard": "fallen",
-     "label": "Fallen power line in water",
-     "fixCard": "Stay far away from fallen wires and the water around them. Call an adult.",
-     "shape": "circle",
-     "x": 0.413,
-     "y": 0.545,
-     "r": 0.221,
-     "rect": [
-      0.312,
-      0.274,
-      0.205,
-      0.548
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "unplug",
-      "call_adult",
-      "move_cord"
-     ]
-    },
-    {
-     "id": "ladder",
-     "hazard": "ladder",
-     "label": "Ladder against a power pole",
-     "fixCard": "Never climb near power lines.",
-     "shape": "circle",
-     "x": 0.301,
-     "y": 0.601,
-     "r": 0.129,
-     "rect": [
-      0.272,
-      0.452,
-      0.062,
-      0.304
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "unplug",
-      "cover"
-     ]
-    }
-   ],
-   "stars": [
-    {
-     "x": 0.964,
-     "y": 0.929,
-     "r": 0.03
-    },
-    {
-     "x": 0.5,
-     "y": 0.048,
-     "r": 0.03
-    },
-    {
-     "x": 0.036,
-     "y": 0.893,
-     "r": 0.03
-    }
-   ]
-  },
-  {
-   "world": 3,
-   "level": 5,
-   "scene": "street",
-   "a": "spot-the-shock.pair.3-5_a",
-   "b": "spot-the-shock.pair.3-5_b",
-   "night": {
-    "a": "spot-the-shock.pair.3-5_a_night",
-    "b": "spot-the-shock.pair.3-5_b_night"
-   },
-   "timeMs": 110000,
-   "differences": [
-    {
-     "id": "climb",
-     "hazard": "climb",
-     "label": "Climbing a tree near power lines",
-     "fixCard": "Never climb trees near power lines.",
-     "shape": "circle",
-     "x": 0.536,
-     "y": 0.449,
-     "r": 0.051,
-     "rect": [
-      0.518,
-      0.405,
-      0.04,
-      0.095
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "move_away",
-      "move_cord",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "meter",
-     "hazard": "meter",
-     "label": "Open meter box",
-     "fixCard": "Don't touch open electrical boxes. Tell an adult.",
-     "shape": "circle",
-     "x": 0.185,
-     "y": 0.586,
-     "r": 0.038,
-     "rect": [
-      0.17,
-      0.56,
-      0.036,
-      0.06
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "call_adult",
-      "move_away"
-     ]
-    },
-    {
-     "id": "ladder",
-     "hazard": "ladder",
-     "label": "Ladder against a power pole",
-     "fixCard": "Never climb near power lines.",
-     "shape": "circle",
-     "x": 0.301,
-     "y": 0.601,
-     "r": 0.129,
-     "rect": [
-      0.272,
-      0.452,
-      0.062,
-      0.304
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "move_away",
-      "call_adult",
-      "cover"
-     ]
-    },
-    {
-     "id": "post",
-     "hazard": "post",
-     "label": "Damaged, leaning post",
-     "fixCard": "A leaning post can fall. Stay away and report it.",
-     "shape": "circle",
-     "x": 0.853,
-     "y": 0.482,
-     "r": 0.188,
-     "rect": [
-      0.808,
-      0.256,
-      0.094,
-      0.458
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "move_cord",
-      "unplug"
-     ]
-    },
-    {
-     "id": "fallen",
-     "hazard": "fallen",
-     "label": "Fallen power line in water",
-     "fixCard": "Stay far away from fallen wires and the water around them. Call an adult.",
-     "shape": "circle",
-     "x": 0.413,
-     "y": 0.545,
-     "r": 0.221,
-     "rect": [
-      0.312,
-      0.274,
-      0.205,
-      0.548
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "unplug",
-      "move_cord"
-     ]
-    },
-    {
-     "id": "branch",
-     "hazard": "branch",
-     "label": "Branch on a power line",
-     "fixCard": "Branches on wires can spark. Stay away and report it.",
-     "shape": "circle",
-     "x": 0.435,
-     "y": 0.259,
-     "r": 0.06,
-     "rect": [
-      0.393,
-      0.202,
-      0.089,
-      0.119
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "unplug",
-      "cover"
-     ]
-    },
-    {
-     "id": "kite",
-     "hazard": "kite",
-     "label": "Kite caught on a power line",
-     "fixCard": "Never try to get a kite off a power line. Fly kites in open fields.",
-     "shape": "circle",
-     "x": 0.67,
-     "y": 0.298,
-     "r": 0.08,
-     "rect": [
-      0.638,
-      0.214,
-      0.067,
-      0.173
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "move_cord",
-      "move_away"
-     ]
-    }
-   ],
-   "stars": [
-    {
-     "x": 0.036,
-     "y": 0.893,
-     "r": 0.03
-    },
-    {
-     "x": 0.929,
-     "y": 0.071,
-     "r": 0.03
-    },
-    {
-     "x": 0.179,
-     "y": 0.417,
-     "r": 0.03
-    }
-   ]
-  },
-  {
-   "world": 4,
-   "level": 1,
-   "scene": "storm",
-   "a": "spot-the-shock.pair.4-1_a",
-   "b": "spot-the-shock.pair.4-1_b",
-   "night": {
-    "a": "spot-the-shock.pair.4-1_a_night",
-    "b": "spot-the-shock.pair.4-1_b_night"
-   },
+   "theme": "typhoon",
    "timeMs": 100000,
-   "differences": [
+   "night": true,
+   "fixIt": false,
+   "pairs": [
     {
-     "id": "fence",
-     "hazard": "fence",
-     "label": "Wire touching a fence",
-     "fixCard": "A wire on a fence can make the fence dangerous. Don't touch it.",
-     "shape": "circle",
-     "x": 0.58,
-     "y": 0.774,
-     "r": 0.107,
-     "rect": [
-      0.491,
-      0.762,
-      0.183,
-      0.03
+     "id": "4-1",
+     "scene": "storm",
+     "a": "spot-the-shock.pair.4-1_a",
+     "b": "spot-the-shock.pair.4-1_b",
+     "night": {
+      "a": "spot-the-shock.pair.4-1_a_night",
+      "b": "spot-the-shock.pair.4-1_b_night"
+     },
+     "differences": [
+      {
+       "id": "fence",
+       "hazard": "fence",
+       "shape": "rect",
+       "rect": [
+        0.491,
+        0.7413,
+        0.183,
+        0.0714
+       ],
+       "fixCard": "fix.fence",
+       "fixOptions": [
+        "unplug",
+        "cover",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "fallen",
+       "hazard": "fallen",
+       "shape": "rect",
+       "rect": [
+        0.317,
+        0.274,
+        0.201,
+        0.548
+       ],
+       "fixCard": "fix.fallen",
+       "fixOptions": [
+        "call_adult",
+        "unplug",
+        "cover"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "climb",
+       "hazard": "climb",
+       "shape": "circle",
+       "x": 0.536,
+       "y": 0.449,
+       "r": 0.051,
+       "rect": [
+        0.518,
+        0.405,
+        0.04,
+        0.095
+       ],
+       "fixCard": "fix.climb",
+       "fixOptions": [
+        "call_adult",
+        "move_cord",
+        "move_away"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "branch",
+       "hazard": "branch",
+       "shape": "circle",
+       "x": 0.435,
+       "y": 0.259,
+       "r": 0.06,
+       "rect": [
+        0.393,
+        0.202,
+        0.089,
+        0.119
+       ],
+       "fixCard": "fix.branch",
+       "fixOptions": [
+        "call_adult",
+        "move_cord",
+        "unplug"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "meter",
+       "hazard": "meter",
+       "shape": "circle",
+       "x": 0.185,
+       "y": 0.586,
+       "r": 0.038,
+       "rect": [
+        0.17,
+        0.56,
+        0.036,
+        0.06
+       ],
+       "fixCard": "fix.meter",
+       "fixOptions": [
+        "unplug",
+        "call_adult",
+        "cover"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "post",
+       "hazard": "post",
+       "shape": "rect",
+       "rect": [
+        0.808,
+        0.256,
+        0.094,
+        0.458
+       ],
+       "fixCard": "fix.post",
+       "fixOptions": [
+        "cover",
+        "move_cord",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      }
      ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "unplug",
-      "cover",
-      "call_adult"
+     "stars": [
+      {
+       "x": 0.955,
+       "y": 0.929,
+       "r": 0.03
+      },
+      {
+       "x": 0.045,
+       "y": 0.893,
+       "r": 0.03
+      },
+      {
+       "x": 0.134,
+       "y": 0.381,
+       "r": 0.03
+      }
      ]
     },
     {
-     "id": "fallen",
-     "hazard": "fallen",
-     "label": "Fallen power line in water",
-     "fixCard": "Stay far away from fallen wires and the water around them. Call an adult.",
-     "shape": "circle",
-     "x": 0.415,
-     "y": 0.545,
-     "r": 0.221,
-     "rect": [
-      0.317,
-      0.274,
-      0.201,
-      0.548
+     "id": "4-2",
+     "scene": "storm",
+     "a": "spot-the-shock.pair.4-2_a",
+     "b": "spot-the-shock.pair.4-2_b",
+     "night": {
+      "a": "spot-the-shock.pair.4-2_a_night",
+      "b": "spot-the-shock.pair.4-2_b_night"
+     },
+     "differences": [
+      {
+       "id": "climb",
+       "hazard": "climb",
+       "shape": "circle",
+       "x": 0.536,
+       "y": 0.449,
+       "r": 0.051,
+       "rect": [
+        0.518,
+        0.405,
+        0.04,
+        0.095
+       ],
+       "fixCard": "fix.climb",
+       "fixOptions": [
+        "call_adult",
+        "unplug",
+        "cover"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "fence",
+       "hazard": "fence",
+       "shape": "rect",
+       "rect": [
+        0.491,
+        0.7413,
+        0.183,
+        0.0714
+       ],
+       "fixCard": "fix.fence",
+       "fixOptions": [
+        "move_cord",
+        "call_adult",
+        "move_away"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "fallen",
+       "hazard": "fallen",
+       "shape": "rect",
+       "rect": [
+        0.317,
+        0.274,
+        0.201,
+        0.548
+       ],
+       "fixCard": "fix.fallen",
+       "fixOptions": [
+        "unplug",
+        "move_cord",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "kite",
+       "hazard": "kite",
+       "shape": "circle",
+       "x": 0.67,
+       "y": 0.298,
+       "r": 0.08,
+       "rect": [
+        0.638,
+        0.214,
+        0.067,
+        0.173
+       ],
+       "fixCard": "fix.kite",
+       "fixOptions": [
+        "unplug",
+        "call_adult",
+        "cover"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "post",
+       "hazard": "post",
+       "shape": "rect",
+       "rect": [
+        0.808,
+        0.256,
+        0.094,
+        0.458
+       ],
+       "fixCard": "fix.post",
+       "fixOptions": [
+        "move_cord",
+        "cover",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "branch",
+       "hazard": "branch",
+       "shape": "circle",
+       "x": 0.435,
+       "y": 0.259,
+       "r": 0.06,
+       "rect": [
+        0.393,
+        0.202,
+        0.089,
+        0.119
+       ],
+       "fixCard": "fix.branch",
+       "fixOptions": [
+        "call_adult",
+        "move_cord",
+        "unplug"
+       ],
+       "correctFix": "call_adult"
+      }
      ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "unplug",
-      "cover"
+     "stars": [
+      {
+       "x": 0.955,
+       "y": 0.929,
+       "r": 0.03
+      },
+      {
+       "x": 0.956,
+       "y": 0.143,
+       "r": 0.03
+      },
+      {
+       "x": 0.045,
+       "y": 0.893,
+       "r": 0.03
+      }
      ]
     },
     {
-     "id": "climb",
-     "hazard": "climb",
-     "label": "Climbing a tree near power lines",
-     "fixCard": "Never climb trees near power lines.",
-     "shape": "circle",
-     "x": 0.536,
-     "y": 0.449,
-     "r": 0.051,
-     "rect": [
-      0.518,
-      0.405,
-      0.04,
-      0.095
+     "id": "4-3",
+     "scene": "storm",
+     "a": "spot-the-shock.pair.4-3_a",
+     "b": "spot-the-shock.pair.4-3_b",
+     "night": {
+      "a": "spot-the-shock.pair.4-3_a_night",
+      "b": "spot-the-shock.pair.4-3_b_night"
+     },
+     "differences": [
+      {
+       "id": "post",
+       "hazard": "post",
+       "shape": "rect",
+       "rect": [
+        0.808,
+        0.256,
+        0.094,
+        0.458
+       ],
+       "fixCard": "fix.post",
+       "fixOptions": [
+        "move_cord",
+        "call_adult",
+        "move_away"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "meter",
+       "hazard": "meter",
+       "shape": "circle",
+       "x": 0.185,
+       "y": 0.586,
+       "r": 0.038,
+       "rect": [
+        0.17,
+        0.56,
+        0.036,
+        0.06
+       ],
+       "fixCard": "fix.meter",
+       "fixOptions": [
+        "move_cord",
+        "unplug",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "branch",
+       "hazard": "branch",
+       "shape": "circle",
+       "x": 0.435,
+       "y": 0.259,
+       "r": 0.06,
+       "rect": [
+        0.393,
+        0.202,
+        0.089,
+        0.119
+       ],
+       "fixCard": "fix.branch",
+       "fixOptions": [
+        "call_adult",
+        "cover",
+        "unplug"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "fallen",
+       "hazard": "fallen",
+       "shape": "rect",
+       "rect": [
+        0.317,
+        0.274,
+        0.201,
+        0.548
+       ],
+       "fixCard": "fix.fallen",
+       "fixOptions": [
+        "call_adult",
+        "move_cord",
+        "cover"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "fence",
+       "hazard": "fence",
+       "shape": "rect",
+       "rect": [
+        0.491,
+        0.7413,
+        0.183,
+        0.0714
+       ],
+       "fixCard": "fix.fence",
+       "fixOptions": [
+        "call_adult",
+        "unplug",
+        "move_cord"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "climb",
+       "hazard": "climb",
+       "shape": "circle",
+       "x": 0.536,
+       "y": 0.449,
+       "r": 0.051,
+       "rect": [
+        0.518,
+        0.405,
+        0.04,
+        0.095
+       ],
+       "fixCard": "fix.climb",
+       "fixOptions": [
+        "move_cord",
+        "call_adult",
+        "cover"
+       ],
+       "correctFix": "call_adult"
+      }
      ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "move_cord",
-      "move_away"
+     "stars": [
+      {
+       "x": 0.929,
+       "y": 0.071,
+       "r": 0.03
+      },
+      {
+       "x": 0.045,
+       "y": 0.893,
+       "r": 0.03
+      },
+      {
+       "x": 0.5,
+       "y": 0.06,
+       "r": 0.03
+      }
      ]
     },
     {
-     "id": "branch",
-     "hazard": "branch",
-     "label": "Branch on a power line",
-     "fixCard": "Branches on wires can spark. Stay away and report it.",
-     "shape": "circle",
-     "x": 0.435,
-     "y": 0.259,
-     "r": 0.06,
-     "rect": [
-      0.393,
-      0.202,
-      0.089,
-      0.119
+     "id": "4-4",
+     "scene": "storm",
+     "a": "spot-the-shock.pair.4-4_a",
+     "b": "spot-the-shock.pair.4-4_b",
+     "night": {
+      "a": "spot-the-shock.pair.4-4_a_night",
+      "b": "spot-the-shock.pair.4-4_b_night"
+     },
+     "differences": [
+      {
+       "id": "fallen",
+       "hazard": "fallen",
+       "shape": "rect",
+       "rect": [
+        0.317,
+        0.274,
+        0.201,
+        0.548
+       ],
+       "fixCard": "fix.fallen",
+       "fixOptions": [
+        "call_adult",
+        "move_cord",
+        "unplug"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "fence",
+       "hazard": "fence",
+       "shape": "rect",
+       "rect": [
+        0.491,
+        0.7413,
+        0.183,
+        0.0714
+       ],
+       "fixCard": "fix.fence",
+       "fixOptions": [
+        "call_adult",
+        "unplug",
+        "cover"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "climb",
+       "hazard": "climb",
+       "shape": "circle",
+       "x": 0.536,
+       "y": 0.449,
+       "r": 0.051,
+       "rect": [
+        0.518,
+        0.405,
+        0.04,
+        0.095
+       ],
+       "fixCard": "fix.climb",
+       "fixOptions": [
+        "move_cord",
+        "call_adult",
+        "cover"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "meter",
+       "hazard": "meter",
+       "shape": "circle",
+       "x": 0.185,
+       "y": 0.586,
+       "r": 0.038,
+       "rect": [
+        0.17,
+        0.56,
+        0.036,
+        0.06
+       ],
+       "fixCard": "fix.meter",
+       "fixOptions": [
+        "call_adult",
+        "move_cord",
+        "unplug"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "branch",
+       "hazard": "branch",
+       "shape": "circle",
+       "x": 0.435,
+       "y": 0.259,
+       "r": 0.06,
+       "rect": [
+        0.393,
+        0.202,
+        0.089,
+        0.119
+       ],
+       "fixCard": "fix.branch",
+       "fixOptions": [
+        "cover",
+        "call_adult",
+        "move_cord"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "kite",
+       "hazard": "kite",
+       "shape": "circle",
+       "x": 0.67,
+       "y": 0.298,
+       "r": 0.08,
+       "rect": [
+        0.638,
+        0.214,
+        0.067,
+        0.173
+       ],
+       "fixCard": "fix.kite",
+       "fixOptions": [
+        "cover",
+        "unplug",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      }
      ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "move_cord",
-      "unplug"
+     "stars": [
+      {
+       "x": 0.929,
+       "y": 0.071,
+       "r": 0.03
+      },
+      {
+       "x": 0.071,
+       "y": 0.06,
+       "r": 0.03
+      },
+      {
+       "x": 0.5,
+       "y": 0.06,
+       "r": 0.03
+      }
      ]
     },
     {
-     "id": "meter",
-     "hazard": "meter",
-     "label": "Open meter box",
-     "fixCard": "Don't touch open electrical boxes. Tell an adult.",
-     "shape": "circle",
-     "x": 0.185,
-     "y": 0.586,
-     "r": 0.038,
-     "rect": [
-      0.17,
-      0.56,
-      0.036,
-      0.06
+     "id": "4-5",
+     "scene": "storm",
+     "a": "spot-the-shock.pair.4-5_a",
+     "b": "spot-the-shock.pair.4-5_b",
+     "night": {
+      "a": "spot-the-shock.pair.4-5_a_night",
+      "b": "spot-the-shock.pair.4-5_b_night"
+     },
+     "differences": [
+      {
+       "id": "fallen",
+       "hazard": "fallen",
+       "shape": "rect",
+       "rect": [
+        0.317,
+        0.274,
+        0.201,
+        0.548
+       ],
+       "fixCard": "fix.fallen",
+       "fixOptions": [
+        "call_adult",
+        "cover",
+        "unplug"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "post",
+       "hazard": "post",
+       "shape": "rect",
+       "rect": [
+        0.808,
+        0.256,
+        0.094,
+        0.458
+       ],
+       "fixCard": "fix.post",
+       "fixOptions": [
+        "cover",
+        "call_adult",
+        "move_cord"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "fence",
+       "hazard": "fence",
+       "shape": "rect",
+       "rect": [
+        0.491,
+        0.7413,
+        0.183,
+        0.0714
+       ],
+       "fixCard": "fix.fence",
+       "fixOptions": [
+        "unplug",
+        "move_cord",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "climb",
+       "hazard": "climb",
+       "shape": "circle",
+       "x": 0.536,
+       "y": 0.449,
+       "r": 0.051,
+       "rect": [
+        0.518,
+        0.405,
+        0.04,
+        0.095
+       ],
+       "fixCard": "fix.climb",
+       "fixOptions": [
+        "cover",
+        "call_adult",
+        "move_cord"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "branch",
+       "hazard": "branch",
+       "shape": "circle",
+       "x": 0.435,
+       "y": 0.259,
+       "r": 0.06,
+       "rect": [
+        0.393,
+        0.202,
+        0.089,
+        0.119
+       ],
+       "fixCard": "fix.branch",
+       "fixOptions": [
+        "call_adult",
+        "cover",
+        "unplug"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "meter",
+       "hazard": "meter",
+       "shape": "circle",
+       "x": 0.185,
+       "y": 0.586,
+       "r": 0.038,
+       "rect": [
+        0.17,
+        0.56,
+        0.036,
+        0.06
+       ],
+       "fixCard": "fix.meter",
+       "fixOptions": [
+        "call_adult",
+        "move_away",
+        "move_cord"
+       ],
+       "correctFix": "call_adult"
+      }
      ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "unplug",
-      "call_adult",
-      "cover"
+     "stars": [
+      {
+       "x": 0.5,
+       "y": 0.06,
+       "r": 0.03
+      },
+      {
+       "x": 0.045,
+       "y": 0.893,
+       "r": 0.03
+      },
+      {
+       "x": 0.071,
+       "y": 0.06,
+       "r": 0.03
+      }
      ]
-    },
-    {
-     "id": "post",
-     "hazard": "post",
-     "label": "Damaged, leaning post",
-     "fixCard": "A leaning post can fall. Stay away and report it.",
-     "shape": "circle",
-     "x": 0.853,
-     "y": 0.482,
-     "r": 0.188,
-     "rect": [
-      0.808,
-      0.256,
-      0.094,
-      0.458
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "move_cord",
-      "call_adult"
-     ]
-    }
-   ],
-   "stars": [
-    {
-     "x": 0.964,
-     "y": 0.929,
-     "r": 0.03
-    },
-    {
-     "x": 0.036,
-     "y": 0.893,
-     "r": 0.03
-    },
-    {
-     "x": 0.179,
-     "y": 0.417,
-     "r": 0.03
     }
    ]
   },
   {
-   "world": 4,
-   "level": 2,
-   "scene": "storm",
-   "a": "spot-the-shock.pair.4-2_a",
-   "b": "spot-the-shock.pair.4-2_b",
-   "night": {
-    "a": "spot-the-shock.pair.4-2_a_night",
-    "b": "spot-the-shock.pair.4-2_b_night"
-   },
-   "timeMs": 100000,
-   "differences": [
-    {
-     "id": "climb",
-     "hazard": "climb",
-     "label": "Climbing a tree near power lines",
-     "fixCard": "Never climb trees near power lines.",
-     "shape": "circle",
-     "x": 0.536,
-     "y": 0.449,
-     "r": 0.051,
-     "rect": [
-      0.518,
-      0.405,
-      0.04,
-      0.095
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "unplug",
-      "cover"
-     ]
-    },
-    {
-     "id": "fence",
-     "hazard": "fence",
-     "label": "Wire touching a fence",
-     "fixCard": "A wire on a fence can make the fence dangerous. Don't touch it.",
-     "shape": "circle",
-     "x": 0.58,
-     "y": 0.774,
-     "r": 0.107,
-     "rect": [
-      0.491,
-      0.762,
-      0.183,
-      0.03
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "move_cord",
-      "call_adult",
-      "move_away"
-     ]
-    },
-    {
-     "id": "fallen",
-     "hazard": "fallen",
-     "label": "Fallen power line in water",
-     "fixCard": "Stay far away from fallen wires and the water around them. Call an adult.",
-     "shape": "circle",
-     "x": 0.415,
-     "y": 0.545,
-     "r": 0.221,
-     "rect": [
-      0.317,
-      0.274,
-      0.201,
-      0.548
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "unplug",
-      "move_cord",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "kite",
-     "hazard": "kite",
-     "label": "Kite caught on a power line",
-     "fixCard": "Never try to get a kite off a power line. Fly kites in open fields.",
-     "shape": "circle",
-     "x": 0.67,
-     "y": 0.298,
-     "r": 0.08,
-     "rect": [
-      0.638,
-      0.214,
-      0.067,
-      0.173
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "unplug",
-      "call_adult",
-      "cover"
-     ]
-    },
-    {
-     "id": "post",
-     "hazard": "post",
-     "label": "Damaged, leaning post",
-     "fixCard": "A leaning post can fall. Stay away and report it.",
-     "shape": "circle",
-     "x": 0.853,
-     "y": 0.482,
-     "r": 0.188,
-     "rect": [
-      0.808,
-      0.256,
-      0.094,
-      0.458
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "move_cord",
-      "cover",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "branch",
-     "hazard": "branch",
-     "label": "Branch on a power line",
-     "fixCard": "Branches on wires can spark. Stay away and report it.",
-     "shape": "circle",
-     "x": 0.435,
-     "y": 0.259,
-     "r": 0.06,
-     "rect": [
-      0.393,
-      0.202,
-      0.089,
-      0.119
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "move_cord",
-      "unplug"
-     ]
-    }
-   ],
-   "stars": [
-    {
-     "x": 0.964,
-     "y": 0.929,
-     "r": 0.03
-    },
-    {
-     "x": 0.893,
-     "y": 0.476,
-     "r": 0.03
-    },
-    {
-     "x": 0.036,
-     "y": 0.893,
-     "r": 0.03
-    }
-   ]
-  },
-  {
-   "world": 4,
-   "level": 3,
-   "scene": "storm",
-   "a": "spot-the-shock.pair.4-3_a",
-   "b": "spot-the-shock.pair.4-3_b",
-   "night": {
-    "a": "spot-the-shock.pair.4-3_a_night",
-    "b": "spot-the-shock.pair.4-3_b_night"
-   },
-   "timeMs": 100000,
-   "differences": [
-    {
-     "id": "post",
-     "hazard": "post",
-     "label": "Damaged, leaning post",
-     "fixCard": "A leaning post can fall. Stay away and report it.",
-     "shape": "circle",
-     "x": 0.853,
-     "y": 0.482,
-     "r": 0.188,
-     "rect": [
-      0.808,
-      0.256,
-      0.094,
-      0.458
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "move_cord",
-      "call_adult",
-      "move_away"
-     ]
-    },
-    {
-     "id": "meter",
-     "hazard": "meter",
-     "label": "Open meter box",
-     "fixCard": "Don't touch open electrical boxes. Tell an adult.",
-     "shape": "circle",
-     "x": 0.185,
-     "y": 0.586,
-     "r": 0.038,
-     "rect": [
-      0.17,
-      0.56,
-      0.036,
-      0.06
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "move_cord",
-      "unplug",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "branch",
-     "hazard": "branch",
-     "label": "Branch on a power line",
-     "fixCard": "Branches on wires can spark. Stay away and report it.",
-     "shape": "circle",
-     "x": 0.435,
-     "y": 0.259,
-     "r": 0.06,
-     "rect": [
-      0.393,
-      0.202,
-      0.089,
-      0.119
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "cover",
-      "unplug"
-     ]
-    },
-    {
-     "id": "fallen",
-     "hazard": "fallen",
-     "label": "Fallen power line in water",
-     "fixCard": "Stay far away from fallen wires and the water around them. Call an adult.",
-     "shape": "circle",
-     "x": 0.415,
-     "y": 0.545,
-     "r": 0.221,
-     "rect": [
-      0.317,
-      0.274,
-      0.201,
-      0.548
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "move_cord",
-      "cover"
-     ]
-    },
-    {
-     "id": "fence",
-     "hazard": "fence",
-     "label": "Wire touching a fence",
-     "fixCard": "A wire on a fence can make the fence dangerous. Don't touch it.",
-     "shape": "circle",
-     "x": 0.58,
-     "y": 0.774,
-     "r": 0.107,
-     "rect": [
-      0.491,
-      0.762,
-      0.183,
-      0.03
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "unplug",
-      "move_cord"
-     ]
-    },
-    {
-     "id": "climb",
-     "hazard": "climb",
-     "label": "Climbing a tree near power lines",
-     "fixCard": "Never climb trees near power lines.",
-     "shape": "circle",
-     "x": 0.536,
-     "y": 0.449,
-     "r": 0.051,
-     "rect": [
-      0.518,
-      0.405,
-      0.04,
-      0.095
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "move_cord",
-      "call_adult",
-      "cover"
-     ]
-    }
-   ],
-   "stars": [
-    {
-     "x": 0.929,
-     "y": 0.071,
-     "r": 0.03
-    },
-    {
-     "x": 0.036,
-     "y": 0.893,
-     "r": 0.03
-    },
-    {
-     "x": 0.5,
-     "y": 0.048,
-     "r": 0.03
-    }
-   ]
-  },
-  {
-   "world": 4,
-   "level": 4,
-   "scene": "storm",
-   "a": "spot-the-shock.pair.4-4_a",
-   "b": "spot-the-shock.pair.4-4_b",
-   "night": {
-    "a": "spot-the-shock.pair.4-4_a_night",
-    "b": "spot-the-shock.pair.4-4_b_night"
-   },
-   "timeMs": 100000,
-   "differences": [
-    {
-     "id": "fallen",
-     "hazard": "fallen",
-     "label": "Fallen power line in water",
-     "fixCard": "Stay far away from fallen wires and the water around them. Call an adult.",
-     "shape": "circle",
-     "x": 0.415,
-     "y": 0.545,
-     "r": 0.221,
-     "rect": [
-      0.317,
-      0.274,
-      0.201,
-      0.548
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "move_cord",
-      "unplug"
-     ]
-    },
-    {
-     "id": "fence",
-     "hazard": "fence",
-     "label": "Wire touching a fence",
-     "fixCard": "A wire on a fence can make the fence dangerous. Don't touch it.",
-     "shape": "circle",
-     "x": 0.58,
-     "y": 0.774,
-     "r": 0.107,
-     "rect": [
-      0.491,
-      0.762,
-      0.183,
-      0.03
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "unplug",
-      "cover"
-     ]
-    },
-    {
-     "id": "climb",
-     "hazard": "climb",
-     "label": "Climbing a tree near power lines",
-     "fixCard": "Never climb trees near power lines.",
-     "shape": "circle",
-     "x": 0.536,
-     "y": 0.449,
-     "r": 0.051,
-     "rect": [
-      0.518,
-      0.405,
-      0.04,
-      0.095
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "move_cord",
-      "call_adult",
-      "cover"
-     ]
-    },
-    {
-     "id": "meter",
-     "hazard": "meter",
-     "label": "Open meter box",
-     "fixCard": "Don't touch open electrical boxes. Tell an adult.",
-     "shape": "circle",
-     "x": 0.185,
-     "y": 0.586,
-     "r": 0.038,
-     "rect": [
-      0.17,
-      0.56,
-      0.036,
-      0.06
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "move_cord",
-      "unplug"
-     ]
-    },
-    {
-     "id": "branch",
-     "hazard": "branch",
-     "label": "Branch on a power line",
-     "fixCard": "Branches on wires can spark. Stay away and report it.",
-     "shape": "circle",
-     "x": 0.435,
-     "y": 0.259,
-     "r": 0.06,
-     "rect": [
-      0.393,
-      0.202,
-      0.089,
-      0.119
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "call_adult",
-      "move_cord"
-     ]
-    },
-    {
-     "id": "kite",
-     "hazard": "kite",
-     "label": "Kite caught on a power line",
-     "fixCard": "Never try to get a kite off a power line. Fly kites in open fields.",
-     "shape": "circle",
-     "x": 0.67,
-     "y": 0.298,
-     "r": 0.08,
-     "rect": [
-      0.638,
-      0.214,
-      0.067,
-      0.173
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "unplug",
-      "call_adult"
-     ]
-    }
-   ],
-   "stars": [
-    {
-     "x": 0.929,
-     "y": 0.071,
-     "r": 0.03
-    },
-    {
-     "x": 0.071,
-     "y": 0.06,
-     "r": 0.03
-    },
-    {
-     "x": 0.5,
-     "y": 0.048,
-     "r": 0.03
-    }
-   ]
-  },
-  {
-   "world": 4,
    "level": 5,
-   "scene": "storm",
-   "a": "spot-the-shock.pair.4-5_a",
-   "b": "spot-the-shock.pair.4-5_b",
-   "night": {
-    "a": "spot-the-shock.pair.4-5_a_night",
-    "b": "spot-the-shock.pair.4-5_b_night"
-   },
-   "timeMs": 100000,
-   "differences": [
-    {
-     "id": "fallen",
-     "hazard": "fallen",
-     "label": "Fallen power line in water",
-     "fixCard": "Stay far away from fallen wires and the water around them. Call an adult.",
-     "shape": "circle",
-     "x": 0.415,
-     "y": 0.545,
-     "r": 0.221,
-     "rect": [
-      0.317,
-      0.274,
-      0.201,
-      0.548
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "cover",
-      "unplug"
-     ]
-    },
-    {
-     "id": "post",
-     "hazard": "post",
-     "label": "Damaged, leaning post",
-     "fixCard": "A leaning post can fall. Stay away and report it.",
-     "shape": "circle",
-     "x": 0.853,
-     "y": 0.482,
-     "r": 0.188,
-     "rect": [
-      0.808,
-      0.256,
-      0.094,
-      0.458
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "call_adult",
-      "move_cord"
-     ]
-    },
-    {
-     "id": "fence",
-     "hazard": "fence",
-     "label": "Wire touching a fence",
-     "fixCard": "A wire on a fence can make the fence dangerous. Don't touch it.",
-     "shape": "circle",
-     "x": 0.58,
-     "y": 0.774,
-     "r": 0.107,
-     "rect": [
-      0.491,
-      0.762,
-      0.183,
-      0.03
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "unplug",
-      "move_cord",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "climb",
-     "hazard": "climb",
-     "label": "Climbing a tree near power lines",
-     "fixCard": "Never climb trees near power lines.",
-     "shape": "circle",
-     "x": 0.536,
-     "y": 0.449,
-     "r": 0.051,
-     "rect": [
-      0.518,
-      0.405,
-      0.04,
-      0.095
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "call_adult",
-      "move_cord"
-     ]
-    },
-    {
-     "id": "branch",
-     "hazard": "branch",
-     "label": "Branch on a power line",
-     "fixCard": "Branches on wires can spark. Stay away and report it.",
-     "shape": "circle",
-     "x": 0.435,
-     "y": 0.259,
-     "r": 0.06,
-     "rect": [
-      0.393,
-      0.202,
-      0.089,
-      0.119
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "cover",
-      "unplug"
-     ]
-    },
-    {
-     "id": "meter",
-     "hazard": "meter",
-     "label": "Open meter box",
-     "fixCard": "Don't touch open electrical boxes. Tell an adult.",
-     "shape": "circle",
-     "x": 0.185,
-     "y": 0.586,
-     "r": 0.038,
-     "rect": [
-      0.17,
-      0.56,
-      0.036,
-      0.06
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "move_away",
-      "move_cord"
-     ]
-    }
-   ],
-   "stars": [
-    {
-     "x": 0.5,
-     "y": 0.048,
-     "r": 0.03
-    },
-    {
-     "x": 0.036,
-     "y": 0.893,
-     "r": 0.03
-    },
-    {
-     "x": 0.071,
-     "y": 0.06,
-     "r": 0.03
-    }
-   ]
-  },
-  {
-   "world": 5,
-   "level": 1,
-   "scene": "kitchen",
-   "a": "spot-the-shock.pair.5-1_a",
-   "b": "spot-the-shock.pair.5-1_b",
-   "night": {
-    "a": "spot-the-shock.pair.5-1_a_night",
-    "b": "spot-the-shock.pair.5-1_b_night"
-   },
+   "theme": "fixit",
    "timeMs": 120000,
-   "differences": [
+   "night": false,
+   "fixIt": true,
+   "pairs": [
     {
-     "id": "sink",
-     "hazard": "sink",
-     "label": "Appliance next to the sink",
-     "fixCard": "Keep plugged-in things away from water.",
-     "shape": "circle",
-     "x": 0.864,
-     "y": 0.47,
-     "r": 0.114,
-     "rect": [
-      0.768,
-      0.405,
-      0.196,
-      0.137
+     "id": "5-1",
+     "scene": "kitchen",
+     "a": "spot-the-shock.pair.5-1_a",
+     "b": "spot-the-shock.pair.5-1_b",
+     "night": {
+      "a": "spot-the-shock.pair.5-1_a_night",
+      "b": "spot-the-shock.pair.5-1_b_night"
+     },
+     "differences": [
+      {
+       "id": "sink",
+       "hazard": "sink",
+       "shape": "circle",
+       "x": 0.864,
+       "y": 0.47,
+       "r": 0.114,
+       "rect": [
+        0.768,
+        0.405,
+        0.196,
+        0.137
+       ],
+       "fixCard": "fix.sink",
+       "fixOptions": [
+        "cover",
+        "move_away",
+        "move_cord"
+       ],
+       "correctFix": "move_away"
+      },
+      {
+       "id": "missing_cover",
+       "hazard": "missing_cover",
+       "shape": "circle",
+       "x": 0.685,
+       "y": 0.562,
+       "r": 0.038,
+       "rect": [
+        0.67,
+        0.536,
+        0.036,
+        0.06
+       ],
+       "fixCard": "fix.missing_cover",
+       "fixOptions": [
+        "unplug",
+        "call_adult",
+        "move_away"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "wet",
+       "hazard": "wet",
+       "shape": "rect",
+       "rect": [
+        0.638,
+        0.8333,
+        0.134,
+        0.0714
+       ],
+       "fixCard": "fix.wet",
+       "fixOptions": [
+        "call_adult",
+        "move_cord",
+        "unplug"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "frayed",
+       "hazard": "frayed",
+       "shape": "circle",
+       "x": 0.79,
+       "y": 0.726,
+       "r": 0.036,
+       "rect": [
+        0.772,
+        0.714,
+        0.04,
+        0.03
+       ],
+       "fixCard": "fix.frayed",
+       "fixOptions": [
+        "move_away",
+        "cover",
+        "unplug"
+       ],
+       "correctFix": "unplug"
+      },
+      {
+       "id": "panel",
+       "hazard": "panel",
+       "shape": "circle",
+       "x": 0.598,
+       "y": 0.244,
+       "r": 0.071,
+       "rect": [
+        0.545,
+        0.179,
+        0.112,
+        0.137
+       ],
+       "fixCard": "fix.panel",
+       "fixOptions": [
+        "cover",
+        "move_cord",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      }
      ],
-     "correctFix": "move_away",
-     "fixOptions": [
-      "cover",
-      "move_away",
-      "call_adult"
+     "stars": [
+      {
+       "x": 0.947,
+       "y": 0.714,
+       "r": 0.03
+      },
+      {
+       "x": 0.045,
+       "y": 0.893,
+       "r": 0.03
+      },
+      {
+       "x": 0.179,
+       "y": 0.417,
+       "r": 0.03
+      }
      ]
     },
     {
-     "id": "missing_cover",
-     "hazard": "missing_cover",
-     "label": "Missing outlet cover",
-     "fixCard": "Open wires are dangerous. Tell an adult to put a cover on.",
-     "shape": "circle",
-     "x": 0.685,
-     "y": 0.562,
-     "r": 0.038,
-     "rect": [
-      0.67,
-      0.536,
-      0.036,
-      0.06
+     "id": "5-2",
+     "scene": "school",
+     "a": "spot-the-shock.pair.5-2_a",
+     "b": "spot-the-shock.pair.5-2_b",
+     "night": {
+      "a": "spot-the-shock.pair.5-2_a_night",
+      "b": "spot-the-shock.pair.5-2_b_night"
+     },
+     "differences": [
+      {
+       "id": "toy",
+       "hazard": "toy",
+       "shape": "circle",
+       "x": 0.556,
+       "y": 0.637,
+       "r": 0.049,
+       "rect": [
+        0.54,
+        0.595,
+        0.036,
+        0.089
+       ],
+       "fixCard": "fix.toy",
+       "fixOptions": [
+        "unplug",
+        "move_away",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "aisle",
+       "hazard": "aisle",
+       "shape": "rect",
+       "rect": [
+        0.268,
+        0.708,
+        0.629,
+        0.244
+       ],
+       "fixCard": "fix.aisle",
+       "fixOptions": [
+        "unplug",
+        "cover",
+        "move_cord"
+       ],
+       "correctFix": "move_cord"
+      },
+      {
+       "id": "frayed",
+       "hazard": "frayed",
+       "shape": "circle",
+       "x": 0.808,
+       "y": 0.729,
+       "r": 0.036,
+       "rect": [
+        0.79,
+        0.708,
+        0.04,
+        0.048
+       ],
+       "fixCard": "fix.frayed",
+       "fixOptions": [
+        "move_away",
+        "unplug",
+        "cover"
+       ],
+       "correctFix": "unplug"
+      },
+      {
+       "id": "panel",
+       "hazard": "panel",
+       "shape": "circle",
+       "x": 0.768,
+       "y": 0.399,
+       "r": 0.071,
+       "rect": [
+        0.714,
+        0.333,
+        0.112,
+        0.137
+       ],
+       "fixCard": "fix.panel",
+       "fixOptions": [
+        "cover",
+        "call_adult",
+        "move_cord"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "missing_cover",
+       "hazard": "missing_cover",
+       "shape": "circle",
+       "x": 0.73,
+       "y": 0.527,
+       "r": 0.038,
+       "rect": [
+        0.714,
+        0.5,
+        0.036,
+        0.06
+       ],
+       "fixCard": "fix.missing_cover",
+       "fixOptions": [
+        "call_adult",
+        "move_cord",
+        "cover"
+       ],
+       "correctFix": "call_adult"
+      }
      ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "unplug",
-      "call_adult",
-      "move_away"
+     "stars": [
+      {
+       "x": 0.045,
+       "y": 0.893,
+       "r": 0.03
+      },
+      {
+       "x": 0.179,
+       "y": 0.417,
+       "r": 0.03
+      },
+      {
+       "x": 0.929,
+       "y": 0.071,
+       "r": 0.03
+      }
      ]
     },
     {
-     "id": "wet",
-     "hazard": "wet",
-     "label": "Water near a plugged-in appliance",
-     "fixCard": "Water and electricity don't mix. Keep the floor dry near plugs.",
-     "shape": "circle",
-     "x": 0.703,
-     "y": 0.866,
-     "r": 0.083,
-     "rect": [
-      0.638,
-      0.845,
-      0.134,
-      0.048
+     "id": "5-3",
+     "scene": "street",
+     "a": "spot-the-shock.pair.5-3_a",
+     "b": "spot-the-shock.pair.5-3_b",
+     "night": {
+      "a": "spot-the-shock.pair.5-3_a_night",
+      "b": "spot-the-shock.pair.5-3_b_night"
+     },
+     "differences": [
+      {
+       "id": "climb",
+       "hazard": "climb",
+       "shape": "circle",
+       "x": 0.536,
+       "y": 0.449,
+       "r": 0.051,
+       "rect": [
+        0.518,
+        0.405,
+        0.04,
+        0.095
+       ],
+       "fixCard": "fix.climb",
+       "fixOptions": [
+        "unplug",
+        "call_adult",
+        "move_cord"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "branch",
+       "hazard": "branch",
+       "shape": "circle",
+       "x": 0.435,
+       "y": 0.259,
+       "r": 0.06,
+       "rect": [
+        0.393,
+        0.202,
+        0.089,
+        0.119
+       ],
+       "fixCard": "fix.branch",
+       "fixOptions": [
+        "call_adult",
+        "move_away",
+        "cover"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "fallen",
+       "hazard": "fallen",
+       "shape": "rect",
+       "rect": [
+        0.312,
+        0.274,
+        0.205,
+        0.548
+       ],
+       "fixCard": "fix.fallen",
+       "fixOptions": [
+        "cover",
+        "move_cord",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "ladder",
+       "hazard": "ladder",
+       "shape": "rect",
+       "rect": [
+        0.272,
+        0.452,
+        0.062,
+        0.304
+       ],
+       "fixCard": "fix.ladder",
+       "fixOptions": [
+        "move_cord",
+        "call_adult",
+        "cover"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "post",
+       "hazard": "post",
+       "shape": "rect",
+       "rect": [
+        0.808,
+        0.256,
+        0.094,
+        0.458
+       ],
+       "fixCard": "fix.post",
+       "fixOptions": [
+        "call_adult",
+        "cover",
+        "move_away"
+       ],
+       "correctFix": "call_adult"
+      }
      ],
-     "correctFix": "unplug",
-     "fixOptions": [
-      "call_adult",
-      "move_cord",
-      "unplug"
+     "stars": [
+      {
+       "x": 0.045,
+       "y": 0.893,
+       "r": 0.03
+      },
+      {
+       "x": 0.956,
+       "y": 0.143,
+       "r": 0.03
+      },
+      {
+       "x": 0.5,
+       "y": 0.06,
+       "r": 0.03
+      }
      ]
     },
     {
-     "id": "frayed",
-     "hazard": "frayed",
-     "label": "Frayed cord",
-     "fixCard": "A damaged cord can shock you. Unplug it and ask an adult to replace it.",
-     "shape": "circle",
-     "x": 0.79,
-     "y": 0.726,
-     "r": 0.036,
-     "rect": [
-      0.772,
-      0.714,
-      0.04,
-      0.03
+     "id": "5-4",
+     "scene": "home",
+     "a": "spot-the-shock.pair.5-4_a",
+     "b": "spot-the-shock.pair.5-4_b",
+     "night": {
+      "a": "spot-the-shock.pair.5-4_a_night",
+      "b": "spot-the-shock.pair.5-4_b_night"
+     },
+     "differences": [
+      {
+       "id": "missing_cover",
+       "hazard": "missing_cover",
+       "shape": "circle",
+       "x": 0.685,
+       "y": 0.562,
+       "r": 0.038,
+       "rect": [
+        0.67,
+        0.536,
+        0.036,
+        0.06
+       ],
+       "fixCard": "fix.missing_cover",
+       "fixOptions": [
+        "move_away",
+        "call_adult",
+        "cover"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "toy",
+       "hazard": "toy",
+       "shape": "circle",
+       "x": 0.884,
+       "y": 0.673,
+       "r": 0.045,
+       "rect": [
+        0.866,
+        0.637,
+        0.04,
+        0.077
+       ],
+       "fixCard": "fix.toy",
+       "fixOptions": [
+        "call_adult",
+        "move_cord",
+        "cover"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "rug",
+       "hazard": "rug",
+       "shape": "rect",
+       "rect": [
+        0.268,
+        0.72,
+        0.362,
+        0.167
+       ],
+       "fixCard": "fix.rug",
+       "fixOptions": [
+        "cover",
+        "move_away",
+        "move_cord"
+       ],
+       "correctFix": "move_cord"
+      },
+      {
+       "id": "octopus",
+       "hazard": "octopus",
+       "shape": "circle",
+       "x": 0.219,
+       "y": 0.705,
+       "r": 0.107,
+       "rect": [
+        0.129,
+        0.601,
+        0.183,
+        0.214
+       ],
+       "fixCard": "fix.octopus",
+       "fixOptions": [
+        "unplug",
+        "cover",
+        "move_away"
+       ],
+       "correctFix": "unplug"
+      },
+      {
+       "id": "wet",
+       "hazard": "wet",
+       "shape": "rect",
+       "rect": [
+        0.616,
+        0.8333,
+        0.134,
+        0.0714
+       ],
+       "fixCard": "fix.wet",
+       "fixOptions": [
+        "cover",
+        "call_adult",
+        "unplug"
+       ],
+       "correctFix": "call_adult"
+      }
      ],
-     "correctFix": "unplug",
-     "fixOptions": [
-      "move_away",
-      "cover",
-      "unplug"
+     "stars": [
+      {
+       "x": 0.071,
+       "y": 0.06,
+       "r": 0.03
+      },
+      {
+       "x": 0.179,
+       "y": 0.417,
+       "r": 0.03
+      },
+      {
+       "x": 0.955,
+       "y": 0.929,
+       "r": 0.03
+      }
      ]
     },
     {
-     "id": "panel",
-     "hazard": "panel",
-     "label": "Open electrical panel",
-     "fixCard": "Keep electrical panels closed. Only adults should open them.",
-     "shape": "circle",
-     "x": 0.598,
-     "y": 0.244,
-     "r": 0.071,
-     "rect": [
-      0.545,
-      0.179,
-      0.112,
-      0.137
+     "id": "5-5",
+     "scene": "storm",
+     "a": "spot-the-shock.pair.5-5_a",
+     "b": "spot-the-shock.pair.5-5_b",
+     "night": {
+      "a": "spot-the-shock.pair.5-5_a_night",
+      "b": "spot-the-shock.pair.5-5_b_night"
+     },
+     "differences": [
+      {
+       "id": "post",
+       "hazard": "post",
+       "shape": "rect",
+       "rect": [
+        0.808,
+        0.256,
+        0.094,
+        0.458
+       ],
+       "fixCard": "fix.post",
+       "fixOptions": [
+        "call_adult",
+        "move_cord",
+        "cover"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "branch",
+       "hazard": "branch",
+       "shape": "circle",
+       "x": 0.435,
+       "y": 0.259,
+       "r": 0.06,
+       "rect": [
+        0.393,
+        0.202,
+        0.089,
+        0.119
+       ],
+       "fixCard": "fix.branch",
+       "fixOptions": [
+        "cover",
+        "move_cord",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "kite",
+       "hazard": "kite",
+       "shape": "circle",
+       "x": 0.67,
+       "y": 0.298,
+       "r": 0.08,
+       "rect": [
+        0.638,
+        0.214,
+        0.067,
+        0.173
+       ],
+       "fixCard": "fix.kite",
+       "fixOptions": [
+        "call_adult",
+        "move_away",
+        "cover"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "meter",
+       "hazard": "meter",
+       "shape": "circle",
+       "x": 0.185,
+       "y": 0.586,
+       "r": 0.038,
+       "rect": [
+        0.17,
+        0.56,
+        0.036,
+        0.06
+       ],
+       "fixCard": "fix.meter",
+       "fixOptions": [
+        "move_cord",
+        "cover",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      },
+      {
+       "id": "climb",
+       "hazard": "climb",
+       "shape": "circle",
+       "x": 0.536,
+       "y": 0.449,
+       "r": 0.051,
+       "rect": [
+        0.518,
+        0.405,
+        0.04,
+        0.095
+       ],
+       "fixCard": "fix.climb",
+       "fixOptions": [
+        "unplug",
+        "cover",
+        "call_adult"
+       ],
+       "correctFix": "call_adult"
+      }
      ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "move_cord",
-      "call_adult"
+     "stars": [
+      {
+       "x": 0.071,
+       "y": 0.06,
+       "r": 0.03
+      },
+      {
+       "x": 0.179,
+       "y": 0.417,
+       "r": 0.03
+      },
+      {
+       "x": 0.929,
+       "y": 0.071,
+       "r": 0.03
+      }
      ]
-    }
-   ],
-   "stars": [
-    {
-     "x": 0.893,
-     "y": 0.476,
-     "r": 0.03
-    },
-    {
-     "x": 0.036,
-     "y": 0.893,
-     "r": 0.03
-    },
-    {
-     "x": 0.179,
-     "y": 0.417,
-     "r": 0.03
-    }
-   ]
-  },
-  {
-   "world": 5,
-   "level": 2,
-   "scene": "school",
-   "a": "spot-the-shock.pair.5-2_a",
-   "b": "spot-the-shock.pair.5-2_b",
-   "night": {
-    "a": "spot-the-shock.pair.5-2_a_night",
-    "b": "spot-the-shock.pair.5-2_b_night"
-   },
-   "timeMs": 120000,
-   "differences": [
-    {
-     "id": "toy",
-     "hazard": "toy",
-     "label": "Something stuck in an outlet",
-     "fixCard": "Never put anything into an outlet. Tell an adult right away.",
-     "shape": "circle",
-     "x": 0.556,
-     "y": 0.637,
-     "r": 0.049,
-     "rect": [
-      0.54,
-      0.595,
-      0.036,
-      0.089
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "unplug",
-      "move_away",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "aisle",
-     "hazard": "aisle",
-     "label": "Cord across the walkway",
-     "fixCard": "People can trip and pull the cord. Run cords along the wall.",
-     "shape": "circle",
-     "x": 0.58,
-     "y": 0.827,
-     "r": 0.33,
-     "rect": [
-      0.268,
-      0.708,
-      0.629,
-      0.244
-     ],
-     "correctFix": "move_cord",
-     "fixOptions": [
-      "unplug",
-      "call_adult",
-      "move_cord"
-     ]
-    },
-    {
-     "id": "frayed",
-     "hazard": "frayed",
-     "label": "Frayed cord",
-     "fixCard": "A damaged cord can shock you. Unplug it and ask an adult to replace it.",
-     "shape": "circle",
-     "x": 0.808,
-     "y": 0.729,
-     "r": 0.036,
-     "rect": [
-      0.79,
-      0.708,
-      0.04,
-      0.048
-     ],
-     "correctFix": "unplug",
-     "fixOptions": [
-      "move_away",
-      "unplug",
-      "cover"
-     ]
-    },
-    {
-     "id": "panel",
-     "hazard": "panel",
-     "label": "Open electrical panel",
-     "fixCard": "Keep electrical panels closed. Only adults should open them.",
-     "shape": "circle",
-     "x": 0.768,
-     "y": 0.399,
-     "r": 0.071,
-     "rect": [
-      0.714,
-      0.333,
-      0.112,
-      0.137
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "call_adult",
-      "move_cord"
-     ]
-    },
-    {
-     "id": "missing_cover",
-     "hazard": "missing_cover",
-     "label": "Missing outlet cover",
-     "fixCard": "Open wires are dangerous. Tell an adult to put a cover on.",
-     "shape": "circle",
-     "x": 0.73,
-     "y": 0.527,
-     "r": 0.038,
-     "rect": [
-      0.714,
-      0.5,
-      0.036,
-      0.06
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "move_cord",
-      "cover"
-     ]
-    }
-   ],
-   "stars": [
-    {
-     "x": 0.036,
-     "y": 0.893,
-     "r": 0.03
-    },
-    {
-     "x": 0.179,
-     "y": 0.417,
-     "r": 0.03
-    },
-    {
-     "x": 0.929,
-     "y": 0.071,
-     "r": 0.03
-    }
-   ]
-  },
-  {
-   "world": 5,
-   "level": 3,
-   "scene": "street",
-   "a": "spot-the-shock.pair.5-3_a",
-   "b": "spot-the-shock.pair.5-3_b",
-   "night": {
-    "a": "spot-the-shock.pair.5-3_a_night",
-    "b": "spot-the-shock.pair.5-3_b_night"
-   },
-   "timeMs": 120000,
-   "differences": [
-    {
-     "id": "climb",
-     "hazard": "climb",
-     "label": "Climbing a tree near power lines",
-     "fixCard": "Never climb trees near power lines.",
-     "shape": "circle",
-     "x": 0.536,
-     "y": 0.449,
-     "r": 0.051,
-     "rect": [
-      0.518,
-      0.405,
-      0.04,
-      0.095
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "unplug",
-      "call_adult",
-      "move_cord"
-     ]
-    },
-    {
-     "id": "branch",
-     "hazard": "branch",
-     "label": "Branch on a power line",
-     "fixCard": "Branches on wires can spark. Stay away and report it.",
-     "shape": "circle",
-     "x": 0.435,
-     "y": 0.259,
-     "r": 0.06,
-     "rect": [
-      0.393,
-      0.202,
-      0.089,
-      0.119
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "move_away",
-      "cover"
-     ]
-    },
-    {
-     "id": "fallen",
-     "hazard": "fallen",
-     "label": "Fallen power line in water",
-     "fixCard": "Stay far away from fallen wires and the water around them. Call an adult.",
-     "shape": "circle",
-     "x": 0.413,
-     "y": 0.545,
-     "r": 0.221,
-     "rect": [
-      0.312,
-      0.274,
-      0.205,
-      0.548
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "move_cord",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "ladder",
-     "hazard": "ladder",
-     "label": "Ladder against a power pole",
-     "fixCard": "Never climb near power lines.",
-     "shape": "circle",
-     "x": 0.301,
-     "y": 0.601,
-     "r": 0.129,
-     "rect": [
-      0.272,
-      0.452,
-      0.062,
-      0.304
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "move_cord",
-      "call_adult",
-      "cover"
-     ]
-    },
-    {
-     "id": "post",
-     "hazard": "post",
-     "label": "Damaged, leaning post",
-     "fixCard": "A leaning post can fall. Stay away and report it.",
-     "shape": "circle",
-     "x": 0.853,
-     "y": 0.482,
-     "r": 0.188,
-     "rect": [
-      0.808,
-      0.256,
-      0.094,
-      0.458
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "cover",
-      "move_away"
-     ]
-    }
-   ],
-   "stars": [
-    {
-     "x": 0.036,
-     "y": 0.893,
-     "r": 0.03
-    },
-    {
-     "x": 0.893,
-     "y": 0.476,
-     "r": 0.03
-    },
-    {
-     "x": 0.5,
-     "y": 0.048,
-     "r": 0.03
-    }
-   ]
-  },
-  {
-   "world": 5,
-   "level": 4,
-   "scene": "home",
-   "a": "spot-the-shock.pair.5-4_a",
-   "b": "spot-the-shock.pair.5-4_b",
-   "night": {
-    "a": "spot-the-shock.pair.5-4_a_night",
-    "b": "spot-the-shock.pair.5-4_b_night"
-   },
-   "timeMs": 120000,
-   "differences": [
-    {
-     "id": "missing_cover",
-     "hazard": "missing_cover",
-     "label": "Missing outlet cover",
-     "fixCard": "Open wires are dangerous. Tell an adult to put a cover on.",
-     "shape": "circle",
-     "x": 0.685,
-     "y": 0.562,
-     "r": 0.038,
-     "rect": [
-      0.67,
-      0.536,
-      0.036,
-      0.06
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "move_away",
-      "call_adult",
-      "cover"
-     ]
-    },
-    {
-     "id": "toy",
-     "hazard": "toy",
-     "label": "Something stuck in an outlet",
-     "fixCard": "Never put anything into an outlet. Tell an adult right away.",
-     "shape": "circle",
-     "x": 0.884,
-     "y": 0.673,
-     "r": 0.045,
-     "rect": [
-      0.866,
-      0.637,
-      0.04,
-      0.077
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "move_cord",
-      "cover"
-     ]
-    },
-    {
-     "id": "rug",
-     "hazard": "rug",
-     "label": "Cord under a rug",
-     "fixCard": "Cords under rugs can overheat and get damaged. Keep cords out in the open.",
-     "shape": "circle",
-     "x": 0.446,
-     "y": 0.801,
-     "r": 0.196,
-     "rect": [
-      0.268,
-      0.72,
-      0.362,
-      0.167
-     ],
-     "correctFix": "move_cord",
-     "fixOptions": [
-      "cover",
-      "call_adult",
-      "move_cord"
-     ]
-    },
-    {
-     "id": "octopus",
-     "hazard": "octopus",
-     "label": "Overloaded outlet (\"octopus wiring\")",
-     "fixCard": "Too many plugs in one outlet can overheat. Unplug some!",
-     "shape": "circle",
-     "x": 0.219,
-     "y": 0.705,
-     "r": 0.107,
-     "rect": [
-      0.129,
-      0.601,
-      0.183,
-      0.214
-     ],
-     "correctFix": "unplug",
-     "fixOptions": [
-      "unplug",
-      "cover",
-      "move_away"
-     ]
-    },
-    {
-     "id": "wet",
-     "hazard": "wet",
-     "label": "Water near a plugged-in appliance",
-     "fixCard": "Water and electricity don't mix. Keep the floor dry near plugs.",
-     "shape": "circle",
-     "x": 0.681,
-     "y": 0.866,
-     "r": 0.083,
-     "rect": [
-      0.616,
-      0.845,
-      0.134,
-      0.048
-     ],
-     "correctFix": "unplug",
-     "fixOptions": [
-      "cover",
-      "call_adult",
-      "unplug"
-     ]
-    }
-   ],
-   "stars": [
-    {
-     "x": 0.071,
-     "y": 0.06,
-     "r": 0.03
-    },
-    {
-     "x": 0.179,
-     "y": 0.417,
-     "r": 0.03
-    },
-    {
-     "x": 0.964,
-     "y": 0.929,
-     "r": 0.03
-    }
-   ]
-  },
-  {
-   "world": 5,
-   "level": 5,
-   "scene": "storm",
-   "a": "spot-the-shock.pair.5-5_a",
-   "b": "spot-the-shock.pair.5-5_b",
-   "night": {
-    "a": "spot-the-shock.pair.5-5_a_night",
-    "b": "spot-the-shock.pair.5-5_b_night"
-   },
-   "timeMs": 120000,
-   "differences": [
-    {
-     "id": "post",
-     "hazard": "post",
-     "label": "Damaged, leaning post",
-     "fixCard": "A leaning post can fall. Stay away and report it.",
-     "shape": "circle",
-     "x": 0.853,
-     "y": 0.482,
-     "r": 0.188,
-     "rect": [
-      0.808,
-      0.256,
-      0.094,
-      0.458
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "move_cord",
-      "cover"
-     ]
-    },
-    {
-     "id": "branch",
-     "hazard": "branch",
-     "label": "Branch on a power line",
-     "fixCard": "Branches on wires can spark. Stay away and report it.",
-     "shape": "circle",
-     "x": 0.435,
-     "y": 0.259,
-     "r": 0.06,
-     "rect": [
-      0.393,
-      0.202,
-      0.089,
-      0.119
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "cover",
-      "move_cord",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "kite",
-     "hazard": "kite",
-     "label": "Kite caught on a power line",
-     "fixCard": "Never try to get a kite off a power line. Fly kites in open fields.",
-     "shape": "circle",
-     "x": 0.67,
-     "y": 0.298,
-     "r": 0.08,
-     "rect": [
-      0.638,
-      0.214,
-      0.067,
-      0.173
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "call_adult",
-      "move_away",
-      "cover"
-     ]
-    },
-    {
-     "id": "meter",
-     "hazard": "meter",
-     "label": "Open meter box",
-     "fixCard": "Don't touch open electrical boxes. Tell an adult.",
-     "shape": "circle",
-     "x": 0.185,
-     "y": 0.586,
-     "r": 0.038,
-     "rect": [
-      0.17,
-      0.56,
-      0.036,
-      0.06
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "move_cord",
-      "cover",
-      "call_adult"
-     ]
-    },
-    {
-     "id": "climb",
-     "hazard": "climb",
-     "label": "Climbing a tree near power lines",
-     "fixCard": "Never climb trees near power lines.",
-     "shape": "circle",
-     "x": 0.536,
-     "y": 0.449,
-     "r": 0.051,
-     "rect": [
-      0.518,
-      0.405,
-      0.04,
-      0.095
-     ],
-     "correctFix": "call_adult",
-     "fixOptions": [
-      "unplug",
-      "cover",
-      "call_adult"
-     ]
-    }
-   ],
-   "stars": [
-    {
-     "x": 0.071,
-     "y": 0.06,
-     "r": 0.03
-    },
-    {
-     "x": 0.179,
-     "y": 0.417,
-     "r": 0.03
-    },
-    {
-     "x": 0.929,
-     "y": 0.071,
-     "r": 0.03
     }
    ]
   }

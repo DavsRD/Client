@@ -1,0 +1,119 @@
+{
+ "fixes": {
+  "unplug": { "text": { "en": "Unplug it" }, "icon": "🔌" },
+  "move_cord": { "text": { "en": "Move the cord" }, "icon": "➰" },
+  "call_adult": { "text": { "en": "Call an adult" }, "icon": "📞" },
+  "move_away": { "text": { "en": "Move it away from water" }, "icon": "💧" },
+  "cover": { "text": { "en": "Put a cover on" }, "icon": "🛡" }
+ },
+ "hazards": {
+  "octopus": {
+   "label": { "en": "Overloaded outlet (\"octopus wiring\")" },
+   "card": { "en": "Too many plugs in one outlet can overheat. Unplug some!" },
+   "tip": { "en": "One outlet, one or two plugs. Unplugging some stops it from overheating." },
+   "powerLine": false
+  },
+  "frayed": {
+   "label": { "en": "Frayed cord" },
+   "card": { "en": "A damaged cord can shock you. Unplug it and ask an adult to replace it." },
+   "tip": { "en": "With dry hands, pull the plug, never the cord. Then an adult can replace it." },
+   "powerLine": false
+  },
+  "rug": {
+   "label": { "en": "Cord under a rug" },
+   "card": { "en": "Cords under rugs can overheat and get damaged. Keep cords out in the open." },
+   "tip": { "en": "A cord needs air and must not be stepped on. Move it out from under the rug." },
+   "powerLine": false
+  },
+  "wet": {
+   "label": { "en": "Water near a plugged-in appliance" },
+   "card": { "en": "Water and electricity don't mix. Keep the floor dry near plugs." },
+   "tip": { "en": "Never touch a plug near water, and never with wet hands. An adult switches it off first." },
+   "powerLine": false
+  },
+  "sink": {
+   "label": { "en": "Appliance next to the sink" },
+   "card": { "en": "Keep plugged-in things away from water." },
+   "tip": { "en": "With dry hands, move it away from the sink so it can never get splashed." },
+   "powerLine": false
+  },
+  "missing_cover": {
+   "label": { "en": "Missing outlet cover" },
+   "card": { "en": "Open wires are dangerous. Tell an adult to put a cover on." },
+   "tip": { "en": "Never touch open wires. An adult fixes the cover." },
+   "powerLine": false
+  },
+  "toy": {
+   "label": { "en": "Something stuck in an outlet" },
+   "card": { "en": "Never put anything into an outlet. Tell an adult right away." },
+   "tip": { "en": "Don't pull it out yourself. Tell an adult right away." },
+   "powerLine": false
+  },
+  "panel": {
+   "label": { "en": "Open electrical panel" },
+   "card": { "en": "Keep electrical panels closed. Only adults should open them." },
+   "tip": { "en": "Only adults open or close an electrical panel. Tell one." },
+   "powerLine": false
+  },
+  "aisle": {
+   "label": { "en": "Cord across the walkway" },
+   "card": { "en": "People can trip and pull the cord. Run cords along the wall." },
+   "tip": { "en": "Move the cord along the wall so nobody trips on it." },
+   "powerLine": false
+  },
+  "spill": {
+   "label": { "en": "Spill near a plug" },
+   "card": { "en": "Water near plugs is dangerous. Tell an adult and keep away." },
+   "tip": { "en": "Keep away from the wet plug and tell an adult." },
+   "powerLine": false
+  },
+  "meter": {
+   "label": { "en": "Open meter box" },
+   "card": { "en": "Don't touch open electrical boxes. Tell an adult." },
+   "tip": { "en": "Don't touch an open electrical box. Tell an adult." },
+   "powerLine": false
+  },
+  "post": {
+   "label": { "en": "Damaged, leaning post" },
+   "card": { "en": "A leaning post can fall. Stay away and report it." },
+   "tip": { "en": "Stay far away from a leaning post. An adult reports it to the power company." },
+   "powerLine": true
+  },
+  "ladder": {
+   "label": { "en": "Ladder against a power pole" },
+   "card": { "en": "Never climb near power lines." },
+   "tip": { "en": "Never climb near power lines. Call an adult." },
+   "powerLine": true
+  },
+  "branch": {
+   "label": { "en": "Branch on a power line" },
+   "card": { "en": "Branches on wires can spark. Stay away and report it." },
+   "tip": { "en": "Don't try to move it. Stay away and an adult reports it." },
+   "powerLine": true
+  },
+  "fallen": {
+   "label": { "en": "Fallen power line in water" },
+   "card": { "en": "Stay far away from fallen wires and the water around them. Call an adult." },
+   "tip": { "en": "Never touch a fallen wire or the water near it. Stay far away and call an adult." },
+   "powerLine": true
+  },
+  "kite": {
+   "label": { "en": "Kite caught on a power line" },
+   "card": { "en": "Never try to get a kite off a power line. Fly kites in open fields." },
+   "tip": { "en": "Let the kite go. An adult calls the power company." },
+   "powerLine": true
+  },
+  "climb": {
+   "label": { "en": "Climbing a tree near power lines" },
+   "card": { "en": "Never climb trees near power lines." },
+   "tip": { "en": "Climb down carefully and stay away from the wires. Tell an adult." },
+   "powerLine": true
+  },
+  "fence": {
+   "label": { "en": "Wire touching a fence" },
+   "card": { "en": "A wire on a fence can make the fence dangerous. Don't touch it." },
+   "tip": { "en": "Don't touch the fence. Stay away and call an adult." },
+   "powerLine": true
+  }
+ }
+}

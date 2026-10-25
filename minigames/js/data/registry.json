@@ -375,7 +375,13 @@
         { "en": "Ask for a hint", "fil": "Humingi ng pahiwatig", "keys": ["key_h"], "gesture": "gesture_tap" }
       ],
       "takeaway": { "en": "Never touch a fallen wire, keep water away from plugs, and tell an adult when something looks wrong.", "fil": "Huwag hawakan ang nahulog na kawad, ilayo ang tubig sa saksakan, at sabihin sa nakatatanda kapag may mali." },
-      "built": false, "scripts": [], "data": ["data/fix-cards.json"]
+      "built": true,
+      "scripts": [
+        "minigames/js/games/spot-the-shock/tuning.js",
+        "minigames/js/games/spot-the-shock/FixIt.js",
+        "minigames/js/games/spot-the-shock/SpotTheShockScene.js",
+        "minigames/js/games/spot-the-shock/index.js"
+      ], "data": ["data/fix-cards.json"]
     },
     {
       "id": "lost-and-found", "num": 16, "hazardId": "missing-child", "hazardGroup": "social",
