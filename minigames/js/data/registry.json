@@ -15,6 +15,15 @@
       "minigames/js/engines/grid/tilemap.js", "minigames/js/engines/grid/camera.js",
       "minigames/js/engines/grid/darkness.js", "minigames/js/engines/grid/mover.js",
       "minigames/js/engines/grid/cursor.js"
+    ],
+    "pieces": [
+      "minigames/js/logic/grid/undo.js",
+      "minigames/js/logic/pieces/shape.js", "minigames/js/logic/pieces/jigsaw.js",
+      "minigames/js/logic/pieces/sliding.js",
+      "minigames/js/engines/pieces/piece.js", "minigames/js/engines/pieces/tray.js",
+      "minigames/js/engines/pieces/grid-board.js", "minigames/js/engines/pieces/slot-board.js",
+      "minigames/js/engines/pieces/play.js", "minigames/js/engines/pieces/cutter.js",
+      "minigames/js/engines/pieces/sliding-board.js"
     ]
   },
   "games": [

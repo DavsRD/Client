@@ -30,7 +30,7 @@
  * -------------------------------------------------------------
  */
 
-const CACHE_VERSION = "v21";
+const CACHE_VERSION = "v22";
 const SHELL_CACHE = `kalasag-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `kalasag-data-${CACHE_VERSION}`;
 const SAVED_CACHE = "kalasag-saved-v1"; // same name as in js/core/offline.js
@@ -85,6 +85,14 @@ const GAME_CORE = [
   "minigames/js/engines/grid/tilemap.js", "minigames/js/engines/grid/camera.js",
   "minigames/js/engines/grid/darkness.js", "minigames/js/engines/grid/mover.js",
   "minigames/js/engines/grid/cursor.js",
+  // E5 pieces engine: the scripts in registry.json engines.pieces (undo.js is above), plus its stylesheet
+  "minigames/css/pieces.css",
+  "minigames/js/logic/pieces/shape.js", "minigames/js/logic/pieces/jigsaw.js",
+  "minigames/js/logic/pieces/sliding.js",
+  "minigames/js/engines/pieces/piece.js", "minigames/js/engines/pieces/tray.js",
+  "minigames/js/engines/pieces/grid-board.js", "minigames/js/engines/pieces/slot-board.js",
+  "minigames/js/engines/pieces/play.js", "minigames/js/engines/pieces/cutter.js",
+  "minigames/js/engines/pieces/sliding-board.js",
   "minigames/assets/asset-manifest.json",
 ];
 

@@ -1,0 +1,131 @@
+/* =============================================================
+   pieces.css — E5 PIECES ENGINE (Piece, Tray, GridBoard, SlotBoard, PiecePlay, SlidingBoard).
+   Added to the page by minigames/js/engines/pieces/piece.js.
+   Every rule is under #ag-app and every class starts with agp-, like ag.css.
+   The prototype's panel style: ink borders, hard offset shadows, stepped motion.
+   Art is canvas at whole multiples (pixelated). Fits / blocked differ by ✔ / ✖ and fill, not colour alone.
+   ============================================================= */
+
+#ag-app .agp-play, #ag-app .agp-slidewrap { font-variant-ligatures: none; font-feature-settings: 'liga' 0, 'clig' 0; }
+#ag-app .agp-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+#ag-app .agp-play [hidden], #ag-app .agp-slidewrap [hidden] { display: none !important; }
+
+/* ---------- layout: board, tray, buttons stacked (portrait) ---------- */
+#ag-app .agp-play { display: flex; flex-direction: column; align-items: center; gap: 12px; width: 100%; }
+#ag-app .agp-play__board { display: flex; justify-content: center; width: 100%; min-width: 0; padding: 10px 0; }
+
+/* ---------- boards ---------- */
+#ag-app .agp-board {
+  position: relative; box-sizing: content-box; flex: none;
+  background: var(--panel-2); border: var(--b) solid var(--ink); border-radius: 2px;
+  box-shadow: var(--sh) var(--sh) 0 var(--shadow-c); touch-action: none; user-select: none;
+}
+#ag-app .agp-board:focus { outline: none; }
+#ag-app .agp-board:focus-visible, #ag-app .agp-board.ag-zone-active:focus-within { outline: 3px dashed var(--vest); outline-offset: 4px; }
+#ag-app .agp-board.hot { outline: 3px solid var(--sky); outline-offset: 4px; }
+#ag-app .agp-grid__cells { display: grid; grid-auto-rows: var(--agp-cell); }
+#ag-app .agp-cell {
+  width: var(--agp-cell); height: var(--agp-cell);
+  background-color: var(--panel); background-size: 100% 100%; image-rendering: pixelated;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--line) 35%, transparent);
+}
+#ag-app .agp-cell.is-wall {
+  background-color: var(--track);
+  background-image: repeating-linear-gradient(45deg, rgba(0, 0, 0, .28) 0 2px, transparent 2px 6px);
+  box-shadow: none;
+}
+#ag-app .agp-grid__layer { position: absolute; inset: 0; pointer-events: none; }
+#ag-app .agp-grid__layer > * { pointer-events: auto; }
+
+/* ---------- a piece (a real <button>; its art is one canvas) ---------- */
+#ag-app .agp-piece {
+  position: relative; display: block; flex: none; padding: 0; margin: 0; border: 0; background: none; line-height: 0;
+  cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none; /* PiecePlay scrolls the shelf on a sideways swipe */
+}
+#ag-app .agp-piece__art { display: block; pointer-events: none; }
+#ag-app .agp-piece:focus { outline: none; }
+#ag-app .agp-piece:focus-visible { outline: 3px solid var(--vest); outline-offset: 3px; }
+#ag-app .agp-piece.is-placed { position: absolute; touch-action: none; }
+#ag-app .agp-piece.is-placed:hover .agp-piece__art { filter: brightness(1.08); }
+#ag-app .agp-piece.done { cursor: default; }
+/* held in the tray: lifted, with a dashed frame and a ▲ marker (shape, not just colour) */
+#ag-app .agp-tray .agp-piece.is-held { transform: translate(-2px, -4px); filter: drop-shadow(3px 4px 0 var(--shadow-c)); }
+#ag-app .agp-tray .agp-piece.is-held::after {
+  content: "▲"; position: absolute; left: 50%; bottom: -18px; transform: translateX(-50%);
+  font: 900 12px/1 var(--font-display); color: var(--vest);
+}
+#ag-app .agp-tray .agp-piece.is-held .agp-piece__art { outline: 2px dashed var(--vest); outline-offset: 3px; }
+#ag-app .agp-piece.is-lifted { opacity: .35; }
+#ag-app .agp-float { position: fixed; z-index: 60; pointer-events: none; filter: drop-shadow(4px 4px 0 var(--shadow-c)); }
+
+/* ---------- tray: a shelf that scrolls sideways ---------- */
+#ag-app .agp-tray {
+  width: 100%; max-width: 100%; padding: 4px; background: var(--panel); border: var(--b) solid var(--line); border-radius: var(--r);
+  box-shadow: var(--sh) var(--sh) 0 var(--shadow-c);
+}
+#ag-app .agp-tray.hot { outline: 3px solid var(--sky); outline-offset: 2px; }
+#ag-app .agp-tray.ag-zone-active { outline: 3px dashed var(--vest); outline-offset: 3px; }
+#ag-app .agp-tray__shelf {
+  display: flex; align-items: center; gap: 14px; min-height: 72px; padding: 10px 12px 22px;
+  overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; scroll-snap-type: x proximity; scrollbar-width: thin;
+}
+#ag-app .agp-tray__shelf > .agp-piece { scroll-snap-align: center; }
+
+/* ---------- ghost: fits = dithered fill + ✔, blocked = ✖ on the cells in the way ---------- */
+#ag-app .agp-ghost { position: absolute; z-index: 3; pointer-events: none; }
+#ag-app .agp-ghost__art { position: absolute; left: 0; top: 0; opacity: .5; }
+#ag-app .agp-gcell { position: absolute; width: var(--agp-cell); height: var(--agp-cell); display: grid; place-items: center; }
+#ag-app .agp-gcell.ok {
+  background: repeating-conic-gradient(var(--safe) 0 25%, transparent 0 50%) 0 0 / calc(var(--agp-dot) * 2) calc(var(--agp-dot) * 2);
+  box-shadow: inset 0 0 0 2px var(--safe);
+}
+#ag-app .agp-gcell.bad {
+  background: repeating-conic-gradient(var(--alert) 0 25%, transparent 0 50%) 0 0 / calc(var(--agp-dot) * 2) calc(var(--agp-dot) * 2);
+  box-shadow: inset 0 0 0 2px var(--alert);
+  font: 900 calc(var(--agp-cell) * .5)/1 var(--font-display); color: #fff; text-shadow: 2px 2px 0 #1e1538;
+}
+#ag-app .agp-gcell.dim { box-shadow: inset 0 0 0 2px var(--ink); background: rgba(0, 0, 0, .12); }
+#ag-app .agp-gbadge {
+  position: absolute; top: -12px; right: -12px; z-index: 1; display: grid; place-items: center; width: 24px; height: 24px;
+  font: 900 14px/1 var(--font-display); color: #fff; border: 2px solid var(--ink); box-shadow: 2px 2px 0 var(--shadow-c);
+}
+#ag-app .agp-ghost.is-ok .agp-gbadge { background: var(--safe); }
+#ag-app .agp-ghost.is-bad .agp-gbadge { background: var(--alert); }
+#ag-app .agp-ghost--slot .agp-ghost__art { opacity: .6; }
+#ag-app .agp-cursor { position: absolute; z-index: 4; pointer-events: none; outline: 3px solid var(--vest); outline-offset: -3px; box-shadow: inset 0 0 0 4px var(--ink); }
+
+/* ---------- jigsaw slots ---------- */
+#ag-app .agp-slots__guide { position: absolute; left: 0; top: 0; opacity: .18; filter: grayscale(1); pointer-events: none; }
+#ag-app .agp-slot { position: absolute; box-sizing: border-box; border: 1px dashed color-mix(in srgb, var(--line) 60%, transparent); }
+#ag-app .agp-slot.hot { border: 0; outline: 3px solid var(--sky); outline-offset: -3px; }
+#ag-app .agp-slot.is-filled { border-color: transparent; }
+
+/* ---------- buttons: ↻ turn, ✕ put back, ↶ undo (≥ 48 CSS px) ---------- */
+#ag-app .agp-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; padding: 4px; border-radius: var(--r); }
+#ag-app .agp-buttons.ag-zone-active { outline: 3px dashed var(--vest); outline-offset: 3px; }
+#ag-app .agp-btn { min-height: 48px; min-width: 48px; display: inline-flex; align-items: center; gap: 6px; }
+#ag-app .agp-btn__glyph { font-size: 1.3em; line-height: 1; }
+#ag-app .agp-btn.is-off { opacity: .5; }
+
+/* ---------- sliding tiles ---------- */
+#ag-app .agp-slidewrap { display: flex; justify-content: center; width: 100%; padding: 10px 0; }
+#ag-app .agp-slide {
+  position: relative; box-sizing: content-box; flex: none; background: var(--track);
+  border: var(--b) solid var(--ink); box-shadow: var(--sh) var(--sh) 0 var(--shadow-c); touch-action: manipulation; user-select: none;
+}
+#ag-app .agp-slide:focus { outline: none; }
+#ag-app .agp-slide:focus-visible { outline: 3px dashed var(--vest); outline-offset: 4px; }
+#ag-app .agp-stile {
+  position: absolute; padding: 0; margin: 0; border: 0; background: var(--panel); line-height: 0; cursor: default;
+  transition: left .09s steps(3, end), top .09s steps(3, end);
+}
+#ag-app .agp-slide.is-instant .agp-stile { transition: none; }
+#ag-app .agp-stile__art { display: block; pointer-events: none; }
+#ag-app .agp-stile__num {
+  display: grid; place-items: center; width: 100%; height: 100%; font: 700 1.6rem/1 var(--font-display); color: var(--fg);
+  border: 2px solid var(--ink); background: var(--panel);
+}
+/* tiles that can slide: a dashed frame (shape, not just colour) */
+#ag-app .agp-stile.is-next { cursor: pointer; }
+#ag-app .agp-stile.is-next::after { content: ""; position: absolute; inset: 2px; border: 2px dashed var(--vest); pointer-events: none; }
+#ag-app .agp-slide.is-solved { outline: 3px solid var(--safe); outline-offset: 4px; }
