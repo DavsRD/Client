@@ -148,11 +148,19 @@
       },
       "howTo": [
         { "en": "Choose a pipe", "fil": "Pumili ng tubo", "keys": ["key_left", "key_right", "key_up", "key_down"], "gesture": "gesture_tap" },
-        { "en": "Turn it", "fil": "Ikutin ito", "keys": ["key_r", "key_enter"], "gesture": "gesture_tap" },
-        { "en": "Test the water flow", "fil": "Subukan ang daloy ng tubig", "keys": ["key_space"], "gesture": "gesture_tap" }
+        { "en": "Turn it", "fil": "Ikutin ito", "keys": ["key_space", "key_r"], "gesture": "gesture_tap" },
+        { "en": "Test the water (FLOW)", "fil": "Subukan ang daloy ng tubig", "keys": ["key_f"], "gesture": "gesture_tap" },
+        { "en": "Fix a leak", "fil": "Ayusin ang tagas", "keys": ["key_e"], "gesture": "gesture_tap" },
+        { "en": "Done", "fil": "Tapos na", "keys": ["key_q"], "gesture": "gesture_tap" }
       ],
-      "takeaway": { "en": "In a drought, every drop counts: fix leaks, reuse water, and drink enough to stay cool.", "fil": "Sa tagtuyot, mahalaga ang bawat patak: ayusin ang tagas, gamiting muli ang tubig, at uminom nang sapat." },
-      "built": false, "scripts": [], "data": ["levels.json"]
+      "takeaway": { "en": "In a drought, every drop counts — fix leaks, reuse water, and drink enough to stay cool.", "fil": "Sa tagtuyot, mahalaga ang bawat patak — ayusin ang tagas, gamiting muli ang tubig, at uminom nang sapat para manatiling presko." },
+      "built": true,
+      "scripts": [
+        "minigames/js/logic/water-ways/flow.js", "minigames/js/games/water-ways/tuning.js",
+        "minigames/js/games/water-ways/tiles.js", "minigames/js/games/water-ways/HeatCheck.js",
+        "minigames/js/games/water-ways/WaterWaysScene.js", "minigames/js/games/water-ways/index.js"
+      ],
+      "data": ["levels.json"]
     },
     {
       "id": "word-lab", "num": 9, "hazardId": "disease-outbreak", "hazardGroup": "biological",

@@ -1,0 +1,153 @@
+[
+  {
+    "level": 1,
+    "features": [],
+    "easy": {
+      "size": 4,
+      "rows": [
+        "R0 .  C1 .",
+        "V0* .  .  E3",
+        "T0 I1 I1 C2",
+        "H0 .  .  A0"
+      ],
+      "props": { "0,0": { "supply": 10 } },
+      "wasteTarget": 0
+    },
+    "advanced": {
+      "size": 5,
+      "rows": [
+        "E1 C0 R0 T0 .",
+        "C1 I1 X0 I1 C2",
+        "I0* T0 I0 C0 I0",
+        "I0 .  C0 C2 I0",
+        "H0 C0 .  F0 A0"
+      ],
+      "props": { "2,0": { "supply": 12 } },
+      "wasteTarget": 0
+    }
+  },
+  {
+    "level": 2,
+    "features": ["priority"],
+    "easy": {
+      "size": 5,
+      "rows": [
+        ".  C0 R0 .  E2",
+        ".  .  V0* .  .",
+        "C1 I1 T2 I1 C2",
+        "I0 T0 I0 C0 I0",
+        "A0 .  H0 .  L0"
+      ],
+      "props": { "2,0": { "supply": 8 } },
+      "serve": ["house", "animals"],
+      "wasteTarget": 0
+    },
+    "advanced": {
+      "size": 6,
+      "rows": [
+        "E1 C0 R0 .  T0 .",
+        ".  .  V0* .  .  E2",
+        "C1 I1 X0 I0 T1 C2",
+        "I0 T0 I0 C0 I0 I0",
+        "I0 .  C0 C2 I0 I0",
+        "A0 .  .  H0 F0 L0"
+      ],
+      "props": { "2,0": { "supply": 10 } },
+      "serve": ["house", "animals"],
+      "wasteTarget": 0
+    }
+  },
+  {
+    "level": 3,
+    "features": ["priority", "leaks"],
+    "easy": {
+      "size": 5,
+      "rows": [
+        ".  R0 C0 E3 .",
+        ".  K0 .  .  .",
+        "C1 T3 I1 K1 C2",
+        "I0 .  T0 .  I0",
+        "H0 .  .  .  A0"
+      ],
+      "props": { "1,0": { "supply": 9 } },
+      "wasteTarget": 0
+    },
+    "advanced": {
+      "size": 6,
+      "rows": [
+        "C0 .  E1 R0 .  C3",
+        ".  T1 .  K0 .  .",
+        "C1 K1 I1 X0 I0 C2",
+        "I0 .  C2 K0 T0 I0",
+        "I0 .  C1 T3 C2 I0",
+        "H0 .  A0 .  F0 L0"
+      ],
+      "props": { "3,0": { "supply": 11 } },
+      "serve": ["house", "animals", "field"],
+      "wasteTarget": 0
+    }
+  },
+  {
+    "level": 4,
+    "features": ["leaks", "drip", "grey", "rain"],
+    "easy": {
+      "size": 6,
+      "rows": [
+        "B0 C1 N0 .  E2 .",
+        "I0 .  I0 .  .  .",
+        "C0 K1 X0 I1 C2 .",
+        ".  C1 T2 T0 D0 C3",
+        ".  H0 L0 G1 F0 .",
+        "E0 .  C0 .  I1 ."
+      ],
+      "props": { "0,0": { "supply": 6 }, "2,4": { "out": "right" }, "4,4": { "grey": "left" } },
+      "wasteTarget": 0
+    },
+    "advanced": {
+      "size": 7,
+      "rows": [
+        "N0 .  E1 R0 C1 .  N0",
+        "I0 .  .  K0 .  .  I0",
+        "C0 I1 I1 X0 I1 I1 C3",
+        "T0 .  C2 I0 .  E3 .",
+        "C1 T1 I1 X0 I1 C2 .",
+        "I0 D0 .  I0 .  I0 C0",
+        "H0 F0 G1 L0 .  A0 ."
+      ],
+      "props": { "3,0": { "supply": 7 }, "3,6": { "out": "left" }, "1,6": { "grey": "right" } },
+      "wasteTarget": 0
+    }
+  },
+  {
+    "level": 5,
+    "features": ["leaks", "canals", "heat"],
+    "easy": {
+      "size": 6,
+      "rows": [
+        ".  E2 R0 .  .  .",
+        "C1 .  K0 .  E3 .",
+        "C1 O0 C0 U0 C2 .",
+        "O1 .  .  .  T0 C2",
+        "C0 O0 C1 U0 C3 I0",
+        ".  T0 H0 .  .  A0"
+      ],
+      "props": { "2,0": { "supply": 8 } },
+      "wasteTarget": 0
+    },
+    "advanced": {
+      "size": 8,
+      "rows": [
+        "E1 R0 .  C0 .  E2 B0 .",
+        ".  K0 .  .  T0 .  V0* .",
+        "C1 X0 I1 C2 C1 O0 C0 C2",
+        "I0 U1 .  I0 O1 .  .  U1",
+        "U1 I0 C1 I0 C0 O0 C2 U1",
+        "I0 I0 .  I0 .  .  O1 K0",
+        "I0 D0 E0 I0 .  .  C3 T2",
+        "H0 F0 G1 L0 .  C3 .  A0"
+      ],
+      "props": { "1,0": { "supply": 7 }, "6,0": { "supply": 3 }, "3,7": { "out": "left" }, "1,7": { "grey": "right" } },
+      "wasteTarget": 0
+    }
+  }
+]

@@ -560,6 +560,13 @@
     return AG.progress.levelOpen(game.id, n, unlockAll) ? n : null;
   }
 
+  /** A result detail's optional icon: an AG.icons name or an emoji (AG.pixelIcon), 2×. */
+  function detailIcon(name) {
+    if (!name) return null;
+    if (AG.icons.has(name)) return AG.ui.icon(name, 36, '', 'ag-detailicon');
+    return h('img', { class: 'ag-px ag-detailicon', src: AG.pixelIcon(name, 18), width: 36, height: 36, alt: '', draggable: 'false' });
+  }
+
   function renderResult(r) {
     view = 'result';
     const { p, res, stars, xp, rec, badges, rankUp } = r;
@@ -585,7 +592,7 @@
           h('div', { class: 'ag-bigstars', role: 'img', 'aria-label': t('map.stars', { n: stars }) }, [0, 1, 2].map(i => AG.ui.icon(i < stars ? 'star' : 'star_empty', 56, '', i < stars ? 'on' : ''))),
           h('div', { class: 'ag-scoreline' },
             h('div', {}, h('b', {}, String(res.score || 0)), h('small', {}, t('res.score'))),
-            ...(res.detail || []).map(d => h('div', {}, h('b', {}, String(d.value)), h('small', {}, pick(d.label)))),
+            ...(res.detail || []).map(d => h('div', {}, h('b', {}, detailIcon(d.icon), String(d.value)), h('small', {}, pick(d.label)))),
             h('div', {}, h('b', {}, '+' + xp), h('small', {}, t('res.xp')))),
           h('div', { class: 'ag-chips' },
             rankUp ? h('span', { class: 'ag-chip ag-chip--hi' }, t('res.newRank', { rank: rankUp.name })) : null,

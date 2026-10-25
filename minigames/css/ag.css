@@ -290,6 +290,7 @@
 #ag-app .ag-scoreline div { display: flex; flex-direction: column; }
 #ag-app .ag-scoreline b { font-family: var(--font-display); font-size: var(--step-3); line-height: 1; }
 #ag-app .ag-scoreline small { color: var(--muted); text-transform: uppercase; letter-spacing: .06em; font-weight: 800; font-size: var(--step--1); }
+#ag-app .ag-scoreline .ag-detailicon { width: 36px; height: 36px; vertical-align: -6px; margin-right: 4px; }
 #ag-app .ag-learned { background: var(--panel); border: var(--b) solid var(--line); border-radius: var(--r); padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; }
 #ag-app .ag-learned ul { padding: 0; list-style: none; display: grid; gap: 6px; }
 #ag-app .ag-learned li { display: flex; gap: 8px; align-items: flex-start; }
