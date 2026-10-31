@@ -19,8 +19,11 @@
  *                    100 MB again after an update. Video players ask for byte
  *                    ranges; serveMedia() cuts them from the saved full file.
  *
- * The first OFFLINE_SCENES slides in scenes.json are precached so the welcome
- * slideshow works offline; the rest only once someone saves everything.
+ * Some files are named only inside the content JSON, so they're read from it on
+ * install (adding a hazard, lesson or slide needs no change here): each hazard's
+ * icon, card thumbnail and lesson from hazards.json, and the first OFFLINE_SCENES
+ * slides in scenes.json so the welcome slideshow works offline (the rest only
+ * once someone saves everything).
  *
  * All paths are relative to this file, so the site also works from a
  * sub-folder (e.g. a GitHub Pages project site).
@@ -30,7 +33,7 @@
  * -------------------------------------------------------------
  */
 
-const CACHE_VERSION = "v36";
+const CACHE_VERSION = "v37";
 const SHELL_CACHE = `kalasag-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `kalasag-data-${CACHE_VERSION}`;
 const SAVED_CACHE = "kalasag-saved-v1"; // same name as in js/core/offline.js
@@ -46,17 +49,6 @@ const SPRITES = [
   "pose_stop_wing_geared", "prop_on_face_mask_geared", "prop_on_magnifier_geared",
   "prop_on_sign_geared", "prop_on_sweat_drop_geared",
 ].map((name) => `assets/pixel-eagle-sprites/png/1x/${name}.png`);
-
-// Each hazard's icon (Home posters, Collections) and card thumbnail (Learn): ~0.8 MB in all.
-const HAZARD_IDS = [
-  "earthquake", "volcanic-eruption", "tsunami", "landslide", "typhoon", "severe-flooding", "storm-surge",
-  "el-nino", "disease-outbreak", "pest-infestation", "fire", "structural-collapse", "road-accidents",
-  "chemical-spill", "electrical-hazards", "missing-child", "bullying", "crowd-crush", "community-conflict",
-];
-const HAZARD_ART = HAZARD_IDS.flatMap((id) => [
-  `assets/icons/hazards/${id}.webp`,
-  `assets/images/hazards/${id}-thumb.webp`,
-]);
 
 // AGILA Safety Games: the small shared core (KALASAG O8). Keep in step with CORE_SCRIPTS in
 // js/ui/game-host.js. Game art, audio and each game's own scripts are NOT precached: they
@@ -143,13 +135,13 @@ const SHELL_FILES = [
   "js/core/theme.js",
   "js/core/mascot.js",
   "js/core/offline.js",
-  "js/dashboard/dashboard.js",
-  "js/dashboard/hotline-panel.js",
   "js/pages/welcome.js",
+  "js/pages/dashboard.js",
   "js/pages/courses.js",
   "js/pages/collection.js",
   "js/pages/subject-connect.js",
   "js/ui/hazard-card.js",
+  "js/ui/hotline-panel.js",
   "js/ui/video-modal.js",
   "js/ui/offline-ui.js",
   "js/ui/game-host.js",
@@ -171,7 +163,6 @@ const SHELL_FILES = [
   "assets/icons/icon-512.png",
   "assets/images/Blank.jpg",
 
-  ...HAZARD_ART,
   ...SPRITES,
   ...GAME_CORE,
 ];
@@ -183,9 +174,6 @@ const DATA_FILES = [
   "js/data/subjects.json",
   "js/data/site.json",
   "js/data/local-hotlines.json",
-  "js/data/lessons/earthquake.json",
-  "js/data/lessons/typhoon.json",
-  "js/data/lessons/volcanic-eruption.json",
 ];
 
 // File-type helpers so routing logic below stays readable.
@@ -199,16 +187,27 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     Promise.all([
       caches.open(SHELL_CACHE).then((cache) => cache.addAll(SHELL_FILES)),
-      caches.open(DATA_CACHE).then((cache) => cache.addAll(DATA_FILES)).then(precacheFirstScenes),
+      caches.open(DATA_CACHE).then((cache) => cache.addAll(DATA_FILES)).then(precacheFromContent),
     ]).then(() => self.skipWaiting())
   );
 });
 
-// The first few slideshow scenes, read from scenes.json so adding slides needs no change here.
-async function precacheFirstScenes() {
-  const { slides } = await (await caches.match("js/data/scenes.json")).json();
-  const urls = slides.slice(0, OFFLINE_SCENES).map((slide) => `assets/images/scenes/${slide.id}.webp`);
-  await (await caches.open(SHELL_CACHE)).addAll(urls);
+// Files named in the content JSON (see the top of this file). Each is saved on its own, so one
+// mistyped path in hazards.json only loses that file offline instead of failing the whole install.
+async function precacheFromContent() {
+  const read = async (path) => (await caches.match(path)).json();
+  const [{ hazards }, { slides }] = await Promise.all([read("js/data/hazards.json"), read("js/data/scenes.json")]);
+  const art = hazards.flatMap((h) => [h.icon, h.banner]); // Home posters, Collections, Learn cards: ~0.5 MB
+  const scenes = slides.slice(0, OFFLINE_SCENES).map((slide) => `assets/images/scenes/${slide.id}.webp`);
+  const lessons = hazards.map((h) => h.lesson);
+  await Promise.all([addEach(SHELL_CACHE, [...art, ...scenes]), addEach(DATA_CACHE, lessons)]);
+}
+
+async function addEach(cacheName, urls) {
+  const cache = await caches.open(cacheName);
+  await Promise.all(
+    urls.filter(Boolean).map((url) => cache.add(url).catch(() => console.warn("Not saved for offline:", url)))
+  );
 }
 
 // ---------- ACTIVATE: clear out old cache versions ----------

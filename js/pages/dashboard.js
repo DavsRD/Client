@@ -13,7 +13,7 @@ import { getHazardIndex, esc, sceneUrl } from "../core/data.js";
 import { t, pick } from "../core/i18n.js";
 import * as state from "../core/state.js";
 import * as mascot from "../core/mascot.js";
-import * as hotlines from "./hotline-panel.js";
+import * as hotlines from "../ui/hotline-panel.js";
 import { hazardIconImg, hazardUrl } from "../ui/hazard-card.js";
 import { loadGames, gameById, dailyToday, gameThumb } from "../core/games.js";
 
