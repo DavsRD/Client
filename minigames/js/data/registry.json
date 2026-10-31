@@ -41,6 +41,16 @@
       "minigames/js/engines/grid/darkness.js",
       "minigames/js/engines/sidescroll/world.js", "minigames/js/engines/sidescroll/runner.js",
       "minigames/js/engines/sidescroll/chaser.js", "minigames/js/engines/sidescroll/course.js"
+    ],
+    "sim": [
+      "minigames/js/logic/sim/core.js", "minigames/js/logic/sim/timeline.js",
+      "minigames/js/logic/sim/graph.js", "minigames/js/logic/sim/tasks.js",
+      "minigames/js/logic/sim/spatial.js", "minigames/js/logic/sim/flow.js",
+      "minigames/js/logic/sim/crowd.js", "minigames/js/logic/sim/followers.js",
+      "minigames/js/logic/sim/meter.js",
+      "minigames/js/engines/sim/walker.js", "minigames/js/engines/sim/draw.js",
+      "minigames/js/engines/sim/views.js", "minigames/js/engines/sim/bubbles.js",
+      "minigames/js/engines/sim/slots.js"
     ]
   },
   "games": [

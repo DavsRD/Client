@@ -452,6 +452,26 @@
   #ag-app *, #ag-app *::before, #ag-app *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
 
+/* ---------- E7 sim engine: the build-slot pop-up menu (AG.sim.BuildSlots) ---------- */
+#ag-app .ag-simmenu { position: absolute; z-index: 6; display: flex; flex-direction: column; gap: 4px; width: max-content; max-width: min(260px, calc(100% - 8px)); padding: 6px; background: var(--panel); color: var(--fg); border: var(--b) solid var(--line); border-radius: var(--r); box-shadow: var(--sh) var(--sh) 0 var(--shadow-c); }
+#ag-app .ag-simmenu__head { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-family: var(--font-display); padding-left: 4px; }
+#ag-app .ag-simmenu__opt { display: flex; align-items: center; gap: 8px; min-height: 48px; padding: 4px 10px 4px 6px; text-align: left; background: var(--panel-2); color: var(--fg); border: 2px solid var(--line); border-radius: var(--r); font-weight: 700; cursor: pointer; touch-action: manipulation; }
+#ag-app .ag-simmenu__opt:hover, #ag-app .ag-simmenu__opt:focus-visible { outline: 3px solid var(--vest); outline-offset: 1px; }
+#ag-app .ag-simmenu__opt img { width: 36px; height: 36px; flex: none; }
+#ag-app .ag-simmenu__txt { display: flex; flex-direction: column; line-height: 1.15; }
+#ag-app .ag-simmenu__txt small { font-weight: 600; opacity: .8; }
+#ag-app .ag-simmenu__opt.is-on { border-color: var(--hat); box-shadow: inset 0 0 0 2px var(--hat); }
+#ag-app .ag-simmenu__opt.is-no { opacity: .6; }
+#ag-app .ag-simmenu__opt.is-remove { background: var(--panel); border-style: dashed; }
+#ag-app .ag-simmenu__close { min-height: 48px; min-width: 48px; padding: 0; justify-content: center; background: var(--panel); }
+/* phones: the list does not fit the stage, so it becomes one row of tiles (label only; the reason is in the title) */
+#ag-app .ag-simmenu--tiles { flex-direction: row; flex-wrap: wrap; max-width: calc(100% - 8px); }
+#ag-app .ag-simmenu--tiles .ag-simmenu__head { flex-basis: 100%; }
+#ag-app .ag-simmenu--tiles .ag-simmenu__opt:not(.ag-simmenu__close) { position: relative; flex-direction: column; justify-content: center; gap: 2px; width: 56px; min-height: 64px; padding: 4px 2px; text-align: center; font-size: .7rem; }
+#ag-app .ag-simmenu--tiles .ag-simmenu__opt .ag-key { position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; font-size: .62rem; }
+#ag-app .ag-simmenu--tiles .ag-simmenu__txt { align-items: center; }
+#ag-app .ag-simmenu--tiles .ag-simmenu__txt small { display: none; }
+
 /* ---------- fullscreen and focus mode ---------- */
 #ag-app:fullscreen { background: var(--bg); overflow: auto; padding: 16px max(16px, env(safe-area-inset-left, 0px)); }
 #ag-app:fullscreen .ag-shell { max-width: 1100px; margin: 0 auto; }

@@ -30,7 +30,7 @@
  * -------------------------------------------------------------
  */
 
-const CACHE_VERSION = "v32";
+const CACHE_VERSION = "v33";
 const SHELL_CACHE = `kalasag-shell-${CACHE_VERSION}`;
 const DATA_CACHE = `kalasag-data-${CACHE_VERSION}`;
 const SAVED_CACHE = "kalasag-saved-v1"; // same name as in js/core/offline.js
@@ -106,6 +106,14 @@ const GAME_CORE = [
   "minigames/js/logic/sidescroll/jump.js", "minigames/js/logic/sidescroll/chunks.js",
   "minigames/js/engines/sidescroll/world.js", "minigames/js/engines/sidescroll/runner.js",
   "minigames/js/engines/sidescroll/chaser.js", "minigames/js/engines/sidescroll/course.js",
+  // E7 simulation engine: the scripts in registry.json engines.sim
+  "minigames/js/logic/sim/core.js", "minigames/js/logic/sim/timeline.js",
+  "minigames/js/logic/sim/graph.js", "minigames/js/logic/sim/tasks.js",
+  "minigames/js/logic/sim/spatial.js", "minigames/js/logic/sim/flow.js",
+  "minigames/js/logic/sim/crowd.js", "minigames/js/logic/sim/followers.js",
+  "minigames/js/logic/sim/meter.js", "minigames/js/engines/sim/walker.js",
+  "minigames/js/engines/sim/draw.js", "minigames/js/engines/sim/views.js",
+  "minigames/js/engines/sim/bubbles.js", "minigames/js/engines/sim/slots.js",
   "minigames/assets/asset-manifest.json",
 ];
 
