@@ -314,6 +314,11 @@ main {
   right: 0;
   z-index: var(--z-modal);
   width: min(340px, calc(100vw - 2 * var(--gutter)));
+  /* Never taller than the screen (small laptops): the panel scrolls inside itself. */
+  max-height: calc(100vh - var(--header-h) - var(--safe-top) - var(--sp-6));
+  max-height: calc(100dvh - var(--header-h) - var(--safe-top) - var(--sp-6));
+  overflow-y: auto;
+  overscroll-behavior: contain;
   padding: var(--sp-4);
   background: var(--surface);
   border: 3px solid var(--border-strong);
@@ -519,8 +524,8 @@ main {
     left: var(--gutter);
     right: var(--gutter);
     width: auto;
-    max-height: calc(100vh - var(--header-h) - 80px);
-    overflow-y: auto;
+    max-height: calc(100vh - var(--header-h) - var(--safe-top) - 80px);
+    max-height: calc(100dvh - var(--header-h) - var(--safe-top) - 80px);
   }
 }
 
