@@ -144,7 +144,15 @@
         { "en": "Call the evacuation early", "fil": "Ipag-utos nang maaga ang paglikas", "keys": ["key_e"], "gesture": "gesture_tap" }
       ],
       "takeaway": { "en": "Cracks, tilting trees, muddy water? Tell an adult and move to safety. Don't wait for the slope to fall.", "fil": "May bitak, nakatagilid na puno, maputik na tubig? Sabihin sa nakatatanda at lumikas. Huwag hintaying gumuho ang dalisdis." },
-      "built": false, "scripts": [], "data": ["levels.json"]
+      "built": true, "scripts": [
+        "minigames/js/engines/grid/darkness.js",
+        "minigames/js/games/slope-defense/tuning.js",
+        "minigames/js/games/slope-defense/Slope.js",
+        "minigames/js/games/slope-defense/BuildPhase.js",
+        "minigames/js/games/slope-defense/RainPhase.js",
+        "minigames/js/games/slope-defense/SlopeDefenseScene.js",
+        "minigames/js/games/slope-defense/index.js"
+      ], "data": ["levels.json"]
     },
     {
       "id": "go-bag-tetris", "num": 5, "hazardId": "typhoon", "hazardGroup": "hydrometeorological",
@@ -467,7 +475,14 @@
         { "en": "Follow the marshals to the exit", "fil": "Sundin ang mga marshal papuntang labasan", "keys": [], "gesture": null }
       ],
       "takeaway": { "en": "In a crowd: walk, don't push, move with the flow toward the side, and never stop to pick things up.", "fil": "Sa dami ng tao: maglakad, huwag manulak, sumabay sa agos patungo sa gilid, at huwag huminto para pumulot." },
-      "built": false, "scripts": [], "data": ["levels.json"]
+      "built": true, "scripts": [
+        "minigames/js/logic/go-with-the-flow/pressure.js",
+        "minigames/js/games/go-with-the-flow/tuning.js",
+        "minigames/js/games/go-with-the-flow/Buddy.js",
+        "minigames/js/games/go-with-the-flow/Marshals.js",
+        "minigames/js/games/go-with-the-flow/CrowdScene.js",
+        "minigames/js/games/go-with-the-flow/index.js"
+      ], "data": ["levels.json"]
     },
     {
       "id": "lunch-table", "num": 18, "hazardId": "bullying", "hazardGroup": "social",

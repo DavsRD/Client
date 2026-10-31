@@ -1,0 +1,332 @@
+[
+  {
+    "level": 1,
+    "title": {"en": "Plant for the slope"},
+    "blurb": {"en": "Trees slow the mud. Plant them beside the mud paths, then watch the rain."},
+    "map": "w1",
+    "waves": 2,
+    "budget": 130,
+    "waveBudget": 50,
+    "options": ["tree"],
+    "night": false,
+    "signs": false,
+    "evacBeforeFirst": false,
+    "spawn": 0.9,
+    "paths": [
+      {"id": "p0", "pts": [[110, 26], [96, 80], [122, 140], [102, 190], [110, 230]]},
+      {"id": "p2", "pts": [[370, 26], [356, 80], [382, 140], [362, 190], [370, 230]]}
+    ],
+    "sources": [
+      {"path": "p0", "x": 110, "y": 26},
+      {"path": "p2", "x": 370, "y": 26}
+    ],
+    "houses": [
+      {"id": "h0", "path": "p0", "x": 110, "y": 246, "people": 2},
+      {"id": "h2", "path": "p2", "x": 370, "y": 246, "people": 2}
+    ],
+    "buildSlots": [
+      {"id": "p0s1", "path": "p0", "x": 122, "y": 88},
+      {"id": "p0s2", "path": "p0", "x": 84, "y": 104},
+      {"id": "p0s3", "path": "p0", "x": 139, "y": 127},
+      {"id": "p0s4", "path": "p0", "x": 101, "y": 144},
+      {"id": "p0s5", "path": "p0", "x": 127, "y": 184},
+      {"id": "p0s6", "path": "p0", "x": 88, "y": 168},
+      {"id": "p2s1", "path": "p2", "x": 382, "y": 88},
+      {"id": "p2s2", "path": "p2", "x": 344, "y": 104},
+      {"id": "p2s3", "path": "p2", "x": 399, "y": 127},
+      {"id": "p2s4", "path": "p2", "x": 361, "y": 144},
+      {"id": "p2s5", "path": "p2", "x": 387, "y": 184},
+      {"id": "p2s6", "path": "p2", "x": 348, "y": 168}
+    ],
+    "canalSlots": [],
+    "watchPost": {"tx": 15, "ty": 4},
+    "evacRoute": [[40, 260], [440, 260]],
+    "safeZone": {"x": 458, "y": 244},
+    "rainMs": 70000,
+    "bigSlides": [
+      {"atPct": 1, "paths": ["p0"], "wave": 1},
+      {"atPct": 1, "paths": ["p2"], "wave": 2}
+    ],
+    "housesTarget": 50,
+    "mudLimit": {"easy": 7, "advanced": 11},
+    "pets": [
+      {"tx": 1, "ty": 6},
+      {"tx": 9, "ty": 3},
+      {"tx": 11, "ty": 6}
+    ]
+  },
+  {
+    "level": 2,
+    "title": {"en": "Drain the water"},
+    "blurb": {"en": "Canals on the upper slope cut the mud before it starts."},
+    "map": "w2",
+    "waves": 2,
+    "budget": 150,
+    "waveBudget": 60,
+    "options": ["tree", "vetiver", "canal"],
+    "night": false,
+    "signs": false,
+    "evacBeforeFirst": false,
+    "spawn": 1.0,
+    "paths": [
+      {"id": "p0", "pts": [[110, 26], [96, 80], [122, 140], [102, 190], [110, 230]]},
+      {"id": "p2", "pts": [[370, 26], [356, 80], [382, 140], [362, 190], [370, 230]]}
+    ],
+    "sources": [
+      {"path": "p0", "x": 110, "y": 26},
+      {"path": "p2", "x": 370, "y": 26}
+    ],
+    "houses": [
+      {"id": "h0", "path": "p0", "x": 110, "y": 246, "people": 2},
+      {"id": "h2", "path": "p2", "x": 370, "y": 246, "people": 2}
+    ],
+    "buildSlots": [
+      {"id": "p0s1", "path": "p0", "x": 122, "y": 88},
+      {"id": "p0s2", "path": "p0", "x": 84, "y": 104},
+      {"id": "p0s3", "path": "p0", "x": 139, "y": 127},
+      {"id": "p0s4", "path": "p0", "x": 101, "y": 144},
+      {"id": "p0s5", "path": "p0", "x": 127, "y": 184},
+      {"id": "p0s6", "path": "p0", "x": 88, "y": 168},
+      {"id": "p2s1", "path": "p2", "x": 382, "y": 88},
+      {"id": "p2s2", "path": "p2", "x": 344, "y": 104},
+      {"id": "p2s3", "path": "p2", "x": 399, "y": 127},
+      {"id": "p2s4", "path": "p2", "x": 361, "y": 144},
+      {"id": "p2s5", "path": "p2", "x": 387, "y": 184},
+      {"id": "p2s6", "path": "p2", "x": 348, "y": 168}
+    ],
+    "canalSlots": [
+      {"id": "p0c", "path": "p0", "x": 105, "y": 45},
+      {"id": "p2c", "path": "p2", "x": 365, "y": 45}
+    ],
+    "watchPost": {"tx": 15, "ty": 4},
+    "evacRoute": [[40, 260], [440, 260]],
+    "safeZone": {"x": 458, "y": 244},
+    "rainMs": 72000,
+    "bigSlides": [
+      {"atPct": 1, "paths": ["p0"], "wave": 1},
+      {"atPct": 1, "paths": ["p2"], "wave": 2}
+    ],
+    "housesTarget": 50,
+    "mudLimit": {"easy": 6, "advanced": 9},
+    "pets": [
+      {"tx": 2, "ty": 6},
+      {"tx": 7, "ty": 1},
+      {"tx": 13, "ty": 1}
+    ]
+  },
+  {
+    "level": 3,
+    "title": {"en": "Warning signs"},
+    "blurb": {"en": "Cracks, tilting trees, muddy water. Spot the signs and keep the Alert meter high."},
+    "map": "w3",
+    "waves": 1,
+    "budget": 150,
+    "waveBudget": 0,
+    "options": ["tree", "vetiver", "canal"],
+    "night": false,
+    "signs": true,
+    "evacBeforeFirst": false,
+    "spawn": 1.0,
+    "paths": [
+      {"id": "p0", "pts": [[110, 26], [96, 80], [122, 140], [102, 190], [110, 230]]},
+      {"id": "p1", "pts": [[240, 26], [254, 80], [228, 140], [248, 190], [240, 230]], "only": "advanced"},
+      {"id": "p2", "pts": [[370, 26], [356, 80], [382, 140], [362, 190], [370, 230]]}
+    ],
+    "sources": [
+      {"path": "p0", "x": 110, "y": 26},
+      {"path": "p1", "x": 240, "y": 26, "only": "advanced"},
+      {"path": "p2", "x": 370, "y": 26}
+    ],
+    "houses": [
+      {"id": "h0", "path": "p0", "x": 110, "y": 246, "people": 2},
+      {"id": "h1", "path": "p1", "x": 240, "y": 246, "people": 3, "only": "advanced"},
+      {"id": "h2", "path": "p2", "x": 370, "y": 246, "people": 2}
+    ],
+    "buildSlots": [
+      {"id": "p0s1", "path": "p0", "x": 122, "y": 88},
+      {"id": "p0s2", "path": "p0", "x": 84, "y": 104},
+      {"id": "p0s3", "path": "p0", "x": 139, "y": 127},
+      {"id": "p0s4", "path": "p0", "x": 101, "y": 144},
+      {"id": "p0s5", "path": "p0", "x": 127, "y": 184},
+      {"id": "p0s6", "path": "p0", "x": 88, "y": 168},
+      {"id": "p1s1", "path": "p1", "x": 266, "y": 104, "only": "advanced"},
+      {"id": "p1s2", "path": "p1", "x": 228, "y": 88, "only": "advanced"},
+      {"id": "p1s3", "path": "p1", "x": 249, "y": 144, "only": "advanced"},
+      {"id": "p1s4", "path": "p1", "x": 211, "y": 127, "only": "advanced"},
+      {"id": "p1s5", "path": "p1", "x": 262, "y": 168, "only": "advanced"},
+      {"id": "p1s6", "path": "p1", "x": 223, "y": 184, "only": "advanced"},
+      {"id": "p2s1", "path": "p2", "x": 382, "y": 88},
+      {"id": "p2s2", "path": "p2", "x": 344, "y": 104},
+      {"id": "p2s3", "path": "p2", "x": 399, "y": 127},
+      {"id": "p2s4", "path": "p2", "x": 361, "y": 144},
+      {"id": "p2s5", "path": "p2", "x": 387, "y": 184},
+      {"id": "p2s6", "path": "p2", "x": 348, "y": 168}
+    ],
+    "canalSlots": [
+      {"id": "p0c", "path": "p0", "x": 105, "y": 45},
+      {"id": "p1c", "path": "p1", "x": 245, "y": 45, "only": "advanced"},
+      {"id": "p2c", "path": "p2", "x": 365, "y": 45}
+    ],
+    "watchPost": {"tx": 15, "ty": 4},
+    "evacRoute": [[40, 260], [440, 260]],
+    "safeZone": {"x": 458, "y": 244},
+    "rainMs": 80000,
+    "bigSlides": [
+      {"atPct": 1, "paths": ["p0"]}
+    ],
+    "housesTarget": 50,
+    "mudLimit": {"easy": 8, "advanced": 11},
+    "pets": [
+      {"tx": 5, "ty": 1},
+      {"tx": 10, "ty": 4},
+      {"tx": 14, "ty": 2}
+    ]
+  },
+  {
+    "level": 4,
+    "title": {"en": "Night storm"},
+    "blurb": {"en": "It is dark. Sweep your flashlight to find the warning signs, and protect a house with a wall."},
+    "map": "w4",
+    "waves": 1,
+    "budget": 230,
+    "waveBudget": 0,
+    "options": ["tree", "vetiver", "canal", "wall"],
+    "night": true,
+    "signs": true,
+    "evacBeforeFirst": false,
+    "spawn": 0.7,
+    "paths": [
+      {"id": "p0", "pts": [[110, 26], [96, 80], [122, 140], [102, 190], [110, 230]]},
+      {"id": "p1", "pts": [[240, 26], [254, 80], [228, 140], [248, 190], [240, 230]], "only": "advanced"},
+      {"id": "p2", "pts": [[370, 26], [356, 80], [382, 140], [362, 190], [370, 230]]}
+    ],
+    "sources": [
+      {"path": "p0", "x": 110, "y": 26},
+      {"path": "p1", "x": 240, "y": 26, "only": "advanced"},
+      {"path": "p2", "x": 370, "y": 26}
+    ],
+    "houses": [
+      {"id": "h0", "path": "p0", "x": 110, "y": 246, "people": 2},
+      {"id": "h1", "path": "p1", "x": 240, "y": 246, "people": 3, "only": "advanced"},
+      {"id": "h2", "path": "p2", "x": 370, "y": 246, "people": 2}
+    ],
+    "buildSlots": [
+      {"id": "p0s1", "path": "p0", "x": 122, "y": 88},
+      {"id": "p0s2", "path": "p0", "x": 84, "y": 104},
+      {"id": "p0s3", "path": "p0", "x": 139, "y": 127},
+      {"id": "p0s4", "path": "p0", "x": 101, "y": 144},
+      {"id": "p0s5", "path": "p0", "x": 127, "y": 184},
+      {"id": "p0s6", "path": "p0", "x": 88, "y": 168},
+      {"id": "p1s1", "path": "p1", "x": 266, "y": 104, "only": "advanced"},
+      {"id": "p1s2", "path": "p1", "x": 228, "y": 88, "only": "advanced"},
+      {"id": "p1s3", "path": "p1", "x": 249, "y": 144, "only": "advanced"},
+      {"id": "p1s4", "path": "p1", "x": 211, "y": 127, "only": "advanced"},
+      {"id": "p1s5", "path": "p1", "x": 262, "y": 168, "only": "advanced"},
+      {"id": "p1s6", "path": "p1", "x": 223, "y": 184, "only": "advanced"},
+      {"id": "p2s1", "path": "p2", "x": 382, "y": 88},
+      {"id": "p2s2", "path": "p2", "x": 344, "y": 104},
+      {"id": "p2s3", "path": "p2", "x": 399, "y": 127},
+      {"id": "p2s4", "path": "p2", "x": 361, "y": 144},
+      {"id": "p2s5", "path": "p2", "x": 387, "y": 184},
+      {"id": "p2s6", "path": "p2", "x": 348, "y": 168}
+    ],
+    "canalSlots": [
+      {"id": "p0c", "path": "p0", "x": 105, "y": 45},
+      {"id": "p1c", "path": "p1", "x": 245, "y": 45, "only": "advanced"},
+      {"id": "p2c", "path": "p2", "x": 365, "y": 45}
+    ],
+    "watchPost": {"tx": 15, "ty": 4},
+    "evacRoute": [[40, 260], [440, 260]],
+    "safeZone": {"x": 458, "y": 244},
+    "rainMs": 85000,
+    "bigSlides": [
+      {"atPct": 1, "paths": ["p0"]}
+    ],
+    "housesTarget": 100,
+    "mudLimit": {"easy": 6, "advanced": 9},
+    "pets": [
+      {"tx": 1, "ty": 3},
+      {"tx": 10, "ty": 2},
+      {"tx": 14, "ty": 6}
+    ]
+  },
+  {
+    "level": 5,
+    "title": {"en": "Typhoon and landslide"},
+    "blurb": {"en": "Two slides are coming. Tell everyone to leave before the first one."},
+    "map": "w5",
+    "waves": 1,
+    "budget": 340,
+    "waveBudget": 0,
+    "options": ["tree", "vetiver", "canal", "wall"],
+    "night": false,
+    "signs": true,
+    "evacBeforeFirst": true,
+    "spawn": 0.6,
+    "paths": [
+      {"id": "p0", "pts": [[80, 26], [66, 80], [92, 140], [72, 190], [80, 230]]},
+      {"id": "p1", "pts": [[185, 26], [199, 80], [173, 140], [193, 190], [185, 230]], "only": "advanced"},
+      {"id": "p2", "pts": [[290, 26], [276, 80], [302, 140], [282, 190], [290, 230]], "only": "advanced"},
+      {"id": "p3", "pts": [[395, 26], [409, 80], [383, 140], [403, 190], [395, 230]]}
+    ],
+    "sources": [
+      {"path": "p0", "x": 80, "y": 26},
+      {"path": "p1", "x": 185, "y": 26, "only": "advanced"},
+      {"path": "p2", "x": 290, "y": 26, "only": "advanced"},
+      {"path": "p3", "x": 395, "y": 26}
+    ],
+    "houses": [
+      {"id": "h0", "path": "p0", "x": 80, "y": 246, "people": 2},
+      {"id": "h1", "path": "p1", "x": 185, "y": 246, "people": 3, "only": "advanced"},
+      {"id": "h2", "path": "p2", "x": 290, "y": 246, "people": 2, "only": "advanced"},
+      {"id": "h3", "path": "p3", "x": 395, "y": 246, "people": 3}
+    ],
+    "buildSlots": [
+      {"id": "p0s1", "path": "p0", "x": 92, "y": 88},
+      {"id": "p0s2", "path": "p0", "x": 54, "y": 104},
+      {"id": "p0s3", "path": "p0", "x": 109, "y": 127},
+      {"id": "p0s4", "path": "p0", "x": 71, "y": 144},
+      {"id": "p0s5", "path": "p0", "x": 97, "y": 184},
+      {"id": "p0s6", "path": "p0", "x": 58, "y": 168},
+      {"id": "p1s1", "path": "p1", "x": 211, "y": 104, "only": "advanced"},
+      {"id": "p1s2", "path": "p1", "x": 173, "y": 88, "only": "advanced"},
+      {"id": "p1s3", "path": "p1", "x": 194, "y": 144, "only": "advanced"},
+      {"id": "p1s4", "path": "p1", "x": 156, "y": 127, "only": "advanced"},
+      {"id": "p1s5", "path": "p1", "x": 207, "y": 168, "only": "advanced"},
+      {"id": "p1s6", "path": "p1", "x": 168, "y": 184, "only": "advanced"},
+      {"id": "p2s1", "path": "p2", "x": 302, "y": 88, "only": "advanced"},
+      {"id": "p2s2", "path": "p2", "x": 264, "y": 104, "only": "advanced"},
+      {"id": "p2s3", "path": "p2", "x": 319, "y": 127, "only": "advanced"},
+      {"id": "p2s4", "path": "p2", "x": 281, "y": 144, "only": "advanced"},
+      {"id": "p2s5", "path": "p2", "x": 307, "y": 184, "only": "advanced"},
+      {"id": "p2s6", "path": "p2", "x": 268, "y": 168, "only": "advanced"},
+      {"id": "p3s1", "path": "p3", "x": 421, "y": 104},
+      {"id": "p3s2", "path": "p3", "x": 383, "y": 88},
+      {"id": "p3s3", "path": "p3", "x": 404, "y": 144},
+      {"id": "p3s4", "path": "p3", "x": 366, "y": 127},
+      {"id": "p3s5", "path": "p3", "x": 417, "y": 168},
+      {"id": "p3s6", "path": "p3", "x": 378, "y": 184}
+    ],
+    "canalSlots": [
+      {"id": "p0c", "path": "p0", "x": 75, "y": 45},
+      {"id": "p1c", "path": "p1", "x": 190, "y": 45, "only": "advanced"},
+      {"id": "p2c", "path": "p2", "x": 285, "y": 45, "only": "advanced"},
+      {"id": "p3c", "path": "p3", "x": 400, "y": 45}
+    ],
+    "watchPost": {"tx": 15, "ty": 4},
+    "evacRoute": [[40, 260], [440, 260]],
+    "safeZone": {"x": 458, "y": 244},
+    "rainMs": 90000,
+    "bigSlides": [
+      {"atPct": 0.72, "paths": ["p0", "p2"]},
+      {"atPct": 1, "paths": ["p3", "p1"]}
+    ],
+    "housesTarget": 75,
+    "mudLimit": {"easy": 6, "advanced": 8},
+    "pets": [
+      {"tx": 1, "ty": 1},
+      {"tx": 7, "ty": 2},
+      {"tx": 14, "ty": 2}
+    ]
+  }
+]
