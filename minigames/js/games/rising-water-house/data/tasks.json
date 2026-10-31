@@ -1,0 +1,14 @@
+[
+  { "id": "power", "kind": "power", "icon": "⚡", "node": "breaker", "durationMs": 1500, "points": 150, "prio": 1, "room": 1, "ground": true, "label": { "en": "Power off" }, "action": "point" },
+  { "id": "docs", "kind": "item", "icon": "📄", "art": "rising-water-house.prop.cabinet", "node": "cabinet", "durationMs": 2000, "points": 100, "prio": 2, "room": 3, "ground": true, "ruin": true, "essential": true, "label": { "en": "Documents in pouch" }, "action": "point" },
+  { "id": "water", "kind": "item", "icon": "💧", "art": "rising-water-house.prop.jugs", "node": "jugs", "durationMs": 2500, "points": 100, "prio": 3, "room": 4, "ground": true, "ruin": true, "essential": true, "label": { "en": "Store clean water" }, "action": "point" },
+  { "id": "gobag", "kind": "item", "icon": "🎒", "art": "rising-water-house.prop.gobag", "node": "gobag", "durationMs": 1000, "deliverTo": "up_store", "carry": "gobag", "points": 100, "prio": 4, "room": 5, "ground": true, "ruin": true, "essential": true, "label": { "en": "Grab go bag" }, "action": "point" },
+  { "id": "lola", "kind": "escort", "icon": "👵", "node": "lola", "durationMs": 800, "deliverTo": "bedroom", "carry": "lola", "points": 150, "prio": 5, "room": 2, "ground": true, "label": { "en": "Help Lola up" }, "action": "point" },
+  { "id": "pets", "kind": "pets", "icon": "🐔", "node": "yard", "durationMs": 900, "deliverTo": "up_pets", "carry": "pets", "points": 80, "prio": 6, "room": 0, "ground": true, "label": { "en": "Bring pets up" }, "action": "point" },
+  { "id": "tv", "kind": "item", "icon": "📺", "art": "rising-water-house.prop.tv", "node": "tv", "durationMs": 1000, "deliverTo": "up_store", "carry": "tv", "points": 60, "prio": 7, "room": 2, "ground": true, "ruin": true, "label": { "en": "Move TV up" }, "action": "point" },
+  { "id": "ref", "kind": "item", "icon": "📺", "art": "rising-water-house.prop.ref", "node": "ref", "durationMs": 1500, "deliverTo": "up_store", "carry": "ref", "points": 60, "prio": 8, "room": 4, "ground": true, "ruin": true, "label": { "en": "Move fridge goods up" }, "action": "point" },
+  { "id": "radio", "kind": "radio", "icon": "📻", "art": "rising-water-house.prop.radio", "node": "radio", "durationMs": 1000, "points": 50, "prio": 9, "room": 2, "ground": true, "label": { "en": "Radio on" }, "action": "hold:radio" },
+  { "id": "flashlight", "kind": "light", "icon": "🔦", "node": "drawer", "durationMs": 1000, "points": 0, "prio": 2, "room": 3, "ground": true, "label": { "en": "Grab flashlight" }, "action": "point" },
+  { "id": "bike", "kind": "decoy", "icon": "🚲", "art": "rising-water-house.prop.bike", "node": "bike", "durationMs": 1000, "points": 0, "prio": 99, "room": 0, "ground": true, "decoy": true, "label": { "en": "Save the bike" }, "action": "stop" },
+  { "id": "photo", "kind": "photo", "icon": "📸", "durationMs": 500, "points": 0, "prio": 20, "optional": true, "label": { "en": "Take a family photo" }, "action": "point" }
+]

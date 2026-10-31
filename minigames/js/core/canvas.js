@@ -35,7 +35,7 @@ window.AG = window.AG || {};
       k = k || 1;
       const cv = AG.icons.canvas(name);
       if (cv) { ctx.drawImage(cv, Math.round(x), Math.round(y), 18 * k, 18 * k); return; }
-      if (!AG.icons.has(name)) { ctx.drawImage(AG.pixelIcon('❓', 18, true), Math.round(x), Math.round(y), 18 * k, 18 * k); return; }
+      if (!AG.icons.has(name)) { ctx.drawImage(AG.pixelIcon(/[^\x00-\x7f]/.test(name) ? name : '❓', 18, true), Math.round(x), Math.round(y), 18 * k, 18 * k); return; }
       const rec = AG.icons.image(name);
       if (!rec.img.complete || !rec.img.naturalWidth) return;
       const w = rec.img.naturalWidth / rec.scale * k, hh = rec.img.naturalHeight / rec.scale * k;

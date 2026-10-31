@@ -1,0 +1,17 @@
+[
+  { "level": 1, "house": "twostory", "title": { "en": "The water is coming" }, "blurb": { "en": "Switch off the power, then move things upstairs." },
+    "riseRate": 0.3, "peakMs": 110000, "tasks": ["power", "docs", "water", "gobag", "tv", "radio"], "easyDrop": ["tv"],
+    "family": ["baby"], "idleTarget": 14000, "photos": ["door", "bedroom", "window"] },
+  { "level": 2, "house": "twostory", "title": { "en": "Power before water" }, "blurb": { "en": "The breaker is far from the stairs. Be quick!" },
+    "riseRate": 0.44, "peakMs": 105000, "tasks": ["power", "docs", "water", "gobag", "tv", "ref", "pets", "radio", "bike"], "easyDrop": ["ref", "bike"],
+    "family": ["dog", "chicken", "baby"], "decoy": "advanced", "idleTarget": 14000, "photos": ["door", "bedroom", "window"] },
+  { "level": 3, "house": "stilt", "title": { "en": "Family first" }, "blurb": { "en": "Lola needs help on the stairs, and the pets must come up." },
+    "riseRate": 0.36, "peakMs": 130000, "tasks": ["power", "docs", "water", "gobag", "lola", "pets", "tv", "radio", "bike"], "easyDrop": ["bike", "tv"],
+    "family": ["lola", "dog", "chicken", "baby"], "evacAtMs": 95000, "exit": "boat", "decoy": "advanced", "idleTarget": 18000, "photos": ["door", "bedroom", "window"] },
+  { "level": 4, "house": "night", "night": true, "title": { "en": "The lights go out" }, "blurb": { "en": "Night, and the electricity is out. Find the flashlight first!" },
+    "riseRate": 0.34, "peakMs": 125000, "tasks": ["flashlight", "power", "docs", "water", "gobag", "lola", "pets", "radio", "bike"], "easyDrop": ["bike", "pets"],
+    "family": ["lola", "dog", "baby"], "decoy": true, "idleTarget": 18000, "photos": ["door", "bedroom", "window"] },
+  { "level": 5, "house": "twostory", "title": { "en": "Evacuate now!" }, "blurb": { "en": "An order can come at any time. When it does, go." },
+    "riseRate": 0.38, "peakMs": 140000, "tasks": ["power", "docs", "water", "gobag", "lola", "pets", "tv", "ref", "radio", "bike"], "easyDrop": ["ref", "tv"],
+    "family": ["lola", "dog", "chicken", "baby"], "evacAtMs": 62000, "exit": "boat", "routes": true, "decoy": true, "idleTarget": 16000, "photos": ["door", "bedroom", "window"] }
+]

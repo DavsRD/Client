@@ -187,7 +187,7 @@
         { "en": "Never walk through floodwater", "fil": "Huwag lumusong sa baha", "keys": [], "gesture": null }
       ],
       "takeaway": { "en": "Power off, move up, and never walk through floodwater. Leave when you're told to.", "fil": "Patayin ang kuryente, umakyat, at huwag lumusong sa baha. Umalis kapag pinalikas." },
-      "built": false, "scripts": [], "data": ["levels.json", "data/tasks.json"]
+      "built": true, "scripts": ["minigames/js/engines/grid/darkness.js", "minigames/js/games/rising-water-house/tuning.js", "minigames/js/games/rising-water-house/Water.js", "minigames/js/games/rising-water-house/RisingWaterScene.js", "minigames/js/games/rising-water-house/index.js"], "data": ["levels.json", "data/tasks.json"]
     },
     {
       "id": "evac-convoy", "num": 7, "hazardId": "storm-surge", "hazardGroup": "hydrometeorological",
