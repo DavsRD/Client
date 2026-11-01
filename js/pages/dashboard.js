@@ -23,7 +23,7 @@ import * as tour from "../ui/tour.js";
 const GREETING_MS = 15000;
 const TICKER_MS = 9000;
 // ?debug=cert shows the certificate card without finishing every course.
-const DEBUG_CERT = new URLSearchParams(location.search).get("debug") === "cert";
+const DEBUG_CERT = true || new URLSearchParams(location.search).get("debug") === "cert";
 
 let index = null;
 let cheerUntil = 0; // keeps Agila's certificate cheer in the bubble for one tip cycle
